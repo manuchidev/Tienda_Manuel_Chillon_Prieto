@@ -10,8 +10,38 @@
   	<description></description>
   	<servlet-class>curso.java.tienda.controller.entrada.EntradaServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ProductoServlet</servlet-name>
+  	<display-name>ProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.producto.ProductoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AñadirCarritoServlet</servlet-name>
+  	<display-name>AñadirCarritoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.carrito.AñadirCarritoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VerCarritoServlet</servlet-name>
+  	<display-name>VerCarritoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.carrito.VerCarritoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EntradaServlet</servlet-name>
   	<url-pattern>/EntradaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductoServlet</servlet-name>
+  	<url-pattern>/ProductoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AñadirCarritoServlet</servlet-name>
+  	<url-pattern>/AñadirCarritoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VerCarritoServlet</servlet-name>
+  	<url-pattern>/VerCarritoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

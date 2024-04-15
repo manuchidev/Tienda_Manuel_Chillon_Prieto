@@ -1,8 +1,6 @@
-package curso.java.tienda.controller.entrada;
+package curso.java.tienda.controller.carrito;
 
 import java.io.IOException;
-import java.util.HashMap;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,20 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
-import curso.java.tienda.model.VO.ProductoVO;
-import curso.java.tienda.service.ProductoService;
 
 /**
- * Servlet implementation class EntradaServlet
+ * Servlet implementation class VerCarritoServlet
  */
-@WebServlet("")
-public class EntradaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
+@WebServlet("/verCarrito")
+public class VerCarritoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public EntradaServlet() {
+    public VerCarritoServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -32,17 +30,7 @@ public class EntradaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Si no existe el carrito en la sesión, lo creamos
-		if (request.getSession().getAttribute("carrito") == null) {
-			request.getSession().setAttribute("carrito", new HashMap<ProductoVO, Integer>());
-			System.out.println("Carrito disponible");
-		}
-		
-		// Recuperar los productos
-		request.setAttribute("productos", ProductoService.getProductos());
-		
-		// Redirigir a la pagina de inicio
-		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
+		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}
 
 	/**

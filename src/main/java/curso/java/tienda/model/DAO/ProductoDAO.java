@@ -47,4 +47,42 @@ public class ProductoDAO {
 		
 		return productos;
 	}
+	
+	
+	public static ProductoVO findById(int id) {
+		
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE id = ?");
+			
+			st.setInt(1, id);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getDouble("precio"));
+				producto.setFecha_alta(rs.getDate("fecha_alta"));
+				producto.setFecha_baja(rs.getDate("fecha_baja"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setImagen(rs.getString("imagen"));
+	
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		
+		return producto;
+		
+	}
 }

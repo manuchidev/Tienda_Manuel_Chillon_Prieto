@@ -13,5 +13,13 @@ public class ProductoService {
 		
 		return productos;
 	}
+	
+	
+	public static ProductoVO getProductoId(int id) {
+		
+		ProductoVO producto = ProductoDAO.findById(id);
+		
+		return producto;
+	}
 
 }
