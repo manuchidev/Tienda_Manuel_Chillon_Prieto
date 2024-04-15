@@ -45,4 +45,16 @@ public class Conexion {
 		
 		return true;
 	}
+	
+	public static void desconectar() {
+		
+		try {
+			conexion.close();
+			conexion = null;
+			System.out.println("La conexion a la base de datos " + bd + " ha terminado");
+			
+		} catch (SQLException e) {
+			System.out.println("Error al cerrar la conexion");
+		}
+	}
 }
