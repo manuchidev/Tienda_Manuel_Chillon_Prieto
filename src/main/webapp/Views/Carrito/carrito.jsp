@@ -23,89 +23,116 @@ import="curso.java.tienda.config.Rutas, java.util.*"
 		
 		<jsp:include page="<%= Rutas.NAV%>" />
 		
-		<table class="table caption-top" border="1">
+		<div class="container">
 		
-			<caption>Lista de Productos</caption>
+			<table class="table caption-top" border="1">
 			
-			<tr class="text-center">		
-				<th scope="col">Producto</th>
-				<th scope="col">Cantidad</th>
-				<th scope="col">Precio</th>
-				<th scope="col">Eliminar Producto</th>			
-			</tr>
-			
-		<%
-			// Obtenemos el carrito de la sesión
-			HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
-		
-			if (carrito != null && !carrito.isEmpty()) {
+				<caption>Lista de Productos</caption>
 				
-				for (Map.Entry<ProductoVO, Integer> producto: carrito.entrySet()) {
-					
-					ProductoVO productoVO = producto.getKey();
-					Integer cantidad = producto.getValue();
-					
-					String nombre = productoVO.getNombre();
-					double precio = productoVO.getPrecio();
-					double total = precio * cantidad;
-					int id = productoVO.getId();
-		%>
-					<tr class="text-center">
-						<td>
-							<input type="text" name="id[]" id="id" value=<%= nombre %> readonly>
-						</td>
-						
-						<td>
-							<div class="input-group">								
-								<input type="button" value="-" class="button-minus" data-field="quantity">
-								<input type="number" step="1" min="1" max="" value=<%= cantidad %> name="cantidad[]" class="quantity-field">
-								<input type="button" value="+" class="button-plus" data-field="quantity">
-							</div>
-						</td>
-						
-						<td><%= total %></td>
-						
-						<td>
-							<form action="eliminarProductoCarrito">
-								<input type="hidden" name="id" value="<%= id %>"></input>
-								<button class="btn btn-outline-danger" type="submit">Eliminar</button>
-							</form>						
-						</td>
-						
+				<thead>
+				
+					<tr>		
+						<th scope="col">Imagen</th>
+						<th scope="col">Producto</th>
+						<th scope="col">Cantidad</th>
+						<th scope="col">Precio</th>
+						<th scope="col">Eliminar Producto</th>			
 					</tr>
-		<%
-				}
+					
+				</thead>
 				
-			} else {
-		%>	
-				<tr>
-					<td colspan="4" style="text-aling: center; color: red">El carrito está vacío</td>
-				</tr>	
-		<%		
-			}			
-		%>
-			
-			<tr>
-
-				<td colspan="4">
+				<tbody>
+				
+				<%
+					// Obtenemos el carrito de la sesión
+					HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
+				
+					if (carrito != null && !carrito.isEmpty()) {
 						
-					<form action="comprar">
-						<button style="float: rigth; margin-right: 2%">Realizar Pedido</button>
-					</form>
-					
-					<form action="actualizar">
-						<button style="float: rigth; margin-right: 2%">Actualizar Carrito</button>
-					</form>
-					
-					<form action="vaciar">
-						<button style="float: rigth; margin-right: 2%">Vaciar Carrito</button>
-					</form>	
+						for (Map.Entry<ProductoVO, Integer> producto: carrito.entrySet()) {
+							
+							ProductoVO productoVO = producto.getKey();
+							Integer cantidad = producto.getValue();
+							
+							String nombre = productoVO.getNombre();
+							double precio = productoVO.getPrecio();
+							double total = precio * cantidad;
+							int id = productoVO.getId();
+				%>
+							<tr>
+							
+								<td>
+									<div class="tdDato">
+										<%= productoVO.getImagen() %>									
+									</div>
+								</td>
+							
+								<td>
+									<div class="tdDato">
+										<%= nombre %>
+<%-- 									<input type="text" name="id[]" id="id" value=<%= nombre %> readonly> --%>									
+									</div>
+								</td>
 								
-				</td>
-			
-			</tr>
+								<td>
+									<div class="input-group">								
+										<input type="button" value="-" class="button-minus" data-field="quantity">
+										<input type="number" step="1" min="1" max="" value=<%= cantidad %> name="cantidad[]" class="quantity-field">
+										<input type="button" value="+" class="button-plus" data-field="quantity">
+									</div>
+								</td>
+								
+								<td>
+									<div class="tdDato">
+										<%= total %> €
+									</div>
+								</td>
+								
+								<td>
+									<form action="eliminarProductoCarrito">
+										<input type="hidden" name="id" value="<%= id %>"></input>
+										<button class="btn btn-danger" type="submit">Eliminar</button>
+									</form>						
+								</td>
+								
+							</tr>
+				<%
+						}
+						
+					} else {
+				%>	
+						<tr>
+							<td colspan="5" style="text-aling: center; color: red">El carrito está vacío</td>
+						</tr>	
+				<%		
+					}			
+				%>
+					
+					<tr>
 		
-		</table>
+						<td colspan="5">
+								
+							<form action="comprar">
+								<button class="opcionesCarrito btn btn-success">Realizar Pedido</button>
+							</form>
+							
+							<form action="actualizar">
+								<button class="opcionesCarrito btn btn-warning">Actualizar Carrito</button>
+							</form>
+							
+							<form action="vaciar">
+								<button class="opcionesCarrito btn btn-danger">Vaciar Carrito</button>
+							</form>	
+										
+						</td>
+					
+					</tr>
+					
+				</tbody>
+			
+			</table>
+			
+		</div>
 						
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 	

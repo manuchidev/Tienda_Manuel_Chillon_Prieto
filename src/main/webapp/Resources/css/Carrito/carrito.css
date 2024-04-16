@@ -1,0 +1,15 @@
+th, tr, td {
+	text-align: center;
+}
+
+.tdDato {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+ 
+ .opcionesCarrito {
+	float: right;
+	margin-left: auto;
+	margin-right: 2%;
+	border: 1px solid black;
+ }
