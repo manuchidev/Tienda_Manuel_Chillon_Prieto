@@ -2,7 +2,7 @@
 
  <footer class="container-fluid text-center">
 
-  <p>Tienda Serbatic Copyright</p>  
+  <p>@ Tienda Serbatic Copyright</p>  
   
   <form class="form-inline">Obtener Ofertas:
   

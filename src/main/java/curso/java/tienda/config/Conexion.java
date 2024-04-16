@@ -31,8 +31,8 @@ public class Conexion {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			// Obtenemos la conexion
-//			conexion = java.sql.DriverManager.getConnection(url + host + "/" + bd, login, password);
-			conexion = java.sql.DriverManager.getConnection(url + host + ":" + port + "/" + bd, login, password);
+			conexion = java.sql.DriverManager.getConnection(url + host + "/" + bd, login, password);
+//			conexion = java.sql.DriverManager.getConnection(url + host + ":" + port + "/" + bd, login, password);
 			
 			conexion.setAutoCommit(false);
 			
@@ -51,7 +51,7 @@ public class Conexion {
 		try {
 			conexion.close();
 			conexion = null;
-			System.out.println("La conexion a la base de datos " + bd + " ha terminado");
+//			System.out.println("La conexion a la base de datos " + bd + " ha terminado");
 			
 		} catch (SQLException e) {
 			System.out.println("Error al cerrar la conexion");

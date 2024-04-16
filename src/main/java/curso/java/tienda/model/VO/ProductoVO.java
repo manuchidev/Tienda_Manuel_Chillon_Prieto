@@ -26,5 +26,6 @@ public class ProductoVO {
 	Date fecha_baja;
 	float impuesto;
 	String imagen;
+	int cantidad;
 
 }

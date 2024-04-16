@@ -1,15 +1,64 @@
-th, tr, td {
+myTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, tr {
 	text-align: center;
 }
 
-.tdDato {
-    margin-top: 6px;
-    margin-bottom: 6px;
+tr, td {
+/*  	width: 150px; Ancho fijo para todas las celdas */
+ 	padding: 10px; /* Espaciado interno de las celdas */
+ 	border: 1px solid #ccc; /* Borde de las celdas */
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.centrarTd {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.nombre {
+	text-align: center;
+	padding: 0;
+}
+
+.imagenProd {
+	text-align: right;
+/* 	margin-left: 30%; */
+	padding: 0;
+}
+
+.imgProdCarrito {
+	width: 50px;
+	height: 50px;
+	margin: auto;
+}
+
+
+.btnVaciarCarrito {
+	float: right;
+	margin-right: 6.6%;
+ }
+
+.divComprar {
+	text-align: center;
+	margin-bottom: 2%;
 }
  
- .opcionesCarrito {
-	float: right;
-	margin-left: auto;
-	margin-right: 2%;
-	border: 1px solid black;
+ .btnRealizarPedido {
+ 	text-align: center;
+ 	width: 25%;
+ 	font-size: large;
  }

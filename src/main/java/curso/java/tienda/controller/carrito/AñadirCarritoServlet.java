@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.ProductoVO;
 import curso.java.tienda.service.ProductoService;
@@ -60,6 +61,8 @@ public class AñadirCarritoServlet extends HttpServlet {
 			
 			System.out.println(carrito.size());
 		}
+		
+//		Conexion.desconectar();
 		
 		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 	}

@@ -12,14 +12,14 @@
         <span class="icon-bar"></span>                        
       </button>
       
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="/Tienda_Manuel_Chillon_Prieto/">Logo</a>
       
     </div>
     
     <div class="collapse navbar-collapse" id="myNavbar">
     
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Inicio</a></li>
+        <li class="active"><a href="/Tienda_Manuel_Chillon_Prieto/">Inicio</a></li>
         <li><a href="#">Categorías</a></li>
         <li><a href="#">Productos</a></li>
         <li><a href="#">Ofertas</a></li>
@@ -34,7 +34,7 @@
         </li>
         
         <li> 
-       		<form action="verCarrito">
+       		<form action="Carrito">
        			<button type="submit" class="btnCarrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</button>
        		</form>		
         </li>
