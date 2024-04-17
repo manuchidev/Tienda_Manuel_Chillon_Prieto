@@ -26,6 +26,9 @@ public class ProductoVO {
 	Date fecha_baja;
 	float impuesto;
 	String imagen;
+	
+	// Atributos para el carrito
 	int cantidad;
+	double total;
 
 }

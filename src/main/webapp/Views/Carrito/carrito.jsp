@@ -45,7 +45,7 @@
 					
 					<%
 						// Obtenemos los productos del carrito de la sesión					
-						List<ProductoVO> productosCarrito = (List<ProductoVO>) request.getSession().getAttribute("productosCarrito");
+						List<ProductoVO> productosCarrito = (List<ProductoVO>) request.getAttribute("productosCarrito");
 										
 						if (productosCarrito != null && !productosCarrito.isEmpty()) {
 							
@@ -77,14 +77,14 @@
 									
 									<td>
 										<div class="centrarTd">
-											<%= producto.getCantidad() * producto.getPrecio() %> €
+											<%= producto.getTotal()%> €
 										</div>
 									</td>
 									
 									<td>
 										<div class="centrarTd">
-											<form action="eliminarProductoCarrito">
-												<input type="hidden" name="id" value="<%= producto.getId() %>"></input>
+											<form action="eliminarProducto" method="post">
+												<input type="hidden" name="idProd" value="<%= producto.getId() %>"></input>
 												<button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
 											</form>
 										</div>				

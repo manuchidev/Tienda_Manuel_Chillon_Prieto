@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>curso.java.tienda.controller.carrito.VerCarritoServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EliminarProductoServlet</servlet-name>
+  	<display-name>EliminarProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.carrito.EliminarProductoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>EntradaServlet</servlet-name>
   	<url-pattern>/EntradaServlet</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>VerCarritoServlet</servlet-name>
   	<url-pattern>/VerCarritoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EliminarProductoServlet</servlet-name>
+  	<url-pattern>/EliminarProductoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

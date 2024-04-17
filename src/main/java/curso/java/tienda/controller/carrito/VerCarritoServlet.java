@@ -11,9 +11,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.ProductoVO;
+import curso.java.tienda.service.ProductoService;
 
 /**
  * Servlet implementation class VerCarritoServlet
@@ -36,28 +38,56 @@ public class VerCarritoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
+		HttpSession session = request.getSession(true);
 		
-		List<ProductoVO> productosCarrito = new ArrayList<>();
-		
+		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
+						
 		if (carrito != null && !carrito.isEmpty()) {
+			
+			// Creamos un mapa de productos con la cantidad de cada uno
+			Map<Integer, Integer> cantidadProducto = new HashMap<>();
 			
 			for (Map.Entry<ProductoVO, Integer> producto: carrito.entrySet()) {
 				
 				ProductoVO productoVO = producto.getKey();
-				Integer cantidad = producto.getValue();
+				int cantidad = producto.getValue();
+				int idProducto = productoVO.getId();
 				
-				productoVO.setCantidad(cantidad);
-								
-				productosCarrito.add(productoVO);
+				if (cantidadProducto.containsKey(idProducto)) {
+					
+					int cantidadActual = cantidadProducto.get(idProducto);
+					cantidadProducto.put(idProducto, cantidadActual + cantidad);
+				
+				} else {
+					cantidadProducto.put(idProducto, cantidad);
+				}
+										
 			}
-		}
+			
+			List<ProductoVO> productosCarrito = new ArrayList<>();
+			
+			for (Map.Entry<Integer, Integer> producto: cantidadProducto.entrySet()) {
+				
+				int idProducto = producto.getKey();
+				int cantidad = producto.getValue();
+				
+				ProductoVO productoLista = ProductoService.getProductoId(idProducto);
+				
+				if (productoLista != null) {
+					
+					productoLista.setCantidad(cantidad);
+					productoLista.setTotal(cantidad * productoLista.getPrecio());
+					
+					productosCarrito.add(productoLista);
+				}
+			}
+			
+			request.setAttribute("productosCarrito", productosCarrito);
 		
-		// Si no existe el carrito en la sesión, lo creamos
-		if (request.getSession().getAttribute("productosCarrito") == null) {
-			request.getSession().setAttribute("productosCarrito", productosCarrito);
+		} else {
+			request.removeAttribute("productosCarrito");
 		}
-		
+				
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}
 
