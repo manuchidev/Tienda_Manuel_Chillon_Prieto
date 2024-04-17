@@ -27,7 +27,6 @@ tr, td {
 }
 
 td {
-    padding: 10px;
     border: 1px solid #ccc;
     text-align: center;
     vertical-align: middle;
@@ -59,6 +58,30 @@ td {
 	margin: auto;
 }
 
+.btnPapelera {
+	background-color: transparent;
+	color: #cc0000;
+	text-shadow: 1px 1px 3px #000;
+}
+
+.btnPapelera:hover {
+	cursor: pointer;
+	color: #f70000;
+}
+
+.tdTotal {
+	background-color: #60a7fd;
+}
+
+.totalCarrito {
+	font-size: large;
+	font-weight: bold;
+}
+
+.tdVaciar {
+	background-color: #ffffff;
+}
+
 
 .btnVaciarCarrito {
 	float: right;
@@ -74,5 +97,5 @@ td {
  	text-align: center;
  	width: 25%;
  	font-size: large;
- 	margin: 5px;
+ 	margin: 15px;
  }

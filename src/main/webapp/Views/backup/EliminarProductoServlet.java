@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.ProductoVO;
-import curso.java.tienda.service.CarritoService;
-import curso.java.tienda.service.ProductoService;
 
 
 /**
@@ -47,21 +45,36 @@ public class EliminarProductoServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession(true);
 		
-		// Obtenemos el carrito de la sesión
-		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		
-		// Si existe un id, creamos el carrito. La primera vez se crea con una unidad del producto, pero posteriormente habrá que comprobar si el id del producto existe y si es así se aumenta la cantidad
 		if (request.getParameter("idProd") != null) {
 			
-			int id = Integer.parseInt(request.getParameter("idProd"));
-						
-			CarritoService.eliminarProducto(carrito, id);
-						
-			System.out.println(carrito.size());
+			int idProd = Integer.parseInt(request.getParameter("idProd"));
+			
+			// Obtenemos los productos del carrito de la sesión
+			HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
+									
+			if (carrito != null && !carrito.isEmpty()) {
+				
+				ProductoVO productoEliminar = null;
+				
+				for (Map.Entry<ProductoVO, Integer> productoCarrito: carrito.entrySet()) {
+					
+					ProductoVO producto = productoCarrito.getKey();
+					
+					if (producto.getId() == idProd) {
+                        productoEliminar = producto;
+						break;
+					}
+				}
+				
+				if (productoEliminar != null) {
+					carrito.remove(productoEliminar);
+					session.setAttribute("carrito", carrito);
+					
+				}								
+			}			
 		}
 		
-		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
-		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
+		response.sendRedirect(request.getContextPath() + "/Carrito");
 	}
 
 }

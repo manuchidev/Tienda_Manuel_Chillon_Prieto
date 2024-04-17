@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.ProductoVO" %>
 
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -44,20 +44,14 @@
 					<tbody>
 					
 					<%
-
+					
+						request.getSession().getAttribute("carrito");
 						// Obtenemos los productos del carrito de la sesión					
-						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-						double totalCarrito = (double)request.getAttribute("totalCarrito");
-						
-				        // Formatear el número con dos decimales utilizando String.format
-				        String resultado = String.format("%.2f", totalCarrito);
+						List<ProductoVO> productosCarrito = (List<ProductoVO>) request.getAttribute("productosCarrito");
+																
+						if (productosCarrito != null && !productosCarrito.isEmpty()) {
 							
-						if (carrito != null && !carrito.isEmpty()) {
-							
-							for (Map.Entry<ProductoVO, Integer> productoCarrito : carrito.entrySet()) {
-								
-								ProductoVO producto = productoCarrito.getKey();
-								int cantidad = productoCarrito.getValue();
+							for (ProductoVO producto: productosCarrito) {																		
 					%>
 								<tr>
 															
@@ -77,7 +71,7 @@
 										<div class="centrarTd">
 											<div class="input-group">								
 												<input type="button" value="-" class="button-minus" data-field="quantity">
-												<input type="number" step="1" min="1" max="" value=<%= cantidad %> name="cantidad[]" class="quantity-field">
+												<input type="number" step="1" min="1" max="" value=<%= producto.getCantidad() %> name="cantidad[]" class="quantity-field">
 												<input type="button" value="+" class="button-plus" data-field="quantity">
 											</div>
 										</div>
@@ -85,7 +79,7 @@
 									
 									<td>
 										<div class="centrarTd">
-											<%= cantidad * producto.getPrecio()%> €
+											<%= producto.getTotal()%> €
 										</div>
 									</td>
 									
@@ -93,27 +87,19 @@
 										<div class="centrarTd">
 											<form action="eliminar" method="post">
 												<input type="hidden" name="idProd" value="<%= producto.getId() %>"></input>
-												<button class="btn btnPapelera" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+												<button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
 											</form>
 										</div>				
 									</td>
 									
 								</tr>
-																
+								
 					<%
 							}
 					%>
 								<tr>
-									<td colspan="4" class="tdTotal">
-										<div class="centrarTd totalCarrito">
-											TOTAL = <%= resultado%> €
-										</div>
-									</td>
-								</tr>
-								
-								<tr>
 			
-									<td colspan="4" class="tdVaciar">
+									<td colspan="4">
 																											
 										<form action="vaciar" method="post">
 											<button class="btnVaciarCarrito btn btn-danger">Vaciar Carrito</button>
@@ -141,10 +127,10 @@
 			
 			
 			<%
-				if (carrito != null && !carrito.isEmpty()) {
+				if (productosCarrito != null && !productosCarrito.isEmpty()) {
 			%>
 					<div class="divComprar">
-						<form action="comprar" method="post">
+						<form action="comprar">
 							<button class="btnRealizarPedido btn btn-success">Realizar Pedido</button>
 						</form>
 					</div>

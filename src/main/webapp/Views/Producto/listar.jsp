@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
-	import="java.util.*, curso.java.tienda.model.VO.ProductoVO, curso.java.tienda.service.ProductoService" 
+	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.ProductoVO, curso.java.tienda.service.ProductoService" 
  %>
 
 <div class="container">
@@ -20,7 +20,7 @@
 	      
 	        <div class="panel-heading textoCard nombreCard"><%= producto.getNombre()%></div>
 	        
-	        <div class="panel-body"><img src="<%=request.getContextPath() %><%= producto.getImagen() %>" class="img-responsive imgProd" style="width:100%" alt="Image"></div>
+	        <div class="panel-body"><img src="<%= request.getContextPath() %><%= Rutas.IMAGENES %><%= producto.getImagen() %>" class="img-responsive imgProd" style="width:100%" alt="Image"></div>
 	        
 	        <div class="panel-footer textoCard">
 	        	<p>Precio: <%= producto.getPrecio()%> €</p>
@@ -45,51 +45,3 @@
     </div>
     
 </div>
-
-<!-- <br> -->
-
-<!-- <div class="container">  -->
-   
-<!--   <div class="row"> -->
-  
-<!--     <div class="col-sm-4"> -->
-    
-<!--       <div class="panel panel-primary"> -->
-      
-<!--         <div class="panel-heading">PRODUCTO</div> -->
-<!--         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div> -->
-<!--         <div class="panel-footer">Precio</div> -->
-        
-<!--       </div> -->
-      
-<!--     </div> -->
-    
-<!--     <div class="col-sm-4">  -->
-    
-<!--       <div class="panel panel-primary"> -->
-      
-<!--         <div class="panel-heading">PRODUCTO</div> -->
-<!--         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div> -->
-<!--         <div class="panel-footer">Precio</div> -->
-        
-<!--       </div> -->
-      
-<!--     </div> -->
-    
-<!--     <div class="col-sm-4">  -->
-    
-<!--       <div class="panel panel-primary"> -->
-      
-<!--         <div class="panel-heading">PRODUCTO</div> -->
-<!--         <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div> -->
-<!--         <div class="panel-footer">Precio</div> -->
-        
-<!--       </div> -->
-      
-<!--     </div> -->
-    
-<!--   </div> -->
-  
-<!-- </div> -->
-
-<br><br>

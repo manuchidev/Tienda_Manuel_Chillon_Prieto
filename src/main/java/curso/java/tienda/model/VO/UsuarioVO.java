@@ -9,18 +9,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data @Getter @Setter @AllArgsConstructor @NoArgsConstructor
-
-public class ProductoVO {
+public class UsuarioVO {
 	
 	int id;
-	int id_categoria;
+	int id_rol;
+	String email;
+	String clave;
 	String nombre;
-	String descripcion;
-	double precio;
-	int stock;
-	Date fecha_alta;
-	Date fecha_baja;
-	float impuesto;
-	String imagen;
+	String apellido1;
+	String apellido2;
+	String direccion;
+	String provincia;
+	String localidad;
+	String telefono;
+	String dni;
 	
+	// Atributos para el carrito
+	int cantidad;
+	double total;
+
 }

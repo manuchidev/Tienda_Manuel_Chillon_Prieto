@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.ProductoVO;
-import curso.java.tienda.service.CarritoService;
 import curso.java.tienda.service.ProductoService;
 
 /**
@@ -42,9 +41,53 @@ public class VerCarritoServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		
-		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 						
+		if (carrito != null && !carrito.isEmpty()) {
+			
+			// Creamos un mapa de productos con la cantidad de cada uno
+			Map<Integer, Integer> cantidadProducto = new HashMap<>();
+			
+			for (Map.Entry<ProductoVO, Integer> producto: carrito.entrySet()) {
+				
+				ProductoVO productoVO = producto.getKey();
+				int cantidad = producto.getValue();
+				int idProducto = productoVO.getId();
+				
+				if (cantidadProducto.containsKey(idProducto)) {
+					
+					int cantidadActual = cantidadProducto.get(idProducto);
+					cantidadProducto.put(idProducto, cantidadActual + cantidad);
+				
+				} else {
+					cantidadProducto.put(idProducto, cantidad);
+				}
+										
+			}
+			
+			List<ProductoVO> productosCarrito = new ArrayList<>();
+			
+			for (Map.Entry<Integer, Integer> producto: cantidadProducto.entrySet()) {
+				
+				int idProducto = producto.getKey();
+				int cantidad = producto.getValue();
+				
+				ProductoVO productoLista = ProductoService.getProductoId(idProducto);
+				
+				if (productoLista != null) {
+					
+					productoLista.setCantidad(cantidad);
+					productoLista.setTotal(cantidad * productoLista.getPrecio());
+					
+					productosCarrito.add(productoLista);
+				}
+			}
+			
+			request.setAttribute("productosCarrito", productosCarrito);
+		
+		} else {
+			request.removeAttribute("productosCarrito");
+		}
+				
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}
 

@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.ProductoVO;
-import curso.java.tienda.service.CarritoService;
 import curso.java.tienda.service.ProductoService;
 
 /**
@@ -43,7 +42,10 @@ public class AñadirCarritoServlet extends HttpServlet {
 		if (request.getParameter("idProd") != null) {
 			
 			int id = Integer.parseInt(request.getParameter("idProd"));
-						
+			
+			// Contador para la cantidad de productos
+			int contador = 1;
+			
 			// Obtenemos el carrito de la sesión
 			HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
 			
@@ -51,9 +53,22 @@ public class AñadirCarritoServlet extends HttpServlet {
 			if (carrito == null) {
 				carrito = new HashMap<>();
 				request.getSession().setAttribute("carrito", carrito);
-			}			
+			}
 			
-			CarritoService.agregarProducto(carrito, id);		
+			// Obtenemos el producto por su id
+			ProductoVO producto = ProductoService.getProductoId(id);
+			
+			if (producto != null) {
+				
+				// Si el producto existe, comprobamos si ya está en el carrito
+				if (carrito.containsKey(producto)) {
+					
+					// Si está en el carrito, aumentamos la cantidad
+					contador += carrito.get(producto);
+				}
+				
+				carrito.put(producto, contador);
+			}
 			
 //			System.out.println(carrito.size());
 		}

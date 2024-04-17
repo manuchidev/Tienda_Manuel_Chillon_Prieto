@@ -5,15 +5,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 	<head>
-	
-	  <title>Tienda Serbatic</title>
+			
+		<title>Login</title>
+		
+		 <jsp:include page="<%= Rutas.HEAD%>" />
 	  
-	  <jsp:include page="<%= Rutas.HEAD%>" />
-	  
-	  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.PROD_CSS%>">
+	  	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.PROD_CSS%>">
 	  
 	</head>
 	
@@ -23,11 +23,7 @@
 		
 		<jsp:include page="<%= Rutas.NAV%>" />
 		
-		<main>		
-			<jsp:include page="<%= Rutas.LISTAR_PROD_JSP%>" />		
-		</main>
-		
-					
+				
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 	
 	</body>
