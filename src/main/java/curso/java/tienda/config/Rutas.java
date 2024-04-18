@@ -11,12 +11,15 @@ public class Rutas {
 	public static final String HEAD = "/Resources/jsp/head.jsp";
 	public static final String HEADER = "/Resources/jsp/header.jsp";
 	public static final String NAV = "/Resources/jsp/nav.jsp";
+	public static final String MAIN = "/Resources/jsp/main.jsp";
 	public static final String FOOTER = "/Resources/jsp/footer.jsp";
+	
+	public static final String JS = "/Resources/js/";
 	
 	public static final String IMAGENES = "/Resources/img/Producto/";
 	
 	public static final String INDEX_JSP = "/Views/index.jsp";
-	public static final String LISTAR_PROD_JSP = "/Views/Producto/listar.jsp";
+//	public static final String LISTAR_PROD_JSP = "/Views/Producto/listar.jsp";
 	public static final String CARRITO_JSP = "/Views/Carrito/carrito.jsp";
 	public static final String COMPRA_JSP = "/Views/Compra/compra.jsp";
 

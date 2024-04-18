@@ -23,13 +23,13 @@
 		
 		<jsp:include page="<%= Rutas.NAV%>" />
 		
-		<main>		
-			<jsp:include page="<%= Rutas.LISTAR_PROD_JSP%>" />		
-		</main>
-		
+		<jsp:include page="<%= Rutas.MAIN%>" />	
 					
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 	
+	
+<%-- 		<script src="<c:url value="<%= Rutas.JS %>scripts.js" />"></script> --%>
+
 	</body>
 	
 </html>

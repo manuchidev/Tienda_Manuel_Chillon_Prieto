@@ -1,18 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
- <footer class="container-fluid text-center">
+<footer class="py-3 bg-dark">
 
-  <p>@ Tienda Serbatic Copyright</p>  
-  
-  <form class="form-inline">Obtener Ofertas:
-  
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Suscribirse</button>
-        
-  </form>
-  
-  	<br>
-  
-   <p class="autorFooter">Manuel Chillón Prieto</p>
-  
+    <div class="container">
+    	<p class="m-3 text-center text-white">Copyright &copy; Tienda Serbatic 2024</p>
+    	<p class="m-3 text-center text-white">Desarrollado por: <a href="https://github.com/manuchidev"  class="linkGithub" target="_blank">Manuel Chillón Prieto</a></p>
+   	</div>
+   	
 </footer>
