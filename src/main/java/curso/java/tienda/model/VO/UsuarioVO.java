@@ -1,7 +1,5 @@
 package curso.java.tienda.model.VO;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -24,8 +22,4 @@ public class UsuarioVO {
 	String telefono;
 	String dni;
 	
-	// Atributos para el carrito
-	int cantidad;
-	double total;
-
 }

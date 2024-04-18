@@ -1,18 +1,23 @@
-.textoCard {
-	text-align: center;
+.cardProducto {
+	border: 2px solid #000000;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.nombreCard {
-	font-size: 20px;
-}
+/* .textoCard { */
+/* 	text-align: center; */
+/* } */
 
-.stock {
-	color: #808080;
-}
+/* .nombreCard { */
+/* 	font-size: 20px; */
+/* } */
+
+/* .stock { */
+/* 	color: #808080; */
+/* } */
 
 .imgProd {
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra: desplazamiento X, desplazamiento Y, desenfoque, color */
-	transition: transform 0.3s ease; /* Transición suave para la propiedad transform */
+ 	transition: transform 0.3s ease; /* Transición suave para la propiedad transform */
 }
 
 .imgProd:hover {

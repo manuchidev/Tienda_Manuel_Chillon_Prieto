@@ -10,17 +10,14 @@ import lombok.Setter;
 
 @Data @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 
-public class ProductoVO {
+public class PedidoVO {
 	
 	int id;
-	int id_categoria;
-	String nombre;
-	String descripcion;
-	double precio;
-	int stock;
-	Timestamp fecha_alta;
-	Timestamp fecha_baja;
-	float impuesto;
-	String imagen;
-	
+	int id_usuario;
+	Timestamp fecha;
+	String metodo_pago;
+	String estado;
+	String num_factura;
+	double total;
+
 }

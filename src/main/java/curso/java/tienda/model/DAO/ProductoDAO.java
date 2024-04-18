@@ -33,8 +33,8 @@ public class ProductoDAO {
 				producto.setNombre(rs.getString("nombre"));
 				producto.setDescripcion(rs.getString("descripcion"));
 				producto.setPrecio(rs.getDouble("precio"));
-				producto.setFecha_alta(rs.getDate("fecha_alta"));
-				producto.setFecha_baja(rs.getDate("fecha_baja"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
 				producto.setStock(rs.getInt("stock"));
 				producto.setImagen(rs.getString("imagen"));
 				
@@ -71,8 +71,8 @@ public class ProductoDAO {
 				producto.setNombre(rs.getString("nombre"));
 				producto.setDescripcion(rs.getString("descripcion"));
 				producto.setPrecio(rs.getDouble("precio"));
-				producto.setFecha_alta(rs.getDate("fecha_alta"));
-				producto.setFecha_baja(rs.getDate("fecha_baja"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
 				producto.setStock(rs.getInt("stock"));
 				producto.setImagen(rs.getString("imagen"));
 	

@@ -4,8 +4,10 @@
 <nav class="navbar navbar-expand-lg">
 
 	<div class="container px-lg-12">
-	
-	    <a class="navbar-brand" href="/Tienda_Manuel_Chillon_Prieto/">LOGO</a>
+		    
+	    <a class="navbar-brand" href="/Tienda_Manuel_Chillon_Prieto/">
+	    	<img class="imgLogo" src="<%=request.getContextPath() %><%=Rutas.IMAGENES_LOGO %>" alt="">
+	    </a>
 	    
 	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 	    
@@ -36,7 +38,7 @@
 	        
 	        <form class="d-flex px-lg-2 py-sm-1" action="verUsuario">
 	        
-	            <button class="btn btn-outline-dark" type="submit">
+	            <button class="btn" type="submit">
 	                <i class="bi-person-fill me-1"></i> Usuario
 	            </button>
 	            
@@ -48,10 +50,10 @@
 	        	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
 	        %>
 	        
-	            <button class="btn btn-outline-dark" type="submit">
+	            <button class="btn" type="submit">
 	                <i class="bi-cart-fill me-1"></i>
 	                Carrito
-	                <span class="badge bg-dark text-white ms-1 rounded-pill"><%= carrito.size()%></span>
+	                <span class="badge bg-danger text-white ms-1 rounded-pill"><%= carrito.size()%></span>
 	            </button>
 	            
 	        </form>

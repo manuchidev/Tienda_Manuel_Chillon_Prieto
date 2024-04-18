@@ -29,8 +29,7 @@
 			  <div class="container py-5">
 			  
 			    <div class="row d-flex justify-content-center my-4">
-			    
-			    
+			    			    
 			      <div class="col-md-8">
 			      
 			        <div class="card mb-4">
@@ -43,7 +42,7 @@
 					          
    					<%	
 						// Obtenemos los productos del carrito de la sesión					
-						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
+						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
 
 	   					double totalCarrito = (double)request.getAttribute("totalCarrito");						
 						double IVA = 0.21;
@@ -69,8 +68,9 @@
 					                <!-- Image -->
 					                <div class="bg-image hover-overlay hover-zoom ripple rounded text-center" data-mdb-ripple-color="light">
 					                
-					                  <img src="<%=request.getContextPath() %><%=Rutas.IMAGENES %><%= producto.getImagen() %>" class="img-responsive imgProdCarrito"
+					                  <img src="<%=request.getContextPath() %><%=Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" class="img-responsive imgProdCarrito"
 					                    class="w-100" alt="Blue Jeans Jacket" />
+					                    
 					                  <a href="#!">
 					                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
 					                  </a>
@@ -127,9 +127,16 @@
 					              </div>
 					              
 					              <div class="col-lg-12 col-md-6 mb-4 mb-lg-0">
-              		                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-sm me-1 btnEliminar" data-mdb-tooltip-init title="Remove item">
-					                  <i class="fas fa-trash iconoPapelera"></i>
-					                </button>
+					              
+					              	<form action="eliminar" method="post">
+					              	
+					              		<input type="hidden" name="idProd" value="<%= producto.getId() %>"></input>
+	              		                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-sm me-1 btnEliminar" data-mdb-tooltip-init title="Remove item">
+						                  <i class="fas fa-trash iconoPapelera"></i>
+						                </button>
+						                
+					                </form>
+					                
 					              </div>
 					              
 					            </div>
@@ -139,8 +146,18 @@
 										           
 	      			<%
 							}
-								
+							
+						} else {
+							
 					%>
+							<div class="col-md-8">
+								<h2 style="text-align; color:red">El carrito está vacío</h2>
+							</div>							
+					<%
+						        
+						}
+					%>
+								
 				          </div>
 					          
 				        </div>
@@ -182,18 +199,8 @@
 				          </div>
 					          
 				        </div>
-					        
-				      </div>
-				<%
-					} else {
-						
-				%>
-						<div class="col-md-8">
-							<h2 style="text-align; color:red">El carrito está vacío</h2>
-						</div>
-				<%
-					}
-				%>
+				        
+				  </div>
 				      
 			      <div class="col-md-4">
 			      
@@ -231,7 +238,7 @@
 			              
 			            </ul>
 				
-						<div class="d-flex gap-5">
+						<div class="d-flex justify-content-between">
 						
 	   						<form action="vaciar" method="post">
 								<button type="submit" data-mdb-button-init data-mdb-ripple-init class="btnVaciarCarrito btn btn-danger btn-lg btn-block">Vaciar Carrito</button>
@@ -248,8 +255,8 @@
 			        </div>
 			        
 			      </div>
-				      
-				      
+			      
+				      				      
 			    </div>
 			    
 			  </div>

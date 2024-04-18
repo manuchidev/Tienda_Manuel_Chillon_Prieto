@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.ProductoVO;
+import curso.java.tienda.service.CarritoService;
 
 /**
  * Servlet implementation class ComprarServlet
@@ -46,9 +47,9 @@ public class ComprarServlet extends HttpServlet {
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
 		
-		request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
+		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		
-//		if (session.getAttribute(""))
+		request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
 
 	}
 

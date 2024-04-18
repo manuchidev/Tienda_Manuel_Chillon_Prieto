@@ -5,11 +5,11 @@
 <!-- Section-->
 <main>
 
-	<section class="py-5">
+	<section class="py-5 gradient-custom">
 	
 	    <div class="container px-4 px-lg-5 mt-5">
 	    
-	        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+	        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
 	        
           	<%
 		  		request.setAttribute("productos", ProductoService.getProductos());
@@ -22,10 +22,10 @@
 	        
 	            <div class="col mb-5">
 	            
-	                <div class="card h-100">
+	                <div class="card h-100 cardProducto">
 	                
 	                    <!-- Product image-->
-	                    <img class="card-img-top" src="<%= request.getContextPath() %><%= Rutas.IMAGENES %><%= producto.getImagen() %>" alt="..." />
+	                    <img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
 	                    
 	                    <!-- Product details-->
 	                    <div class="card-body p-4">
@@ -47,8 +47,8 @@
 	                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 	                    
 	                        <div class="text-center">
-	                        	<a class="btn btn-outline-dark mt-auto" href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a>
-	                        	<a class="btn btn-outline-dark mt-auto" href="verDetalles?idProd=<%= producto.getId()%>">Detalles</a>
+	                        	<a class="btn btn-primary mt-auto" href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a>
+	                        	<a class="btn btn-warning mt-auto" href="verDetalles?idProd=<%= producto.getId()%>">Detalles</a>
 	                        </div>
 	                        
 	                    </div>
