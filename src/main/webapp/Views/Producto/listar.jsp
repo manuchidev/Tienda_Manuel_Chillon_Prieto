@@ -20,7 +20,7 @@
 	      
 	        <div class="panel-heading textoCard nombreCard"><%= producto.getNombre()%></div>
 	        
-	        <div class="panel-body"><img src="<%= request.getContextPath() %><%= Rutas.IMAGENES %><%= producto.getImagen() %>" class="img-responsive imgProd" style="width:100%" alt="Image"></div>
+	        <div class="panel-body"><img src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" class="img-responsive imgProd" style="width:100%" alt="Image"></div>
 	        
 	        <div class="panel-footer textoCard">
 	        	<p>Precio: <%= producto.getPrecio()%> €</p>

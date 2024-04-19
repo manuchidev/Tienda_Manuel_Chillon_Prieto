@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  
-	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.ProductoVO" %>
+	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.*" %>
 
 <nav class="navbar navbar-expand-lg">
 
@@ -36,20 +36,31 @@
 	            
 	        </ul>
 	        
-	        <form class="d-flex px-lg-2 py-sm-1" action="verUsuario">
-	        
-	            <button class="btn" type="submit">
-	                <i class="bi-person-fill me-1"></i> Usuario
-	            </button>
-	            
-	        </form>
-	        
+        <%
+        	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
+        	
+        	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+	        	
+			 if (usuario == null) {
+       	%>
+       	        <form class="d-flex px-lg-2 py-sm-1" action="Usuario">
+                 	<button class="btn" data-bs-toggle="modal" type="submit">
+	                	<i class="bi-person-fill me-1"></i> Usuario	  
+	                </button>   
+               	</form> 
+	                          	
+        <%
+             } else {
+        %>
+               	<button class="btn" data-bs-toggle="modal" data-bs-target="#usuarioModal" type="button">
+               		<i class="bi-person-fill me-1"></i> <%= usuario.getEmail() %>
+               	</button>	                
+        <%
+             }
+        %>
+     
 	        <form class="d-flex" action="Carrito">
-	        
-	        <%
-	        	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-	        %>
-	        
+	        	        
 	            <button class="btn" type="submit">
 	                <i class="bi-cart-fill me-1"></i>
 	                Carrito
@@ -62,3 +73,35 @@
 	    
 	</div>
 </nav>
+
+<!-- Modal de Usuario -->
+<div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="usuarioModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+    
+        <div class="modal-content">
+        
+            <div class="modal-header">
+                <h5 class="modal-title" id="usuarioModalLabel">Opciones de Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body">
+            
+                <% if (usuario != null) { %>
+                    <!-- Si el usuario ha iniciado sesión -->
+                    <form action="Usuario" method="post">
+                        <button class="btn btn-primary" type="submit" formaction="perfil.jsp">Perfil</button>
+                        <button class="btn btn-secondary" type="submit" formaction="index.jsp">Cerrar Sesión</button>
+                    </form>                
+                <% 
+                	} 
+                %>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>

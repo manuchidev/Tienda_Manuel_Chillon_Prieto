@@ -9,11 +9,11 @@ public class Rutas {
 	public static final String CANTIDAD_CARRITO_CSS = "/Resources/css/Carrito/cantidad.css";
 	public static final String PAGO_CSS = "/Resources/css/Compra/pago.css";
 	
-	public static final String HEAD = "/Resources/jsp/head.jsp";
-	public static final String HEADER = "/Resources/jsp/header.jsp";
-	public static final String NAV = "/Resources/jsp/nav.jsp";
-	public static final String MAIN = "/Resources/jsp/main.jsp";
-	public static final String FOOTER = "/Resources/jsp/footer.jsp";
+	public static final String HEAD = "/Views/Base/head.jsp";
+	public static final String HEADER = "/Views/Base/header.jsp";
+	public static final String NAV = "/Views/Base/nav.jsp";
+	public static final String MAIN = "/Views/Base/main.jsp";
+	public static final String FOOTER = "/Views/Base/footer.jsp";
 	
 	public static final String JS = "/Resources/js/";
 	
@@ -21,6 +21,7 @@ public class Rutas {
 	public static final String IMAGENES_PROD = "/Resources/img/Producto/";
 	
 	public static final String INDEX_JSP = "/Views/index.jsp";
+	public static final String LOGIN_JSP = "/Views/Usuario/login.jsp";
 	public static final String CARRITO_JSP = "/Views/Carrito/carrito.jsp";
 	public static final String COMPRA_JSP = "/Views/Compra/compra.jsp";
 

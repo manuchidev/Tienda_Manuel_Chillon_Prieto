@@ -66,7 +66,7 @@
 											<div class="col-xs-8 nombre"><%= producto.getNombre() %></div>
 											
 											<div class="col-xs-4 imagenProd">
-												<img src="<%=request.getContextPath() %><%=Rutas.IMAGENES %><%= producto.getImagen() %>" class="img-responsive imgProdCarrito"  alt="Image">																					
+												<img src="<%=request.getContextPath() %><%=Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" class="img-responsive imgProdCarrito"  alt="Image">																					
 											</div>	
 											
 	<%-- 									<input type="text" name="id[]" id="id" value=<%= nombre %> readonly> --%>									

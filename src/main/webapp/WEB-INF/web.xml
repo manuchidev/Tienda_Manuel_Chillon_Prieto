@@ -65,6 +65,12 @@
   	<description></description>
   	<servlet-class>curso.java.tienda.controller.compra.PagarServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RegistroServlet</servlet-name>
+  	<display-name>RegistroServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.usuario.login.RegistroServlet</servlet-class>
+  </servlet>
   
   
   <servlet-mapping>
@@ -106,5 +112,9 @@
   <servlet-mapping>
   	<servlet-name>PagarServlet</servlet-name>
   	<url-pattern>/PagarServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegistroServlet</servlet-name>
+  	<url-pattern>/RegistroServlet</url-pattern>
   </servlet-mapping>
 </web-app>
