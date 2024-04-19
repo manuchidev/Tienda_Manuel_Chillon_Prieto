@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
-import curso.java.tienda.model.VO.ProductoVO;
-import curso.java.tienda.service.CarritoService;
-import curso.java.tienda.service.ProductoService;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Producto.ProductoService;
 
 
 /**

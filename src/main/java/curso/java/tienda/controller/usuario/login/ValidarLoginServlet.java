@@ -1,4 +1,4 @@
-package curso.java.tienda.controller.carrito;
+package curso.java.tienda.controller.usuario.login;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,20 +12,22 @@ import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
- * Servlet implementation class ComprarServlet
+ * Servlet implementation class LoginServlet
  */
 
-@WebServlet("/comprar")
-public class ComprarServlet extends HttpServlet {
+@WebServlet("/Login")
+public class ValidarLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ComprarServlet() {
+    public ValidarLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,8 +36,7 @@ public class ComprarServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 
 	/**
@@ -49,8 +50,21 @@ public class ComprarServlet extends HttpServlet {
 		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		
-		request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
+		String email = request.getParameter("email");
+		String clave = request.getParameter("clave");
+		
+		UsuarioVO usuario = UsuarioService.validarUsuario(email, clave);
+		
+		if (usuario != null) {
+			
+			session.setAttribute("usuario", usuario);
+			
+			request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
+		
+		} else {
 
+			response.sendRedirect(Rutas.LOGIN_JSP);
+		}
 	}
 
 }

@@ -1,4 +1,4 @@
-package curso.java.tienda.model.VO;
+package curso.java.tienda.model.VO.Producto;
 
 import java.sql.Timestamp;
 

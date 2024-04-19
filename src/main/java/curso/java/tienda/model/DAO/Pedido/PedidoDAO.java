@@ -1,4 +1,4 @@
-package curso.java.tienda.model.DAO;
+package curso.java.tienda.model.DAO.Pedido;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import curso.java.tienda.config.Conexion;
-import curso.java.tienda.model.VO.PedidoVO;
+import curso.java.tienda.model.VO.Pedido.PedidoVO;
 
 public class PedidoDAO {
 	

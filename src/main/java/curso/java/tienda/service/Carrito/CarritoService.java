@@ -1,11 +1,12 @@
-package curso.java.tienda.service;
+package curso.java.tienda.service.Carrito;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import curso.java.tienda.model.VO.ProductoVO;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Producto.ProductoService;
 
 public class CarritoService {
 	

@@ -1,9 +1,9 @@
-package curso.java.tienda.service;
+package curso.java.tienda.service.Pedido;
 
 import java.util.List;
 
-import curso.java.tienda.model.DAO.PedidoDAO;
-import curso.java.tienda.model.VO.PedidoVO;
+import curso.java.tienda.model.DAO.Pedido.PedidoDAO;
+import curso.java.tienda.model.VO.Pedido.PedidoVO;
 
 public class PedidoService {
 	

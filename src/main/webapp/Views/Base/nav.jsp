@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  
-	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.*" %>
+	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.*, curso.java.tienda.model.VO.Usuario.*" %>
 
 <nav class="navbar navbar-expand-lg">
 

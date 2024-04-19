@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE DATABASE IF NOT EXISTS tienda_manuel_chillon_prieto;
+USE tienda_manuel_chillon_prieto;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -38,8 +40,8 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `descripcion`) VALUES
-(1, 'Electrónica', 'Dispositivos electrónicos y accesorios');
-(2, 'Ropa', 'Artículos de vestir'),
+(1, 'Electrónica', 'Dispositivos electrónicos y accesorios'),
+(2, 'Ropa', 'Artículos de vestir');
 
 -- --------------------------------------------------------
 
@@ -112,8 +114,8 @@ CREATE TABLE `metodos_pago` (
 -- Volcado de datos para la tabla `metodos_pago`
 --
 
-INSERT INTO `metodos_pago` (`id`, `metodos_pago`) VALUES
-(1, 'Tarjeta de Crédito');
+INSERT INTO `metodos_pago` (`id`, `metodo_pago`) VALUES
+(1, 'Tarjeta de Crédito'),
 (2, 'Paypal'),
 (3, 'Contra reembolso');
 
@@ -169,10 +171,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `nombre`, `descripcion`, `precio`, `stock`, `fecha_alta`, `fecha_baja`, `impuesto`, `imagen`) VALUES
-(1, 1, 'Samsung Galaxy S20', 'Smartphone de alta gama con cámara potente y pantalla AMOLED', 799.99, 50, '2024-04-14 22:00:00', NULL, 0.1, 'samsumgGS20.webp'),
-(2, 1, 'Sony WH-1000XM4', 'Auriculares inalámbricos con cancelación de ruido líder en su clase', 349.99, 30, '2024-04-14 22:00:00', NULL, 0.08, 'SonyAuriculares.webp'),
-(3, 2, 'Jeans Slim Fit', 'Jeans ajustados de alta calidad, estilo moderno', 39.99, 80, '2024-04-14 22:00:00', NULL, 0.05, 'jeansSlimFit.webp'),
-(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 0.08, 'zapatillasDeportivas.webp');
+(1, 1, 'Samsung Galaxy S20', 'Smartphone de alta gama con cámara potente y pantalla AMOLED', 799.99, 50, '2024-04-14 22:00:00', NULL, 0.21, 'samsumgGS20.webp'),
+(2, 1, 'Sony WH-1000XM4', 'Auriculares inalámbricos con cancelación de ruido líder en su clase', 349.99, 30, '2024-04-14 22:00:00', NULL, 0.21, 'SonyAuriculares.webp'),
+(3, 2, 'Jeans Slim Fit', 'Jeans ajustados de alta calidad, estilo moderno', 39.99, 80, '2024-04-14 22:00:00', NULL, 0.21, 'jeansSlimFit.webp'),
+(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 0.21, 'zapatillasDeportivas.webp');
 
 -- --------------------------------------------------------
 

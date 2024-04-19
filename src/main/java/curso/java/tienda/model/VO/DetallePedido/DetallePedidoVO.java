@@ -1,6 +1,4 @@
-package curso.java.tienda.model.VO;
-
-import java.sql.Timestamp;
+package curso.java.tienda.model.VO.DetallePedido;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,14 +8,14 @@ import lombok.Setter;
 
 @Data @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 
-public class PedidoVO {
+public class DetallePedidoVO {
 	
 	int id;
-	int id_usuario;
-	Timestamp fecha;
-	String metodo_pago;
-	String estado;
-	String num_factura;
+	int id_pedido;
+	int id_producto;
+	float precio_unidad;
+	int unidades;
+	float impuesto;
 	double total;
 
 }

@@ -1,4 +1,4 @@
-package curso.java.tienda.model.VO;
+package curso.java.tienda.model.VO.Usuario;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

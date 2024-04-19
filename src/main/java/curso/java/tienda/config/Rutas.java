@@ -22,6 +22,7 @@ public class Rutas {
 	
 	public static final String INDEX_JSP = "/Views/index.jsp";
 	public static final String LOGIN_JSP = "/Views/Usuario/login.jsp";
+	public static final String REGISTRO_JSP = "/Views/Usuario/registro.jsp";
 	public static final String CARRITO_JSP = "/Views/Carrito/carrito.jsp";
 	public static final String COMPRA_JSP = "/Views/Compra/compra.jsp";
 

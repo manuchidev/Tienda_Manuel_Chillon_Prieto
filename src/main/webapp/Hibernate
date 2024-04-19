@@ -1,0 +1,5 @@
+Probar Hibernate con las tablas de Rol y Opciones_Menu.
+
+En Usuario, campo de id_rol como clase Rol.
+
+En opciones_menu, campo de id_rol como clase Rol.

@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
-import curso.java.tienda.model.VO.ProductoVO;
-import curso.java.tienda.service.ProductoService;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Producto.ProductoService;
 
 /**
  * Servlet implementation class EntradaServlet

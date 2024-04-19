@@ -1,9 +1,9 @@
-package curso.java.tienda.service;
+package curso.java.tienda.service.Producto;
 
 import java.util.List;
 
-import curso.java.tienda.model.DAO.ProductoDAO;
-import curso.java.tienda.model.VO.ProductoVO;
+import curso.java.tienda.model.DAO.Producto.ProductoDAO;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
 
 public class ProductoService {
 	

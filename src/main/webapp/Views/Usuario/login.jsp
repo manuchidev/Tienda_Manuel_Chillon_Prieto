@@ -13,8 +13,6 @@
 		
 		 <jsp:include page="<%= Rutas.HEAD%>" />
 	  
-	  	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.PROD_CSS%>">
-	  
 	</head>
 	
 	<body>
@@ -37,7 +35,7 @@
 			        
 			          <div class="card-body p-3 text-center">
 			
-			            <div class="mb-md-5 mt-md-4 p-0 m-0">
+			            <div class="mb-0">
 			
 			              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
 			              <p class="text-white-50 mb-4">Introduzca su email y contraseña!</p>
@@ -47,12 +45,12 @@
 			                <input type="email" id="idEmail" class="form-control form-control-lg" />
 			              </div>
 			
-			              <div data-mdb-input-init class="form-outline form-white mb-4">
+			              <div data-mdb-input-init class="form-outline form-white mb-3">
 			                <label class="form-label" for="idPassword">Contraseña</label>
 			                <input type="password" id="idPassword" class="form-control form-control-lg" />
 			              </div>
 			
-			              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidó su contraseña?</a></p>
+			              <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidó su contraseña?</a></p>
 			
 				          <form action="Login">
 				              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesión</button>				          
@@ -66,9 +64,13 @@
 			
 			            </div>
 			
-			            <div>
-			              <p class="mb-0">¿No está registrado? <a href="#!" class="text-white-50 fw-bold">Registrarse</a>
-			              </p>
+			            <div class="mt-4">
+		             		<p class="mb-0">¿No está registrado? </p>
+
+			             	<button  class="btn" type="submit">
+			             		<a href="Registro" class="text-white-50 fw-bold">Registrarse</a>
+			             	</button>
+			             
 			            </div>
 			
 			          </div>

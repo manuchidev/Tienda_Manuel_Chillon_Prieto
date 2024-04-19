@@ -1,9 +1,9 @@
-package curso.java.tienda.service;
+package curso.java.tienda.service.DetallePedido;
 
 import java.util.List;
 
-import curso.java.tienda.model.DAO.DetallePedidoDAO;
-import curso.java.tienda.model.VO.DetallePedidoVO;
+import curso.java.tienda.model.DAO.DetallePedido.DetallePedidoDAO;
+import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 
 public class DetallePedidoService {
 	
