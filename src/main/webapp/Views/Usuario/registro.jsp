@@ -12,6 +12,8 @@
 		<title>Registro</title>
 		
 		 <jsp:include page="<%= Rutas.HEAD%>" />
+		 
+		 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.REGISTRO_CSS%>">
 	  	  
 	</head>
 	
@@ -39,76 +41,94 @@
 			            
 				              <h2 class="text-uppercase text-center mb-5">Formulario de Registro</h2>
 				
-				              <form action="ValidarRegistro" method="post">
+				              <form action="ValidarRegistro" method="post" class="form-container">
 								
-		              			<div data-mdb-input-init class="form-outline form-white mb-4">
-				                	<label class="form-label" for="emailRegistro">Email</label>
-				                	<input type="email" id="emailRegistro" class="form-control form-control-lg" />
-				              	</div>
-				              	
-		              			<div data-mdb-input-init class="form-outline form-white mb-4">
-				                	<label class="form-label" for="password">Contraseña</label>
-				                	<input type="password" id="password" class="form-control form-control-lg" />
-				              	</div>
-				              	
-		              			<div data-mdb-input-init class="form-outline form-white mb-4">
-				                	<label class="form-label" for="password2">Repetir Contraseña</label>
-				                	<input type="password" id="password2" class="form-control form-control-lg" />
-				              	</div>
-		
-				                <div data-mdb-input-init class="form-outline form-white mb-4">
-				                	<label class="form-label" for="nombreRegistro">Nombre</label>
-				                	<input type="text" id="nombreRegistro" class="form-control form-control-lg" />
-				              	</div>
-				              	
-				                <div data-mdb-input-init class="form-outline form-white mb-4">
-				                	<label class="form-label" for="apellido1Registro">Primer Apellido</label>
-				                	<input type="text" id="apellido1Registro" class="form-control form-control-lg" />
-				              	</div>
-				              	
-                                <div data-mdb-input-init class="form-outline form-white mb-4">
-                                	<label class="form-label" for="apellido2Registro">Segundo Apellido</label>
-                                	<input type="text" id="apellido2Registro" class="form-control form-control-lg" />
-                               	</div>
-                               	
-                                <div data-mdb-input-init class="form-outline form-white mb-4">
-                                	<label class="form-label" for="direccionRegistro">Dirección</label>
-                                	<input type="text" id="direccionRegistro" class="form-control form-control-lg" />
-                               	</div>
-                               	
-                             	<div data-mdb-input-init class="form-outline form-white mb-4">
-                                	<label class="form-label" for="provinciaRegistro">Provincia</label>
-                                	<input type="text" id="provinciaRegistro" class="form-control form-control-lg" />
-                               	</div>
-                               	
-                             	<div data-mdb-input-init class="form-outline form-white mb-4">
-                                	<label class="form-label" for="localidadRegistro">Localidad</label>
-                                	<input type="text" id="localidadRegistro" class="form-control form-control-lg" />
-                               	</div>
-                               	
-                             	<div data-mdb-input-init class="form-outline form-white mb-4">
-                                	<label class="form-label" for="telefonoRegistro">Teléfono</label>
-                                	<input type="text" id="telefonoRegistro" class="form-control form-control-lg" />
-                               	</div>
-                               	
-                             	<div data-mdb-input-init class="form-outline form-white mb-4">
-                                	<label class="form-label" for="dniRegistro">DNI</label>
-                                	<input type="text" id="dniRegistro" class="form-control form-control-lg" />
-                               	</div>
-                               	
-                               	
-				
-				                <div data-mdb-input-init class="form-outline form-white mb-4 py-2">
-				                  <input class="form-check-input me-2" type="checkbox" value="" id="terminos" />
-				                  <label class="form-check-label" for="terminos">
-				                    Acepto todo los <a href="#!" class="text-body"><u style="color: white;">Términos y Servicios</u></a>
-				                  </label>
-				                </div>
-				
-				                <div class="d-flex justify-content-center py-2 mb-3">
-				                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Crear una cuenta</button>
-				                </div>
-				
+								<div class="form-row">
+								
+							        <div class="form-item">
+							            <label class="form-label" for="emailRegistro">Email</label>
+							            <input type="email" id="emailRegistro" class="form-control form-control-lg" />
+							        </div>
+							        
+							        <div class="form-item">
+							            <label class="form-label" for="password">Contraseña</label>
+							            <input type="password" id="password" class="form-control form-control-lg" />
+							        </div>
+							    </div>
+							    
+							    <div class="form-row">
+							    
+							        <div class="form-item">
+							            <label class="form-label" for="nombreRegistro">Nombre</label>
+							            <input type="text" id="nombreRegistro" class="form-control form-control-lg" />
+							        </div>
+							        
+							        <div class="form-item">
+							            <label class="form-label" for="password2">Repetir Contraseña</label>
+							            <input type="password" id="password2" class="form-control form-control-lg" />
+							        </div>
+							        
+							    </div>
+							
+							    <div class="form-row">
+							    
+							        <div class="form-item">
+					                	<label class="form-label" for="apellido1Registro">Primer Apellido</label>
+				                		<input type="text" id="apellido1Registro" class="form-control form-control-lg" />
+							        </div>
+							        
+							        <div class="form-item">
+						                	<label class="form-label" for="apellido2Registro">Segundo Apellido</label>
+                                			<input type="text" id="apellido2Registro" class="form-control form-control-lg" />
+							        </div>
+							    </div>
+							    
+   							    <div class="form-row">
+   							    
+							        <div class="form-item">
+	                                	<label class="form-label" for="direccionRegistro">Dirección</label>
+                                		<input type="text" id="direccionRegistro" class="form-control form-control-lg" />
+							        </div>
+							        
+							        <div class="form-item">		                                	
+	                                	<label class="form-label" for="provinciaRegistro">Provincia</label>
+	                                	<input type="text" id="provinciaRegistro" class="form-control form-control-lg" />
+							        </div>
+							    </div>
+							    
+   							    <div class="form-row">
+   							    
+							        <div class="form-item">
+	                                	<label class="form-label" for="localidadRegistro">Localidad</label>
+                                		<input type="text" id="localidadRegistro" class="form-control form-control-lg" />
+							        </div>
+							        
+							        <div class="form-item">
+	                                	<label class="form-label" for="telefonoRegistro">Teléfono</label>
+                                		<input type="text" id="telefonoRegistro" class="form-control form-control-lg" />
+							        </div>
+							    </div>
+							    
+   							    <div class="rowDNI mb-3">
+   							   
+							        <div>
+	                            		<label class="form-label" for="dniRegistro">DNI</label>
+                                		<input type="text" id="dniRegistro" class="form-control form-control-lg" />
+							        </div>
+							        
+							    </div>
+							    
+							    <div class="form-check py-2">
+							        <input class="form-check-input me-2" type="checkbox" value="" id="terminos" />
+							        <label class="form-check-label" for="terminos">
+							            Acepto todos los <a href="#!" class="text-body"><u style="color: white;">Términos y Servicios</u></a>
+							        </label>
+							    </div>
+							
+							    <div class="d-flex justify-content-center py-2 mb-3">
+							        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Crear una cuenta</button>
+							    </div>
+							    			
 				              </form>
 				              
       			              <div>

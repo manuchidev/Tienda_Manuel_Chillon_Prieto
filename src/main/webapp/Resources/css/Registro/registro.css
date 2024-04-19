@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* Estilos para el contenedor principal del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para cada fila de elementos */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Estilos para cada par de label e input */
+.form-item {
+    width: 45%; /* Ancho del 45% para cada item */
+}
+
+/* Estilos para la etiqueta (label) */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.rowDNI {
+	align-items: center;
+}
+
+/* Estilos para la casilla de verificación (checkbox) */
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el botón */
+.btn-lg {
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+}

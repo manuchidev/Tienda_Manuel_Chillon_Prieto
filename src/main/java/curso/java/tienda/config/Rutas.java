@@ -5,6 +5,7 @@ public class Rutas {
 	public static final String BASE_CSS = "/Resources/css/base.css";
 	public static final String PROD_CSS = "/Resources/css/Producto/producto.css";
 	public static final String FOOTER_CSS = "/Resources/css/footer.css";
+	public static final String REGISTRO_CSS = "/Resources/css/Registro/registro.css";
 	public static final String CARRITO_CSS = "/Resources/css/Carrito/carrito.css";
 	public static final String CANTIDAD_CARRITO_CSS = "/Resources/css/Carrito/cantidad.css";
 	public static final String PAGO_CSS = "/Resources/css/Compra/pago.css";
