@@ -21,5 +21,11 @@ public class PedidoService {
 		
 		return detallePedido;
 	}
+	
+	public static void realizarPedido(PedidoVO pedido) {
+		
+		PedidoDAO.insert(pedido);
+
+	}
 
 }

@@ -21,13 +21,13 @@ import curso.java.tienda.service.Usuario.UsuarioService;
  */
 
 @WebServlet("/Login")
-public class ValidarLoginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ValidarLoginServlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,19 +52,27 @@ public class ValidarLoginServlet extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String clave = request.getParameter("clave");
+
 		
-		UsuarioVO usuario = UsuarioService.validarUsuario(email, clave);
-		
-		if (usuario != null) {
+		if (email != null && !email.isEmpty() && clave != null && !clave.isEmpty()) {
 			
-			session.setAttribute("usuario", usuario);
+			UsuarioVO usuario = UsuarioService.validarUsuario(email, clave);
 			
-			request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
+			if (usuario != null) {
+				
+				session.setAttribute("usuario", usuario);
+				
+				request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
+				
+			} else {
+				
+				request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
+			}
 		
 		} else {
-
-			response.sendRedirect(Rutas.LOGIN_JSP);
+			request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
 		}
+				
 	}
 
 }

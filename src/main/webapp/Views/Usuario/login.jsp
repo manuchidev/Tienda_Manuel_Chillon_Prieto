@@ -40,19 +40,19 @@
 			              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
 			              <p class="text-white-50 mb-4">Introduzca su email y contraseña!</p>
 			
-			              <div data-mdb-input-init class="form-outline form-white mb-4">
-			                <label class="form-label" for="idEmail">Email</label>
-			                <input type="email" id="idEmail" class="form-control form-control-lg" />
-			              </div>
-			
-			              <div data-mdb-input-init class="form-outline form-white mb-3">
-			                <label class="form-label" for="idPassword">Contraseña</label>
-			                <input type="password" id="idPassword" class="form-control form-control-lg" />
-			              </div>
-			
-			              <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidó su contraseña?</a></p>
-			
-				          <form action="Login">
+						  <form action="Login" method="post">
+				              <div data-mdb-input-init class="form-outline form-white mb-4">
+				                <label class="form-label" for="idEmail">Email</label>
+				                <input type="email" id="idEmail" name="email" class="form-control form-control-lg" />
+				              </div>
+				
+				              <div data-mdb-input-init class="form-outline form-white mb-3">
+				                <label class="form-label" for="idPassword">Contraseña</label>
+				                <input type="password" id="idPassword" name="clave" class="form-control form-control-lg" />
+				              </div>
+				
+				              <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidó su contraseña?</a></p>
+							          
 				              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesión</button>				          
 				          </form>
 			

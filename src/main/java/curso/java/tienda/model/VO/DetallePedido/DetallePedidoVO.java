@@ -10,12 +10,12 @@ import lombok.Setter;
 
 public class DetallePedidoVO {
 	
-	int id;
-	int id_pedido;
-	int id_producto;
-	float precio_unidad;
-	int unidades;
-	float impuesto;
-	double total;
+	private int id;
+	private int id_pedido;
+	private int id_producto;
+	private float precio_unidad;
+	private int unidades;
+	private float impuesto;
+	private double total;
 
 }

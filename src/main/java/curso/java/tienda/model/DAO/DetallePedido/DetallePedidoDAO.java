@@ -5,10 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
 
 public class DetallePedidoDAO {
 	
@@ -119,7 +123,7 @@ public class DetallePedidoDAO {
 
 	}
 	
-	public static boolean insert(DetallePedidoVO detallePedido) {
+	public static boolean insert(DetallePedidoVO detallePedido) {		
 
 		try {
 

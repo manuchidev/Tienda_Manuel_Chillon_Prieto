@@ -12,15 +12,15 @@ import lombok.Setter;
 
 public class ProductoVO {
 	
-	int id;
-	int id_categoria;
-	String nombre;
-	String descripcion;
-	double precio;
-	int stock;
-	Timestamp fecha_alta;
-	Timestamp fecha_baja;
-	float impuesto;
-	String imagen;
+	private int id;
+	private int id_categoria;
+	private String nombre;
+	private String descripcion;
+	private double precio;
+	private int stock;
+	private Timestamp fecha_alta;
+	private Timestamp fecha_baja;
+	private float impuesto;
+	private String imagen;
 	
 }

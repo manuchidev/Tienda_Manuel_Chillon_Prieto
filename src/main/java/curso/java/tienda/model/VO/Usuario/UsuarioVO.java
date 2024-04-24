@@ -9,17 +9,17 @@ import lombok.Setter;
 @Data @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class UsuarioVO {
 	
-	int id;
-	int id_rol;
-	String email;
-	String clave;
-	String nombre;
-	String apellido1;
-	String apellido2;
-	String direccion;
-	String provincia;
-	String localidad;
-	String telefono;
-	String dni;
+	private int id;
+	private int id_rol;
+	private String email;
+	private String clave;
+	private String nombre;
+	private String apellido1;
+	private String apellido2;
+	private String direccion;
+	private String provincia;
+	private String localidad;
+	private String telefono;
+	private String dni;
 	
 }

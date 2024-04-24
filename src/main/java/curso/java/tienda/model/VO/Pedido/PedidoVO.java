@@ -12,12 +12,19 @@ import lombok.Setter;
 
 public class PedidoVO {
 	
-	int id;
-	int id_usuario;
-	Timestamp fecha;
-	String metodo_pago;
-	String estado;
-	String num_factura;
-	double total;
+	private int id;
+	private int id_usuario;
+	private Timestamp fecha;
+	private String metodo_pago;
+	private String estado;
+	private String num_factura;
+	private double total;
+	
+	public PedidoVO(int id_usuario, Timestamp fecha, String metodo_pago) {
+		this.id_usuario = id_usuario;
+		this.fecha = fecha;
+		this.metodo_pago = metodo_pago;
+		this.estado = "PE";
+	}
 
 }

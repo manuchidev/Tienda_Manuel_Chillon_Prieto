@@ -58,6 +58,9 @@ CREATE TABLE `configuracion` (
 
 -- --------------------------------------------------------
 
+INSERT INTO configuracion VALUES
+	('num_factura', 0);
+
 --
 -- Estructura de tabla para la tabla `descuentos`
 --

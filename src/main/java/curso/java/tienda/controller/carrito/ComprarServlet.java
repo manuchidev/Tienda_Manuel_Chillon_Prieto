@@ -2,6 +2,8 @@ package curso.java.tienda.controller.carrito;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.model.VO.Compra.MetodoPagoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Compra.MetodoPagoService;
 
 /**
  * Servlet implementation class ComprarServlet
@@ -43,13 +48,25 @@ public class ComprarServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(true);
+	HttpSession session = request.getSession(true);
 		
-		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		
+		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		
-		request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
+		UsuarioVO usuario = (UsuarioVO)session.getAttribute("usuario");
+		
+		if (usuario != null) {
+			
+			List<MetodoPagoVO> metodos_pago = MetodoPagoService.getMetodosPago();
+			
+			request.setAttribute("metodos_pago", metodos_pago);
+			
+			request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);						
+			
+		
+		} else {
+			request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
+		}
 
 	}
 

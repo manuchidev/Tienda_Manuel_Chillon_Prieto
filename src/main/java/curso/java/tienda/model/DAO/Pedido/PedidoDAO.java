@@ -123,14 +123,12 @@ public class PedidoDAO {
 
 			Connection con = Conexion.getConexion();
 			PreparedStatement st = con.prepareStatement(
-					"INSERT INTO pedidos (id_usuario, fecha, metodo_pago, estado, num_factura, total) VALUES (?, ?, ?, ?, ?, ?)");
+					"INSERT INTO pedidos (id_usuario, fecha, metodo_pago, estado) VALUES (?, ?, ?, ?)");
 
 			st.setInt(1, pedido.getId_usuario());
 			st.setTimestamp(2, pedido.getFecha());
 			st.setString(3, pedido.getMetodo_pago());
 			st.setString(4, pedido.getEstado());
-			st.setString(5, pedido.getNum_factura());
-			st.setDouble(6, pedido.getTotal());
 
 			st.executeUpdate();
 
