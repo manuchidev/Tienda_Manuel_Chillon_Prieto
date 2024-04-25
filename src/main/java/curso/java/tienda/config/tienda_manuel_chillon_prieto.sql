@@ -177,7 +177,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `nombre`, `descripcion`, `precio`
 (1, 1, 'Samsung Galaxy S20', 'Smartphone de alta gama con cámara potente y pantalla AMOLED', 799.99, 50, '2024-04-14 22:00:00', NULL, 0.21, 'samsumgGS20.webp'),
 (2, 1, 'Sony WH-1000XM4', 'Auriculares inalámbricos con cancelación de ruido líder en su clase', 349.99, 30, '2024-04-14 22:00:00', NULL, 0.21, 'SonyAuriculares.webp'),
 (3, 2, 'Jeans Slim Fit', 'Jeans ajustados de alta calidad, estilo moderno', 39.99, 80, '2024-04-14 22:00:00', NULL, 0.21, 'jeansSlimFit.webp'),
-(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 0.21, 'zapatillasDeportivas.webp');
+(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 0.21, 'zapatillasDeportivas.webp'),
+(5, 1, 'iPhone 13 Pro', 'Teléfono inteligente de alta gama con tecnología avanzada', 999.99, 30, '2024-04-20 10:00:00', NULL, 0.21, 'iphone13pro.webp'),
+(6, 1, 'Laptop HP Envy x360', 'Laptop convertible con pantalla táctil Full HD y procesador Ryzen', 1299.99, 10, '2024-04-20 12:00:00', NULL, 0.21, 'hp-envy-x360.webp');
 
 -- --------------------------------------------------------
 
