@@ -251,15 +251,17 @@
 	 	       			    <%
 	 	       			    		  	 if (metodo_pago.getId() == 1) {
 	 	       			    %>
-	 					                	<input id="<%= metodo_pago.getId() %>" name="metodo_pago" type="radio" class="custom-control-input" checked required>
+	 					                	<input id="<%= metodo_pago.getId() %>" name="metodo_pago" type="radio" class="custom-control-input" 
+	 					                		value="<%= metodo_pago.getMetodo_pago()%>" checked required>
 	 					    <%
 	 	       			    		  	 } else {
 	 					    %>
-	 					    				<input id="<%= metodo_pago.getId() %>" name="metodo_pago" type="radio" class="custom-control-input" required>
+	 					    				<input id="<%= metodo_pago.getId() %>" name="metodo_pago" type="radio" class="custom-control-input" 
+	 					    					value="<%= metodo_pago.getMetodo_pago()%>" required>
 	 					    <%
 	 	       			    		  	 }
 	 					    %>
-	 					                <label class="custom-control-label" for="metodo_pago"><%= metodo_pago.getMetodo_pago() %></label>
+	 					                <label class="custom-control-label" for="metodo_<%= metodo_pago.getId()%>"><%= metodo_pago.getMetodo_pago() %></label>
 	 					              </div> 
 					        <%				            	
 					            	}
@@ -313,7 +315,7 @@
 				              
 				              <div class="col-md-3 mb-3">
 				                <label for="cvv">CVV</label>
-				                <input type="text" class="form-control" id="cvv" name="cvv" placeholder="" required>
+				                <input type="password" class="form-control" id="cvv" name="cvv" placeholder="" required>
 				                
 				                <div class="errorCvv">
 <!-- 				                  	Debe introducir un CVV -->

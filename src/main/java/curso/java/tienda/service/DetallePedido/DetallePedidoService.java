@@ -23,7 +23,7 @@ public class DetallePedidoService {
 	}
 	
 	public static void realizarDetallePedido(DetallePedidoVO detallePedido) {
-		
+				
 		DetallePedidoDAO.insert(detallePedido);
 		
 	}

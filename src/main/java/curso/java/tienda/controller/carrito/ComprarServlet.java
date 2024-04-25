@@ -48,7 +48,7 @@ public class ComprarServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(true);
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));

@@ -33,9 +33,10 @@ public class ProductoDAO {
 				producto.setNombre(rs.getString("nombre"));
 				producto.setDescripcion(rs.getString("descripcion"));
 				producto.setPrecio(rs.getDouble("precio"));
+				producto.setStock(rs.getInt("stock"));
 				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
 				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
-				producto.setStock(rs.getInt("stock"));
+				producto.setImpuesto(rs.getFloat("impuesto"));
 				producto.setImagen(rs.getString("imagen"));
 				
 				productos.add(producto);
@@ -74,6 +75,7 @@ public class ProductoDAO {
 				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
 				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
 				producto.setStock(rs.getInt("stock"));
+				producto.setImpuesto(rs.getFloat("impuesto"));
 				producto.setImagen(rs.getString("imagen"));
 	
 			}
@@ -84,5 +86,49 @@ public class ProductoDAO {
 		
 		return producto;
 		
+	}
+	
+	public static int findStock(int id) {
+		
+		int stock = 0;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT stock FROM productos WHERE id = ?");
+			
+			st.setInt(1, id);
+			
+			ResultSet rs = st.executeQuery();
+			
+			if(rs.next()) {
+									
+				stock = rs.getInt("stock");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return stock;
+		
+	}
+	
+	public static void updateStock(int id, int cantidad) {
+		
+		
+		try {
+            
+            Connection con = Conexion.getConexion();
+            PreparedStatement st = con.prepareStatement("UPDATE productos SET stock = stock - ? WHERE id = ?");
+            
+            st.setInt(1, cantidad);
+            st.setInt(2, id);
+            
+            st.executeUpdate();
+            
+        } catch (SQLException e) {
+            
+        }
 	}
 }

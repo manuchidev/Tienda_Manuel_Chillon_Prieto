@@ -21,5 +21,17 @@ public class ProductoService {
 		
 		return producto;
 	}
+	
+	public static int obtenerStock(int id) {
+		
+		int stock = ProductoDAO.findStock(id);
+		
+		return stock;
+	}
+	
+	public static void reducirStock(int id, int cantidad) {
+		
+		ProductoDAO.updateStock(id, cantidad);
+	}
 
 }

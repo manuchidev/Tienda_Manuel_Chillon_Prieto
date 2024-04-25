@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -15,13 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.model.VO.Compra.MetodoPagoVO;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 import curso.java.tienda.model.VO.Pedido.PedidoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.DetallePedido.DetallePedidoService;
 import curso.java.tienda.service.Pedido.PedidoService;
+import curso.java.tienda.service.Producto.ProductoService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
@@ -140,21 +144,23 @@ public class RealizarPedidoServlet extends HttpServlet {
 					ProductoVO producto = entry.getKey();
 					Integer cantidad = entry.getValue();
 					
-					if (producto.getStock() < cantidad ) {
+					if (ProductoService.obtenerStock(producto.getId()) < cantidad ) {
 						stockSuficiente = false;
 						break;
 					}
 				}
 
 				if (stockSuficiente) {
-
+					
 					PedidoVO pedido = new PedidoVO(usuario.getId(), Timestamp.valueOf(LocalDateTime.now()), metodo_pago);								
 					
 					int idPedido = PedidoService.realizarPedido(pedido);
-	
+						
 					for (Map.Entry<ProductoVO, Integer> entry : carrito.entrySet()) {
 						ProductoVO producto = entry.getKey();
 						Integer cantidad = entry.getValue();
+						
+						System.out.println("Producto:" + producto.toString());
 	
 						int id_producto = producto.getId();
 						float precio_unidad = (float)producto.getPrecio();
@@ -162,11 +168,16 @@ public class RealizarPedidoServlet extends HttpServlet {
 						double totalSinImpuesto = (precio_unidad * cantidad);
 						double total = totalSinImpuesto + (totalSinImpuesto * impuesto);
 						
+						System.out.println("Impuesto: " + impuesto);
+						
 						DetallePedidoVO detallePedido = new DetallePedidoVO(idPedido, id_producto, precio_unidad, cantidad, impuesto, total);
 						DetallePedidoService.realizarDetallePedido(detallePedido);
+						
+						ProductoService.reducirStock(id_producto, cantidad);												
 					}
+					
 										
-					request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
+					request.getRequestDispatcher(Rutas.RESULTADO_JSP).forward(request, response);
 				
 				} else {
 					request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);

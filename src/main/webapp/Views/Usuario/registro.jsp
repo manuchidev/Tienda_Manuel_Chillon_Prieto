@@ -83,6 +83,21 @@
 							    <div class="form-row">
 							    
 							        <div class="form-item">
+							            <label class="form-label" for="password2">Repetir Contraseña</label>
+							            <input type="password" id="password2Registro" name="password2Registro" class="form-control form-control-lg" required/>
+							            
+							            <span name="errorPassword2" id="errorPassword2" class="error">
+							            <%
+							            	if (errores != null && errores.containsKey("errorPassword2")) {
+							            %>		
+							            		<%= errores.get("errorPassword2") %>
+							            <%
+							            	}
+							            %>
+							            </span>
+							        </div>
+							        
+							        <div class="form-item">
 							            <label class="form-label" for="nombreRegistro">Nombre</label>
 							            <input type="text" id="nombreRegistro" name="nombreRegistro" class="form-control form-control-lg" required/>
 							            
@@ -97,20 +112,6 @@
 							            </span>
 							        </div>
 							        
-							        <div class="form-item">
-							            <label class="form-label" for="password2">Repetir Contraseña</label>
-							            <input type="password" id="password2Registro" name="password2Registro" class="form-control form-control-lg" required/>
-							            
-							            <span name="errorPassword2" id="errorPassword2" class="error">
-							            <%
-							            	if (errores != null && errores.containsKey("errorPassword2")) {
-							            %>		
-							            		<%= errores.get("errorPassword2") %>
-							            <%
-							            	}
-							            %>
-							            </span>
-							        </div>
 							        
 							    </div>
 							

@@ -67,11 +67,7 @@ public class RegistroServlet extends HttpServlet {
 		String dniExp = "^[0-9]{8}[A-Z]$";
 		
 		boolean emailRegistrado = UsuarioService.getUsuarioByEmail(email) != null;
-		
-		System.out.println("Registro Servlet");
-		
-		System.out.println("Email: " + email);
-				
+						
 		if (email.equals("")) {
 			errores.put("errorEmail", "Debe introducir un email");
 		
@@ -155,16 +151,15 @@ public class RegistroServlet extends HttpServlet {
 		
 		
 		if (errores.isEmpty()) {
-			
+
 			UsuarioVO nuevoUsuario = new UsuarioVO(0, 0, email, password, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni);
 								
-			if (UsuarioService.registrarCliente(nuevoUsuario)) {
-				request.setAttribute("mensaje", "Usuario registrado correctamente");
-				request.getSession().setAttribute("usuario", nuevoUsuario);
+			UsuarioService.registrarCliente(nuevoUsuario);
+			request.getSession().setAttribute("usuario", nuevoUsuario);
 				
-			} else {
-				request.setAttribute("mensaje", "Error al registrar el usuario");
-			}
+//			} else {
+//				request.setAttribute("mensaje", "Error al registrar el usuario");
+//			}
 			
 			limpiarAtributosRegistro(request);
 				

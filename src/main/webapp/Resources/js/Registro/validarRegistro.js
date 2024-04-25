@@ -90,15 +90,18 @@ function validarRegistro(event) {
 	if (!emailExiste) {
 
 		if (email.value.trim() === "") {
+			document.getElementById("errorEmail").style.color = "red";
 			mostrarError("errorEmail", "Debe introducir un email", email);
 			error = true;
 		
 		} else if (!emailExp.test(email.value.trim())) {
+			document.getElementById("errorEmail").style.color = "red";
 			mostrarError("errorEmail", "El email no es válido", email);
 			error = true;
 		} 
 	
 	} else {
+		document.getElementById("errorEmail").style.color = "red";
 		mostrarError("errorEmail", "El email ya existe", email);
 		error = true;
 	}

@@ -124,8 +124,7 @@ public class PedidoDAO {
 		try {
 
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement(
-					"INSERT INTO pedidos (id_usuario, fecha, metodo_pago, estado) VALUES (?, ?, ?, ?)");
+			PreparedStatement st = con.prepareStatement("INSERT INTO pedidos (id_usuario, fecha, metodo_pago, estado) VALUES (?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
 
 			st.setInt(1, pedido.getId_usuario());
 			st.setTimestamp(2, pedido.getFecha());
@@ -141,7 +140,7 @@ public class PedidoDAO {
 			}
 
 		} catch (SQLException e) {
-			
+			e.printStackTrace();
 		}
 
 		return idPedido;

@@ -17,7 +17,7 @@ public class UsuarioDAO {
 		try {
 			
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM Usuarios WHERE id = ?");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios WHERE id = ?");
 			
 			st.setInt(1, id);
 			
@@ -57,7 +57,7 @@ public class UsuarioDAO {
 		try {
 			
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM Usuarios WHERE email = ?");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios WHERE email = ?");
 			
 			st.setString(1, email);
 			
@@ -91,12 +91,12 @@ public class UsuarioDAO {
 				
 	}
 	
-	public static boolean insertarCliente(UsuarioVO usuario) {
-		    
+	public static void insertarCliente(UsuarioVO usuario) {
+				    
         try {
             
             Connection con = Conexion.getConexion();
-            PreparedStatement st = con.prepareStatement("INSERT INTO Usuarios (id_rol, email, clave, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni) VALUES (3, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement st = con.prepareStatement("INSERT INTO usuarios (id_rol, email, clave, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni) VALUES (3, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
             st.setString(1, usuario.getEmail());
             st.setString(2, usuario.getClave());
@@ -110,12 +110,10 @@ public class UsuarioDAO {
             st.setString(10, usuario.getDni());
             
             st.executeUpdate();
-            
+                        
         } catch (SQLException e) {
-            return false;
-        }
-        
-        return true;
+        	e.printStackTrace();
+        }       
         
 	}
 

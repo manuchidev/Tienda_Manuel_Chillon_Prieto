@@ -31,10 +31,10 @@ public class Conexion {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			// Obtenemos la conexion
-//			conexion = java.sql.DriverManager.getConnection(url + host + "/" + bd, login, password);
-			conexion = java.sql.DriverManager.getConnection(url + host + ":" + port + "/" + bd, login, password);
+			conexion = java.sql.DriverManager.getConnection(url + host + "/" + bd, login, password);
+//			conexion = java.sql.DriverManager.getConnection(url + host + ":" + port + "/" + bd, login, password);
 			
-			conexion.setAutoCommit(false);
+			conexion.setAutoCommit(true);
 			
 		} catch (SQLException e) {
 			return false;

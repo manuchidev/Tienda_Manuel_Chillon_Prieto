@@ -101,17 +101,17 @@
 					                <div class="d-flex mb-4" style="max-width: 300px">
 					                
 					                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 me-2"
-					                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+					                    onclick="decrementarCantidad()">
 					                    <i class="fas fa-minus"></i>
 					                  </button>
 					
 					                  <div data-mdb-input-init class="form-outline text-center">
-					                    <input id="form1" min="0" name="quantity" value="<%= cantidad %>" type="number" class="form-control text-center" />
-<!-- 					                    <label class="form-label" for="form1">Cantidad</label> -->
+					                    <input id="form1" min="0" name="cantidad" value="<%= cantidad %>" type="number" class="form-control text-center" 
+					                    	onchange="actualizarCantidad(this.value)" />
 					                  </div>
 					
 					                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 ms-2"
-					                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+					                    onclick="incrementarCantidad">
 					                    <i class="fas fa-plus"></i>
 					                  </button>
 					                  
@@ -130,7 +130,7 @@
 					              
 					              	<form action="eliminar" method="post">
 					              	
-					              		<input type="hidden" name="idProd" value="<%= producto.getId() %>"></input>
+					              		<input type="hidden" id="idProd" name="idProd" value="<%= producto.getId() %>"></input>
 	              		                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-sm me-1 btnEliminar" data-mdb-tooltip-init title="Remove item">
 						                  <i class="fas fa-trash iconoPapelera"></i>
 						                </button>
@@ -267,6 +267,7 @@
 						
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 	
+		<script src="<%=request.getContextPath() %><%= Rutas.CANTIDAD_CARRITO_JS%>"></script>
 	</body>
 	
 </html>

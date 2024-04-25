@@ -31,11 +31,10 @@ public class UsuarioService {
 	}
 	
 	
-	public static boolean registrarCliente(UsuarioVO usuario) {
+	public static void registrarCliente(UsuarioVO usuario) {
+					
+		UsuarioDAO.insertarCliente(usuario);
 
-		boolean registrado = UsuarioDAO.insertarCliente(usuario);
-
-		return registrado;
 	}
 
 }
