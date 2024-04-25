@@ -3,13 +3,15 @@
 
 <nav class="navbar navbar-expand-lg">
 
-	<div class="container px-lg-12">
+	<div class="container-fluid">
 		    
-	    <a class="navbar-brand" href="/Tienda_Manuel_Chillon_Prieto/">
+	    <a class="navbar-brand  px-0 mx-5" href="/Tienda_Manuel_Chillon_Prieto/">
 	    	<img class="imgLogo" src="<%=request.getContextPath() %><%=Rutas.IMAGENES_LOGO %>" alt="">
 	    </a>
 	    
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	    </button>
 	    
 	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    
@@ -36,42 +38,46 @@
 	            
 	        </ul>
 	        
-        <%
-        	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
-        	
-        	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+	        <div class="d-flex">
+	         <%
+	        	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
 	        	
-			 if (usuario == null) {
-       	%>
-       	        <form class="d-flex px-lg-2 py-sm-1" action="Usuario">
-                 	<button class="btn" data-bs-toggle="modal" type="submit">
-	                	<i class="bi-person-fill me-1"></i> Usuario	  
-	                </button>   
-               	</form> 
-	                          	
-        <%
-             } else {
-        %>
-               	<button class="btn" data-bs-toggle="modal" data-bs-target="#usuarioModal" type="button">
-               		<i class="bi-person-fill me-1"></i> <%= usuario.getEmail() %>
-               	</button>	                
-        <%
-             }
-        %>
-     
-	        <form class="d-flex" action="Carrito">
-	        	        
-	            <button class="btn" type="submit">
-	                <i class="bi-cart-fill me-1"></i>
-	                Carrito
-	                <span class="badge bg-danger text-white ms-1 rounded-pill"><%= carrito.size()%></span>
-	            </button>
-	            
-	        </form>
+	        	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+		        	
+				 if (usuario == null) {
+	       	%>
+	       	        <form class="d-flex px-lg-2 py-sm-1" action="Login" method="get">
+	                 	<button class="btn" data-bs-toggle="modal" type="submit">
+		                	<i class="bi-person-fill me-1"></i> Usuario	  
+		                </button>   
+	               	</form> 
+		                          	
+	        <%
+	             } else {
+	        %>
+	               	<button class="btn" data-bs-toggle="modal" data-bs-target="#usuarioModal" type="button">
+	               		<i class="bi-person-fill me-1"></i> <%= usuario.getEmail() %>
+	               	</button>	                
+	        <%
+	             }
+	        %>
+	     
+		        <form class="d-flex" action="Carrito">
+		        	        
+		            <button class="btn" type="submit">
+		                <i class="bi-cart-fill me-1"></i>
+		                Carrito
+		                <span class="badge bg-danger text-white ms-1 rounded-pill"><%= carrito.size()%></span>
+		            </button>
+		            
+		        </form>
 	        
+	        </div>
+	            		        
 	    </div>
 	    
 	</div>
+	
 </nav>
 
 <!-- Modal de Usuario -->
@@ -90,7 +96,7 @@
             
                 <% if (usuario != null) { %>
                     <!-- Si el usuario ha iniciado sesión -->
-                    <form action="Usuario" method="post">
+                    <form action="Login" method="get">
                         <button class="btn btn-primary" type="submit" formaction="perfil.jsp">Perfil</button>
                         <button class="btn btn-secondary" type="submit" formaction="index.jsp">Cerrar Sesión</button>
                     </form>                

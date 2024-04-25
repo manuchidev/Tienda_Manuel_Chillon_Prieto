@@ -23,7 +23,7 @@ public class UsuarioService {
 		
 		UsuarioVO usuario = UsuarioDAO.findByEmail(email);
 		
-		if (usuario.getClave().equals(clave)) {
+		if (usuario != null && usuario.getClave().equals(clave)) {
 			return usuario;
 		}
 		
@@ -31,9 +31,9 @@ public class UsuarioService {
 	}
 	
 	
-	public static boolean registrarUsuario(UsuarioVO usuario) {
+	public static boolean registrarCliente(UsuarioVO usuario) {
 
-		boolean registrado = UsuarioDAO.insertarUsuario(usuario);
+		boolean registrado = UsuarioDAO.insertarCliente(usuario);
 
 		return registrado;
 	}

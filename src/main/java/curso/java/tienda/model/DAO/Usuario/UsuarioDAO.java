@@ -41,7 +41,7 @@ public class UsuarioDAO {
 				usuario.setDni(rs.getString("dni"));
 
 			}
-			
+
 		} catch (SQLException e) {
 			return null;
 		}
@@ -63,7 +63,7 @@ public class UsuarioDAO {
 			
 			ResultSet rs = st.executeQuery();
 			
-			while(rs.next()) {
+			if(rs.next()) {
 				
 				usuario = new UsuarioVO();
 				
@@ -82,6 +82,7 @@ public class UsuarioDAO {
 
 			}
 			
+						
 		} catch (SQLException e) {
 			return null;
 		}
@@ -90,24 +91,23 @@ public class UsuarioDAO {
 				
 	}
 	
-	public static boolean insertarUsuario(UsuarioVO usuario) {
+	public static boolean insertarCliente(UsuarioVO usuario) {
 		    
         try {
             
             Connection con = Conexion.getConexion();
             PreparedStatement st = con.prepareStatement("INSERT INTO Usuarios (id_rol, email, clave, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni) VALUES (3, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             
-            st.setInt(1, usuario.getId_rol());
-            st.setString(2, usuario.getEmail());
-            st.setString(3, usuario.getClave());
-            st.setString(4, usuario.getNombre());
-            st.setString(5, usuario.getApellido1());
-            st.setString(6, usuario.getApellido2());
-            st.setString(7, usuario.getDireccion());
-            st.setString(8, usuario.getProvincia());
-            st.setString(9, usuario.getLocalidad());
-            st.setString(10, usuario.getTelefono());
-            st.setString(11, usuario.getDni());
+            st.setString(1, usuario.getEmail());
+            st.setString(2, usuario.getClave());
+            st.setString(3, usuario.getNombre());
+            st.setString(4, usuario.getApellido1());
+            st.setString(5, usuario.getApellido2());
+            st.setString(6, usuario.getDireccion());
+            st.setString(7, usuario.getProvincia());
+            st.setString(8, usuario.getLocalidad());
+            st.setString(9, usuario.getTelefono());
+            st.setString(10, usuario.getDni());
             
             st.executeUpdate();
             

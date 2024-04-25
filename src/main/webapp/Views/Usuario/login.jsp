@@ -11,7 +11,9 @@
 			
 		<title>Login</title>
 		
-		 <jsp:include page="<%= Rutas.HEAD%>" />
+		<jsp:include page="<%= Rutas.HEAD%>" />
+		 
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.LOGIN_CSS%>">
 	  
 	</head>
 	
@@ -36,6 +38,7 @@
 			          <div class="card-body p-3 text-center">
 			
 			            <div class="mb-0">
+<<<<<<< Upstream, based on origin/main
 			
 			              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
 			              <p class="text-white-50 mb-4">Introduzca su email y contraseña!</p>
@@ -53,6 +56,26 @@
 				
 				              <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidó su contraseña?</a></p>
 							          
+=======
+			            
+						  <form action="Login" method="post">
+						  
+				              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+				              <p class="text-white-50 mb-4">Introduzca su email y contraseña!</p>
+				
+				              <div data-mdb-input-init class="form-outline form-white mb-4">
+				                <label class="form-label" for="emailLogin">Email</label>
+				                <input type="email" name="emailLogin" class="form-control form-control-lg" />
+				              </div>
+				
+				              <div data-mdb-input-init class="form-outline form-white mb-3">
+				                <label class="form-label" for="passwordLogin">Contraseña</label>
+				                <input type="password" name="passwordLogin" class="form-control form-control-lg" />
+				              </div>
+				
+				              <p class="small mb-4 pb-lg-2"><a class="text-white-50" href="#!">¿Olvidó su contraseña?</a></p>
+							        
+>>>>>>> 1660d8a Casa Registro y Login
 				              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesión</button>				          
 				          </form>
 			

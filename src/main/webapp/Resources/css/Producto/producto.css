@@ -18,6 +18,7 @@
 .imgProd {
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra: desplazamiento X, desplazamiento Y, desenfoque, color */
  	transition: transform 0.3s ease; /* Transición suave para la propiedad transform */
+ 	height: 100%;
 }
 
 .imgProd:hover {

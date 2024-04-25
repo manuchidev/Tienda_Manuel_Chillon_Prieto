@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+.error {
+	color: red;
+	font-size:14px;
+}
+
+.valido {
+	color: green;
+	font-size: 14px;
+}
+
 /* Estilos para el contenedor principal del formulario */
 .form-container {
     display: flex;
@@ -26,6 +36,10 @@
     margin-bottom: 5px;
 }
 
+.form-control {
+	font-size: 14px;
+}
+
 .rowDNI {
 	align-items: center;
 }
@@ -33,7 +47,12 @@
 /* Estilos para la casilla de verificación (checkbox) */
 .form-check {
     display: flex;
-    align-items: center;
+    flex-direction:column;
+    align-items: flex-start;
+}
+
+.form-check-label {
+    margin-bottom: 5px; /* Espacio debajo del label */
 }
 
 /* Estilos para el botón */
