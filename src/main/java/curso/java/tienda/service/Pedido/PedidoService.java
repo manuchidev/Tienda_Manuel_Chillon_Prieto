@@ -14,18 +14,12 @@ public class PedidoService {
 		return detallesPedido;
 	}
 	
-	
-	public static PedidoVO getPedidoId(int id) {
 		
-		PedidoVO detallePedido = PedidoDAO.findById(id);
+	public static int realizarPedido(PedidoVO pedido) {
 		
-		return detallePedido;
-	}
-	
-	public static void realizarPedido(PedidoVO pedido) {
+		int idPedido = PedidoDAO.insert(pedido);
 		
-		PedidoDAO.insert(pedido);
-
+		return idPedido;
 	}
 
 }

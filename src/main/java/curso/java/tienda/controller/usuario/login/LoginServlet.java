@@ -36,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
 
 	}
 
@@ -50,8 +52,8 @@ public class LoginServlet extends HttpServlet {
 		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		
-		String email = request.getParameter("email");
-		String clave = request.getParameter("clave");
+		String email = request.getParameter("emailLogin");
+		String clave = request.getParameter("passwordLogin");
 
 		
 		if (email != null && !email.isEmpty() && clave != null && !clave.isEmpty()) {

@@ -15,10 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 import curso.java.tienda.model.VO.Pedido.PedidoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.DetallePedido.DetallePedidoService;
 import curso.java.tienda.service.Pedido.PedidoService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
@@ -130,17 +132,46 @@ public class RealizarPedidoServlet extends HttpServlet {
 			
 			if (errores.isEmpty()) {
 				
-				PedidoVO pedido = new PedidoVO(usuario.getId(), Timestamp.valueOf(LocalDateTime.now()), metodo_pago);								
-				
-				PedidoService.realizarPedido(pedido);
-				
-				int id = pedido.getId();
-
-				int idPedido = PedidoService.getPedidoId(id);
-				
 				request.setAttribute("errores", errores);
+
+				boolean stockSuficiente = true;
+
+				for (Map.Entry<ProductoVO, Integer> entry : carrito.entrySet()) {
+					ProductoVO producto = entry.getKey();
+					Integer cantidad = entry.getValue();
+					
+					if (producto.getStock() < cantidad ) {
+						stockSuficiente = false;
+						break;
+					}
+				}
+
+				if (stockSuficiente) {
+
+					PedidoVO pedido = new PedidoVO(usuario.getId(), Timestamp.valueOf(LocalDateTime.now()), metodo_pago);								
+					
+					int idPedido = PedidoService.realizarPedido(pedido);
+	
+					for (Map.Entry<ProductoVO, Integer> entry : carrito.entrySet()) {
+						ProductoVO producto = entry.getKey();
+						Integer cantidad = entry.getValue();
+	
+						int id_producto = producto.getId();
+						float precio_unidad = (float)producto.getPrecio();
+						float impuesto = producto.getImpuesto();
+						double totalSinImpuesto = (precio_unidad * cantidad);
+						double total = totalSinImpuesto + (totalSinImpuesto * impuesto);
+						
+						DetallePedidoVO detallePedido = new DetallePedidoVO(idPedido, id_producto, precio_unidad, cantidad, impuesto, total);
+						DetallePedidoService.realizarDetallePedido(detallePedido);
+					}
+										
+					request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 				
-				
+				} else {
+					request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
+				}
+												
 				
 			} else {
 				request.setAttribute("errores", errores);

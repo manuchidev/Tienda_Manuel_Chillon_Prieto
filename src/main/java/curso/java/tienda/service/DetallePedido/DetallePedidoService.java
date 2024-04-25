@@ -21,5 +21,11 @@ public class DetallePedidoService {
 		
 		return detallePedido;
 	}
+	
+	public static void realizarDetallePedido(DetallePedidoVO detallePedido) {
+		
+		DetallePedidoDAO.insert(detallePedido);
+		
+	}
 
 }

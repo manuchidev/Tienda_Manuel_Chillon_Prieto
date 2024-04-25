@@ -117,7 +117,9 @@ public class PedidoDAO {
 		
 	}
 	
-	public static boolean insert(PedidoVO pedido) {
+	public static int insert(PedidoVO pedido) {
+
+		int idPedido = 0;
 
 		try {
 
@@ -132,11 +134,17 @@ public class PedidoDAO {
 
 			st.executeUpdate();
 
+			ResultSet rs = st.getGeneratedKeys();
+
+			if (rs.next()) {
+				idPedido = rs.getInt(1);
+			}
+
 		} catch (SQLException e) {
-			return false;
+			
 		}
 
-		return true;
+		return idPedido;
 
 	}
 	
