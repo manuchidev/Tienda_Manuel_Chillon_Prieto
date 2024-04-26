@@ -25,7 +25,9 @@
 	                <div class="card h-100 cardProducto">
 	                
 	                    <!-- Product image-->
-	                    <img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
+	                    <div class="divProductoImg">
+		                    <img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />	                    
+	                    </div>
 	                    
 	                    <!-- Product details-->
 	                    <div class="card-body p-4">

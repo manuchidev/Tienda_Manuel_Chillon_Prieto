@@ -26,11 +26,11 @@
 		<main>
 		
 			<!-- Product section-->
-	        <section class="py-5">
+	        <section class="py-5 gradient-custom">
 	        
 	            <div class="container px-4 px-lg-5 my-5">
 	            
-	                <div class="row gx-4 gx-lg-5 align-items-center">
+	                <div class="row gx-4 gx-lg-5 align-items-center bg-light">
 	                
                     <%
                     	ProductoVO producto = (ProductoVO) request.getAttribute("producto");
@@ -49,7 +49,7 @@
 	                        <p class="lead"><%= producto.getNombre() %></p>
 	                        
 	                        <div class="d-flex">
-	                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 3rem" onchange="actualizarCantidadDetalle()" />
+	                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" min="1" style="max-width: 3rem" onchange="actualizarCantidadDetalle()" />
 	                            <a id="añadirCarrito" href="añadirCarrito?idProd=<%= producto.getId()%>&cantidad=1" data-idprod="<%= producto.getId() %>">
 		                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
                         				<i class="bi-cart-fill me-1"></i>
@@ -67,40 +67,51 @@
 	        </section>
 	        
 	        <!-- Related items section-->
-	        <section class="py-5 bg-light">
+	        <section class="bg-light">
 	        
-	            <div class="container px-4 px-lg-5 mt-5">
+	            <div class="container py-3 bg-light">
 	            
-	                <h2 class="fw-bolder mb-4">Related products</h2>
+	                <h2 class="fw-bolder mb-4">Productos Relacionados</h2>
 	                
 	                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 	                
-	                    <div class="col mb-5">
-	                    
-	                        <div class="card h-100">
-	                            <!-- Product image-->
-	                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-	                            
-	                            <!-- Product details-->
-	                            <div class="card-body p-4">
-	                            
-	                                <div class="text-center">
-	                                    <!-- Product name-->
-	                                    <h5 class="fw-bolder">Fancy Product</h5>
-	                                    <!-- Product price-->
-	                                    $40.00 - $80.00
-	                                </div>
-	                                
-	                            </div>
-	                            
-	                            <!-- Product actions-->
-	                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-	                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-	                            </div>
-	                            
-	                        </div>
-	                        
-	                    </div>
+                    <%
+                    	List<ProductoVO> productosCategoria = (List<ProductoVO>) request.getAttribute("productosCategoria");
+                    
+                        for(ProductoVO productoCategoria : productosCategoria) {
+                    
+                    %>	           
+		                    <div class="col mb-5">
+		                    
+		                        <div class="card h-100">
+		                            <!-- Product image-->
+		                            <img class="card-img-top imgProdDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= productoCategoria.getImagen() %>" alt="..." />
+		                            
+		                            <!-- Product details-->
+		                            <div class="card-body p-4">
+		                            
+		                                <div class="text-center">
+		                                    <!-- Product name-->
+		                                    <h5 class="fw-bolder"><%= productoCategoria.getNombre() %></h5>
+		                                    <!-- Product price-->
+		                                    <%= productoCategoria.getPrecio() %> €
+		                                </div>
+		                                
+		                            </div>
+		                            
+		                            <!-- Product actions-->
+		                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+		                                <div class="text-center">
+		                                	<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= productoCategoria.getId()%>&idCat=<%= productoCategoria.getId_categoria()%>">Detalles</a>
+										</div>
+		                            </div>
+		                            
+		                        </div>
+		                        
+		                    </div>
+		            <%		            
+                        }
+		            %>
 
 	                </div>
 	                
