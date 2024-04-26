@@ -88,6 +88,18 @@
   	<description></description>
   	<servlet-class>curso.java.tienda.controller.usuario.registro.ValidarRegistroServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CantidadCarritoServlet</servlet-name>
+  	<display-name>CantidadCarritoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.carrito.CantidadCarritoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DetallesServlet</servlet-name>
+  	<display-name>DetallesServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.producto.DetallesServlet</servlet-class>
+  </servlet>
   
   
   <servlet-mapping>
@@ -148,5 +160,13 @@
   <servlet-mapping>
   	<servlet-name>ValidarRegistroServlet</servlet-name>
   	<url-pattern>/ValidarRegistroServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CantidadCarritoServlet</servlet-name>
+  	<url-pattern>/CantidadCarritoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DetallesServlet</servlet-name>
+  	<url-pattern>/DetallesServlet</url-pattern>
   </servlet-mapping>
 </web-app>

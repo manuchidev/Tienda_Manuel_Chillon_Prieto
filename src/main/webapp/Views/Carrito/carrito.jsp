@@ -98,24 +98,30 @@
 					              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
 					              
 					                <!-- Quantity -->
-					                <div class="d-flex mb-4" style="max-width: 300px">
-					                
-					                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 me-2"
-					                    onclick="decrementarCantidad()">
-					                    <i class="fas fa-minus"></i>
-					                  </button>
-					
-					                  <div data-mdb-input-init class="form-outline text-center">
-					                    <input id="form1" min="0" name="cantidad" value="<%= cantidad %>" type="number" class="form-control text-center" 
-					                    	onchange="actualizarCantidad(this.value)" />
-					                  </div>
-					
-					                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 ms-2"
-					                    onclick="incrementarCantidad">
-					                    <i class="fas fa-plus"></i>
-					                  </button>
-					                  
-					                </div>
+									<form action="actualizarCantidad" method="post">
+									
+                                        <input type="hidden" id="idProd" name="idProd" value="<%= producto.getId() %>"></input>
+                                        
+										<div class="d-flex mb-4" style="max-width: 300px">
+										
+										  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 me-2"
+											onclick="decrementarCantidad(this.parentElement.querySelector('input'))">
+											<i class="fas fa-minus"></i>
+										  </button>
+						
+										  <div data-mdb-input-init class="form-outline text-center">
+											<input id="cantidad" min="0" name="cantidad" value="<%= cantidad %>" type="number" class="form-control text-center" 
+												onchange="this.form.submit()" />
+										  </div>
+						
+										  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary px-3 ms-2"
+											onclick="incrementarCantidad(this.parentElement.querySelector('input'))">
+											<i class="fas fa-plus"></i>
+										  </button>
+										  
+										</div>
+
+									</form>
 					                <!-- Quantity -->
 					
 					                <!-- Price -->
@@ -151,7 +157,7 @@
 							
 					%>
 							<div class="col-md-8">
-								<h2 style="text-align; color:red">El carrito está vacío</h2>
+								<h2 style="color: red">El carrito está vacío</h2>
 							</div>							
 					<%
 						        

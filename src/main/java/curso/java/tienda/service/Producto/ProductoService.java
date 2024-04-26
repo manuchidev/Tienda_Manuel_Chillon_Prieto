@@ -14,12 +14,18 @@ public class ProductoService {
 		return productos;
 	}
 	
-	
 	public static ProductoVO getProductoId(int id) {
 		
 		ProductoVO producto = ProductoDAO.findById(id);
 		
 		return producto;
+	}
+	
+	public static List<ProductoVO> getProductosCategoria(int id_producto, int id_categoria) {
+		
+		List<ProductoVO> productos = ProductoDAO.findByIdCategoria(id_producto, id_categoria);
+		
+		return productos;
 	}
 	
 	public static int obtenerStock(int id) {

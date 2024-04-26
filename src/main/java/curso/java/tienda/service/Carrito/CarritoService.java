@@ -30,6 +30,26 @@ public class CarritoService {
 		}
 	}
 	
+	public static void agregarProductoCantidad(HashMap<ProductoVO, Integer> carrito, int id, int cantidad) {
+		
+		// Obtenemos el producto por su id
+		ProductoVO producto = ProductoService.getProductoId(id);
+		
+		if (producto != null) {
+			
+			// Si el producto existe, comprobamos si ya está en el carrito
+			if (carrito.containsKey(producto)) {
+				
+				// Si está en el carrito, aumentamos la cantidad
+				carrito.put(producto, carrito.get(producto) + 1);
+				
+			} else {
+				
+				carrito.put(producto, cantidad);
+			}	
+		}
+	}
+	
 	public static double calcularTotal(HashMap<ProductoVO, Integer> carrito) {
 		
 		double total = 0;

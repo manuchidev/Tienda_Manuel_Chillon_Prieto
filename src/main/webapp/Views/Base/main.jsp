@@ -48,7 +48,7 @@
 	                    
 	                        <div class="text-center">
 	                        	<a class="btn btn-primary mt-auto" href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a>
-	                        	<a class="btn btn-warning mt-auto" href="verDetalles?idProd=<%= producto.getId()%>">Detalles</a>
+	                        	<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
 	                        </div>
 	                        
 	                    </div>

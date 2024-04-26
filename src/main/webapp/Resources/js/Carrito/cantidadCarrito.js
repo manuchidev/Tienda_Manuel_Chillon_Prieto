@@ -1,36 +1,19 @@
-function incrementarCantidad() {
+function incrementarCantidad(input) {
+
+	let aumentar = parseInt(input.value);
 	
-	const cantidad = document.getElementById('cantidad');
-	
-	cantidad.stepUp();
-	
-	actualizarCantidad(cantidad.value);
+	aumentar++;
+
+	input.value = aumentar;
 }
 
-function decrementarCantidad() {
-	
-	const cantidad = document.getElementById('cantidad');
-	
-	cantidad.stepDown();
-	
-	actualizarCantidad(cantidad.value);
-}
+function decrementarCantidad(input) {
 
-function actualizarCantidad(cantidadActulizada) {
+	let decrementar = parseInt(input.value);
 	
-	const cantidad = document.getElementById('cantidad');
-	
-	cantidad.value = parseInt(cantidadActulizada);
-	
-	const idProd = document.getElementById('idProd').value;
-	
-	if (carrito.has(idProd)) {
-		
-		carrito.set(idProd, cantidadActulizada);
-		console.log('Cantidad actualizada');
-	
-	} else {
-		console.log('No se ha encontrado el producto');
+	if (decrementar > 1) {
+		decrementar--;
 	}
 	
+	input.value = decrementar;
 }

@@ -21,6 +21,7 @@ public class Rutas {
 	
 	// JAVASCRIPT
 	public static final String REGISTRO_JS = "/Resources/js/Registro/validarRegistro.js";
+	public static final String CANTIDAD_DETALLES_JS = "/Resources/js/Detalles/cantidadDetalle.js";
 	public static final String CANTIDAD_CARRITO_JS = "/Resources/js/Carrito/cantidadCarrito.js";
 	
 	// IMAGENES
@@ -30,6 +31,7 @@ public class Rutas {
 	
 	// VIEWS 
 	public static final String INDEX_JSP = "/Views/index.jsp";
+	public static final String DETALLES_JSP = "Views/Producto/detalle.jsp";
 	public static final String LOGIN_JSP = "/Views/Usuario/login.jsp";
 	public static final String REGISTRO_JSP = "/Views/Usuario/registro.jsp";
 	public static final String CARRITO_JSP = "/Views/Carrito/carrito.jsp";

@@ -88,6 +88,46 @@ public class ProductoDAO {
 		
 	}
 	
+	public static List<ProductoVO> findByIdCategoria(int id_producto, int id_categoria) {
+		
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE id != ? AND id_categoria = ? ");
+			
+			st.setInt(1, id_producto);
+			st.setInt(2, id_categoria);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getDouble("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getFloat("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;
+	}
+	
 	public static int findStock(int id) {
 		
 		int stock = 0;
