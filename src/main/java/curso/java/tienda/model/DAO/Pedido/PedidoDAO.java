@@ -82,8 +82,9 @@ public class PedidoDAO {
 		
 	}
 	
-	public static PedidoVO findByIdUsuario(int id_usuario) {
+	public static List<PedidoVO> findByIdUsuario(int id_usuario) {
 		
+		List<PedidoVO> pedidos = new ArrayList<PedidoVO>();
 		PedidoVO pedido = null;
 		
 		try {
@@ -106,14 +107,15 @@ public class PedidoDAO {
 				pedido.setEstado(rs.getString("estado"));
 				pedido.setNum_factura(rs.getString("num_factura"));
 				pedido.setTotal(rs.getDouble("total"));
-	
+				
+				pedidos.add(pedido);
 			}
 			
 		} catch (SQLException e) {
 			return null;
 		}
 		
-		return pedido;
+		return pedidos;
 		
 	}
 	

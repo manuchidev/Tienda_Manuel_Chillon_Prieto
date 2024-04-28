@@ -156,11 +156,7 @@ public class RegistroServlet extends HttpServlet {
 								
 			UsuarioService.registrarCliente(nuevoUsuario);
 			request.getSession().setAttribute("usuario", nuevoUsuario);
-				
-//			} else {
-//				request.setAttribute("mensaje", "Error al registrar el usuario");
-//			}
-			
+							
 			limpiarAtributosRegistro(request);
 				
 			request.setAttribute("errores", errores);

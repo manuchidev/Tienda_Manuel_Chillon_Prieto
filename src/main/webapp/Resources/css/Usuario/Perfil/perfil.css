@@ -1,0 +1,34 @@
+.labels {
+    font-size: 12px;
+    color: white;
+}
+
+.divIzq, .divCentral {
+    border-right: 1px solid white;
+}
+
+@media (max-width: 576px) {
+    .divIzq, .divCentral {
+        border-right: none;
+        border-bottom: 1px solid white;
+    }
+}
+
+.noEditable {
+	color: gray;
+}
+
+.noEditable:focus {
+	color: gray;
+}
+
+.add-experience {
+	color: white;
+}
+
+.add-experience:hover {
+    background: #ffffff;
+    color: black;
+    border: solid 1px black;
+    cursor: pointer;
+}

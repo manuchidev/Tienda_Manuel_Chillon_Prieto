@@ -11,6 +11,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
  
+ main {
+ min-height: 51.1vh;
+ }
+ 
 .gradient-custom {
     /* Fallback for old browsers */
     background: #343a40; /* Gris oscuro para la parte superior */

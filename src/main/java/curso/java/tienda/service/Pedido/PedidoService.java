@@ -21,5 +21,12 @@ public class PedidoService {
 		
 		return idPedido;
 	}
+	
+	public static List<PedidoVO> getPedidoUsuario(int id) {
+
+		List<PedidoVO> pedidos = PedidoDAO.findByIdUsuario(id);
+
+		return pedidos;
+	}
 
 }

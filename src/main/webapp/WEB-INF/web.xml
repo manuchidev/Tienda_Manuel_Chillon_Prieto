@@ -100,6 +100,24 @@
   	<description></description>
   	<servlet-class>curso.java.tienda.controller.producto.DetallesServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ContactoServlet</servlet-name>
+  	<display-name>ContactoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.contacto.ContactoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PerfilServlet</servlet-name>
+  	<display-name>PerfilServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.usuario.perfil.PerfilServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PedidosServlet</servlet-name>
+  	<display-name>PedidosServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.pedidos.PedidosServlet</servlet-class>
+  </servlet>
   
   
   <servlet-mapping>
@@ -168,5 +186,17 @@
   <servlet-mapping>
   	<servlet-name>DetallesServlet</servlet-name>
   	<url-pattern>/DetallesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ContactoServlet</servlet-name>
+  	<url-pattern>/ContactoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PerfilServlet</servlet-name>
+  	<url-pattern>/PerfilServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PedidosServlet</servlet-name>
+  	<url-pattern>/PedidosServlet</url-pattern>
   </servlet-mapping>
 </web-app>

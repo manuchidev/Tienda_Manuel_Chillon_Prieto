@@ -34,7 +34,7 @@
 	                
 	            </li>
 	            
-     	        <li class="nav-item"><a class="nav-link" href="#!">Contacto</a></li>
+     	        <li class="nav-item"><a class="nav-link" href="Contacto">Contacto</a></li>
 	            
 	        </ul>
 	        
@@ -67,7 +67,7 @@
 		            <button class="btn" type="submit">
 		                <i class="bi-cart-fill me-1"></i>
 		                Carrito
-		                <span class="badge bg-danger text-white ms-1 rounded-pill"><%= carrito.size()%></span>
+		                <span class="badge bg-danger text-white ms-1 rounded-pill"><%= (carrito != null ? carrito.size() : 0) %></span>
 		            </button>
 		            
 		        </form>
@@ -83,7 +83,7 @@
 <!-- Modal de Usuario -->
 <div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="usuarioModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
     
         <div class="modal-content">
         
@@ -96,9 +96,10 @@
             
                 <% if (usuario != null) { %>
                     <!-- Si el usuario ha iniciado sesión -->
-                    <form action="Login" method="get">
-                        <button class="btn btn-primary" type="submit" formaction="perfil.jsp">Perfil</button>
-                        <button class="btn btn-secondary" type="submit" formaction="index.jsp">Cerrar Sesión</button>
+                    <form action="Usuario" method="post" class="d-flex flex-column align-items-center">
+                        <button class="btn btn-primary w-100 mb-3" type="submit" name="accion" value="perfil">PERFIL</button>
+                        <button class="btn btn-primary w-100 mb-3" type="submit" name="accion" value="pedidos">PEDIDOS</button>
+                        <button class="btn btn-danger w-100 mb-3" type="submit" name="accion" value="cerrarSesion">CERRAR SESIÓN</button>
                     </form>                
                 <% 
                 	} 
