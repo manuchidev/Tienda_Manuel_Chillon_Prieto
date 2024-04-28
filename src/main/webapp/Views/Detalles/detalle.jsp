@@ -13,7 +13,7 @@
 	  
 	  <jsp:include page="<%= Rutas.HEAD%>" />
 	  
-	  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.PROD_CSS%>">
+	  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %><%= Rutas.DETALLES_CSS %>">
 	  
 	</head>
 	
@@ -28,34 +28,41 @@
 			<!-- Product section-->
 	        <section class="py-5 gradient-custom">
 	        
-	            <div class="container px-4 px-lg-5 my-5">
+	            <div class="container px-4 px-lg-5 my-3 d-flex justify-content-center align-items-center">
 	            
-	                <div class="row gx-4 gx-lg-5 align-items-center bg-light">
+	                <div class="row gx-4 gx-lg-5 bg-light prodDetalle">
 	                
                     <%
                     	ProductoVO producto = (ProductoVO) request.getAttribute("producto");
                     
                     %>
-	                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." /></div>
+	                    <div class="col-md-5">
+	                    	<img class="card-img-top mb-5 mb-md-0 imgDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
+	                    </div>
 	                    
 	                    
-	                    <div class="col-md-6">
-	                        <h1 class="display-5 fw-bolder"><%= producto.getNombre() %></h1>
+	                    <div class="col-md-7">
+	                        <h1 class="display-5 fw-bolder datosProd"><%= producto.getNombre() %></h1>
 	                        
-	                        <div class="fs-5 mb-2">
+	                        <div class="fs-5 mb-2 datosProd">
 	                            <span><%= producto.getPrecio()%> €</span>
 	                        </div>
 	                        
-	                        <p class="lead"><%= producto.getNombre() %></p>
+	                        <p class="lead text-align-justify"><%= producto.getDescripcion() %></p>
 	                        
-	                        <div class="d-flex">
-	                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" min="1" style="max-width: 3rem" onchange="actualizarCantidadDetalle()" />
+	                        <div class="d-flex justify-content-center">
+	                        
+	                            <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" min="1" style="max-width: 5rem" onchange="actualizarCantidadDetalle()" />
+	                            
 	                            <a id="añadirCarrito" href="añadirCarrito?idProd=<%= producto.getId()%>&cantidad=1" data-idprod="<%= producto.getId() %>">
+	                            
 		                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
                         				<i class="bi-cart-fill me-1"></i>
 	                                	Añadir al carrito
 		                            </button>
+		                            
 	                            </a>
+	                            
 	                        </div>
 	                        
 	                    </div>
@@ -67,9 +74,9 @@
 	        </section>
 	        
 	        <!-- Related items section-->
-	        <section class="bg-light">
+	        <section class="prodRelac">
 	        
-	            <div class="container py-3 bg-light">
+	            <div class="container py-3">
 	            
 	                <h2 class="fw-bolder mb-4">Productos Relacionados</h2>
 	                
@@ -83,9 +90,9 @@
                     %>	           
 		                    <div class="col mb-5">
 		                    
-		                        <div class="card h-100">
+		                        <div class="card h-100 cardProdRelac">
 		                            <!-- Product image-->
-		                            <img class="card-img-top imgProdDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= productoCategoria.getImagen() %>" alt="..." />
+		                            <img class="card-img-top imgProdRelac" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= productoCategoria.getImagen() %>" alt="..." />
 		                            
 		                            <!-- Product details-->
 		                            <div class="card-body p-4">

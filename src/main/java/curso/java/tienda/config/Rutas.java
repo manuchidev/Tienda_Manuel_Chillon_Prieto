@@ -6,6 +6,7 @@ public class Rutas {
 	public static final String BASE_CSS = "/Resources/css/base.css";
 	public static final String PROD_CSS = "/Resources/css/Producto/producto.css";
 	public static final String FOOTER_CSS = "/Resources/css/footer.css";
+	public static final String DETALLES_CSS = "/Resources/css/Detalles/detalles.css";
 	public static final String LOGIN_CSS = "/Resources/css/Login/login.css";
 	public static final String REGISTRO_CSS = "/Resources/css/Registro/registro.css";
 	public static final String CARRITO_CSS = "/Resources/css/Carrito/carrito.css";
@@ -31,7 +32,7 @@ public class Rutas {
 	
 	// VIEWS 
 	public static final String INDEX_JSP = "/Views/index.jsp";
-	public static final String DETALLES_JSP = "Views/Producto/detalle.jsp";
+	public static final String DETALLES_JSP = "Views/Detalles/detalle.jsp";
 	public static final String LOGIN_JSP = "/Views/Usuario/login.jsp";
 	public static final String REGISTRO_JSP = "/Views/Usuario/registro.jsp";
 	public static final String CARRITO_JSP = "/Views/Carrito/carrito.jsp";

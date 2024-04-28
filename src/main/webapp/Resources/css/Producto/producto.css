@@ -1,11 +1,12 @@
 .cardProducto {
 	border: 2px solid #000000;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-	width: 100%;
+	max-width: 400px;
 }
 
 .divProductoImg {
-	height: 300px; 
+	max-height: 400px;
+    overflow: hidden;
 }
 
 .imgProd {

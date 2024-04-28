@@ -7,9 +7,9 @@
 
 	<section class="py-5 gradient-custom">
 	
-	    <div class="container px-4 px-lg-5 mt-5">
+	    <div class="container-fluid px-2 px-lg-5 mt-5">
 	    
-	        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 ">
+	        <div class="row gx-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
 	        
           	<%
 		  		request.setAttribute("productos", ProductoService.getProductos());
