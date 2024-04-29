@@ -63,9 +63,7 @@ public class AñadirCarritoServlet extends HttpServlet {
 				
 			} else {
 				CarritoService.agregarProducto(carrito, id);			
-			}
-			
-			
+			}			
 		}
 		
 		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);

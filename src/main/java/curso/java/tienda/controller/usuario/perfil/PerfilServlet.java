@@ -41,25 +41,42 @@ public class PerfilServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+		String accion = request.getParameter("accion");	
+		System.out.println("accion: " + accion);
 		
-		String nombre = request.getParameter("nombrePerfil");
-		String apellido1 = request.getParameter("apellido1Perfil");
-		String apellido2 = request.getParameter("apellido2Perfil");
-		String password = request.getParameter("passwordPerfil");
-		
-		if (password == null || password.isEmpty()) {
-			password = usuario.getClave();
+		if ("guardarPerfil".equals(accion)) {
+			String nombre = request.getParameter("nombrePerfil");
+			String apellido1 = request.getParameter("apellido1Perfil");
+			String apellido2 = request.getParameter("apellido2Perfil");		
+			String telefono = request.getParameter("telefonoPerfil");
+			String direccion = request.getParameter("direccionPerfil");
+			String provincia = request.getParameter("provinciaPerfil");
+			String localidad = request.getParameter("localidadPerfil");
+			
+			UsuarioService.actualizarUsuario(usuario, nombre, apellido1, apellido2, telefono, direccion, provincia, localidad);
+						
+		} else if ("cambioClave".equals(accion)) {
+			
+			String claveActual = request.getParameter("claveActual");
+			String claveNueva = request.getParameter("claveNueva");
+			
+			if (claveActual != null && !claveActual.isEmpty()) {
+				
+				System.out.println("claveActual: " + claveActual);
+								
+				if (UsuarioService.compararClave(usuario, claveActual)) {
+					
+					System.out.println("claveActual: " + claveActual);
+					
+					if (claveNueva != null && !claveNueva.isEmpty()) {		
+						System.out.println("claveNueva: " + claveNueva);
+						UsuarioService.actualizarClave(usuario, claveNueva);
+					}
+				}
+			}
 		}
-		
-		String telefono = request.getParameter("telefonoPerfil");
-		String direccion = request.getParameter("direccionPerfil");
-		String provincia = request.getParameter("provinciaPerfil");
-		String localidad = request.getParameter("localidadPerfil");
-
-		UsuarioService.actualizarUsuario(usuario, nombre, apellido1, apellido2, password, telefono, direccion, provincia, localidad);
-		
+				
 		request.getSession().setAttribute("usuario", usuario);
-		
 		request.getRequestDispatcher(Rutas.PERFIL_JSP).forward(request, response);
 	}
 

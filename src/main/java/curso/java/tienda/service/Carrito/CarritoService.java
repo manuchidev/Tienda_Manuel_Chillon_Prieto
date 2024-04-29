@@ -54,15 +54,34 @@ public class CarritoService {
 		
 		double total = 0;
 		
-		for (Map.Entry<ProductoVO, Integer> productoCarrito : carrito.entrySet()) {
-			
-			ProductoVO producto = productoCarrito.getKey();
-			int cantidad = productoCarrito.getValue();
-			
-			total += producto.getPrecio() * cantidad;
+		if (carrito != null) {
+
+			for (Map.Entry<ProductoVO, Integer> productoCarrito : carrito.entrySet()) {
+				
+				ProductoVO producto = productoCarrito.getKey();
+				int cantidad = productoCarrito.getValue();
+				
+				total += producto.getPrecio() * cantidad;
+			}			
 		}
 		
+		// Redondeamos el total a dos decimales
+		total = Math.round(total * 100.0) / 100.0;
+
 		return total;
+	}
+	
+	
+	public static double calcularTotalIVA(double totalCarrito) {
+		
+		double IVA = 0.21;
+		
+		double totalCarritoIVA = (totalCarrito * IVA) + totalCarrito;
+		
+		// Redondeamos el total a dos decimales
+		totalCarritoIVA = Math.round(totalCarritoIVA * 100.0) / 100.0;
+
+		return totalCarritoIVA;
 	}
 	
 	public static void eliminarProducto(HashMap<ProductoVO, Integer> carrito, int id) {

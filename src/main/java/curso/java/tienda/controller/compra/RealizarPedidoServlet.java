@@ -88,7 +88,10 @@ public class RealizarPedidoServlet extends HttpServlet {
 				if (stockSuficiente) {
 					
 					CompraService.completarPedido(carrito, usuario, metodo_pago);
-															
+
+					// Borrar los datos del carrito
+					session.removeAttribute("carrito");
+																							
 					request.getRequestDispatcher(Rutas.RESULTADO_JSP).forward(request, response);
 				
 				} else {
@@ -104,7 +107,6 @@ public class RealizarPedidoServlet extends HttpServlet {
 		} else {
 			request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
 		}
-		
 
 	}
 

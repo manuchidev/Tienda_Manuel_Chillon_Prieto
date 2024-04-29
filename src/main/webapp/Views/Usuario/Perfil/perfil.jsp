@@ -81,12 +81,7 @@
 											<label class="labels">Email</label>
 											<input type="text" class="form-control noEditable" value="<%= usuario.getEmail()%>" readonly>
 										</div>
-										
-										<div class="col-md-6 mt-3">
-											<label class="labels">Contraseña</label>
-											<input type="password" class="form-control" value="<%= usuario.getClave()%>" name="clavePerfil">
-										</div>
-										
+																				
 										<div class="col-md-6 mt-3">
 											<label class="labels">Teléfono</label>
 											<input type="text" class="form-control" value="<%= usuario.getTelefono()%>" name="telefonoPerfil">
@@ -111,7 +106,7 @@
 									
 									<div class="mt-5 text-center">
 										<input type="hidden" name="idPerfil" value="<%= usuario.getId()%>">
-										<button class="btn btn-outline-light btn-lg px-5" type="submit">Guardar Perfil</button>
+										<button type="submit" class="btn btn-outline-light btn-lg px-5" name="accion" value="guardarPerfil">Guardar Perfil</button>
 									</div>
 									
 								</form>							
@@ -124,45 +119,74 @@
 						
 							<div class="p-3 py-5">
 							
-								<div class="d-flex justify-content-between align-items-center experience">
-									<span class="text-white">Tarjeta de Crédito</span>
-									<span class="border px-3 p-1 add-experience">
-										<i class="fa fa-plus"></i>&nbsp;Añadir Tarjeta
-									</span>
-								</div>
+								<form action="Perfil" method="post">
 								
-								<br>
-								
-								<div class="col-md-12">
-									<label class="labels">Titular</label>
-									<input type="text" class="form-control" value="<%=usuario.getNombre()%> <%=usuario.getApellido1()%> <%=usuario.getApellido2()%>">
-								</div>
-								
-								<br>
-								
-								<div class="col-md-12">
-									<label class="labels">IBAN</label>
-									<input type="text" class="form-control" value="">
-								</div>
-								
-								<br>
-								
-								<div class="row">
-								
-									<div class="col-md-6">
-										<label class="labels">Fecha de Expedición</label>
-										<input type="date" class="form-control" placeholder="additional details" value="">
+									<div class="d-flex justify-content-center align-items-center">
+										<span class="text-white">Cambio de Contraseña</span>
 									</div>
-									
-									<div class="col-md-6">
-										<label class="labels">CVV</label>
-										<input type="password" class="form-control" value="">
+																	
+									<div class="col-md-12 mt-3">
+										<label class="labels">Contraseña Actual</label>
+										<input type="password" class="form-control" name="claveActual">
 									</div>
-									
-								</div>
 																
-								
+									<div class="col-md-12 mt-3">
+										<label class="labels">Nueva Contraseña</label>
+										<input type="password" class="form-control" name="claveNueva">
+									</div>
+											
+									<div class="col-md-12 mt-4 text-center">
+										<button type="submit" class="btn btn-outline-light btnCambioClave" name="accion" value="cambioClave">
+	                                        <i class="fa fa-key"></i>&nbsp;Cambiar Contraseña							
+										</button>
+									</div>
+														
+								</form>
+																														
 							</div>
+						
+<!-- 						<div class="col-md-4"> -->
+						
+<!-- 							<div class="p-3 py-5"> -->
+							
+<!-- 								<div class="d-flex justify-content-between align-items-center experience"> -->
+<!-- 									<span class="text-white">Tarjeta de Crédito</span> -->
+<!-- 									<span class="border px-3 p-1 add-experience"> -->
+<!-- 										<i class="fa fa-plus"></i>&nbsp;Añadir Tarjeta -->
+<!-- 									</span> -->
+<!-- 								</div> -->
+								
+<!-- 								<br> -->
+								
+<!-- 								<div class="col-md-12"> -->
+<!-- 									<label class="labels">Titular</label> -->
+<%-- 									<input type="text" class="form-control" value="<%=usuario.getNombre()%> <%=usuario.getApellido1()%> <%=usuario.getApellido2()%>"> --%>
+<!-- 								</div> -->
+								
+<!-- 								<br> -->
+								
+<!-- 								<div class="col-md-12"> -->
+<!-- 									<label class="labels">IBAN</label> -->
+<!-- 									<input type="text" class="form-control" value=""> -->
+<!-- 								</div> -->
+								
+<!-- 								<br> -->
+								
+<!-- 								<div class="row"> -->
+								
+<!-- 									<div class="col-md-6"> -->
+<!-- 										<label class="labels">Fecha de Expedición</label> -->
+<!-- 										<input type="date" class="form-control" placeholder="additional details" value=""> -->
+<!-- 									</div> -->
+									
+<!-- 									<div class="col-md-6"> -->
+<!-- 										<label class="labels">CVV</label> -->
+<!-- 										<input type="password" class="form-control" value=""> -->
+<!-- 									</div> -->
+									
+<!-- 								</div> -->
+																								
+<!-- 							</div> -->
 							
 						</div>
 						

@@ -50,12 +50,13 @@ public class LoginServlet extends HttpServlet {
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
 		
-		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		if (carrito != null) {
+			request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		}
 		
 		String email = request.getParameter("emailLogin");
 		String clave = request.getParameter("passwordLogin");
-
-		
+				
 		if (email != null && !email.isEmpty() && clave != null && !clave.isEmpty()) {
 			
 			UsuarioVO usuario = UsuarioService.validarUsuario(email, clave);

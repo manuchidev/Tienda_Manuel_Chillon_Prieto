@@ -122,17 +122,33 @@ public class UsuarioDAO {
 		try {
             
             Connection con = Conexion.getConexion();
-            PreparedStatement st = con.prepareStatement("UPDATE usuarios SET nombre = ?, apellido1 = ?, apellido2 = ?, clave = ?, telefono = ?, direccion = ?, provincia = ?, localidad = ? WHERE id = ?");
+            PreparedStatement st = con.prepareStatement("UPDATE usuarios SET nombre = ?, apellido1 = ?, apellido2 = ?, telefono = ?, direccion = ?, provincia = ?, localidad = ? WHERE id = ?");
             
             st.setString(1, usuario.getNombre());
             st.setString(2, usuario.getApellido1());
             st.setString(3, usuario.getApellido2());
-            st.setString(4, usuario.getClave());
-            st.setString(5, usuario.getTelefono());
-            st.setString(6, usuario.getDireccion());
-            st.setString(7, usuario.getProvincia());
-            st.setString(8, usuario.getLocalidad());
-            st.setInt(9, usuario.getId());
+            st.setString(4, usuario.getTelefono());
+            st.setString(5, usuario.getDireccion());
+            st.setString(6, usuario.getProvincia());
+            st.setString(7, usuario.getLocalidad());
+            st.setInt(8, usuario.getId());
+            
+            st.executeUpdate();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }        
+	}
+	
+	public static void updateClaveUsuario(UsuarioVO usuario, String clave) {
+		
+		try {
+            
+            Connection con = Conexion.getConexion();
+            PreparedStatement st = con.prepareStatement("UPDATE usuarios SET clave = ? WHERE id = ?");
+            
+            st.setString(1, clave);
+            st.setInt(2, usuario.getId());
             
             st.executeUpdate();
             

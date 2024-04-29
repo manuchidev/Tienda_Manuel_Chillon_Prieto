@@ -52,6 +52,7 @@ public class ComprarServlet extends HttpServlet {
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 		
 		UsuarioVO usuario = (UsuarioVO)session.getAttribute("usuario");
 		

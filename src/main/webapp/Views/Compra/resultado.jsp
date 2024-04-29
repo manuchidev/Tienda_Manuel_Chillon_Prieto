@@ -20,15 +20,16 @@
 		<jsp:include page="<%= Rutas.NAV%>" />
 		
 		<main>
-		
+			
+			<div class="d-flex flex-column justify-content-center align-items-center">
+			    <h1 class="mt-2">GRACIAS POR SU COMPRA</h1>
+				<h3 class="mt-5" style="color: green">PEDIDO REALIZADO CON ÉXITO</h3>
+			</div>			
 		
 		</main>
 					
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 	
-	
-<%-- 		<script src="<c:url value="<%= Rutas.JS %>scripts.js" />"></script> --%>
-
 	</body>
 	
 </html>

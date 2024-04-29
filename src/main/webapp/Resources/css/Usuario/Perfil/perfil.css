@@ -22,11 +22,12 @@
 	color: gray;
 }
 
-.add-experience {
+.btnCambioClave {
 	color: white;
+	background-color: black;
 }
 
-.add-experience:hover {
+.btnCambioClave:hover {
     background: #ffffff;
     color: black;
     border: solid 1px black;

@@ -45,14 +45,8 @@
 						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
 
 	   					double totalCarrito = (double)request.getAttribute("totalCarrito");						
-						double IVA = 0.21;
-						
-						double totalIVA = totalCarrito * IVA;
-						
-				        // Formatear el número con dos decimales utilizando String.format
-				        String resultado = String.format("%.2f", totalCarrito);
-				        String resultadoIVA = String.format("%.2f", totalIVA + totalCarrito);
-							
+	   					double totalCarritoIVA = (double)request.getAttribute("totalCarritoIVA");;
+													
 						if (carrito != null && !carrito.isEmpty()) {
 							
 							for (Map.Entry<ProductoVO, Integer> productoCarrito : carrito.entrySet()) {
@@ -223,7 +217,7 @@
 			              <li
 			                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
 			                Productos
-			                <span><%= resultado%> €</span>
+			                <span><%= totalCarrito %> €</span>
 			              </li>
 			              
 			              <li class="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -239,7 +233,7 @@
 			                    <p class="mb-0">(IVA incluido)</p>
 			                  </strong>
 			                </div>
-			                <span><strong><%= resultadoIVA %> €</strong></span>
+			                <span><strong><%= totalCarritoIVA %> €</strong></span>
 			              </li>
 			              
 			            </ul>

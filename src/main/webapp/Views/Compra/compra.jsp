@@ -64,13 +64,8 @@
 						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
 	
 	   					double totalCarrito = (double)request.getAttribute("totalCarrito");						
-						double IVA = 0.21;
+	   					double totalCarritoIVA = (double)request.getAttribute("totalCarritoIVA");
 						
-						double totalIVA = totalCarrito * IVA;
-						
-				        // Formatear el número con dos decimales utilizando String.format
-				        String resultado = String.format("%.2f", totalCarrito);
-				        String resultadoIVA = String.format("%.2f", totalIVA + totalCarrito);
 							
 						for (Map.Entry<ProductoVO, Integer> productoCarrito : carrito.entrySet()) {
 							
@@ -98,7 +93,7 @@
 			            
 			            <li class="list-group-item d-flex justify-content-between">
 			              <span>Total (IVA)</span>
-			              <strong><%= resultadoIVA %> €</strong>
+			              <strong><%= totalCarritoIVA %> €</strong>
 			            </li>
 			            
 			          </ul>
@@ -277,7 +272,7 @@
 				            
 				              <div class="col-md-6 mb-3">
 				                <label for="nombre_titular">Nombre del titular</label>
-				                <input type="text" class="form-control" id="nombre_titular" name="nombre_titular" placeholder="" required>
+				                <input type="text" class="form-control" id="nombre_titular" name="nombre_titular" placeholder="" value="<%=usuario.getNombre()%> <%=usuario.getApellido1()%> <%=usuario.getApellido2()%>" required>
 				                
 				                <small class="text-muted">Nombre completo como aparece en la tarjeta</small>
 				                

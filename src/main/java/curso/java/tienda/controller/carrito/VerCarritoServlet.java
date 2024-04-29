@@ -44,6 +44,7 @@ public class VerCarritoServlet extends HttpServlet {
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
 		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 						
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}
