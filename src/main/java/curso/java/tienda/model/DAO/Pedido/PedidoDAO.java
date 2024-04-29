@@ -34,7 +34,7 @@ public class PedidoDAO {
 				pedido.setMetodo_pago(rs.getString("metodo_pago"));
 				pedido.setEstado(rs.getString("estado"));
 				pedido.setNum_factura(rs.getString("num_factura"));
-				pedido.setTotal(rs.getDouble("total"));
+				pedido.setTotal(rs.getBigDecimal("total"));
 				
 				pedidos.add(pedido);
 			}
@@ -70,7 +70,7 @@ public class PedidoDAO {
 				pedido.setMetodo_pago(rs.getString("metodo_pago"));
 				pedido.setEstado(rs.getString("estado"));
 				pedido.setNum_factura(rs.getString("num_factura"));
-				pedido.setTotal(rs.getDouble("total"));
+				pedido.setTotal(rs.getBigDecimal("total"));
 	
 			}
 			
@@ -106,7 +106,7 @@ public class PedidoDAO {
 				pedido.setMetodo_pago(rs.getString("metodo_pago"));
 				pedido.setEstado(rs.getString("estado"));
 				pedido.setNum_factura(rs.getString("num_factura"));
-				pedido.setTotal(rs.getDouble("total"));
+				pedido.setTotal(rs.getBigDecimal("total"));
 				
 				pedidos.add(pedido);
 			}
@@ -162,7 +162,7 @@ public class PedidoDAO {
 			st.setString(3, pedido.getMetodo_pago());
 			st.setString(4, pedido.getEstado());
 			st.setString(5, pedido.getNum_factura());
-			st.setDouble(6, pedido.getTotal());
+			st.setBigDecimal(6, pedido.getTotal());
 			st.setInt(7, pedido.getId());
 
 			st.executeUpdate();

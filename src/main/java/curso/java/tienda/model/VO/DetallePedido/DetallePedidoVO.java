@@ -20,7 +20,7 @@ public class DetallePedidoVO {
 	private BigDecimal impuesto;
 	private BigDecimal total;
 
-	public DetallePedidoVO(int id_pedido, int id_producto, BigDecimal precio_unidad, int unidades, BigDecimal impuesto, BigDecimal total) {
+	public DetallePedidoVO(int id_pedido, int id_producto, BigDecimal precio_unidad, int unidades, BigDecimal impuesto) {
 		this.id_pedido = id_pedido;
 		this.id_producto = id_producto;
 		this.precio_unidad = precio_unidad;
@@ -28,9 +28,9 @@ public class DetallePedidoVO {
 		this.impuesto = impuesto;
 		
 		BigDecimal totalSinImpuesto = precio_unidad.multiply(BigDecimal.valueOf(unidades));
-		BigDecimal totalImpuesto = totalSinImpuesto.multiply(impuesto.add(BigDecimal.ONE));
+		BigDecimal totalImpuesto = totalSinImpuesto.multiply(impuesto).add(totalSinImpuesto);
 		
-		this.total = totalSinImpuesto.add(totalImpuesto) ;
+		this.total = totalImpuesto ;
 	}
 
 }

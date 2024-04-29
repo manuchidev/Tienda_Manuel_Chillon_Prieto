@@ -1,7 +1,6 @@
 package curso.java.tienda.service.Compra;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -14,7 +13,6 @@ import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.DetallePedido.DetallePedidoService;
 import curso.java.tienda.service.Pedido.PedidoService;
 import curso.java.tienda.service.Producto.ProductoService;
-
 
 public class CompraService {
 	
@@ -107,16 +105,11 @@ public class CompraService {
 			Integer cantidad = entry.getValue();
 			
 			int id_producto = producto.getId();
+
 			BigDecimal precio_unidad = (BigDecimal)producto.getPrecio();
 			BigDecimal impuesto = producto.getImpuesto();
-			
-			BigDecimal totalSinImpuesto = BigDecimal.valueOf(precio_unidad * cantidad).setScale(2, RoundingMode.HALF_UP);
-			
-			BigDecimal totalImpuesto = totalSinImpuesto.multiply(BigDecimal.valueOf(impuesto));
-			
-			BigDecimal total = totalSinImpuesto.add(totalImpuesto).setScale(2, RoundingMode.HALF_UP);
-					
-			DetallePedidoVO detallePedido = new DetallePedidoVO(idPedido, id_producto, precio_unidad, cantidad, impuesto, total);
+											
+			DetallePedidoVO detallePedido = new DetallePedidoVO(idPedido, id_producto, precio_unidad, cantidad, impuesto);
 			System.out.println("Detalle pedido total: " + detallePedido.getTotal());
 			
 			DetallePedidoService.realizarDetallePedido(detallePedido);

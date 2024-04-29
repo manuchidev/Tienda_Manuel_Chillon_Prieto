@@ -45,12 +45,9 @@ public class CantidadCarritoServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 		
-		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
-		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
+		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 				
-		int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-		
+		int cantidad = Integer.parseInt(request.getParameter("cantidad"));		
 		int idProducto = Integer.parseInt(request.getParameter("idProd"));
 		
 		for (ProductoVO producto : carrito.keySet()) {
@@ -60,6 +57,7 @@ public class CantidadCarritoServlet extends HttpServlet {
 		}
 		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 						
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}

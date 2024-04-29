@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import=" java.util.*, curso.java.tienda.config.Rutas,curso.java.tienda.model.VO.Producto.ProductoVO" %>
+	import=" java.util.*, java.math.BigDecimal, curso.java.tienda.config.Rutas,curso.java.tienda.model.VO.Producto.ProductoVO" %>
 
 <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
 
@@ -44,8 +44,8 @@
 						// Obtenemos los productos del carrito de la sesión					
 						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
 
-	   					double totalCarrito = (double)request.getAttribute("totalCarrito");						
-	   					double totalCarritoIVA = (double)request.getAttribute("totalCarritoIVA");;
+	   					BigDecimal totalCarrito = (BigDecimal)request.getAttribute("totalCarrito");						
+	   					BigDecimal totalCarritoIVA = (BigDecimal)request.getAttribute("totalCarritoIVA");
 													
 						if (carrito != null && !carrito.isEmpty()) {
 							
@@ -53,6 +53,10 @@
 								
 								ProductoVO producto = productoCarrito.getKey();
 								int cantidad = productoCarrito.getValue();
+								
+								BigDecimal precioTotal = producto.getPrecio().multiply(new BigDecimal(cantidad));
+								
+// 								BigDecimal precioTotal = producto.getPrecio().multiply(new BigDecimal(cantidad));
 					%>
 					            <!-- Single item -->
 					            <div class="row">
@@ -120,7 +124,7 @@
 					
 					                <!-- Price -->
 					                <p class="text-start text-md-center">
-					                  <strong><%= cantidad * producto.getPrecio()%> €</strong>
+					                  <strong><%= precioTotal %> €</strong>
 					                </p>
 					                <!-- Price -->
 					                

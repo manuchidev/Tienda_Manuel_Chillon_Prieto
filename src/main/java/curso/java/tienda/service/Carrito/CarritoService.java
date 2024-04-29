@@ -1,9 +1,8 @@
 package curso.java.tienda.service.Carrito;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Producto.ProductoService;
@@ -50,9 +49,9 @@ public class CarritoService {
 		}
 	}
 	
-	public static double calcularTotal(HashMap<ProductoVO, Integer> carrito) {
+	public static BigDecimal calcularTotal(HashMap<ProductoVO, Integer> carrito) {
 		
-		double total = 0;
+		BigDecimal total = new BigDecimal("0.0");
 		
 		if (carrito != null) {
 
@@ -61,26 +60,20 @@ public class CarritoService {
 				ProductoVO producto = productoCarrito.getKey();
 				int cantidad = productoCarrito.getValue();
 				
-				total += producto.getPrecio() * cantidad;
+				total = producto.getPrecio().multiply(BigDecimal.valueOf(cantidad)).add(total);
 			}			
 		}
 		
-		// Redondeamos el total a dos decimales
-		total = Math.round(total * 100.0) / 100.0;
-
 		return total;
 	}
 	
 	
-	public static double calcularTotalIVA(double totalCarrito) {
+	public static BigDecimal calcularTotalIVA(BigDecimal totalCarrito) {
 		
 		double IVA = 0.21;
 		
-		double totalCarritoIVA = (totalCarrito * IVA) + totalCarrito;
+		BigDecimal totalCarritoIVA = totalCarrito.multiply(BigDecimal.valueOf(IVA)).add(totalCarrito).setScale(2, BigDecimal.ROUND_HALF_UP);
 		
-		// Redondeamos el total a dos decimales
-		totalCarritoIVA = Math.round(totalCarritoIVA * 100.0) / 100.0;
-
 		return totalCarritoIVA;
 	}
 	
@@ -100,8 +93,7 @@ public class CarritoService {
 				} else {
 					System.out.println("No se ha encontrado el producto en el carrito");
 				}									
-			}
-			
+			}			
 		}
 	}
 	

@@ -32,11 +32,11 @@ public class ProductoDAO {
 				producto.setId_categoria(rs.getInt("id_categoria"));
 				producto.setNombre(rs.getString("nombre"));
 				producto.setDescripcion(rs.getString("descripcion"));
-				producto.setPrecio(rs.getDouble("precio"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
 				producto.setStock(rs.getInt("stock"));
 				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
 				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
-				producto.setImpuesto(rs.getFloat("impuesto"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
 				producto.setImagen(rs.getString("imagen"));
 				
 				productos.add(producto);
@@ -71,11 +71,11 @@ public class ProductoDAO {
 				producto.setId_categoria(rs.getInt("id_categoria"));
 				producto.setNombre(rs.getString("nombre"));
 				producto.setDescripcion(rs.getString("descripcion"));
-				producto.setPrecio(rs.getDouble("precio"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
 				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
 				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
 				producto.setStock(rs.getInt("stock"));
-				producto.setImpuesto(rs.getFloat("impuesto"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
 				producto.setImagen(rs.getString("imagen"));
 	
 			}
@@ -111,11 +111,11 @@ public class ProductoDAO {
 				producto.setId_categoria(rs.getInt("id_categoria"));
 				producto.setNombre(rs.getString("nombre"));
 				producto.setDescripcion(rs.getString("descripcion"));
-				producto.setPrecio(rs.getDouble("precio"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
 				producto.setStock(rs.getInt("stock"));
 				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
 				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
-				producto.setImpuesto(rs.getFloat("impuesto"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
 				producto.setImagen(rs.getString("imagen"));
 				
 				productos.add(producto);

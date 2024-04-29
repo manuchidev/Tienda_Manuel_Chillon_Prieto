@@ -1,5 +1,6 @@
 package curso.java.tienda.model.VO.Pedido;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class PedidoVO {
 	private String metodo_pago;
 	private String estado;
 	private String num_factura;
-	private double total;
+	private BigDecimal total;
 	
 	public PedidoVO(int id_usuario, Timestamp fecha, String metodo_pago) {
 		this.id_usuario = id_usuario;

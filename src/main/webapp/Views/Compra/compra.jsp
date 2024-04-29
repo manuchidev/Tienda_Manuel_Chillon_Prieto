@@ -1,6 +1,6 @@
 <%@page import="curso.java.tienda.model.VO.Compra.ProvinciasLocalidadesVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.ProductoVO, 
+	import="java.util.*, java.math.BigDecimal, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.ProductoVO, 
 	curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Compra.MetodoPagoVO"
 %>
 
@@ -63,21 +63,22 @@
 						// Obtenemos los productos del carrito de la sesión					
 						HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
 	
-	   					double totalCarrito = (double)request.getAttribute("totalCarrito");						
-	   					double totalCarritoIVA = (double)request.getAttribute("totalCarritoIVA");
-						
-							
+	   					BigDecimal totalCarrito = (BigDecimal)request.getAttribute("totalCarrito");						
+	   					BigDecimal totalCarritoIVA = (BigDecimal)request.getAttribute("totalCarritoIVA");
+													
 						for (Map.Entry<ProductoVO, Integer> productoCarrito : carrito.entrySet()) {
 							
 							ProductoVO producto = productoCarrito.getKey();
 							int cantidad = productoCarrito.getValue();
+							
+							BigDecimal precioTotal = producto.getPrecio().multiply(new BigDecimal(cantidad));
 					  %>		          
 				            <li class="list-group-item d-flex justify-content-between lh-condensed">
 				              <div>
 				                <h6 class="my-0"><%= producto.getNombre()%></h6>
 				                <small class="text-muted">Cantidad: <%= cantidad%></small>
 				              </div>
-				              <span class="text-muted"><%= cantidad * producto.getPrecio()%>€</span>
+				              <span class="text-muted"><%= precioTotal %>€</span>
 				            </li>
 				      <%
 						}																				    								    
