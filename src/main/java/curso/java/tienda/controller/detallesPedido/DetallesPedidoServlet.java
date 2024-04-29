@@ -1,4 +1,4 @@
-package curso.java.tienda.controller.pedidos;
+package curso.java.tienda.controller.detallesPedido;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,23 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
-import curso.java.tienda.model.VO.Pedido.PedidoVO;
-import curso.java.tienda.model.VO.Usuario.UsuarioVO;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.DetallePedido.DetallePedidoService;
-import curso.java.tienda.service.Pedido.PedidoService;
 
 /**
- * Servlet implementation class PedidosServlet
+ * Servlet implementation class DetallesPedidoServlet
  */
 
-@WebServlet("/Pedidos")
-public class PedidosServlet extends HttpServlet {
+@WebServlet("/DetallesPedido")
+public class DetallesPedidoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PedidosServlet() {
+    public DetallesPedidoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,31 +35,32 @@ public class PedidosServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
+		String id = request.getParameter("idPedido");
 		
-		List<PedidoVO> pedidos = PedidoService.getPedidoUsuario(usuario.getId());		
-		request.setAttribute("pedidos", pedidos);
+		if (id != null) {
+			
+			int idPedido = Integer.parseInt(id);
+			
+			List<DetallePedidoVO> detallesPedido = DetallePedidoService.getDetallesPedidoIdPedido(idPedido);			
+			request.setAttribute("detallesPedido", detallesPedido);
+			
+			List<ProductoVO> productosDetallePedido = DetallePedidoService.getProductosDetallePedido(idPedido);
+			request.setAttribute("productosDetallePedido", productosDetallePedido);
+			
+			request.getRequestDispatcher(Rutas.DETALLES_PEDIDO_JSP).forward(request, response);
+		
+		} else {
+			request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
+		}
 				
-		request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String accion = request.getParameter("accion");	
-		String id = request.getParameter("idPedido");
-		
-		int idPedido = Integer.parseInt(id);
-		
-		if ("Factura".equals(accion)) {
-			
-
-		} else if ("Cancelacion".equals(accion)) {
-
-		}
-				
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

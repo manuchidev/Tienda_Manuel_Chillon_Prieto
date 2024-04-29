@@ -1,5 +1,6 @@
 package curso.java.tienda.model.VO.Producto;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
@@ -16,11 +17,11 @@ public class ProductoVO {
 	private int id_categoria;
 	private String nombre;
 	private String descripcion;
-	private double precio;
+	private BigDecimal precio;
 	private int stock;
 	private Timestamp fecha_alta;
 	private Timestamp fecha_baja;
-	private float impuesto;
+	private BigDecimal impuesto;
 	private String imagen;
 	
 }

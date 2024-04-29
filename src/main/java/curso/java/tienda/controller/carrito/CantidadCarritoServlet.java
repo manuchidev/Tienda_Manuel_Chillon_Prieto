@@ -45,7 +45,9 @@ public class CantidadCarritoServlet extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 		
-		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
+		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
+		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 				
 		int cantidad = Integer.parseInt(request.getParameter("cantidad"));
 		

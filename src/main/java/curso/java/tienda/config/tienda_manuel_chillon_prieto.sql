@@ -59,7 +59,7 @@ CREATE TABLE `configuracion` (
 -- --------------------------------------------------------
 
 INSERT INTO configuracion VALUES
-	('num_factura', 0);
+	(0, 'num_factura', '0', '');
 
 --
 -- Estructura de tabla para la tabla `descuentos`
@@ -68,7 +68,7 @@ INSERT INTO configuracion VALUES
 CREATE TABLE `descuentos` (
   `id` int(11) NOT NULL,
   `codigo` varchar(255) DEFAULT NULL,
-  `descuento` float DEFAULT NULL,
+  `descuento` DECIMAL(10, 2) DEFAULT NULL,
   `fecha_inicio` timestamp NULL DEFAULT NULL,
   `fecha_fin` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -83,10 +83,10 @@ CREATE TABLE `detalles_pedido` (
   `id` int(11) NOT NULL,
   `id_pedido` int(11) DEFAULT NULL,
   `id_producto` int(11) DEFAULT NULL,
-  `precio_unidad` float DEFAULT NULL,
+  `precio_unidad` DECIMAL(10, 2) DEFAULT NULL,
   `unidades` int(11) DEFAULT NULL,
   `impuesto` float DEFAULT NULL,
-  `total` double DEFAULT NULL
+  `total` DECIMAL(10, 2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -118,7 +118,7 @@ CREATE TABLE `metodos_pago` (
 --
 
 INSERT INTO `metodos_pago` (`id`, `metodo_pago`) VALUES
-(1, 'Tarjeta de Crédito'),
+(1, 'Tarjeta'),
 (2, 'Paypal'),
 (3, 'Contra reembolso');
 
@@ -147,7 +147,7 @@ CREATE TABLE `pedidos` (
   `metodo_pago` varchar(255) DEFAULT NULL,
   `estado` varchar(255) DEFAULT NULL,
   `num_factura` varchar(255) DEFAULT NULL,
-  `total` double DEFAULT NULL
+  `total` DECIMAL(10, 2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -161,11 +161,11 @@ CREATE TABLE `productos` (
   `id_categoria` int(11) DEFAULT NULL,
   `nombre` varchar(255) DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
-  `precio` double DEFAULT NULL,
+  `precio` DECIMAL(10, 2) DEFAULT NULL,
   `stock` int(11) DEFAULT NULL,
   `fecha_alta` timestamp NULL DEFAULT NULL,
   `fecha_baja` timestamp NULL DEFAULT NULL,
-  `impuesto` float DEFAULT NULL,
+  `impuesto` DECIMAL(4, 2) DEFAULT NULL,
   `imagen` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

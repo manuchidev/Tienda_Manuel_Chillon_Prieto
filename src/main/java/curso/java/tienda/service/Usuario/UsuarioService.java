@@ -155,9 +155,11 @@ public class UsuarioService {
 	}
 		
 	
-	public static void registrarCliente(UsuarioVO usuario) {
+	public static UsuarioVO registrarCliente(UsuarioVO usuario) {
 					
-		UsuarioDAO.insertarCliente(usuario);
+		UsuarioVO usuarioRegistrado = UsuarioDAO.insertarCliente(usuario);
+		
+		return usuarioRegistrado;
 	}
 	
 	public static void actualizarUsuario(UsuarioVO usuario, String nombre, String apellido1, String apellido2, String telefono, String direccion, String provincia, String localidad) {

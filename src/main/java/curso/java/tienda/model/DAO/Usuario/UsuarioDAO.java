@@ -91,12 +91,14 @@ public class UsuarioDAO {
 				
 	}
 	
-	public static void insertarCliente(UsuarioVO usuario) {
+	public static UsuarioVO insertarCliente(UsuarioVO usuario) {
+		
+		UsuarioVO usuarioRegistrado = null;
 				    
         try {
             
             Connection con = Conexion.getConexion();
-            PreparedStatement st = con.prepareStatement("INSERT INTO usuarios (id_rol, email, clave, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni) VALUES (3, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement st = con.prepareStatement("INSERT INTO usuarios (id_rol, email, clave, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni) VALUES (3, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
             
             st.setString(1, usuario.getEmail());
             st.setString(2, usuario.getClave());
@@ -108,13 +110,20 @@ public class UsuarioDAO {
             st.setString(8, usuario.getLocalidad());
             st.setString(9, usuario.getTelefono());
             st.setString(10, usuario.getDni());
-            
+
             st.executeUpdate();
+            
+            ResultSet rs = st.getGeneratedKeys();
+            
+			if (rs.next()) {
+				usuarioRegistrado = UsuarioDAO.findById(rs.getInt(1));
+			}
                         
         } catch (SQLException e) {
         	e.printStackTrace();
         }       
         
+        return usuarioRegistrado;
 	}
 	
 	public static void updateUsuario(UsuarioVO usuario) {

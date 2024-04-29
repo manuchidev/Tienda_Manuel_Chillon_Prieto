@@ -15,112 +15,116 @@
 	  
 	</head>
 	
-	<body>
+	<body class="gradient-custom">
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
 		<jsp:include page="<%= Rutas.NAV%>" />
 		
 		<main>
-		
-<section class="h-100 gradient-custom">
+	
+			<section class="gradient-custom">
 			
-			  <div class="container py-5">
-			  
-			    <div class="row d-flex justify-content-center my-4">
-			    			    
-			      <div class="col-md-8">
-			      
-			        <div class="card mb-4">
-			        
-			          <div class="card-header py-3">			          
-			            <h5 class="mb-0">Lista de Productos</h5>
-			          </div>
-			          
-			          <div class="card-body">
-					          
-   					<%	
-						List<PedidoVO> pedidos = (List<PedidoVO>) request.getAttribute("pedidos");
+				<div class="container py-5">
+				
+					<div class="row d-flex justify-content-center my-4">
+					
+						<div class="col-md-10">
 						
-						
-				        // Formatear el número con dos decimales utilizando String.format
-// 				        String resultadoIVA = String.format("%.2f", totalIVA + totalCarrito);
+							<div class="card mb-4">
 							
-						if (pedidos != null && !pedidos.isEmpty()) {
-							
-							for (PedidoVO pedido : pedidos) {
+								<div class="card-header py-3">
+									<h5 class="mb-0">Lista de Pedidos</h5>
+								</div>
 								
-					%>
-					            <!-- Single item -->
-					            <div class="row">
-					
-					              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-					              
-					                <!-- Data -->
-					                <p><strong><%= pedido.getFecha()%></strong></p>
-					                <p><%= pedido.getMetodo_pago()%></p>
-					                
-					                				                
-					                <!-- Data -->
-					              </div>
-					
-					              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-					
-					                <!-- Price -->
-					                <p class="text-start text-md-center">
-					                  <strong><%= pedido.getEstado()%> </strong>
-					                </p>
-					                <!-- Price -->
-					                
-					              </div>
-					              
-					              <div class="col-lg-12 col-md-6 mb-4 mb-lg-0">
-					              
-					              	<form action="factura" method="post">
-					              	
-					              		<input type="hidden" id="idProd" name="idProd" value="<%= pedido.getId() %>"></input>
-	            		                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-sm me-1" value="Detalle">
-<!-- 						                  <i class="fas fa-trash"></i> -->
-						                </button>
-	              		                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-sm me-1" value="Factura">
-<!-- 						                  <i class="fas fa-trash"></i> -->
-						                </button>
-						                
-					                </form>
-					                
-					              </div>
-					              
-					            </div>
-					            <!-- Single item -->
-					
-					            <hr class="my-4" />
-										           
-	      			<%
-							}
-							
-						} else {
-							
-					%>
-							<div class="col-md-8">
-								<h2 style="color: red">Todavía no ha realizado ningún pedido</h2>
-							</div>							
-					<%
-						        
-						}
-					%>
+								<div class="card-body">
 								
-				          </div>
-					          
-				        </div>
-				        
-				  </div>
-					      
-			    </div>
-			    
-			  </div>
-			  
-			</section>
+								<%  
+		                            List<PedidoVO> pedidos = (List<PedidoVO>) request.getAttribute("pedidos");
 		
+		                            if (pedidos != null && !pedidos.isEmpty()) {
+	                        	%>
+										<div class="table-responsive">
+										
+											<table class="table table-striped">
+											
+												<thead>
+												
+													<tr class="text-center">
+													
+														<th class="w-25">Fecha</th>
+														<th class="w-25">Método de Pago</th>
+														<th class="w-25">Estado</th>
+														<th class="w-25">Acciones</th>
+														
+													</tr>
+													
+												</thead>
+												
+												<tbody>
+												
+												<% for (PedidoVO pedido : pedidos) { %>
+													
+													<tr class="text-center">
+													
+														<td><%= pedido.getFecha() %></td>
+														<td><%= pedido.getMetodo_pago() %></td>
+														<td><%= pedido.getEstado() %></td>
+														
+														<td class="d-flex flex-column justify-content-center">
+
+														    <div class="d-flex justify-content-center mb-2">
+														    
+														        <form action="DetallesPedido" method="post" class="me-1">
+														            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+														            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
+														        </form>
+														        
+														        <form action="Pedidos" method="post">
+														            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+														            <button type="submit" class="btn btn-sm bg-success" name="accion" value="Factura">Factura</button>
+														        </form>
+														        
+														    </div>
+														
+														    <form action="Pedidos" method="post">
+														        <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+														        <button type="submit" class="btn btn-sm bg-danger" name="accion" value="Cancelacion">Solicitar Cancelación</button>
+														    </form>
+																							
+														</td>
+
+													</tr>
+													
+												<% } %>
+													
+												</tbody>
+												
+											</table>
+											
+										</div>
+										
+							<%  
+	                            } else {
+	                        %>
+									<div class="col-md-12">
+										<h2 style="color: red; text-align: center;">Todavía no ha realizado ningún pedido</h2>
+									</div>
+									
+									<% } %>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</section>
+	
 		</main>
 		
 				

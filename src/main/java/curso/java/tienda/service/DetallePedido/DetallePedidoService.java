@@ -1,9 +1,11 @@
 package curso.java.tienda.service.DetallePedido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import curso.java.tienda.model.DAO.DetallePedido.DetallePedidoDAO;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
 
 public class DetallePedidoService {
 	
@@ -22,9 +24,27 @@ public class DetallePedidoService {
 		return detallePedido;
 	}
 	
+	public static List<DetallePedidoVO> getDetallesPedidoIdPedido(int id) {
+		
+		List<DetallePedidoVO> detallesPedido = DetallePedidoDAO.findByIdPedido(id);
+		
+		return detallesPedido;
+	}
+	
 	public static void realizarDetallePedido(DetallePedidoVO detallePedido) {
+		
+		System.out.println("Total detalle: " + detallePedido.getTotal());
 				
 		DetallePedidoDAO.insert(detallePedido);		
+	}
+	
+	public static List<ProductoVO> getProductosDetallePedido(int idPedido) {
+
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+
+		productos = DetallePedidoDAO.findProducto(idPedido);
+
+		return productos;
 	}
 	
 }

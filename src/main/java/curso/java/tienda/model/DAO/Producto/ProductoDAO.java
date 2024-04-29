@@ -155,8 +155,7 @@ public class ProductoDAO {
 	}
 	
 	public static void updateStock(int id, int cantidad) {
-		
-		
+				
 		try {
             
             Connection con = Conexion.getConexion();

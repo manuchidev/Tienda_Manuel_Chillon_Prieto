@@ -61,10 +61,10 @@ public class RegistroServlet extends HttpServlet {
 			
 			String passwordEncriptada = UsuarioService.encriptarClave(password);
 
-			UsuarioVO nuevoUsuario = new UsuarioVO(0, 0, email, passwordEncriptada, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni);
+			UsuarioVO nuevoUsuario = new UsuarioVO(email, passwordEncriptada, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni);
 								
-			UsuarioService.registrarCliente(nuevoUsuario);
-			request.getSession().setAttribute("usuario", nuevoUsuario);
+			UsuarioVO usuarioRegistrado = UsuarioService.registrarCliente(nuevoUsuario);			
+			request.getSession().setAttribute("usuario", usuarioRegistrado);
 							
 			limpiarAtributosRegistro(request);
 				

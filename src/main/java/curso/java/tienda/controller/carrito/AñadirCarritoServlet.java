@@ -56,8 +56,6 @@ public class AñadirCarritoServlet extends HttpServlet {
 			if (request.getParameter("cantidad") != null) {
 				
 				int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-
-				System.out.println("Cantidad: " + cantidad);
 				
 				CarritoService.agregarProductoCantidad(carrito, id, cantidad);
 				

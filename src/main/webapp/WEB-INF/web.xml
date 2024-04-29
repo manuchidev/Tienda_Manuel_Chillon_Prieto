@@ -118,6 +118,12 @@
   	<description></description>
   	<servlet-class>curso.java.tienda.controller.pedidos.PedidosServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DetallesPedidoServlet</servlet-name>
+  	<display-name>DetallesPedidoServlet</display-name>
+  	<description></description>
+  	<servlet-class>curso.java.tienda.controller.detallesPedido.DetallesPedidoServlet</servlet-class>
+  </servlet>
   
   
   <servlet-mapping>
@@ -198,5 +204,9 @@
   <servlet-mapping>
   	<servlet-name>PedidosServlet</servlet-name>
   	<url-pattern>/PedidosServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DetallesPedidoServlet</servlet-name>
+  	<url-pattern>/DetallesPedidoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

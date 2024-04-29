@@ -1,5 +1,7 @@
 package curso.java.tienda.service.Compra;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -94,7 +96,9 @@ public class CompraService {
 	
 	public static void completarPedido(HashMap<ProductoVO, Integer> carrito, UsuarioVO usuario, String metodo_pago) {
 		
-		PedidoVO pedido = new PedidoVO(usuario.getId(), Timestamp.valueOf(LocalDateTime.now()), metodo_pago);								
+		PedidoVO pedido = new PedidoVO(usuario.getId(), Timestamp.valueOf(LocalDateTime.now()), metodo_pago);
+		
+		System.out.println("Usuario id pedido creado: " + usuario.getId());
 		
 		int idPedido = PedidoService.realizarPedido(pedido);
 			
@@ -102,17 +106,19 @@ public class CompraService {
 			ProductoVO producto = entry.getKey();
 			Integer cantidad = entry.getValue();
 			
-			System.out.println("Producto:" + producto.toString());
-
 			int id_producto = producto.getId();
-			float precio_unidad = (float)producto.getPrecio();
-			float impuesto = producto.getImpuesto();
-			double totalSinImpuesto = (precio_unidad * cantidad);
-			double total = totalSinImpuesto + (totalSinImpuesto * impuesto);
+			BigDecimal precio_unidad = (BigDecimal)producto.getPrecio();
+			BigDecimal impuesto = producto.getImpuesto();
 			
-			System.out.println("Impuesto: " + impuesto);
+			BigDecimal totalSinImpuesto = BigDecimal.valueOf(precio_unidad * cantidad).setScale(2, RoundingMode.HALF_UP);
 			
+			BigDecimal totalImpuesto = totalSinImpuesto.multiply(BigDecimal.valueOf(impuesto));
+			
+			BigDecimal total = totalSinImpuesto.add(totalImpuesto).setScale(2, RoundingMode.HALF_UP);
+					
 			DetallePedidoVO detallePedido = new DetallePedidoVO(idPedido, id_producto, precio_unidad, cantidad, impuesto, total);
+			System.out.println("Detalle pedido total: " + detallePedido.getTotal());
+			
 			DetallePedidoService.realizarDetallePedido(detallePedido);
 			
 			ProductoService.reducirStock(id_producto, cantidad);												

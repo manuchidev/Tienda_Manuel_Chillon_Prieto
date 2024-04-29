@@ -5,10 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
@@ -35,10 +32,10 @@ public class DetallePedidoDAO {
 				detallePedido.setId(rs.getInt("id"));
 				detallePedido.setId_pedido(rs.getInt("id_pedido"));
 				detallePedido.setId_producto(rs.getInt("id_producto"));
-				detallePedido.setPrecio_unidad(rs.getFloat("precio_unidad"));
+				detallePedido.setPrecio_unidad(rs.getBigDecimal("precio_unidad"));
 				detallePedido.setUnidades(rs.getInt("unidades"));
-				detallePedido.setImpuesto(rs.getFloat("impuesto"));
-				detallePedido.setTotal(rs.getDouble("total"));
+				detallePedido.setImpuesto(rs.getBigDecimal("impuesto"));
+				detallePedido.setTotal(rs.getBigDecimal("total"));
 				
 				detallesPedidos.add(detallePedido);
 			}
@@ -71,10 +68,10 @@ public class DetallePedidoDAO {
 				detallePedido.setId(rs.getInt("id"));
 				detallePedido.setId_pedido(rs.getInt("id_pedido"));
 				detallePedido.setId_producto(rs.getInt("id_producto"));
-				detallePedido.setPrecio_unidad(rs.getFloat("precio_unidad"));
+				detallePedido.setPrecio_unidad(rs.getBigDecimal("precio_unidad"));
 				detallePedido.setUnidades(rs.getInt("unidades"));
-				detallePedido.setImpuesto(rs.getFloat("impuesto"));
-				detallePedido.setTotal(rs.getDouble("total"));
+				detallePedido.setImpuesto(rs.getBigDecimal("impuesto"));
+				detallePedido.setTotal(rs.getBigDecimal("total"));
 	
 			}
 			
@@ -107,10 +104,10 @@ public class DetallePedidoDAO {
 				detallePedido.setId(rs.getInt("id"));
 				detallePedido.setId_pedido(rs.getInt("id_pedido"));
 				detallePedido.setId_producto(rs.getInt("id_producto"));
-				detallePedido.setPrecio_unidad(rs.getFloat("precio_unidad"));
+				detallePedido.setPrecio_unidad(rs.getBigDecimal("precio_unidad"));
 				detallePedido.setUnidades(rs.getInt("unidades"));
-				detallePedido.setImpuesto(rs.getFloat("impuesto"));
-				detallePedido.setTotal(rs.getDouble("total"));
+				detallePedido.setImpuesto(rs.getBigDecimal("impuesto"));
+				detallePedido.setTotal(rs.getBigDecimal("total"));
 
 				detallesPedidos.add(detallePedido);
 			}
@@ -123,6 +120,39 @@ public class DetallePedidoDAO {
 
 	}
 	
+	public static List<ProductoVO> findProducto(int idPedido) {
+				
+		List<ProductoVO> productos = new ArrayList<>();
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT p.* FROM productos p JOIN detalles_pedido dp ON p.id = dp.id_producto WHERE dp.id_pedido = ?");
+
+			st.setInt(1, idPedido);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				ProductoVO producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return productos;
+		
+	}
+	
 	public static boolean insert(DetallePedidoVO detallePedido) {		
 
 		try {
@@ -133,10 +163,12 @@ public class DetallePedidoDAO {
 
 			st.setInt(1, detallePedido.getId_pedido());
 			st.setInt(2, detallePedido.getId_producto());
-			st.setFloat(3, detallePedido.getPrecio_unidad());
+			st.setBigDecimal(3, detallePedido.getPrecio_unidad());
 			st.setInt(4, detallePedido.getUnidades());
-			st.setFloat(5, detallePedido.getImpuesto());
-			st.setDouble(6, detallePedido.getTotal());
+			st.setBigDecimal(5, detallePedido.getImpuesto());
+			st.setBigDecimal(6, detallePedido.getTotal());
+			
+			System.out.println("Total detalle insert: " + detallePedido.getTotal());
 
 			st.executeUpdate();
 
@@ -158,10 +190,10 @@ public class DetallePedidoDAO {
 
 			st.setInt(1, detallePedido.getId_pedido());
 			st.setInt(2, detallePedido.getId_producto());
-			st.setFloat(3, detallePedido.getPrecio_unidad());
+			st.setBigDecimal(3, detallePedido.getPrecio_unidad());
 			st.setInt(4, detallePedido.getUnidades());
-			st.setFloat(5, detallePedido.getImpuesto());
-			st.setDouble(6, detallePedido.getTotal());
+			st.setBigDecimal(5, detallePedido.getImpuesto());
+			st.setBigDecimal(6, detallePedido.getTotal());
 			st.setInt(7, detallePedido.getId());
 
 			st.executeUpdate();

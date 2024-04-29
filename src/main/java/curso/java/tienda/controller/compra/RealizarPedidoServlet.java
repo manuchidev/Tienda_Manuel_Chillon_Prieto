@@ -57,6 +57,7 @@ public class RealizarPedidoServlet extends HttpServlet {
 		UsuarioVO usuario = (UsuarioVO)session.getAttribute("usuario");
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 	
 		if (usuario != null) {
 			            
@@ -88,11 +89,11 @@ public class RealizarPedidoServlet extends HttpServlet {
 				if (stockSuficiente) {
 					
 					CompraService.completarPedido(carrito, usuario, metodo_pago);
-
-					// Borrar los datos del carrito
-					session.removeAttribute("carrito");
 																							
 					request.getRequestDispatcher(Rutas.RESULTADO_JSP).forward(request, response);
+					
+					// Borrar los datos del carrito
+					session.removeAttribute("carrito");
 				
 				} else {
 					request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
