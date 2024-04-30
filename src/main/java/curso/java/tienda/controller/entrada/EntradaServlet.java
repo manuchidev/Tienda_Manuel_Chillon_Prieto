@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Producto.ProductoService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
@@ -41,9 +43,11 @@ public class EntradaServlet extends HttpServlet {
 			System.out.println("Carrito disponible");
 		}
 		
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();		
 		List<ProductoVO> productos = ProductoService.getProductos();
 				
-		// Recuperar los productos
+		// Recuperar las categorias y productos
+		request.setAttribute("categorias", categorias);
 		request.setAttribute("productos", productos);
 	
 		// Redirigir a la pagina de inicio

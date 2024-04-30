@@ -1,9 +1,11 @@
 package curso.java.tienda.service.Producto;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import curso.java.tienda.model.DAO.Producto.ProductoDAO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Categoria.CategoriaService;
 
 public class ProductoService {
 	
@@ -21,9 +23,72 @@ public class ProductoService {
 		return producto;
 	}
 	
-	public static List<ProductoVO> getProductosCategoria(int id_producto, int id_categoria) {
+	public static List<ProductoVO> getProductosCategoria(int id_categoria) {
 		
-		List<ProductoVO> productos = ProductoDAO.findByIdCategoria(id_producto, id_categoria);
+		List<ProductoVO> productos = ProductoDAO.findByIdCategoria(id_categoria);
+		
+		return productos;
+	}
+	
+	public static List<ProductoVO> getProductosFiltrados(String precio, String categoria) {
+		
+		// Si no se ha seleccionado ninguna categoria ni precio
+		if (categoria.equals("Todas") && precio.equals("Todos")) {
+			List<ProductoVO> productos = ProductoDAO.findAll();
+			return productos;
+		
+		// Si se ha seleccionado un precio, pero no una categoria
+		} else if (categoria.equals("Todas") && !precio.equals("Todos")) {
+			
+			switch (precio) { 
+			
+				case "min":
+					List<ProductoVO> productosMin = ProductoDAO.findByMinPrecio();
+					return productosMin;
+					
+				case "max":
+					List<ProductoVO> productosMax = ProductoDAO.findByMaxPrecio();
+					return productosMax;					
+					
+				default:
+					int precioInt = Integer.parseInt(precio);
+					List<ProductoVO> productosPrecio = ProductoDAO.findByPrecio(precioInt);
+					return productosPrecio;
+			}
+
+		// Si se ha seleccionado una categoria, pero no un precio
+		} else if (precio.equals("Todos") && !categoria.equals("Todas")) {
+			int idCategoria = Integer.parseInt(categoria);
+			List<ProductoVO> productosCategoria = ProductoDAO.findByIdCategoria(idCategoria);
+			return productosCategoria;
+
+		// Si se ha seleccionado una categoria y un precio
+		} else {
+			
+			int idCategoria = Integer.parseInt(categoria);
+			
+			switch (precio) { 
+			
+				case "max":
+					List<ProductoVO> productosMax = ProductoDAO.findByMaxPrecioCategoria(idCategoria);
+					return productosMax;
+					
+				case "min":
+					List<ProductoVO> productosMin = ProductoDAO.findByMinPrecioCategoria(idCategoria);
+					return productosMin;
+					
+				default:
+					BigDecimal precioBD = BigDecimal.valueOf(Double.parseDouble(precio));
+					List<ProductoVO> productosPrecio = ProductoDAO.findByPrecioCategoria(precioBD, idCategoria);
+					return productosPrecio;
+			}
+		}
+		
+	}
+	
+	public static List<ProductoVO> getProductosCategoriaDetalles(int id_producto, int id_categoria) {
+		
+		List<ProductoVO> productos = ProductoDAO.findByIdCategoriaDetalles(id_producto, id_categoria);
 		
 		return productos;
 	}

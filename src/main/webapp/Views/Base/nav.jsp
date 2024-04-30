@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  
-	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.*, curso.java.tienda.model.VO.Usuario.*" %>
+	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.*, 
+		curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Categoria.CategoriaVO" %>
+
+<%
+	List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
+	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");	        
+%>
 
 <nav class="navbar navbar-expand-lg">
 
@@ -26,10 +33,18 @@
 	                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 	                    <li><a class="dropdown-item" href="#!">Todos los productos</a></li>
 	                    <li><hr class="dropdown-divider" /></li>
-	                    <li><a class="dropdown-item" href="#!">Ordenadores</a></li>
-	                    <li><a class="dropdown-item" href="#!">Monitores</a></li>
-	                    <li><a class="dropdown-item" href="#!">Teclados</a></li>
-	                    <li><a class="dropdown-item" href="#!">Ratones</a></li>
+	                    
+                    <%		  	          			  	
+						if (categorias != null && !categorias.isEmpty()) {
+							
+							for (CategoriaVO categoria: categorias) {								
+					%>
+			                    <li><a class="dropdown-item" href="categoria?id=<%= categoria.getId() %>"><%= categoria.getNombre() %></a></li>			
+					<%
+							}
+						}
+                     %>
+					
 	                </ul>
 	                
 	            </li>
@@ -39,11 +54,7 @@
 	        </ul>
 	        
 	        <div class="d-flex">
-	         <%
-	        	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");
-	        	
-	        	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
-		        	
+	         <%		        	
 				 if (usuario == null) {
 	       	%>
 	       	        <form class="d-flex px-lg-2 py-sm-1" action="Login" method="get">

@@ -1,5 +1,6 @@
 package curso.java.tienda.model.DAO.Producto;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -88,7 +89,46 @@ public class ProductoDAO {
 		
 	}
 	
-	public static List<ProductoVO> findByIdCategoria(int id_producto, int id_categoria) {
+	public static List<ProductoVO> findByIdCategoria(int id_categoria) {
+		
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE id_categoria = ? ");
+			
+			st.setInt(1, id_categoria);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;
+	}
+	
+	public static List<ProductoVO> findByIdCategoriaDetalles(int id_producto, int id_categoria) {
 		
 		List<ProductoVO> productos = new ArrayList<ProductoVO>();
 		ProductoVO producto = null;
@@ -170,4 +210,240 @@ public class ProductoDAO {
             
         }
 	}
+
+	public static List<ProductoVO> findByMinPrecio() {
+		
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos ORDER BY precio ASC");
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;	
+	}
+
+	public static List<ProductoVO> findByMaxPrecio() {
+
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos ORDER BY precio DESC");
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;	
+	}
+
+
+	public static List<ProductoVO> findByPrecio(int precio) {
+
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE precio <= ? ORDER BY precio ASC");
+			
+			st.setInt(1, precio);
+
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;	
+	}
+
+	public static List<ProductoVO> findByMaxPrecioCategoria(int categoria) {
+		
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE id_categoria = ? ORDER BY precio DESC");
+			
+			st.setInt(1, categoria);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;		
+	}
+
+
+	public static List<ProductoVO> findByMinPrecioCategoria(int categoria) {
+		
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE id_categoria = ? ORDER BY precio ASC");
+			
+			st.setInt(1, categoria);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;	
+
+	}
+
+
+	public static List<ProductoVO> findByPrecioCategoria(BigDecimal precio, int categoria) {
+		
+		List<ProductoVO> productos = new ArrayList<ProductoVO>();
+		ProductoVO producto = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE precio <= ? AND id_categoria = ? ORDER BY precio ASC");
+			
+			st.setBigDecimal(1, precio);
+			st.setInt(2, categoria);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				producto = new ProductoVO();
+				
+				producto.setId(rs.getInt("id"));
+				producto.setId_categoria(rs.getInt("id_categoria"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setDescripcion(rs.getString("descripcion"));
+				producto.setPrecio(rs.getBigDecimal("precio"));
+				producto.setStock(rs.getInt("stock"));
+				producto.setFecha_alta(rs.getTimestamp("fecha_alta"));
+				producto.setFecha_baja(rs.getTimestamp("fecha_baja"));
+				producto.setImpuesto(rs.getBigDecimal("impuesto"));
+				producto.setImagen(rs.getString("imagen"));
+				
+				productos.add(producto);
+			}
+			
+		} catch (SQLException e) {
+	        
+	    }
+		
+		return productos;	
+	}
+
 }

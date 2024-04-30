@@ -17,7 +17,7 @@
 	  
 	</head>
 	
-	<body>
+	<body class="gradient-custom">
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		

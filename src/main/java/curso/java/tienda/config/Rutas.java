@@ -37,6 +37,10 @@ public class Rutas {
 	
 	// VIEWS 
 	public static final String INDEX_JSP = "/Views/index.jsp";
+	public static final String FILTROS_JSP = "/Views/Productos/filtros.jsp";
+	public static final String PRODUCTOS_JSP = "/Views/Productos/productos.jsp";
+	public static final String PRODUCTOS_FILTRADOS_JSP = "/Views/Productos/productosFiltrados.jsp";
+	public static final String PRODUCTOS_CATEGORIAS_JSP = "/Views/Productos/productosCategorias.jsp";
 	public static final String DETALLES_JSP = "Views/Detalles/detalle.jsp";
 	public static final String CONTACTO_JSP = "Views/Contacto/contacto.jsp";
 	public static final String LOGIN_JSP = "/Views/Usuario/Login/login.jsp";

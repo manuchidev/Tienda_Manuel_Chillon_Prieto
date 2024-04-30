@@ -1,4 +1,4 @@
-package curso.java.tienda.controller.detalles;
+package curso.java.tienda.controller.categoria;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,23 +8,25 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
- * Servlet implementation class DetallesServlet
+ * Servlet implementation class CategoriaServlet
  */
-@WebServlet("/detalles")
-public class DetallesServlet extends HttpServlet {
+
+@WebServlet("/categoria")
+public class CategoriaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DetallesServlet() {
+    public CategoriaServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,23 +35,23 @@ public class DetallesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		HttpSession session = request.getSession(true);
 		
-		// Si existe un id, creamos el carrito. La primera vez se crea con una unidad del producto, pero posteriormente habrá que comprobar si el id del producto existe y si es así se aumenta la cantidad
-		if (request.getParameter("idProd") != null && request.getParameter("idCat") != null) {
+		String idCategoria = request.getParameter("id");
+		
+		System.out.println("idCategoria: " + idCategoria);
+		
+		if (idCategoria != null && !idCategoria.isEmpty()) {
 			
-			int idProd = Integer.parseInt(request.getParameter("idProd"));
-			int idCat = Integer.parseInt(request.getParameter("idCat"));
+			int id = Integer.parseInt(idCategoria);
 						
-			ProductoVO producto = ProductoService.getProductoId(idProd);
-			request.setAttribute("producto", producto);
-			
-			List<ProductoVO> productosCategoriaDetalles = ProductoService.getProductosCategoriaDetalles(idProd, idCat);
-			request.setAttribute("productosCategoriaDetalles", productosCategoriaDetalles);
+			List<ProductoVO> productosCategoria = ProductoService.getProductosCategoria(id);
+			request.setAttribute("productosCategoria", productosCategoria);
 		}
 		
-		request.getRequestDispatcher(Rutas.DETALLES_JSP).forward(request, response);
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		request.setAttribute("categorias", categorias);
+		
+		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 	}
 
 	/**
