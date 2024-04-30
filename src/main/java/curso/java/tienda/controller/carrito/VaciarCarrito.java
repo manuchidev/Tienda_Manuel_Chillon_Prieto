@@ -48,12 +48,11 @@ public class VaciarCarrito extends HttpServlet {
 			
 		// Obtenemos los productos del carrito de la sesión
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
-		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));		
-	
+		
 		CarritoService.vaciarCarrito(carrito);
 															
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}
 

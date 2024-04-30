@@ -7,6 +7,14 @@ import curso.java.tienda.model.VO.Pedido.PedidoVO;
 
 public class PedidoService {
 	
+	public static PedidoVO getPedido(int id) {
+
+		PedidoVO pedido = PedidoDAO.findById(id);
+
+		return pedido;
+	}
+	
+	
 	public static List<PedidoVO> getPedidos() {
 		
 		List<PedidoVO> detallesPedido = PedidoDAO.findAll();

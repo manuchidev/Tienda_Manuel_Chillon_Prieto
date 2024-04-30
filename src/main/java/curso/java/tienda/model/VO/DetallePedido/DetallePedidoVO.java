@@ -28,7 +28,7 @@ public class DetallePedidoVO {
 		this.impuesto = impuesto;
 		
 		BigDecimal totalSinImpuesto = precio_unidad.multiply(BigDecimal.valueOf(unidades));
-		BigDecimal totalImpuesto = totalSinImpuesto.multiply(impuesto).add(totalSinImpuesto);
+		BigDecimal totalImpuesto = totalSinImpuesto.multiply(impuesto).divide(BigDecimal.valueOf(100)).add(totalSinImpuesto).setScale(2, BigDecimal.ROUND_HALF_UP);
 		
 		this.total = totalImpuesto ;
 	}

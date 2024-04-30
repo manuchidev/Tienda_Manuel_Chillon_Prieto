@@ -10,10 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
-import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 import curso.java.tienda.model.VO.Pedido.PedidoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
-import curso.java.tienda.service.DetallePedido.DetallePedidoService;
 import curso.java.tienda.service.Pedido.PedidoService;
 
 /**
@@ -39,9 +37,9 @@ public class PedidosServlet extends HttpServlet {
 		
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		
-		List<PedidoVO> pedidos = PedidoService.getPedidoUsuario(usuario.getId());		
+		List<PedidoVO> pedidos = PedidoService.getPedidoUsuario(usuario.getId());	
 		request.setAttribute("pedidos", pedidos);
-				
+
 		request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
 	}
 
@@ -50,6 +48,11 @@ public class PedidosServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
+		
+		List<PedidoVO> pedidos = PedidoService.getPedidoUsuario(usuario.getId());	
+		request.setAttribute("pedidos", pedidos);
+		
 		String accion = request.getParameter("accion");	
 		String id = request.getParameter("idPedido");
 		
@@ -59,7 +62,14 @@ public class PedidosServlet extends HttpServlet {
 			
 
 		} else if ("Cancelacion".equals(accion)) {
-
+			
+			for (PedidoVO pedido : pedidos) {
+				if (pedido.getId() == idPedido) {
+					pedido.setEstado("PC");
+				}
+			}
+			
+			request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
 		}
 				
 	}

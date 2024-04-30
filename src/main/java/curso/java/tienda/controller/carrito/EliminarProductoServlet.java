@@ -49,20 +49,18 @@ public class EliminarProductoServlet extends HttpServlet {
 		
 		// Obtenemos el carrito de la sesión
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
-		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
-		
+			
 		// Si existe un id, creamos el carrito. La primera vez se crea con una unidad del producto, pero posteriormente habrá que comprobar si el id del producto existe y si es así se aumenta la cantidad
 		if (request.getParameter("idProd") != null) {
 			
 			int id = Integer.parseInt(request.getParameter("idProd"));
-						
+			
 			CarritoService.eliminarProducto(carrito, id);
-						
-			System.out.println(carrito.size());
 		}
 		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
+		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
+
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}
 

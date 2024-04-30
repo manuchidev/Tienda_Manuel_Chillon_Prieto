@@ -14,6 +14,7 @@ import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Producto.ProductoService;
+import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
  * Servlet implementation class EntradaServlet

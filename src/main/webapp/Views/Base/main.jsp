@@ -6,8 +6,32 @@
 <main>
 
 	<section class="py-5 gradient-custom">
-	
+		
+		<div class="container text-center">
+			<form action="filtrarProductos" method="get">
+				<div class="row">
+					<div class="col">
+						<label for="precio">Precio:</label>
+						<input type="number" id="precio" name="precio" min="0">
+					</div>
+					<div class="col">
+						<label for="categoria">Categoría:</label>
+						<select id="categoria" name="categoria">
+							<option value="">Todas</option>
+							<!-- Aquí puedes agregar las categorías disponibles -->
+							<option value="categoria1">Categoría 1</option>
+							<option value="categoria2">Categoría 2</option>
+						</select>
+					</div>
+					<div class="col">
+						<input type="submit" value="Filtrar">
+					</div>
+				</div>
+			</form>
+		</div>
+			
 	    <div class="container-fluid px-2 px-lg-5 mt-5">
+
 	    
 	        <div class="row gx-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
 	        

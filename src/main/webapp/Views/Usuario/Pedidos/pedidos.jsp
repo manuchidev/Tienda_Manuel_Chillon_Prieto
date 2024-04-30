@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Pedido.PedidoVO"
+	import="java.util.*, java.text.SimpleDateFormat, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Pedido.PedidoVO"
 %>
 
 <!DOCTYPE html>
@@ -41,6 +41,8 @@
 								
 								<%  
 		                            List<PedidoVO> pedidos = (List<PedidoVO>) request.getAttribute("pedidos");
+								
+								    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		                            if (pedidos != null && !pedidos.isEmpty()) {
 	                        	%>
@@ -63,37 +65,98 @@
 												
 												<tbody>
 												
-												<% for (PedidoVO pedido : pedidos) { %>
+												<% for (PedidoVO pedido : pedidos) { 
+												
+													String fecha = sdf.format(pedido.getFecha());
+												%>											
 													
 													<tr class="text-center">
 													
-														<td><%= pedido.getFecha() %></td>
+														<td><%= fecha %></td>
 														<td><%= pedido.getMetodo_pago() %></td>
-														<td><%= pedido.getEstado() %></td>
 														
-														<td class="d-flex flex-column justify-content-center">
+													<%
+														switch(pedido.getEstado()) {
+                                                               case "PE":
+                                                               	%>
+                                                               	<td style="color:rgb(255, 217, 0); text-shadow: 1px 1px 1px black;">Pendiente de Envío</td>
+                                                               	<td class="d-flex flex-column justify-content-center">
 
-														    <div class="d-flex justify-content-center mb-2">
+														    		<div class="d-flex justify-content-center mb-2">
 														    
-														        <form action="DetallesPedido" method="post" class="me-1">
-														            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
-														            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
-														        </form>
-														        
-														        <form action="Pedidos" method="post">
-														            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
-														            <button type="submit" class="btn btn-sm bg-success" name="accion" value="Factura">Factura</button>
-														        </form>
-														        
-														    </div>
-														
-														    <form action="Pedidos" method="post">
-														        <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
-														        <button type="submit" class="btn btn-sm bg-danger" name="accion" value="Cancelacion">Solicitar Cancelación</button>
-														    </form>
-																							
-														</td>
+																        <form action="DetallesPedido" method="post" class="me-1">
+																            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+																            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
+																        </form>
+																        															        
+																    </div>
+																    
+																    <form action="Pedidos" method="post">
+																        <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+																        <button type="submit" class="btn btn-sm bg-danger" name="accion" value="Cancelacion">Solicitar Cancelación</button>
+																    </form>
+																    
+																  </td>
+                                                               	<%
+                                                                   break;
+                                                               	
+                                                               case "PC":
+                                                               	%>
+                                                               	<td style="color:rgb(255, 123, 0); text-shadow: 1px 1px 1px black;">Pendiente de Cancelación</td> 
+                                                               	
+                                                               	<td class="d-flex flex-column justify-content-center">
 
+														    		<div class="d-flex justify-content-center">
+														    
+																        <form action="DetallesPedido" method="post" class="me-1">
+																            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+																            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
+																        </form>
+																        															        
+																    </div>
+																    																    
+																  </td>
+                                                               	<%
+                                                                   break;
+                                                               	
+                                                               case "E":
+                                                               	%>
+                                                               	<td style="color:rgb(2, 165, 2); text-shadow: 1px 1px 1px black;">Enviado</td>
+                                                               	
+                                                               	<td class="d-flex flex-column justify-content-center">
+															    	<div class="d-flex justify-content-center mb-2">
+															    
+																        <form action="DetallesPedido" method="post" class="me-1">
+																            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+																            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
+																        </form>
+																        
+																        <form action="Pedidos" method="post">
+																            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+																            <button type="submit" class="btn btn-sm bg-success" name="accion" value="Factura">Factura</button>
+																        </form>
+																        
+																    </div>
+																 </td>
+                                                               	<%
+                                                                   break;
+                                                               	
+                                                               case "C":
+                                                               	%>
+                                                               	<td style="color:rgb(211, 0, 0); text-shadow: 1px 1px 1px black;">Cancelado</td>
+                                                               	
+                                                               	<td class="d-flex flex-column justify-content-center">
+															    
+															        <form action="DetallesPedido" method="post" class="me-1">
+															            <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+															            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
+															        </form>
+															     </td>
+                                                               	<%
+                                                                   break;
+                                                           }
+													%>
+														
 													</tr>
 													
 												<% } %>

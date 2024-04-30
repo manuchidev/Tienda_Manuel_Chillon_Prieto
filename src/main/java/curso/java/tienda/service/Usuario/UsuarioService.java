@@ -138,7 +138,6 @@ public class UsuarioService {
 		StrongPasswordEncryptor clave = new StrongPasswordEncryptor();
 				
 		String claveEncriptada = clave.encryptPassword(password);
-		System.out.println("Clave encriptada: " + claveEncriptada);
 		
 		return claveEncriptada;
 	}

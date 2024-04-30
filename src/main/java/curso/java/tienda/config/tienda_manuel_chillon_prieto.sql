@@ -59,7 +59,10 @@ CREATE TABLE `configuracion` (
 -- --------------------------------------------------------
 
 INSERT INTO configuracion VALUES
-	(0, 'num_factura', '0', '');
+	(1, 'num_factura', '0', ''),
+	(2, 'nombre_empresa', '', ''),
+	(3, 'cif', '', ''),
+	(4, 'direccion', '', '');
 
 --
 -- Estructura de tabla para la tabla `descuentos`
@@ -145,7 +148,7 @@ CREATE TABLE `pedidos` (
   `id_usuario` int(11) DEFAULT NULL,
   `fecha` timestamp NULL DEFAULT NULL,
   `metodo_pago` varchar(255) DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `estado` ENUM('PE', 'PC', 'E', 'C') DEFAULT NULL,
   `num_factura` varchar(255) DEFAULT NULL,
   `total` DECIMAL(10, 2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -174,12 +177,12 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `nombre`, `descripcion`, `precio`, `stock`, `fecha_alta`, `fecha_baja`, `impuesto`, `imagen`) VALUES
-(1, 1, 'Samsung Galaxy S20', 'Smartphone de alta gama con cámara potente y pantalla AMOLED', 799.99, 50, '2024-04-14 22:00:00', NULL, 0.21, 'samsumgGS20.webp'),
-(2, 1, 'Sony WH-1000XM4', 'Auriculares inalámbricos con cancelación de ruido líder en su clase', 349.99, 30, '2024-04-14 22:00:00', NULL, 0.21, 'SonyAuriculares.webp'),
-(3, 2, 'Jeans Slim Fit', 'Jeans ajustados de alta calidad, estilo moderno', 39.99, 80, '2024-04-14 22:00:00', NULL, 0.21, 'jeansSlimFit.webp'),
-(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 0.21, 'zapatillasDeportivas.webp'),
-(5, 1, 'iPhone 13 Pro', 'Teléfono inteligente de alta gama con tecnología avanzada', 999.99, 30, '2024-04-20 10:00:00', NULL, 0.21, 'iphone13pro.webp'),
-(6, 1, 'Laptop HP Envy x360', 'Laptop convertible con pantalla táctil Full HD y procesador Ryzen', 1299.99, 10, '2024-04-20 12:00:00', NULL, 0.21, 'hp-envy-x360.webp');
+(1, 1, 'Samsung Galaxy S20', 'Smartphone de alta gama con cámara potente y pantalla AMOLED', 799.99, 50, '2024-04-14 22:00:00', NULL, 21, 'samsumgGS20.webp'),
+(2, 1, 'Sony WH-1000XM4', 'Auriculares inalámbricos con cancelación de ruido líder en su clase', 349.99, 30, '2024-04-14 22:00:00', NULL, 21, 'SonyAuriculares.webp'),
+(3, 2, 'Jeans Slim Fit', 'Jeans ajustados de alta calidad, estilo moderno', 39.99, 80, '2024-04-14 22:00:00', NULL, 21, 'jeansSlimFit.webp'),
+(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 21, 'zapatillasDeportivas.webp'),
+(5, 1, 'iPhone 13 Pro', 'Teléfono inteligente de alta gama con tecnología avanzada', 999.99, 30, '2024-04-20 10:00:00', NULL, 21, 'iphone13pro.webp'),
+(6, 1, 'Laptop HP Envy x360', 'Laptop convertible con pantalla táctil Full HD y procesador Ryzen', 1299.99, 10, '2024-04-20 12:00:00', NULL, 21, 'hp-envy-x360.webp');
 
 -- --------------------------------------------------------
 
@@ -244,8 +247,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `id_rol`, `email`, `clave`, `nombre`, `apellido1`, `apellido2`, `direccion`, `provincia`, `localidad`, `telefono`, `dni`) VALUES
-(1, 1, 'admin1@admin1.com', 'admin1', 'María', 'López', 'Martínez', 'Avenida Central 456', 'Barcelona', 'Barcelona', '555123456', '87654321B'),
-(2, 2, 'empleado1@empleado1.com', 'empleado1', 'Pepe', 'Prieto', 'Gómez', 'Calle Maestra 789', 'Valencia', 'Valencia', '600364857', '45678912V');
+(1, 1, 'admin1@admin1.com', 'wVh8cR7nMc8Ta82QXzTEJUMshq8wrDDmhb3gyoj3t5q70hW1jqkzxCTfa0ZpGPpj', 'María', 'López', 'Martínez', 'Avenida Central 456', 'Barcelona', 'Barcelona', '555123456', '87654321B'),
+(2, 2, 'empleado1@empleado1.com', '9MJhr0uMviZUYZ8bzzqY+E+Ss2aH6jE5KZxz9UTcBR4z1l+1/PmZfLxmK1k6tX2j', 'Pepe', 'Prieto', 'Gómez', 'Calle Maestra 789', 'Valencia', 'Valencia', '600364857', '45678912V');
 
 -- --------------------------------------------------------
 

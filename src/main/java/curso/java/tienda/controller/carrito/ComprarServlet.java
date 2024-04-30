@@ -56,19 +56,25 @@ public class ComprarServlet extends HttpServlet {
 		
 		UsuarioVO usuario = (UsuarioVO)session.getAttribute("usuario");
 		
-		if (usuario != null) {
+		if (carrito != null && !carrito.isEmpty()) {
 			
-			List<MetodoPagoVO> metodos_pago = MetodoPagoService.getMetodosPago();
-			
-			request.setAttribute("metodos_pago", metodos_pago);
-			
-			request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);						
-			
+			if (usuario != null) {
+				
+				List<MetodoPagoVO> metodos_pago = MetodoPagoService.getMetodosPago();
+				
+				request.setAttribute("metodos_pago", metodos_pago);
+				
+				request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);						
+				
+				
+			} else {
+				request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
+			}
 		
 		} else {
-			request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
+			request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 		}
-
+		
 	}
 
 }

@@ -32,9 +32,7 @@ public class DetallePedidoService {
 	}
 	
 	public static void realizarDetallePedido(DetallePedidoVO detallePedido) {
-		
-		System.out.println("Total detalle: " + detallePedido.getTotal());
-				
+						
 		DetallePedidoDAO.insert(detallePedido);		
 	}
 	
