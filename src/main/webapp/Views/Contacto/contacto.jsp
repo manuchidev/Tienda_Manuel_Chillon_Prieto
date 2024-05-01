@@ -15,7 +15,7 @@
 	  
 	</head>
 	
-	<body>
+	<body class="gradient-custom">
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
@@ -23,7 +23,21 @@
 		
 		<main>
 					
-			<section class="gradient-custom">
+			<section>
+
+			<% if (request.getAttribute("mensajeExito") != null) { %>
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					<%= request.getAttribute("mensajeExito") %>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<% } %>
+
+			<% if (request.getAttribute("mensajeError") != null) { %>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<%= request.getAttribute("mensajeError") %>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<% } %>
 			
 				<div class="container">
 				
@@ -50,7 +64,7 @@
 												
 												if (usuario != null) {
 											%>	
-													<input type="text" id="emailContacto"  name="emailContacto" value="<%= usuario.getEmail() %>" placeholder="Introduzca su email" class="form-control input-box rm-border">
+													<input type="text" id="emailContactoLogueado"  name="emailContacto" value="<%= usuario.getEmail() %>" class="form-control input-box rm-border" readonly>
 											<%	
 												} else {
 											%>	
@@ -63,7 +77,14 @@
 									</div>
 									
 									<div class="form-group row">
-										<div class="col-md-12 mb-2">
+										<div class="col-md-12 mb-3">
+											<p class="mb-1">Asunto</p> 
+											<input type="text" id="asuntoContacto"  name="asuntoContacto" placeholder="Introduzca el asunto" class="form-control input-box rm-border">
+										</div>
+									</div>
+									
+									<div class="form-group row">
+										<div class="col-md-12 mb-3">
 											<p class="mb-1">Mensaje</p> 
 											<textarea id="mensajeContacto" type="text" placeholder="Introduzca su mensaje" name="mensajeContacto" class="form-control input-box rm-border" rows="5"></textarea>
 										</div>

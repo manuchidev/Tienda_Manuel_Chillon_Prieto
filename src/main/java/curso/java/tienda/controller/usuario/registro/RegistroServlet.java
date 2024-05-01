@@ -2,6 +2,7 @@ package curso.java.tienda.controller.usuario.registro;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
+import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
+import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Producto.ProductoService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
@@ -18,7 +24,7 @@ import curso.java.tienda.service.Usuario.UsuarioService;
  */
 
 @WebServlet("/Registro")
-public class RegistroServlet extends HttpServlet {
+public class RegistroServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -41,6 +47,13 @@ public class RegistroServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();		
+		List<ProductoVO> productos = ProductoService.getProductos();
+				
+		// Recuperar las categorias y productos
+		request.setAttribute("categorias", categorias);
+		request.setAttribute("productos", productos);
 		
 		String email = request.getParameter("emailRegistro");
 		String password = request.getParameter("passwordRegistro");

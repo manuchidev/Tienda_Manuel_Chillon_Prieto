@@ -1,0 +1,414 @@
+01/05/2024 18:35:03  INFO EntradaServlet:45 - Carrito disponible
+01/05/2024 18:37:38  INFO EntradaServlet:43 - Carrito disponible
+01/05/2024 19:05:37  INFO EntradaServlet:43 - Carrito disponible
+01/05/2024 19:16:38  INFO EntradaServlet:43 - Carrito disponible
+01/05/2024 19:39:19  INFO EntradaServlet:43 - Carrito disponible
+01/05/2024 19:48:09  INFO EntradaServlet:58 - Carrito disponible
+01/05/2024 19:57:42  INFO EntradaServlet:58 - Carrito disponible
+01/05/2024 20:02:00  INFO EntradaServlet:58 - Carrito disponible
+01/05/2024 20:02:30  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:15:45  INFO EntradaServlet:58 - Carrito disponible
+01/05/2024 20:15:52  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:16:21  INFO EntradaServlet:58 - Carrito disponible
+01/05/2024 20:16:28  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:21:38  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:21:38  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:21:43  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:21:53  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:21:53  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:21:54  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:21:59  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:22:08  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:23:51  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:23:51  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:23:56  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:24:05  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:26:05  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:26:05  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:26:11  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:29:27  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:29:27  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:29:34  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:34:46  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:34:46  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:34:55  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:34:58  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:34:58  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 20:35:07  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:35:12  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:36:16  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:36:24  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 20:36:27  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:44:16  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:44:24  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 20:51:44  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 20:51:44  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 21:50:35  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 21:50:35  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 21:52:16  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 21:52:17  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 21:52:17  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 21:52:46  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 22:17:03  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 22:17:03  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 22:17:16  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:17:29 ERROR ContactoServlet:61 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:58)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:55)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no user name specified?
+	at javax.mail.Service.connect(Service.java:326)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:55)
+	... 25 more
+01/05/2024 22:20:42  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 22:20:42  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 22:20:49  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:22:00 ERROR ContactoServlet:61 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:55)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no user name specified?
+	at javax.mail.Service.connect(Service.java:326)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+01/05/2024 22:24:54  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 22:24:54  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 22:25:04  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:25:24 ERROR ContactoServlet:61 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:55)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no user name specified?
+	at javax.mail.Service.connect(Service.java:326)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+01/05/2024 22:26:21  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 22:26:37 ERROR ContactoServlet:61 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:55)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no user name specified?
+	at javax.mail.Service.connect(Service.java:326)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+01/05/2024 22:26:56 ERROR ContactoServlet:61 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:55)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no user name specified?
+	at javax.mail.Service.connect(Service.java:326)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+01/05/2024 22:29:32  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 22:29:37  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:29:51  INFO ContactoServlet:63 - Idioma: es
+01/05/2024 22:29:51 ERROR ContactoServlet:80 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no user name specified?
+	at javax.mail.Service.connect(Service.java:326)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+01/05/2024 22:31:14  INFO EntradaServlet:53 - Idioma: es
+01/05/2024 22:31:32  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:31:42  INFO ContactoServlet:63 - Idioma: es
+01/05/2024 22:31:48 ERROR ContactoServlet:80 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.MessagingException: Could not convert socket to TLS;
+  nested exception is:
+	javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at com.sun.mail.smtp.SMTPTransport.startTLS(SMTPTransport.java:1907)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:666)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+Caused by: javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:172)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at com.sun.mail.util.SocketFetcher.configureSSLSocket(SocketFetcher.java:549)
+	at com.sun.mail.util.SocketFetcher.startTLS(SocketFetcher.java:486)
+	at com.sun.mail.smtp.SMTPTransport.startTLS(SMTPTransport.java:1902)
+	... 32 more
+01/05/2024 22:33:31  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 22:33:31  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 22:33:38  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:33:49  INFO ContactoServlet:63 - Idioma: es
+01/05/2024 22:33:56 ERROR ContactoServlet:80 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:56)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.sun.mail.smtp.SMTPSendFailedException: 554 5.2.252 SendAsDenied; cliente_Tienda@outlook.com not allowed to send as cliente1@cliente1.com; STOREDRV.Submission.Exception:SendAsDeniedException.MapiExceptionSendAsDenied; Failed to process message due to a permanent exception with message [BeginDiagnosticData]Cannot submit message. 1.84300:0A000000, 1.84300:0A000000, 1.84300:0E000000, 1.84300:32000000, 1.116652:8E110000, 1.81836:36020000, 0.117068:56000000, 1.79180:0A000000, 1.79180:0A000000, 1.79180:0E000000, 1.79180:32000000, 1.79180:FA000000, 0.73100:56000000, 0.38698:7A000100, 1.41134:87000000, 1.41134:47000000, 0.37692:01000000, 0.37948:87000000, 5.33852:00000000534D545000205F02, 7.36354:010000000000010933205F02, 4.56248:DC040000, 7.40748:010000000000010B0F010480, 7.57132:000000000000000087000000, 4.39640:DC040000, 1.63016:32000000, 8.45434:01400300447136B800000000000000003431332D, 1.46798:04000000, 5.10786:0000000031352E32302E373534342E3031333A444237505230324D42343533383A38656336613662392D316137632D343431332D396531612D3534393131313231336339363A35313835323A2E4E455420382E302E34001000000000, 7.51330:E46354FF1D6ADC0812000000, 0.39570:00000000, 1.55954:0A000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:00000000, 1.56562:00000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:00000000, 1.56562:00000000, 1.55954:0A000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:00000000, 1.56562:00000000, 1.33010:0A000000, 2.54258:00000000, 0.40002:00000000, 1.56562:00000000, 1.64146:0E000000, 1.33010:0E000000, 2.54258:00000000, 1.33010:0E000000, 2.54258:00000000, 1.64146:32000000, 1.33010:32000000, 2.54258:DC040000, 1.33010:32000000, 2.54258:DC040000, 0.79500:00000000, 0.100684:00000000, 4.120460:DC040000, 1.52466:02000000, 1.52466:02000000, 1.42738:05000000, 0.37698:58000000, 1.42738:05000000, 0.37698:03000000, 1.52466:01000000, 0.60402:02000000, 1.52466:01000000[EndDiagnosticData] [Hostname=DB7PR02MB4538.eurprd02.prod.outlook.com]
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2108)
+	at com.sun.mail.smtp.SMTPTransport.finishData(SMTPTransport.java:1889)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1120)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:53)
+	... 25 more
+01/05/2024 22:35:30  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 22:35:30  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 22:35:40  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:36:06  INFO ContactoServlet:63 - Idioma: es
+01/05/2024 22:36:06 ERROR ContactoServlet:80 - Error al enviar el correo
+java.lang.NullPointerException: Cannot invoke "String.length()" because "s" is null
+	at javax.mail.internet.InternetAddress.parse(InternetAddress.java:673)
+	at javax.mail.internet.InternetAddress.parse(InternetAddress.java:633)
+	at javax.mail.internet.InternetAddress.<init>(InternetAddress.java:111)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:47)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:74)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+01/05/2024 22:37:14  INFO EntradaServlet:50 - Idioma por defecto: es
+01/05/2024 22:37:14  INFO EntradaServlet:62 - Carrito disponible
+01/05/2024 22:37:20  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+01/05/2024 22:37:30  INFO ContactoServlet:63 - Idioma: es
+01/05/2024 22:37:37  INFO ContactoServlet:76 - Correo enviado correctamente

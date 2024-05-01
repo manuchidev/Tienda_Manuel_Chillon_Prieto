@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
@@ -20,7 +21,7 @@ import curso.java.tienda.service.Producto.ProductoService;
  */
 
 @WebServlet("/categoria")
-public class CategoriaServlet extends HttpServlet {
+public class CategoriaServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -38,14 +39,18 @@ public class CategoriaServlet extends HttpServlet {
 		
 		String idCategoria = request.getParameter("id");
 		
-		System.out.println("idCategoria: " + idCategoria);
-		
 		if (idCategoria != null && !idCategoria.isEmpty()) {
 			
 			int id = Integer.parseInt(idCategoria);
 						
 			List<ProductoVO> productosCategoria = ProductoService.getProductosCategoria(id);
+			
+			request.setAttribute("idCategoria", id);
 			request.setAttribute("productosCategoria", productosCategoria);
+		
+		} else {
+			List<ProductoVO> productos = ProductoService.getProductos();
+			request.setAttribute("productos", productos);
 		}
 		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();

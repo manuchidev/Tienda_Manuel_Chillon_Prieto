@@ -17,7 +17,7 @@
 			<div class="col-md-4 mb-3">
 
 				<label for="precio" class="lblFiltro">Precio:</label>
-				<!-- 						<input type="number" id="precio" name="precio" min="0"> -->
+				<!-- <input type="number" id="precio" name="precio" min="0"> -->
 
 				<select id="precio" name="precio">
 					<option value="Todos">Seleccione una opcion</option>
@@ -38,14 +38,13 @@
 				<label for="categoria" class="lblFiltro">Categoría:</label> 
 				<select id="categoria" name="categoria">
 					<option value="Todas">Seleccione una opcion</option>
-					<%
-							for (CategoriaVO categoria: categorias) {
-							%>
-					<option value="<%= categoria.getId() %>"><%= categoria.getNombre() %></option>
-					<%							
-							}
-							%>
-
+				<%
+					for (CategoriaVO categoria: categorias) {
+				%>
+						<option value="<%= categoria.getId() %>"><%= categoria.getNombre() %></option>
+				<%							
+					}
+				%>
 				</select>
 
 			</div>

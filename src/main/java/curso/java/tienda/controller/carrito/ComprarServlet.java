@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Compra.MetodoPagoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
@@ -24,7 +25,7 @@ import curso.java.tienda.service.Compra.MetodoPagoService;
  */
 
 @WebServlet("/comprar")
-public class ComprarServlet extends HttpServlet {
+public class ComprarServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**

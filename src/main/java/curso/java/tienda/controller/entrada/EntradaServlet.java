@@ -1,28 +1,31 @@
 package curso.java.tienda.controller.entrada;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ResourceBundle;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Producto.ProductoService;
-import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
  * Servlet implementation class EntradaServlet
  */
 @WebServlet("")
-public class EntradaServlet extends HttpServlet {
+public class EntradaServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
@@ -36,11 +39,27 @@ public class EntradaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				
+		HttpSession session = request.getSession(true);
+
+		String idioma = (String) session.getAttribute("idioma");
+
+		if (idioma == null) {
+			idioma = "es";
+			session.setAttribute("idioma", idioma);
+			logger.info("Idioma por defecto: " + idioma);
 		
+		} else {
+			logger.info("Idioma: " + idioma);
+		}
+
+		ResourceBundle bundle = ResourceBundle.getBundle("messages", new Locale(idioma));
+		session.setAttribute("bundle", bundle);
+
 		// Si no existe el carrito en la sesión, lo creamos
-		if (request.getSession().getAttribute("carrito") == null) {
-			request.getSession().setAttribute("carrito", new HashMap<ProductoVO, Integer>());
-			System.out.println("Carrito disponible");
+		if (session.getAttribute("carrito") == null) {
+			session.setAttribute("carrito", new HashMap<ProductoVO, Integer>());
+			logger.info("Carrito disponible");
 		}
 		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();		

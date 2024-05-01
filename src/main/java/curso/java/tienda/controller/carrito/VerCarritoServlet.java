@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Carrito.CarritoService;
 import curso.java.tienda.service.Producto.ProductoService;
@@ -23,7 +24,7 @@ import curso.java.tienda.service.Producto.ProductoService;
  */
 
 @WebServlet("/Carrito")
-public class VerCarritoServlet extends HttpServlet {
+public class VerCarritoServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -42,7 +43,7 @@ public class VerCarritoServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");
-		
+				
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 						

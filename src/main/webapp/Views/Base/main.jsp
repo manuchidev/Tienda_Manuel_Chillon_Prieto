@@ -9,14 +9,14 @@
 	<section class="py-5 gradient-custom">
 	
 	<%
+		List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
+		List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");
 		List<ProductoVO> productosFiltrados = (List<ProductoVO>) request.getAttribute("productosFiltrados");
 		List<ProductoVO> productosCategoria = (List<ProductoVO>) request.getAttribute("productosCategoria");		
 		
-	%>	
-		<jsp:include page="<%= Rutas.FILTROS_JSP%>" />		
-	<%
 		if (productosFiltrados != null && !productosFiltrados.isEmpty()) {
 	%>
+			<jsp:include page="<%= Rutas.FILTROS_JSP%>" />	
 	    	<jsp:include page="<%= Rutas.PRODUCTOS_FILTRADOS_JSP%>" />
 	<%
 		} else if (productosCategoria != null && !productosCategoria.isEmpty()) {			
@@ -25,6 +25,7 @@
 	<%
 		} else {		
 	%>
+			<jsp:include page="<%= Rutas.FILTROS_JSP%>" />	
 	    	<jsp:include page="<%= Rutas.PRODUCTOS_JSP%>" />    
 	<%
 		}

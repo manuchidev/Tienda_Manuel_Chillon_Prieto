@@ -15,8 +15,10 @@ textarea[name="message"] {
 	resize: none
 }
 
-#e-mail {
-	height: 45px
+#emailContactoLogueado {
+    cursor: default;
+	color: rgb(184, 184, 184);
+	background-color: #616161;
 }
 
 input.input-box,
@@ -25,6 +27,7 @@ textarea.input-box {
 	border: #616161;
 	color: #BDBDBD
 }
+
 input.input-box:focus,
 textarea.input-box:focus {
 	background-color: #000000;

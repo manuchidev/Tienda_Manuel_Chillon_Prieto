@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Producto.ProductoService;
 
@@ -18,7 +19,7 @@ import curso.java.tienda.service.Producto.ProductoService;
  * Servlet implementation class DetallesServlet
  */
 @WebServlet("/detalles")
-public class DetallesServlet extends HttpServlet {
+public class DetallesServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**

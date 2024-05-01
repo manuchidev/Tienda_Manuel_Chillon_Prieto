@@ -8,7 +8,7 @@
 	List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");	
 %>		
 
-<div class="container-fluid px-2 px-lg-5 mt-5">
+<div class="container-fluid px-2 px-lg-5 mt-4">
 
 <%		  	          			  	
 	if (categorias != null && !categorias.isEmpty() && productos != null && !productos.isEmpty()) {

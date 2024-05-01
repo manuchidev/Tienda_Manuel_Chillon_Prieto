@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
@@ -18,7 +19,7 @@ import curso.java.tienda.service.Usuario.UsuarioService;
  */
 
 @WebServlet("/comprobarEmail")
-public class comprobarEmailServlet extends HttpServlet {
+public class comprobarEmailServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**

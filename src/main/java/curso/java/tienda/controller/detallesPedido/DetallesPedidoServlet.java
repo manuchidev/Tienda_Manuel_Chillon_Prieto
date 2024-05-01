@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
+import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.DetallePedido.DetallePedidoService;
@@ -19,7 +20,7 @@ import curso.java.tienda.service.DetallePedido.DetallePedidoService;
  */
 
 @WebServlet("/DetallesPedido")
-public class DetallesPedidoServlet extends HttpServlet {
+public class DetallesPedidoServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
