@@ -82,7 +82,7 @@ public class PedidoDAO {
 		
 	}
 	
-	public static List<PedidoVO> findByIdUsuario(int id_usuario) {
+	public static List<PedidoVO> findByIdUsuarioASC(int id_usuario) {
 		
 		List<PedidoVO> pedidos = new ArrayList<PedidoVO>();
 		PedidoVO pedido = null;
@@ -90,7 +90,7 @@ public class PedidoDAO {
 		try {
 			
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM pedidos WHERE id_usuario = ?");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM pedidos WHERE id_usuario = ? ORDER BY fecha ASC");
 			
 			st.setInt(1, id_usuario);
 			
@@ -116,7 +116,42 @@ public class PedidoDAO {
 		}
 		
 		return pedidos;
+	}
+	
+	public static List<PedidoVO> findByIdUsuarioDESC(int id_usuario) {
 		
+		List<PedidoVO> pedidos = new ArrayList<PedidoVO>();
+		PedidoVO pedido = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM pedidos WHERE id_usuario = ? ORDER BY fecha DESC");
+			
+			st.setInt(1, id_usuario);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				pedido = new PedidoVO();
+				
+				pedido.setId(rs.getInt("id"));
+				pedido.setId_usuario(rs.getInt("id_usuario"));
+				pedido.setFecha(rs.getTimestamp("fecha"));
+				pedido.setMetodo_pago(rs.getString("metodo_pago"));
+				pedido.setEstado(rs.getString("estado"));
+				pedido.setNum_factura(rs.getString("num_factura"));
+				pedido.setTotal(rs.getBigDecimal("total"));
+				
+				pedidos.add(pedido);
+			}
+			
+		} catch (SQLException e) {
+			return null;
+		}
+		
+		return pedidos;
 	}
 	
 	public static int insert(PedidoVO pedido) {
@@ -150,13 +185,13 @@ public class PedidoDAO {
 	}
 	
 	public static boolean update(PedidoVO pedido) {
-
+		
 		try {
-
+			
 			Connection con = Conexion.getConexion();
 			PreparedStatement st = con.prepareStatement(
 					"UPDATE pedidos SET id_usuario = ?, fecha = ?, metodo_pago = ?, estado = ?, num_factura = ?, total = ? WHERE id = ?");
-
+			
 			st.setInt(1, pedido.getId_usuario());
 			st.setTimestamp(2, pedido.getFecha());
 			st.setString(3, pedido.getMetodo_pago());
@@ -164,15 +199,34 @@ public class PedidoDAO {
 			st.setString(5, pedido.getNum_factura());
 			st.setBigDecimal(6, pedido.getTotal());
 			st.setInt(7, pedido.getId());
-
+			
 			st.executeUpdate();
-
+			
 		} catch (SQLException e) {
 			return false;
 		}
-
+		
 		return true;
-
+	}
+	
+	public static boolean updateEstado(int id, String estado) {
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement(
+					"UPDATE pedidos SET estado = ? WHERE id = ?");
+			
+			st.setString(1, estado);
+			st.setInt(2, id);
+						
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			return false;
+		}
+		
+		return true;
 	}
 	
 	

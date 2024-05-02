@@ -412,3 +412,127 @@ java.lang.NullPointerException: Cannot invoke "String.length()" because "s" is n
 01/05/2024 22:37:20  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
 01/05/2024 22:37:30  INFO ContactoServlet:63 - Idioma: es
 01/05/2024 22:37:37  INFO ContactoServlet:76 - Correo enviado correctamente
+02/05/2024 11:43:02  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 11:43:02  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 11:43:54  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 11:43:54  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:12:55  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 12:12:55  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:13:05  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:14:45  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:14:45  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:15:42  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:15:43  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:17:02  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:17:02  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:17:11  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:17:11  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:17:15  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:25:03  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 12:25:03  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:25:59  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:26:19  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:26:19  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:26:53  WARN LoginServlet:83 - Intento de inicio de sesión fallido con email cliente1@cliente1.com
+02/05/2024 12:26:59  INFO LoginServlet:79 - Usuario empleado1@empleado1.com ha iniciado sesión
+02/05/2024 12:27:07  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 12:27:07  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:33:10  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:33:11  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:33:11  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:33:11  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:33:53  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:33:57  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:33:58  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:34:20  INFO LoginServlet:79 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 12:34:24 ERROR ComprarServlet:76 - Stock insuficiente
+02/05/2024 12:34:40  INFO ComprarServlet:72 - Stock suficiente
+02/05/2024 12:34:45  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:34:59 ERROR ComprarServlet:76 - Stock insuficiente
+02/05/2024 12:35:29  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:35:39  INFO ComprarServlet:72 - Stock suficiente
+02/05/2024 12:36:38  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:36:38  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 12:36:58  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:47:31  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:47:34  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:47:35  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:48:06  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:48:37  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:48:40  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:48:50  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:50:06  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:53:43  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:57:03  INFO LoginServlet:79 - Usuario empleado1@empleado1.com ha iniciado sesión
+02/05/2024 12:57:52  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:58:00  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 12:58:07  INFO LoginServlet:79 - Usuario empleado1@empleado1.com ha iniciado sesión
+02/05/2024 13:00:45  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:22:51  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:22:57  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:23:08  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:23:16  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:23:22  INFO LoginServlet:78 - Usuario empleado1@empleado1.com ha iniciado sesión
+02/05/2024 13:23:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:23:56  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:28:56  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:29:06 ERROR ProductoServlet:58 - No hay productos con esas características
+02/05/2024 13:29:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:29:37 ERROR ProductoServlet:58 - No hay productos con esas características
+02/05/2024 13:29:52 ERROR ProductoServlet:58 - No hay productos con esas características
+02/05/2024 13:30:45  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:30:53  INFO LoginServlet:78 - Usuario empleado1@empleado1.com ha iniciado sesión
+02/05/2024 13:31:10  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:44:32  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:44:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:44:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:44:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:44:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:47:29  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 13:47:29  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 13:47:37  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 13:47:57  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 13:48:01  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 13:48:02  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:04:06  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:12:28  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:12:34  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 14:12:40  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:12:41  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:12:41  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:12:43  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 14:12:43  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 14:12:51  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 14:13:13  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:13:25  INFO ComprarServlet:72 - Stock suficiente
+02/05/2024 14:13:41  INFO RealizarPedidoServlet:91 - Stock suficiente
+02/05/2024 14:33:08  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:33:08  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 14:33:14  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 14:36:48  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:36:51  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:36:52  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:36:52  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:36:59  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:37:03  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:37:06  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:37:12  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 14:37:28  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:37:32  INFO EntradaServlet:50 - Idioma por defecto: es
+02/05/2024 14:37:32  INFO EntradaServlet:62 - Carrito disponible
+02/05/2024 14:37:33  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:37:38  INFO LoginServlet:78 - Usuario cliente1@cliente1.com ha iniciado sesión
+02/05/2024 14:37:48  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:44:00  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:44:00  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:44:06  INFO EntradaServlet:53 - Idioma: en
+02/05/2024 14:44:07  INFO EntradaServlet:53 - Idioma: en
+02/05/2024 14:46:13  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:46:15  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:46:15  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:46:17  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:46:53  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:46:54  INFO EntradaServlet:53 - Idioma: es
+02/05/2024 14:47:05  INFO EntradaServlet:53 - Idioma: en
+02/05/2024 14:47:07  INFO EntradaServlet:53 - Idioma: en
+02/05/2024 14:47:08  INFO EntradaServlet:53 - Idioma: en

@@ -2,6 +2,7 @@ package curso.java.tienda.controller.carrito;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +14,10 @@ import javax.servlet.http.HttpSession;
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
+import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
@@ -65,6 +68,12 @@ public class AñadirCarritoServlet extends BaseServlet {
 			}			
 		}
 		
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		List<ProductoVO> productos = ProductoService.getProductos();	
+		
+		request.setAttribute("categorias", categorias);
+		request.setAttribute("productos", productos);
+				
 		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 	}
 

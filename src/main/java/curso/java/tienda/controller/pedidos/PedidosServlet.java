@@ -38,9 +38,24 @@ public class PedidosServlet extends BaseServlet {
 		
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		
-		List<PedidoVO> pedidos = PedidoService.getPedidoUsuario(usuario.getId());	
-		request.setAttribute("pedidos", pedidos);
-
+		String orden = request.getParameter("orden");
+		
+		if (orden != null) {
+			
+			if ("ASC".equals(orden)) {
+				List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioASC(usuario.getId());
+				request.setAttribute("pedidos", pedidos);
+				
+			} else if ("DESC".equals(orden)) {
+				List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioDESC(usuario.getId());
+				request.setAttribute("pedidos", pedidos);
+			}
+		
+		} else {
+			List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioASC(usuario.getId());
+			request.setAttribute("pedidos", pedidos);
+		}
+		
 		request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
 	}
 
@@ -51,9 +66,9 @@ public class PedidosServlet extends BaseServlet {
 
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		
-		List<PedidoVO> pedidos = PedidoService.getPedidoUsuario(usuario.getId());	
+		List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioASC(usuario.getId());
 		request.setAttribute("pedidos", pedidos);
-		
+				
 		String accion = request.getParameter("accion");	
 		String id = request.getParameter("idPedido");
 		
@@ -66,10 +81,13 @@ public class PedidosServlet extends BaseServlet {
 			
 			for (PedidoVO pedido : pedidos) {
 				if (pedido.getId() == idPedido) {
-					pedido.setEstado("PC");
+					PedidoService.cambiarEstado(pedido.getId(), "PC");
+					break;
 				}
 			}
 			
+			pedidos = PedidoService.getPedidoUsuarioASC(usuario.getId());
+			request.setAttribute("pedidos", pedidos);
 			request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
 		}
 				

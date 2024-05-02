@@ -51,9 +51,6 @@ public class IdiomaServlet extends BaseServlet {
 		HttpSession session = request.getSession();		
 
 		String idioma = request.getParameter("idioma");		
-
-		System.out.println("Idioma: " + idioma);
-
 		session.setAttribute("idioma", idioma);
 
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", new Locale(idioma));

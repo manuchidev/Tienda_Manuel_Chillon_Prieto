@@ -60,9 +60,9 @@ CREATE TABLE `configuracion` (
 
 INSERT INTO configuracion VALUES
 	(1, 'num_factura', '0', ''),
-	(2, 'nombre_empresa', '', ''),
-	(3, 'cif', '', ''),
-	(4, 'direccion', '', '');
+	(2, 'nombre_empresa', 'Riders Shop', ''),
+	(3, 'cif', 'B41527894', ''),
+	(4, 'direccion', 'C/Candelaria 5, 49015, Zamora', '');
 
 --
 -- Estructura de tabla para la tabla `descuentos`

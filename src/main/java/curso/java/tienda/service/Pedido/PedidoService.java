@@ -30,11 +30,24 @@ public class PedidoService {
 		return idPedido;
 	}
 	
-	public static List<PedidoVO> getPedidoUsuario(int id) {
+	public static List<PedidoVO> getPedidoUsuarioASC(int id) {
 
-		List<PedidoVO> pedidos = PedidoDAO.findByIdUsuario(id);
+		List<PedidoVO> pedidos = PedidoDAO.findByIdUsuarioASC(id);
 
 		return pedidos;
+	}
+	
+	public static List<PedidoVO> getPedidoUsuarioDESC(int id) {
+		
+		List<PedidoVO> pedidos = PedidoDAO.findByIdUsuarioDESC(id);
+		
+		return pedidos;
+	}
+	
+	public static void cambiarEstado(int id, String estado) {
+		
+		PedidoDAO.updateEstado(id, estado);
+
 	}
 
 }

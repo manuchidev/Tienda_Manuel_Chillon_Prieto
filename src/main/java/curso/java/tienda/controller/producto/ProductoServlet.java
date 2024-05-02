@@ -52,7 +52,13 @@ public class ProductoServlet extends BaseServlet {
 		if ( (!precio.equals("Todos") && !categoria.equals("Todas")) || (!precio.equals("Todos") && categoria.equals("Todas")) 
 				|| (precio.equals("Todos") && !categoria.equals("Todas")) ){
 			
-			List<ProductoVO> productosFiltrados = ProductoService.getProductosFiltrados(precio, categoria);			
+			List<ProductoVO> productosFiltrados = ProductoService.getProductosFiltrados(precio, categoria);		
+			
+			if (productosFiltrados.size() == 0) {
+				logger.error("No hay productos con esas características");
+				request.setAttribute("mensajeError", "No hay productos con esas características");
+			}
+			
 			request.setAttribute("productosFiltrados", productosFiltrados);	
 		
 		} else {

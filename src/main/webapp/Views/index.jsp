@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import="curso.java.tienda.config.Rutas"
+	import="curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Usuario.UsuarioVO"
 %>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -19,12 +17,19 @@
 	
 	<body class="gradient-custom">
 	
+		<% UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario"); %>
+	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<jsp:include page="<%= Rutas.NAV%>" />
-		
-		<jsp:include page="<%= Rutas.MAIN%>" />	
-					
+		<% if (usuario == null || usuario.esCliente()){%>
+			<jsp:include page="<%= Rutas.NAV%>" />
+				
+		<% } else if (usuario.esEmpleado()) {%>
+			<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />	
+		<% } %>
+							
+		<jsp:include page="<%= Rutas.MAIN%>" />							
+							
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 
 	</body>

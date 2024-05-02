@@ -24,8 +24,33 @@
 		<main>
 	
 			<section class="gradient-custom">
-			
+	
 				<div class="container py-5">
+				
+					<form action="Pedidos" method="get" class="d-flex justify-content-center">
+				
+						<div class="row">
+				
+							<div class="col-md-2 mb-1 d-flex align-items-center justify-content-center">				
+								<label for="orden" class="lblFiltro">Ordenar:</label>								
+							</div>
+
+							<div class="col-md-6 mb-1 d-flex align-items-center justify-content-center">
+							
+								<select id="orden" name="orden">
+									<option value="ASC">Más Antiguos</option>
+									<option value="DESC">Más Nuevos</option>
+								</select>
+								
+							</div>
+								
+							<div class="col-md-4 mb-1 d-flex align-items-center justify-content-center">
+								<input type="submit" value="Filtrar Pedidos">
+							</div>
+				
+						</div>
+				
+					</form>
 				
 					<div class="row d-flex justify-content-center my-4">
 					

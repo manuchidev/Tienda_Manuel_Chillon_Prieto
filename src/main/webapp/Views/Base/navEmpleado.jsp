@@ -3,7 +3,7 @@
 		curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Categoria.CategoriaVO" %>
 
 <%
-	String idiomaActual = (String) request.getSession().getAttribute("idioma");
+	String idiomaActual = (String)request.getSession().getAttribute("idioma");
 	ResourceBundle bundle = (ResourceBundle) session.getAttribute("bundle");
 	List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
 	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
@@ -93,17 +93,7 @@
 	        <%
 	             }
 	        %>
-	     
-		        <form class="d-flex order-1" action="Carrito">
-		        	        
-		            <button class="btn" type="submit">
-		                <i class="bi-cart-fill me-1"></i>
-		                <%= bundle.getString("nav.carrito") %>
-		                <span class="badge bg-danger text-white ms-1 rounded-pill"><%= (carrito != null ? carrito.size() : 0) %></span>
-		            </button>
-		            
-		        </form>
-	        
+	     	        
 	        </div>
 	            		        
 	    </div>
@@ -130,7 +120,7 @@
                     <!-- Si el usuario ha iniciado sesión -->
                     <form action="Usuario" method="post" class="d-flex flex-column align-items-center">
                         <button class="btn btn-primary w-100 mb-3" type="submit" name="accion" value="perfil">PERFIL</button>
-                        <button class="btn btn-primary w-100 mb-3" type="submit" name="accion" value="pedidos">PEDIDOS</button>
+                        <button class="btn btn-primary w-100 mb-3" type="submit" name="accion" value="pedidos">PEDIDOS USUARIOS</button>
                         <button class="btn btn-danger w-100 mb-3" type="submit" name="accion" value="cerrarSesion">CERRAR SESIÓN</button>
                     </form>                
                 <% 

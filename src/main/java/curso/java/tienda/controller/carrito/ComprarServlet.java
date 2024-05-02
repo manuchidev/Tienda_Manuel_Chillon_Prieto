@@ -18,6 +18,7 @@ import curso.java.tienda.model.VO.Compra.MetodoPagoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Compra.CompraService;
 import curso.java.tienda.service.Compra.MetodoPagoService;
 
 /**
@@ -65,9 +66,18 @@ public class ComprarServlet extends BaseServlet {
 				
 				request.setAttribute("metodos_pago", metodos_pago);
 				
-				request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);						
+				boolean stockSuficiente = CompraService.validarStock(carrito);
 				
+				if (stockSuficiente) {
+					logger.info("Stock suficiente");
+					request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
 				
+				} else {
+					logger.error("Stock insuficiente");
+					request.setAttribute("mensajeError", "Stock insuficiente");
+					request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
+				}
+								
 			} else {
 				request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
 			}

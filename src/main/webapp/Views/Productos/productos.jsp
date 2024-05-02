@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
 	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.ProductoVO, curso.java.tienda.model.VO.Categoria.CategoriaVO, 
-	curso.java.tienda.service.Producto.ProductoService, curso.java.tienda.service.Categoria.CategoriaService" 
+	curso.java.tienda.model.VO.Usuario.UsuarioVO" 
  %>
 
 <%
+	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
 	List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
 	List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");	
 %>		
@@ -60,10 +61,14 @@
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 				
 									<div class="text-center">
-										<a class="btn btn-primary mt-auto"
-											href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a> <a
-											class="btn btn-warning mt-auto"
-											href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
+									    <% if (usuario == null || usuario.esCliente()){ %>
+											<a class="btn btn-primary mt-auto" href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a> 
+											<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
+																				    
+									    <%} else if (usuario.esEmpleado()){ %>
+											<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
+									    	<a class="btn btn-danger mt-auto" href="retirar?idProd=<%= producto.getId()%>">Dar de Baja</a> 
+									    <%} %>
 									</div>
 				
 								</div>

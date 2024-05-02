@@ -88,7 +88,7 @@ public class RealizarPedidoServlet extends BaseServlet {
 				boolean stockSuficiente = CompraService.validarStock(carrito);
 
 				if (stockSuficiente) {
-					
+					logger.info("Stock suficiente");
 					CompraService.completarPedido(carrito, usuario, metodo_pago);
 																							
 					request.getRequestDispatcher(Rutas.RESULTADO_JSP).forward(request, response);
@@ -97,9 +97,10 @@ public class RealizarPedidoServlet extends BaseServlet {
 					session.removeAttribute("carrito");
 				
 				} else {
+					logger.error("Stock insuficiente");
+					request.setAttribute("mensajeError", "Stock insuficiente");
 					request.getRequestDispatcher(Rutas.COMPRA_JSP).forward(request, response);
-				}
-												
+				}												
 				
 			} else {
 				request.setAttribute("errores", errores);

@@ -73,8 +73,7 @@ public class LoginServlet extends BaseServlet {
 			
 			UsuarioVO usuario = UsuarioService.validarUsuario(email, clave);
 			
-			if (usuario != null) {
-				
+			if (usuario != null) {				
 				session.setAttribute("usuario", usuario);
 				logger.info("Usuario " + email + " ha iniciado sesión");
 				request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
