@@ -1,10 +1,7 @@
-<%@page import="curso.java.tienda.model.VO.Compra.ProvinciasLocalidadesVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	import="java.util.*, java.math.BigDecimal, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.ProductoVO, 
 	curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Compra.MetodoPagoVO"
 %>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="es">

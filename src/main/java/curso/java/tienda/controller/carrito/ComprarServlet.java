@@ -14,10 +14,12 @@ import javax.servlet.http.HttpSession;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
+import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Compra.MetodoPagoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
+import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Compra.CompraService;
 import curso.java.tienda.service.Compra.MetodoPagoService;
 
@@ -52,6 +54,9 @@ public class ComprarServlet extends BaseServlet {
 		
 		HttpSession session = request.getSession(true);
 		
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		request.setAttribute("categorias", categorias);
+		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
@@ -79,10 +84,12 @@ public class ComprarServlet extends BaseServlet {
 				}
 								
 			} else {
+				logger.error("Usuario no autenticado");
 				request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
 			}
 		
 		} else {
+			logger.error("Carrito vacío");
 			request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 		}
 		

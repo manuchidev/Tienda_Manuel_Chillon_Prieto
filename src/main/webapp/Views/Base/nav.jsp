@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  
 	import=" java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.*, 
-		curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Categoria.CategoriaVO" %>
+		curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Categoria.CategoriaVO" 
+%>
 
 <%
 	String idiomaActual = (String) request.getSession().getAttribute("idioma");
@@ -120,7 +121,7 @@
         <div class="modal-content">
         
             <div class="modal-header">
-                <h5 class="modal-title" id="usuarioModalLabel">Opciones de Usuario</h5>
+                <h5 class="modal-title" id="usuarioModalLabel" style="color:black">Opciones de Usuario</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             

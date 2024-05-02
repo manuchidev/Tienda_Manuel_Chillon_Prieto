@@ -8,12 +8,34 @@ import curso.java.tienda.config.Conexion;
 
 public class ConfigDAO {
 	
-	public static void updateFactura() {
+	public static int getValor() {
+
+		int valor = 0;
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT valor FROM configuracion WHERE id = 1");
+			ResultSet rs = st.executeQuery();
+
+			if (rs.next()) {
+				valor = rs.getInt("valor");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return valor;
+	}
+	
+	
+	public static void updateValor() {
 		
 		try {
 			
 			Connection con = Conexion.getConexion();
-			PreparedStatement stSelect = con.prepareStatement("SELECT valor FROM config WHERE id = 1");
+			PreparedStatement stSelect = con.prepareStatement("SELECT valor FROM configuracion WHERE id = 1");
 			ResultSet rs = stSelect.executeQuery();
 	
 			String valorActualStr = null;
@@ -26,7 +48,7 @@ public class ConfigDAO {
 			
 			int nuevoValor = valorActual + 1;
 			
-			PreparedStatement stUpdate = con.prepareStatement("UPDATE config SET valor = ? WHERE id = 1");
+			PreparedStatement stUpdate = con.prepareStatement("UPDATE configuracion SET valor = ? WHERE id = 1");
 			stUpdate.setString(1, String.valueOf(nuevoValor));
 			stUpdate.executeUpdate();
 

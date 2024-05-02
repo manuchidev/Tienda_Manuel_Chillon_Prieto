@@ -51,6 +51,8 @@ public class ContactoServlet extends BaseServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession(true);
+		
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 
 		String idioma = (String) session.getAttribute("idioma");
 
@@ -80,6 +82,7 @@ public class ContactoServlet extends BaseServlet {
 			logger.error("Error al enviar el correo", e);
 		}
 		
+		request.setAttribute("categorias", categorias);
 		request.getRequestDispatcher(Rutas.CONTACTO_JSP).forward(request, response);
 	}
 

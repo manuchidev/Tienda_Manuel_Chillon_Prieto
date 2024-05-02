@@ -40,6 +40,9 @@ public class RegistroServlet extends BaseServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		request.setAttribute("categorias", categorias);
+		
 		request.getRequestDispatcher(Rutas.REGISTRO_JSP).forward(request, response);
 	}
 

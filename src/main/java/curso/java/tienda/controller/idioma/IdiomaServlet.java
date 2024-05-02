@@ -56,7 +56,6 @@ public class IdiomaServlet extends BaseServlet {
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", new Locale(idioma));
 		session.setAttribute("bundle", bundle);
 		
-	
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();		
 		List<ProductoVO> productos = ProductoService.getProductos();
 				
@@ -64,7 +63,10 @@ public class IdiomaServlet extends BaseServlet {
 		request.setAttribute("categorias", categorias);
 		request.setAttribute("productos", productos);
 		
-		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
+		String url = request.getHeader("Referer");
+
+		response.sendRedirect(url);
+
 	}
 
 }

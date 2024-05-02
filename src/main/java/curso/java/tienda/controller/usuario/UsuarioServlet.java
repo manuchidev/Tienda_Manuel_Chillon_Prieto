@@ -16,6 +16,7 @@ import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Producto.ProductoService;
 
@@ -49,6 +50,8 @@ public class UsuarioServlet extends BaseServlet {
 
 		String accion = request.getParameter("accion");
 		
+		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
+		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();		
 		List<ProductoVO> productos = ProductoService.getProductos();
 				
@@ -60,7 +63,13 @@ public class UsuarioServlet extends BaseServlet {
 			request.getRequestDispatcher(Rutas.PERFIL_JSP).forward(request, response);
 		
 		} else if ("pedidos".equals(accion)){
-			response.sendRedirect("Pedidos");
+			
+			if (usuario.esCliente()) {
+				response.sendRedirect("Pedidos");
+				
+			} else if (usuario.esEmpleado()) {
+				response.sendRedirect("PedidosUsuarios");
+			}
 			// request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);
 		
 		} else if ("cerrarSesion".equals(accion)){

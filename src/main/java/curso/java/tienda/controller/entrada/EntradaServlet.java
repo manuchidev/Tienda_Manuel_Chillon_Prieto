@@ -68,7 +68,7 @@ public class EntradaServlet extends BaseServlet {
 		// Recuperar las categorias y productos
 		request.setAttribute("categorias", categorias);
 		request.setAttribute("productos", productos);
-	
+			
 		// Redirigir a la pagina de inicio
 		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 	}

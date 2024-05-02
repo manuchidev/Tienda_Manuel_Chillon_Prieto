@@ -4,11 +4,51 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 
 public class UsuarioDAO {
+	
+	public static List<UsuarioVO> findAll() {
+
+		List<UsuarioVO> usuarios = new ArrayList<UsuarioVO>();
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios");
+
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				UsuarioVO usuario = new UsuarioVO();
+
+				usuario.setId(rs.getInt("id"));
+				usuario.setId_rol(rs.getInt("id_rol"));
+				usuario.setEmail(rs.getString("email"));
+				usuario.setClave(rs.getString("clave"));
+				usuario.setNombre(rs.getString("nombre"));
+				usuario.setApellido1(rs.getString("apellido1"));
+				usuario.setApellido2(rs.getString("apellido2"));
+				usuario.setDireccion(rs.getString("direccion"));
+				usuario.setProvincia(rs.getString("provincia"));
+				usuario.setLocalidad(rs.getString("localidad"));
+				usuario.setTelefono(rs.getString("telefono"));
+				usuario.setDni(rs.getString("dni"));
+
+				usuarios.add(usuario);
+			}
+
+		} catch (SQLException e) {
+			return null;
+		}
+
+		return usuarios;
+	}
 	
 	public static UsuarioVO findById(int id) {
 		

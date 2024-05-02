@@ -1,6 +1,8 @@
 package curso.java.tienda.controller.usuario.perfil;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
+import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
+import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
@@ -42,6 +46,8 @@ public class PerfilServlet extends BaseServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		
 		String accion = request.getParameter("accion");	
 		System.out.println("accion: " + accion);
 		
@@ -76,7 +82,8 @@ public class PerfilServlet extends BaseServlet {
 				}
 			}
 		}
-				
+		
+		request.getAttribute("categorias");
 		request.getSession().setAttribute("usuario", usuario);
 		request.getRequestDispatcher(Rutas.PERFIL_JSP).forward(request, response);
 	}

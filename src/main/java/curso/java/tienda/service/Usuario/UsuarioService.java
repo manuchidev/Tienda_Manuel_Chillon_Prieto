@@ -2,6 +2,7 @@ package curso.java.tienda.service.Usuario;
 
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.List;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.util.password.StrongPasswordEncryptor;
@@ -10,6 +11,13 @@ import curso.java.tienda.model.DAO.Usuario.UsuarioDAO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 
 public class UsuarioService {
+	
+	public static List<UsuarioVO> getUsuarios() {
+
+		List<UsuarioVO> usuarios = UsuarioDAO.findAll();
+
+		return usuarios;
+	}
 	
 	public static UsuarioVO getUsuario(int id) {
 		

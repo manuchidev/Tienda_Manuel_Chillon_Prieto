@@ -1,5 +1,6 @@
 package curso.java.tienda.model.DAO.Pedido;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +13,7 @@ import curso.java.tienda.model.VO.Pedido.PedidoVO;
 
 public class PedidoDAO {
 	
-	public static List<PedidoVO> findAll() { 
+	public static List<PedidoVO> findAllASC() { 
 		
 		List<PedidoVO> pedidos = new ArrayList<PedidoVO>();
 		PedidoVO pedido = null;
@@ -20,7 +21,7 @@ public class PedidoDAO {
 		try {
 			
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM pedidos");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM pedidos ORDER BY fecha ASC");
 			
 			ResultSet rs = st.executeQuery();
 			
@@ -42,6 +43,40 @@ public class PedidoDAO {
 		} catch (SQLException e) {
 	        
 	    }
+		
+		return pedidos;
+	}
+	
+	public static List<PedidoVO> findAllDESC() { 
+		
+		List<PedidoVO> pedidos = new ArrayList<PedidoVO>();
+		PedidoVO pedido = null;
+		
+		try {
+			
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM pedidos ORDER BY fecha DESC");
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				
+				pedido = new PedidoVO();
+				
+				pedido.setId(rs.getInt("id"));
+				pedido.setId_usuario(rs.getInt("id_usuario"));
+				pedido.setFecha(rs.getTimestamp("fecha"));
+				pedido.setMetodo_pago(rs.getString("metodo_pago"));
+				pedido.setEstado(rs.getString("estado"));
+				pedido.setNum_factura(rs.getString("num_factura"));
+				pedido.setTotal(rs.getBigDecimal("total"));
+				
+				pedidos.add(pedido);
+			}
+			
+		} catch (SQLException e) {
+			
+		}
 		
 		return pedidos;
 	}
@@ -229,6 +264,47 @@ public class PedidoDAO {
 		return true;
 	}
 	
-	
+	public static void insertFactura(int id, String numFactura, BigDecimal total) {
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("UPDATE pedidos SET num_factura = ?, total = ? WHERE id = ?");
+
+			st.setString(1, numFactura);
+			st.setBigDecimal(2, total);
+			st.setInt(3, id);
+
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+
+		}
+
+	}
+
+	public static String getNumFactura(int idPedido) {
+
+		String numFactura = null;
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT num_factura FROM pedidos WHERE id = ?");
+
+			st.setInt(1, idPedido);
+
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+				numFactura = rs.getString("num_factura");
+			}
+
+		} catch (SQLException e) {
+			return null;
+		}
+
+		return numFactura;
+	}
 
 }

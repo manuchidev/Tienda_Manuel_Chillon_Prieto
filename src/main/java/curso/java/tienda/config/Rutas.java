@@ -75,6 +75,7 @@ public class Rutas {
 	
 	// PEDIDOS
 	public static final String PEDIDOS_JSP = "/Views/Usuario/Pedidos/pedidos.jsp";
+	public static final String PEDIDOS_USUARIOS_JSP = "/Views/Usuario/Pedidos/pedidosUsuarios.jsp";
 	public static final String DETALLES_PEDIDO_JSP = "/Views/Usuario/DetallesPedido/detallesPedido.jsp";
 
 }

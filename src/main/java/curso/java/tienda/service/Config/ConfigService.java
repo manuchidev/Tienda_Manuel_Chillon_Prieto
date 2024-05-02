@@ -4,9 +4,16 @@ import curso.java.tienda.model.DAO.Config.ConfigDAO;
 
 public class ConfigService {
 	
-	public static void actualizarNumFactur() {
+	public static int obtenerContador() {
 		
-		ConfigDAO.updateFactura();
+		int contador = ConfigDAO.getValor();
+		return contador;
+	}
+	
+	
+	public static void actualizarContador() {
+		
+		ConfigDAO.updateValor();
 	}
 
 }
