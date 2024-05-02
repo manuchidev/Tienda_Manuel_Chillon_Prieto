@@ -307,4 +307,28 @@ public class PedidoDAO {
 		return numFactura;
 	}
 
+	public static String getFecha(int idPedido) {
+
+		String fecha = null;
+
+        try {
+
+            Connection con = Conexion.getConexion();
+            PreparedStatement st = con.prepareStatement("SELECT fecha FROM pedidos WHERE id = ?");
+
+            st.setInt(1, idPedido);
+
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()) {
+                fecha = rs.getString("fecha");
+            }
+
+        } catch (SQLException e) {
+            return null;
+        }
+
+        return fecha;
+	}
+
 }
