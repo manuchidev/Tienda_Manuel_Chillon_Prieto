@@ -82,7 +82,10 @@ public class PedidosServlet extends BaseServlet {
 		int idPedido = Integer.parseInt(id);
 		
 		if ("Factura".equals(accion)) {
-			ByteArrayOutputStream factura = PedidoService.generarFactura(idPedido);
+			
+			String ruta = request.getServletContext().getRealPath("/");
+			
+			ByteArrayOutputStream factura = PedidoService.generarFactura(idPedido, ruta);
 
 			String numFactura = PedidoService.obtenerNumFactura(idPedido);
 

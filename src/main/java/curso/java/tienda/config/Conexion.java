@@ -9,7 +9,7 @@ public class Conexion {
 	static String login = "root";
 	static String password = "";
 	static String host = "127.0.0.1"; // Localhost
-	static String port = "3306";
+	static String port = "3307";
 	
 	static String url = "jdbc:mysql://";
 	static Connection conexion;
