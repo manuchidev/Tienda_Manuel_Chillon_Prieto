@@ -194,6 +194,35 @@ public class ProductoDAO {
 		
 	}
 	
+	public static ProductoVO updateProducto(int id, int idCategoria, String nombre, String descripcion, BigDecimal precio, int stock, BigDecimal impuesto, String imagen) {
+		
+		ProductoVO producto = null;
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement( "UPDATE productos SET id_categoria = ?, nombre = ?, descripcion = ?, precio = ?, stock = ?, impuesto = ?, imagen = ? WHERE id = ?");
+
+			st.setInt(1, idCategoria);
+			st.setString(2, nombre);
+			st.setString(3, descripcion);
+			st.setBigDecimal(4, precio);
+			st.setInt(5, stock);
+			st.setBigDecimal(6, impuesto);
+			st.setString(7, imagen);
+			st.setInt(8, id);
+
+			st.executeUpdate();
+
+			producto = findById(id);
+
+		} catch (SQLException e) {
+
+		}
+
+		return producto;
+	}
+	
 	public static void updateStock(int id, int cantidad) {
 				
 		try {

@@ -33,3 +33,139 @@
 03/05/2024 14:05:10  INFO EntradaServlet:57 - Idioma: es
 03/05/2024 14:05:20  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
 03/05/2024 14:14:10  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:13:24  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 16:13:24  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 16:13:56  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 16:31:28  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 16:31:28  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 16:31:38  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 16:33:58  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:34:10  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 16:34:19  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 16:41:45  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:41:52  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 16:46:57  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:49:20  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:49:30  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 16:50:52  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:50:53  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:51:09  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:51:16  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 16:55:23  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 16:55:31  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 16:55:37  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:04:16  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:04:23  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:06:54  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:07:12  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:07:21  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:08:34  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:08:51  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:10:38  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:10:45  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:10:55  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:13:12  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:21:53  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:22:04  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:37:17  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 17:37:24  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:38:35  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:38:50  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:40:47  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 17:41:00  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 18:10:01  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 18:10:02  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 18:10:03  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 18:53:45  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 18:53:45  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 18:53:55  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 18:55:44  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 18:55:49  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 18:55:55  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 18:56:00  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 18:58:16  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 18:58:18  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:01:41  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:01:47  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:01:52  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:01:54  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:01:59  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:02:25  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:07:02  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:07:09  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:07:14  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:10:41  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:10:43  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:10:46  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:10:46  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:10:47  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:10:47  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:10:49  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 19:10:49  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 19:10:55  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:11:21  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:11:27  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:29:54  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:30:01  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:30:54  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:30:56  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:30:57  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:30:58  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:31:01  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:31:06  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:32:37  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:32:38  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:32:39  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:32:47  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:32:48  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:40:59  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:41:05  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:45:18  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:45:24  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:57:26  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:57:32  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 19:59:21  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 19:59:23  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:02:03  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:02:10  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:02:51  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:02:54  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:03:00  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:10:46  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:10:52  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:16:13  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:16:22  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:26:36  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:27:18  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 20:27:24  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 20:27:30  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:31:47  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:31:52  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:37:11  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:37:20  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:37:24  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:37:26  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:37:26  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:39:51  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:40:06  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:40:12  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:42:45  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:45:31  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:45:46  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:46:19  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 20:46:19  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 20:46:27  INFO LoginServlet:81 - Usuario cliente1@cliente1.com ha iniciado sesión
+03/05/2024 20:46:44  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 20:46:44  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 20:46:50  INFO LoginServlet:81 - Usuario cliente1@cliente1.com ha iniciado sesión
+03/05/2024 20:46:56  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 20:46:56  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 20:47:03  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 20:47:18  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:47:21  INFO EntradaServlet:57 - Idioma: en
+03/05/2024 20:47:21  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:47:49  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:47:51  INFO EntradaServlet:57 - Idioma: en
+03/05/2024 20:47:52  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 20:47:58  INFO EntradaServlet:57 - Idioma: en
+03/05/2024 20:48:00  INFO EntradaServlet:57 - Idioma: es

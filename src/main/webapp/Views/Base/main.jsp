@@ -37,7 +37,6 @@
 	    	<jsp:include page="<%= Rutas.PRODUCTOS_JSP%>" />    
 	<%
 		}
-	
 	%>	
 	    
 	</section>

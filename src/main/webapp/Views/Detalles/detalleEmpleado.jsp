@@ -25,8 +25,8 @@
 		
 			<!-- Product section-->
 	        <section class="py-5 ">
-	        
-				<form action="modificarProducto" method="post" enctype="multipart/form-data">
+	        											<!-- enctype="multipart/form-data" -->
+				<form action="modificarProducto" method="post">
 				 
 	            	<div class="container px-4 px-lg-5 my-3 d-flex justify-content-center align-items-center">
 	            
@@ -37,8 +37,10 @@
 						
 						%>
 							<div class="col-md-5">
-								<img class="card-img-top mb-5 mb-md-0 imgDetalle" id="preview" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
-								<input type="file" id="imagen" name="imagen" onchange="previewImage()" class="form-control mt-2 mb-2">
+							    <input type="hidden" name="imagenProd" value="<%=producto.getImagen()%>">
+								<img class="card-img-top mb-5 mb-md-0 imgDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
+<%-- 								<img class="card-img-top mb-5 mb-md-0 imgDetalle" id="preview" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." /> --%>
+<!-- 								<input type="file" id="imagen" name="imagen" onchange="previewImage()" class="form-control mt-2 mb-2"> -->
 							</div>
 							
 							
@@ -88,7 +90,7 @@
 								    </div>
 								    
 								    <div class="col-auto">
-								        <select id="categoria" name="categoria" class="form-control">
+								        <select id="categoriaProd" name="categoriaProd" class="form-control">
 								            <%
 								                for (CategoriaVO categoria : categorias) {
 								            %>
@@ -103,8 +105,13 @@
 								
 								<div class="d-flex justify-content-center mt-3">
 								
+								    <input type="hidden" name="idProd" value="<%=producto.getId()%>">
+								    <input type="hidden" name="idCat" value="<%=producto.getId_categoria()%>">								
 									<button class="btn btn-outline-dark flex-shrink-0" type="submit">
 										Modificar Producto
+									</button>
+									<button class="btn btn-danger flex-shrink-0" type="submit">
+										Eliminar Producto
 									</button>
 								</div>
 								
@@ -175,19 +182,7 @@
 					
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 		
-			<script src="<%=request.getContextPath() %><%= Rutas.CANTIDAD_DETALLES_JS%>"></script>
-	
-	<script>
-
-	    function previewImage() {
-	        var reader = new FileReader();
-	        reader.onload = function(e) {
-	            document.getElementById('preview').src = e.target.result;
-	        }
-	        reader.readAsDataURL(document.getElementById('imagen').files[0]);
-	    }
-
-	</script>
+		<script src="<%=request.getContextPath() %><%= Rutas.PREVIEW_IMAGEN_JS%>"></script>
 	
 	</body>
 	

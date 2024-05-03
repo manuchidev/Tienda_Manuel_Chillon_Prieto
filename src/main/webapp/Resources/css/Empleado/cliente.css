@@ -1,0 +1,16 @@
+.lblFiltro {
+	color: white;
+}
+
+.cardCliente {
+	border: 2px solid #000000;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	max-width: 400px;
+}
+
+.divUsuarioImg {
+	width: 100%;
+	height: auto;
+    overflow: hidden;
+    text-align: center;
+}

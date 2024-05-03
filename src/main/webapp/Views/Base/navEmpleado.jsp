@@ -26,31 +26,13 @@
 	        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 	        
 	            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Tienda_Manuel_Chillon_Prieto/"><%= bundle.getString("nav.inicio") %></a></li>
-
-	            <li class="nav-item dropdown">
-	        
-	                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= bundle.getString("nav.categorias") %></a>
-	                
-	                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-	                    <li><a class="dropdown-item" href="categoria"><%= bundle.getString("nav.productos") %></a></li>
-	                    <li><hr class="dropdown-divider" /></li>
-	                    
-                    <%		  	          			  	
-						if (categorias != null && !categorias.isEmpty()) {
-							
-							for (CategoriaVO categoria: categorias) {								
-					%>
-			                    <li><a class="dropdown-item" href="categoria?id=<%= categoria.getId() %>"><%= categoria.getNombre() %></a></li>			
-					<%
-							}
-						}
-                     %>
-					
-	                </ul>
-	                
-	            </li>
 	            
-<%--      	        <li class="nav-item"><a class="nav-link" href="Contacto"><%= bundle.getString("nav.contacto") %></a></li> --%>
+     	        <li class="nav-item"><a class="nav-link" href="ProductoEmpleado?accion=view"><%= bundle.getString("nav.productos") %></a></li>
+     	        
+     	        <li class="nav-item"><a class="nav-link" href="CategoriaEmpleado?accion=view"><%= bundle.getString("nav.categorias") %></a></li>
+     	        
+     	        <li class="nav-item"><a class="nav-link" href="ClienteEmpleado?accion=view"><%= bundle.getString("nav.clientes") %></a></li>
+     	        
 	            
 	        </ul>
 	        

@@ -23,12 +23,13 @@
 		
 		<% if (usuario == null || usuario.esCliente()){%>
 			<jsp:include page="<%= Rutas.NAV%>" />
+			<jsp:include page="<%= Rutas.MAIN%>" />
 				
 		<% } else if (usuario.esEmpleado()) {%>
 			<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />	
+			<jsp:include page="<%= Rutas.MAIN_EMPLEADO%>" />					
 		<% } %>
 							
-		<jsp:include page="<%= Rutas.MAIN%>" />							
 							
 		<jsp:include page="<%= Rutas.FOOTER%>" />
 

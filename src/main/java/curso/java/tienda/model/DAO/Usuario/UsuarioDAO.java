@@ -19,7 +19,7 @@ public class UsuarioDAO {
 		try {
 
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios WHERE id_rol = 3");
 
 			ResultSet rs = st.executeQuery();
 

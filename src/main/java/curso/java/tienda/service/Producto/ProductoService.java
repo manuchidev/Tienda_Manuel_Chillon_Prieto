@@ -3,6 +3,8 @@ package curso.java.tienda.service.Producto;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.servlet.http.Part;
+
 import curso.java.tienda.model.DAO.Producto.ProductoDAO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
@@ -93,6 +95,20 @@ public class ProductoService {
 		return productos;
 	}
 	
+	public static ProductoVO actualizarProducto(String id, String idCategoria, String nombre, String descripcion, String precio, String stock, String impuesto, String imagen) {
+		
+		int idProducto = Integer.parseInt(id);
+		int idCategoriaInt = Integer.parseInt(idCategoria);
+		BigDecimal precioBD = BigDecimal.valueOf(Double.parseDouble(precio));
+		int stockInt = Integer.parseInt(stock);
+		BigDecimal impuestoBD = BigDecimal.valueOf(Double.parseDouble(impuesto));
+		
+		ProductoVO producto = ProductoDAO.updateProducto(idProducto, idCategoriaInt, nombre, descripcion, precioBD, stockInt, impuestoBD, imagen);
+		
+		return producto;
+		
+	}
+	
 	public static int obtenerStock(int id) {
 		
 		int stock = ProductoDAO.findStock(id);
@@ -104,5 +120,5 @@ public class ProductoService {
 		
 		ProductoDAO.updateStock(id, cantidad);
 	}
-
+	
 }

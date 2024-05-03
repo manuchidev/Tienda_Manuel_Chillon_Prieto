@@ -34,7 +34,7 @@
 	                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= bundle.getString("nav.categorias") %></a>
 	                
 	                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-	                    <li><a class="dropdown-item" href="categoria"><%= bundle.getString("nav.productos") %></a></li>
+	                    <li><a class="dropdown-item" href="categoria"><%= bundle.getString("nav.Allproductos") %></a></li>
 	                    <li><hr class="dropdown-divider" /></li>
 	                    
                     <%		  	          			  	

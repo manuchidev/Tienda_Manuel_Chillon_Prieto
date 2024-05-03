@@ -61,14 +61,8 @@
 								<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 				
 									<div class="text-center">
-									    <% if (usuario == null || usuario.esCliente()){ %>
-											<a class="btn btn-primary mt-auto" href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a> 
-											<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
-																				    
-									    <%} else if (usuario.esEmpleado()){ %>
-											<a class="btn btn-warning mt-auto" href="detallesEmpleado?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Modificar</a>
-									    	<a class="btn btn-danger mt-auto" href="retirar?idProd=<%= producto.getId()%>">Dar de Baja</a> 
-									    <%} %>
+										<a class="btn btn-primary mt-auto" href="añadirCarrito?idProd=<%= producto.getId()%>">Comprar</a> 
+										<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>																				    
 									</div>
 				
 								</div>
