@@ -51,7 +51,7 @@
 							
 									<div class="row mt-0">
 										<div class="col-md-12 mb-3">
-											<h4 class="text-center">Contacta con Nosotros</h4>
+											<h4 class="text-center">Contacte con Nosotros</h4>
 										</div>
 									</div>
 								
