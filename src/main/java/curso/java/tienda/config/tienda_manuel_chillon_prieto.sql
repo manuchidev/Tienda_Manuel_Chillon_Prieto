@@ -62,7 +62,8 @@ INSERT INTO configuracion VALUES
 	(1, 'num_factura', '0', ''),
 	(2, 'nombre_empresa', 'Riders Shop', ''),
 	(3, 'cif', 'B41527894', ''),
-	(4, 'direccion', 'C/Candelaria 5, 49015, Zamora', '');
+	(4, 'direccion', 'C/ Candelaria 5, 49015, Zamora', ''),
+	(5, 'email', 'riders_shop@outlook.com', '');
 
 --
 -- Estructura de tabla para la tabla `descuentos`

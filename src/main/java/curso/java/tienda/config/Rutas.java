@@ -9,6 +9,8 @@ public class Rutas {
 	// PRODUCTOS
 	public static final String PROD_CSS = "/Resources/css/Producto/producto.css";
 	public static final String DETALLES_CSS = "/Resources/css/Detalles/detalles.css";
+	public static final String DETALLES_EMPLEADO_CSS = "/Resources/css/Detalles/detallesEmpleado.css";
+	
 	
 	// CONTACTO
 	public static final String CONTACTO_CSS = "/Resources/css/Contacto/contacto.css";
@@ -41,6 +43,7 @@ public class Rutas {
 	// JAVASCRIPT
 	public static final String REGISTRO_JS = "/Resources/js/Registro/validarRegistro.js";
 	public static final String CANTIDAD_DETALLES_JS = "/Resources/js/Detalles/cantidadDetalle.js";
+	public static final String PREVIEW_IMAGEN_JS = "/Resources/js/Detalles/previewImagen.js";	
 	public static final String CANTIDAD_CARRITO_JS = "/Resources/js/Carrito/cantidadCarrito.js";
 	
 	// IMAGENES
@@ -57,6 +60,7 @@ public class Rutas {
 	public static final String PRODUCTOS_FILTRADOS_JSP = "/Views/Productos/productosFiltrados.jsp";
 	public static final String PRODUCTOS_CATEGORIAS_JSP = "/Views/Productos/productosCategorias.jsp";
 	public static final String DETALLES_JSP = "Views/Detalles/detalle.jsp";
+	public static final String DETALLES_EMPLEADO_JSP = "Views/Detalles/detalleEmpleado.jsp";
 	
 	// CONTACTO
 	public static final String CONTACTO_JSP = "Views/Contacto/contacto.jsp";

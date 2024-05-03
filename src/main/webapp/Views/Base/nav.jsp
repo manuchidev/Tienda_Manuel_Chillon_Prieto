@@ -52,7 +52,9 @@
 	                
 	            </li>
 	            
-     	        <li class="nav-item"><a class="nav-link" href="Contacto"><%= bundle.getString("nav.contacto") %></a></li>
+   				<% if (usuario == null || usuario.esCliente()) {%>	            
+	     	        <li class="nav-item"><a class="nav-link" href="Contacto"><%= bundle.getString("nav.contacto") %></a></li>
+	            <% } %>
 	            
 	        </ul>
 	        
@@ -95,6 +97,7 @@
 	             }
 	        %>
 	     
+	     	<% if (usuario == null || usuario.esCliente()){ %>
 		        <form class="d-flex order-1" action="Carrito">
 		        	        
 		            <button class="btn" type="submit">
@@ -104,6 +107,7 @@
 		            </button>
 		            
 		        </form>
+		   <% } %>
 	        
 	        </div>
 	            		        

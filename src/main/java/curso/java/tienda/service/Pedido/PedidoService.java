@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.swing.text.ParagraphView;
+
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Font;
@@ -19,6 +21,7 @@ import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.DAO.DetallePedido.DetallePedidoDAO;
 import curso.java.tienda.model.DAO.Pedido.PedidoDAO;
 import curso.java.tienda.model.DAO.Usuario.UsuarioDAO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 import curso.java.tienda.model.VO.Pedido.PedidoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
@@ -126,7 +129,7 @@ public class PedidoService {
 		try {
 			
 			PdfWriter writer = PdfWriter.getInstance(documento, baos);
-			Font fuenteTitulo = new Font(Font.FontFamily.HELVETICA, 18, Font.BOLD);			
+			Font fuenteTitulo = new Font(Font.FontFamily.HELVETICA, 20, Font.BOLD);			
 			Font fuenteTotal = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD);
 			Font fuenteNegrita = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD);
 			Font fuenteNormal = new Font(Font.FontFamily.HELVETICA, 14, Font.NORMAL);
@@ -154,16 +157,33 @@ public class PedidoService {
 
 			tablaEncabezado.addCell(celda);
 
-			// TITULO
+			// DATOS EMPRESA
 			celda = new PdfPCell();
-			Paragraph titulo = new Paragraph();			
-			    titulo.setFont(fuenteTitulo);
-				titulo.add("RIDERS SHOP");
-				titulo.setIndentationRight(30);
-				titulo.setAlignment(Paragraph.ALIGN_CENTER);
+			List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();	
+			Paragraph tituloParagraph = new Paragraph();
+				tituloParagraph.setAlignment(Paragraph.ALIGN_CENTER);
+						
+			Paragraph datosEmpresaParagraph = new Paragraph();
+				datosEmpresaParagraph.setFont(fuenteNormal);
+				datosEmpresaParagraph.setLeading(30);
+				datosEmpresaParagraph.setIndentationLeft(30);
+				datosEmpresaParagraph.setAlignment(Paragraph.ALIGN_JUSTIFIED);
 			
-			celda.addElement(new Chunk("\n\n"));
-			celda.addElement(titulo);
+			for (ConfigVO dato : datosEmpresa) {
+
+				if (dato.getClave().equals("nombre_empresa")) {
+					Phrase titulo = new Phrase(dato.getValor() + "\n", fuenteTitulo);
+					titulo.add("\n");
+					tituloParagraph.add(titulo);
+				
+				} else {
+					datosEmpresaParagraph.add(dato.getValor() + "\n");					
+				}				
+			}		
+					
+			
+			celda.addElement(tituloParagraph);
+			celda.addElement(datosEmpresaParagraph);
 			celda.setBorder(PdfPCell.NO_BORDER);
 
 			tablaEncabezado.addCell(celda);

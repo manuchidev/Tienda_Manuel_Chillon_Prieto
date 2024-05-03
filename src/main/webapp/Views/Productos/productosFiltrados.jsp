@@ -69,7 +69,7 @@
 											<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
 																				    
 									    <%} else if (usuario.esEmpleado()){ %>
-											<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
+											<a class="btn btn-warning mt-auto" href="detallesEmpleado?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Modificar</a>
 									    	<a class="btn btn-danger mt-auto" href="retirar?idProd=<%= producto.getId()%>">Dar de Baja</a> 
 									    <%} %>
 								</div>
@@ -138,7 +138,7 @@
 													<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
 																						    
 										    <% } else if (usuario.esEmpleado()){ %>
-													<a class="btn btn-warning mt-auto" href="detalles?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Detalles</a>
+													<a class="btn btn-warning mt-auto" href="detallesEmpleado?idProd=<%= producto.getId()%>&idCat=<%= producto.getId_categoria()%>">Modificar</a>
 											    	<a class="btn btn-danger mt-auto" href="retirar?idProd=<%= producto.getId()%>">Dar de Baja</a> 
 										    <% } %>
 											</div>

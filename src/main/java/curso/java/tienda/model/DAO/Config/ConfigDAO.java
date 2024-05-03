@@ -3,10 +3,39 @@ package curso.java.tienda.model.DAO.Config;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import curso.java.tienda.config.Conexion;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 
 public class ConfigDAO {
+	
+	public static List<ConfigVO> getDatosEmpresa() {
+
+		List<ConfigVO> datos = new ArrayList<>();
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM configuracion WHERE id != 1");
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+				ConfigVO dato = new ConfigVO();
+				
+				dato.setClave(rs.getString("clave"));
+				dato.setValor(rs.getString("valor"));
+				
+				datos.add(dato);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return datos;
+	}
 	
 	public static int getValor() {
 
@@ -57,5 +86,5 @@ public class ConfigDAO {
 		}
 		
 	}
-
+	
 }

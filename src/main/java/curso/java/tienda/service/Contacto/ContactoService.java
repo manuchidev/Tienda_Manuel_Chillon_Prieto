@@ -21,7 +21,7 @@ public class ContactoService extends BaseServlet{
     public static void enviarEmail(String asunto, String mensaje) {
 
         final Properties properties = new Properties();
-        String destinatario = "empleado1_@outlook.com";
+        String destinatario = "riders_shop@outlook.com";
 
         try (InputStream input = ContactoService.class.getClassLoader().getResourceAsStream("mail.properties")) {
 

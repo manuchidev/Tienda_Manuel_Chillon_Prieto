@@ -1,0 +1,35 @@
+03/05/2024 12:36:27  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 12:36:27  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 12:38:01  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 12:48:25  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 12:48:31  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 13:07:23  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:07:24  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:07:34  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:10:14  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:10:20  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 13:39:35  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:39:42  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 13:39:48  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:39:51  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:43:20  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:44:47  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:44:57  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:45:10  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:46:21  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:46:23  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:46:37  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:46:38  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:46:45  INFO EntradaServlet:54 - Idioma por defecto: es
+03/05/2024 13:46:45  INFO EntradaServlet:66 - Carrito disponible
+03/05/2024 13:46:52  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email empleado1@empleado1.com
+03/05/2024 13:46:58  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 13:48:08  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:48:29  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:48:31  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:48:36  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 13:51:06  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 13:56:15  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 14:05:10  INFO EntradaServlet:57 - Idioma: es
+03/05/2024 14:05:20  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+03/05/2024 14:14:10  INFO EntradaServlet:57 - Idioma: es
