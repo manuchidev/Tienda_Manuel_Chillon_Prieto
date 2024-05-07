@@ -89,7 +89,7 @@ public class Rutas {
 	public static final String MODIFICAR_CLIENTE_JSP = "/Views/Empleado/modificarCliente.jsp";	
 	
 	public static final String DETALLES_EMPLEADO_JSP = "Views/Detalles/detalleEmpleado.jsp";
-	public static final String PEDIDOS_USUARIOS_JSP = "/Views/Usuario/Pedidos/pedidosUsuarios.jsp";
+	public static final String PEDIDOS_USUARIOS_JSP = "/Views/Empleado/pedidosUsuarios.jsp";
 	public static final String DETALLES_PEDIDO_JSP = "/Views/Usuario/DetallesPedido/detallesPedido.jsp";
 	
 	

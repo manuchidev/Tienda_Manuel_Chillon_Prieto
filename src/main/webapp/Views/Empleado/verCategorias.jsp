@@ -25,12 +25,20 @@
 
 			<div class="container-fluid px-2 px-lg-5 mt-4">
 			
+				<div class="d-flex justify-content-end">
+
+					<form action="CategoriaEmpleado" method="get">
+						<button type="submit" name="accion" value="add" class="btn btn-success">Añadir Categoría</button>
+					</form>
+
+				</div>
+			
+				<h2 class="text-center mb-4" style="color: white">CATEGORÍAS</h2>
 			<%		  	          			  	
 				List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
 			
 				if (categorias != null && !categorias.isEmpty()) {
 			%>		
-					<h2 class="text-center mb-4" style="color: white">CATEGORÍAS</h2>
 					
 					<div class="row gx-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
 			<%		
@@ -53,7 +61,7 @@
 											<h5 class="fw-bolder"><%= categoria.getNombre()%></h5>
 					
 											<!-- Category description-->
-											<p class="p-3 m-0 fs-5"><%= categoria.getDescripcion()%>
+											<p class="p-2 m-0 fs-5"><%= categoria.getDescripcion()%>
 											</p>
 										</div>
 					
@@ -69,8 +77,7 @@
 												<input type="hidden" name="idCat" value="<%= categoria.getId()%>">
 												
 												<button type="submit" name="accion" value="edit" class="btn btn-warning mt-auto">Modificar</button>
-												<button type="submit" name="accion" value="delete" class="btn btn-danger mt-auto">Dar de Baja</button>
-												
+																								
 											</form>
 			
 										</div>

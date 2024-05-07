@@ -5,10 +5,13 @@
 
 <%
 	String idiomaActual = (String) request.getSession().getAttribute("idioma");
-	ResourceBundle bundle = (ResourceBundle) session.getAttribute("bundle");
+	ResourceBundle bundle = (ResourceBundle) request.getSession().getAttribute("bundle");
+	
 	List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
+	
 	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
-	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");	        
+	
+	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");     
 %>
 
 <nav class="navbar navbar-expand-lg">

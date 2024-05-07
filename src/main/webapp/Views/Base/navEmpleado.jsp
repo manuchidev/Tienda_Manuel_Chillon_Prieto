@@ -3,9 +3,12 @@
 		curso.java.tienda.model.VO.Usuario.UsuarioVO, curso.java.tienda.model.VO.Categoria.CategoriaVO" %>
 <%
 	String idiomaActual = (String)request.getSession().getAttribute("idioma");
-	ResourceBundle bundle = (ResourceBundle) session.getAttribute("bundle");
+	ResourceBundle bundle = (ResourceBundle) request.getSession().getAttribute("bundle");
+	
 	List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
+	
 	UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
+	
 	HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)request.getSession().getAttribute("carrito");	        
 %>
 

@@ -57,7 +57,7 @@
 								    <input type="hidden" name="idCatModif" value="<%=categoria.getId()%>">
 								    							
 									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="edit"> Actualizar Categoria </button>
-									<button type="submit" class="btn btn-danger flex-shrink-0" name="accion" value="delete"> Eliminar </button>
+									
 								</div>
 								
 							</div>

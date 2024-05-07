@@ -65,8 +65,12 @@ public class IdiomaServlet extends BaseServlet {
 		
 		String url = request.getHeader("Referer");
 
-		response.sendRedirect(url);
+		if (url.endsWith("Login") && session.getAttribute("usuario") != null) {
 
+			url = url.replace("Login", "");
+		} 
+
+		response.sendRedirect(url);
 	}
 
 }

@@ -17,9 +17,16 @@
 	
 	<body class="gradient-custom">
 	
+		<% UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario"); %>
+	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<jsp:include page="<%= Rutas.NAV%>" />
+		<% if (usuario.esCliente()) {%>
+			<jsp:include page="<%= Rutas.NAV%>" />
+		
+		<%} else if (usuario.esEmpleado()) {%>
+        	<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />
+        <%}%> 
 		
 		<main>
 	

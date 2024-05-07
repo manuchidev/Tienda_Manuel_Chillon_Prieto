@@ -26,6 +26,16 @@
 
 			<div class="container-fluid px-2 px-lg-5 mt-4">
 			
+				<div class="d-flex justify-content-end">
+
+					<form action="ProductoEmpleado" method="get">
+						<button type="submit" name="accion" value="add" class="btn btn-success">Añadir Producto</button>
+					</form>
+
+				</div>
+			
+				<h2 class="text-center mb-4" style="color: white">PRODUCTOS</h2>
+			
 			<%		  	          			  	
 				List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
 				List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");	
@@ -85,7 +95,6 @@
 														<input type="hidden" name="idCat" value="<%= producto.getId_categoria()%>">
 														
 														<button type="submit" name="accion" value="edit" class="btn btn-warning mt-auto">Modificar</button>
-														<button type="submit" name="accion" value="delete" class="btn btn-danger mt-auto">Dar de Baja</button>
 														
 													</form>
 												

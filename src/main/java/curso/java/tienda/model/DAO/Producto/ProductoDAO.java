@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -433,6 +434,33 @@ public class ProductoDAO {
 		return productos;	
 
 	}
+	
+	public static void insertProducto(ProductoVO producto) {
+		
+		Timestamp fecha = new Timestamp(System.currentTimeMillis());
+        
+        try {
+            
+            Connection con = Conexion.getConexion();
+            PreparedStatement st = con.prepareStatement("INSERT INTO productos (id_categoria, nombre, descripcion, precio, stock, fecha_alta, impuesto, imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            
+            st.setInt(1, producto.getId_categoria());
+            st.setString(2, producto.getNombre());
+            st.setString(3, producto.getDescripcion());
+            st.setBigDecimal(4, producto.getPrecio());
+            st.setInt(5, producto.getStock());
+            st.setTimestamp(6, fecha);
+            st.setBigDecimal(7, producto.getImpuesto());
+            st.setString(8, producto.getImagen());
+            
+            st.executeUpdate();
+            
+            producto = findByIdCategoria(producto.getId_categoria()).get(0);
+            
+        } catch (SQLException e) {
+            
+        }
+	}
 
 
 	public static List<ProductoVO> findByPrecioCategoria(BigDecimal precio, int categoria) {
@@ -474,5 +502,4 @@ public class ProductoDAO {
 		
 		return productos;	
 	}
-
 }

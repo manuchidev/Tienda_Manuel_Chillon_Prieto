@@ -109,7 +109,7 @@
 								    <input type="hidden" name="idCatModif" value="<%=producto.getId_categoria()%>">
 								    							
 									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="edit"> Actualizar Producto </button>
-									<button type="submit" class="btn btn-danger flex-shrink-0" name="accion" value="delete"> Dar de Baja </button>
+									
 								</div>
 								
 							</div>

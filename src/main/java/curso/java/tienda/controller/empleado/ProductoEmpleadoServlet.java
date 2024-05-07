@@ -1,6 +1,9 @@
 package curso.java.tienda.controller.empleado;
 
+import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -8,6 +11,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
@@ -89,60 +97,99 @@ public class ProductoEmpleadoServlet extends BaseServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
-//		Part filePart = request.getPart("imagen"); // Recoge el archivo de imagen del formulario
-//	    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // Obtiene el nombre del archivo
-	    
-		String accion = request.getParameter("accion");
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		request.setAttribute("categorias", categorias);
 		
-		if ("add".equals(accion)) {
-			
-			String idCategoria = request.getParameter("categoriaProd");
-            String nombre = request.getParameter("nombreProd");
-            String precio = request.getParameter("precioProd").replaceAll("[^\\d.]", "").trim();
-            String descripcion = request.getParameter("descripcionProd");
-            String impuesto = request.getParameter("impuestoProd").replace("%", "").trim();
-            String stock = request.getParameter("stockProd");
-            String imagen = request.getParameter("imagenProd");
-            
-//          ProductoVO productoAlta = ProductoService.altaProducto(idCategoria, nombre, descripcion, precio, stock, impuesto, imagen);
-//          request.setAttribute("productoAlta", productoAlta);
-            request.getRequestDispatcher(Rutas.PRODUCTOS_EMPLEADO_JSP).forward(request, response);
-            
-	   	    	    
-		} else if ("edit".equals(accion)) {
-	    	
-	    	String idProd = request.getParameter("idProdModif");
-	    	String idCategoria = request.getParameter("categoriaProdModif");
-	    	String nombre = request.getParameter("nombreProdModif");
-	    	String precio = request.getParameter("precioProdModif").replaceAll("[^\\d.]", "").trim();
-	    	String descripcion = request.getParameter("descripcionProdModif");
-	    	String impuesto = request.getParameter("impuestoProdModif").replace("%", "").trim();
-	    	String stock = request.getParameter("stockProdModif");
-	    	String imagen = request.getParameter("imagenProdModif");
-	    	
-	    	ProductoVO producto = ProductoService.actualizarProducto(idProd, idCategoria, nombre, descripcion, precio, stock, impuesto, imagen);	    	    
-	    	List<CategoriaVO> categorias = CategoriaService.getCategorias();
-	    	
-	    	if (idProd != null && idCategoria != null) {
-	    		
-	    		producto = ProductoService.getProductoId(producto.getId());
-	    		request.setAttribute("producto", producto);
-	    		
-	    		List<ProductoVO> productosCategoriaDetalles = ProductoService.getProductosCategoriaDetalles(producto.getId(), producto.getId_categoria());
-	    		request.setAttribute("productosCategoriaDetalles", productosCategoriaDetalles);
-	    	}
-	    	
-	    	request.setAttribute("categorias", categorias);
-	    	request.getRequestDispatcher(Rutas.MODIFICAR_PRODUCTO_JSP).forward(request, response);
-	    	
-	    } else if ("delete".equals(accion)) {
-	    	
-	    	String idProd = request.getParameter("idProdModif");
-	    	int idProducto = Integer.parseInt(idProd);
-	    	// ProductoService.eliminarProducto(request);
-	    	request.getRequestDispatcher(Rutas.PRODUCTOS_EMPLEADO_JSP).forward(request, response);
-	    }
-				
+        String accion = request.getParameter("accion");
+        
+        switch (accion) {
+        
+        	case "add":
+    			
+        		ArrayList<String> lista = new ArrayList<>();
+				String absolutePath = getServletContext().getRealPath("");
+				ProductoVO nuevoProducto = new ProductoVO();
+        		
+        		try {
+        			FileItemFactory file = new DiskFileItemFactory();
+        			ServletFileUpload flieUpload = new ServletFileUpload(file);
+        			List items = flieUpload.parseRequest(request);
+        			
+					for (Object item : items) {
+						FileItem fileItem = (FileItem) item;
+						
+						if (!fileItem.isFormField()) {
+							File f = new File(absolutePath + Rutas.IMAGENES_PROD + fileItem.getName());
+							fileItem.write(f);
+							nuevoProducto.setImagen(fileItem.getName());
+							
+						} else {
+							lista.add(fileItem.getString());
+						}
+					}
+					
+					BigDecimal precio = new BigDecimal(lista.get(1));
+					BigDecimal impuesto = new BigDecimal(lista.get(3));
+					int stock = Integer.parseInt(lista.get(4));
+					int idCategoria = Integer.parseInt(lista.get(5));
+					
+					nuevoProducto.setNombre(lista.get(0));
+					nuevoProducto.setPrecio(precio);
+					nuevoProducto.setDescripcion(lista.get(2));
+					nuevoProducto.setImpuesto(impuesto);
+					nuevoProducto.setStock(stock);
+					nuevoProducto.setId_categoria(idCategoria);
+										
+					ProductoService.altaProducto(nuevoProducto);
+					
+        		} catch (Exception e) {
+        			e.printStackTrace();
+        		}
+        		  
+    			request.getRequestDispatcher("ProductoEmpleado?accion=listar").forward(request, response);    			
+    			break;
+    			
+			case "listar":
+				List<ProductoVO> productos = ProductoService.getProductos();
+				request.setAttribute("productos", productos);
+				request.getRequestDispatcher(Rutas.ALTA_PRODUCTO_JSP).forward(request, response);
+				break;
+    			
+        	case "edit":
+        		String idProdModif = request.getParameter("idProdModif");
+    	    	String idCategoriaModif = request.getParameter("categoriaProdModif");
+    	    	String nombreModif = request.getParameter("nombreProdModif");
+    	    	String precioModif = request.getParameter("precioProdModif").replaceAll("[^\\d.]", "").trim();
+    	    	String descripcionModif = request.getParameter("descripcionProdModif");
+    	    	String impuestoModif = request.getParameter("impuestoProdModif").replace("%", "").trim();
+    	    	String stockModif = request.getParameter("stockProdModif");
+    	    	String imagenModif = request.getParameter("imagenProdModif");
+    	    	
+    	    	ProductoVO producto = ProductoService.actualizarProducto(idProdModif, idCategoriaModif, nombreModif, precioModif, descripcionModif, impuestoModif, stockModif, imagenModif);	    	    
+    	    	categorias = CategoriaService.getCategorias();
+    	    	
+    	    	if (idProdModif != null && idCategoriaModif != null) {
+    	    		
+    	    		producto = ProductoService.getProductoId(producto.getId());
+    	    		request.setAttribute("producto", producto);
+    	    		
+    	    		List<ProductoVO> productosCategoriaDetalles = ProductoService.getProductosCategoriaDetalles(producto.getId(), producto.getId_categoria());
+    	    		request.setAttribute("productosCategoriaDetalles", productosCategoriaDetalles);
+    	    	}
+    	    	
+    	    	request.setAttribute("categorias", categorias);
+    	    	request.getRequestDispatcher(Rutas.MODIFICAR_PRODUCTO_JSP).forward(request, response);
+    	    	
+    	    	break;
+    	    	
+        	case "delete":
+        		String idProd = request.getParameter("idProd");
+    	    	int idProducto = Integer.parseInt(idProd);
+    	    	// ProductoService.eliminarProducto(request);
+    	    	request.getRequestDispatcher(Rutas.PRODUCTOS_EMPLEADO_JSP).forward(request, response);
+        }
+
 	}
+
 
 }

@@ -32,7 +32,7 @@
 					<div class="card text-center">
 					
 						<div class="card-body">
-							<h5 class="card-title">Productos</h5>
+							<h5 class="card-title">PRODUCTOS</h5>
 							
 							<form action="ProductoEmpleado" method="get">
 								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Productos</button>
@@ -50,7 +50,7 @@
 					<div class="card text-center">
 					
 						<div class="card-body">
-							<h5 class="card-title">Categorias</h5>
+							<h5 class="card-title">CATEGORÍAS</h5>
 
 							<form action="CategoriaEmpleado" method="get">
 								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Categorias</button>
@@ -68,11 +68,11 @@
 					<div class="card text-center">
 					
 						<div class="card-body">
-							<h5 class="card-title">Clientes</h5>
+							<h5 class="card-title">CLIENTES</h5>
 
 							<form action="ClienteEmpleado" method="get">
 								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Clientes</button>
-								<button type="submit" name="accion" value="add" class="btn btn-success">Añadir Clientes</button>
+								<button type="submit" name="accion" value="add" class="btn btn-success">Añadir Cliente</button>
 							</form>
 
 						</div>

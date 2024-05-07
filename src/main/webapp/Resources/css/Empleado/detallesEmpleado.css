@@ -5,6 +5,10 @@
 	overflow: hidden;
 }
 
+.divImagen {
+ 	min-height: 250px;
+ }
+
 .imgDetalle{
 	max-height: 450px;
 	padding: 5px;
@@ -16,5 +20,5 @@
 
 .inputModificar {
 	width: 100%;
-	border: none;
+	border: 1px solid #ccc;
 }

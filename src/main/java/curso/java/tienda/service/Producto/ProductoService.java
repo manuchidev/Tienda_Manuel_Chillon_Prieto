@@ -95,6 +95,11 @@ public class ProductoService {
 		return productos;
 	}
 	
+	public static void altaProducto(ProductoVO producto) {
+
+		ProductoDAO.insertProducto(producto);
+	}
+	
 	public static ProductoVO actualizarProducto(String id, String idCategoria, String nombre, String descripcion, String precio, String stock, String impuesto, String imagen) {
 		
 		int idProducto = Integer.parseInt(id);
@@ -105,8 +110,7 @@ public class ProductoService {
 		
 		ProductoVO producto = ProductoDAO.updateProducto(idProducto, idCategoriaInt, nombre, descripcion, precioBD, stockInt, impuestoBD, imagen);
 		
-		return producto;
-		
+		return producto;		
 	}
 	
 	public static int obtenerStock(int id) {
