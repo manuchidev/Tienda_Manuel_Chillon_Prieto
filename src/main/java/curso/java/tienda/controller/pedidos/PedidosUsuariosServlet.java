@@ -38,6 +38,7 @@ public class PedidosUsuariosServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<UsuarioVO> usuarios = UsuarioService.getUsuarios();
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		
@@ -55,13 +56,19 @@ public class PedidosUsuariosServlet extends HttpServlet {
 			}
 		
 		} else {
-			List<PedidoVO> pedidos = PedidoService.getPedidosUsuariosASC();
+			List<PedidoVO> pedidos = PedidoService.getPedidosUsuariosDESC();
 			request.setAttribute("pedidos", pedidos);
 		}
 		
 		request.setAttribute("usuarios", usuarios);
 		request.setAttribute("categorias", categorias);
-		request.getRequestDispatcher(Rutas.PEDIDOS_USUARIOS_JSP).forward(request, response);
+		
+		if (usuario.esEmpleado()) {
+			request.getRequestDispatcher(Rutas.PEDIDOS_USUARIOS_EMPLEADO_JSP).forward(request, response);
+			
+		} else {
+            request.getRequestDispatcher(Rutas.PEDIDOS_USUARIOS_ADMIN_JSP).forward(request, response);
+		}
 	}
 
 	/**
@@ -69,9 +76,10 @@ public class PedidosUsuariosServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		List<UsuarioVO> usuarios = UsuarioService.getUsuarios();
-		List<PedidoVO> pedidos = PedidoService.getPedidosUsuariosASC();
+		List<PedidoVO> pedidos = PedidoService.getPedidosUsuariosDESC();
 		request.setAttribute("pedidos", pedidos);
 				
 		String accion = request.getParameter("accion");	
@@ -104,11 +112,18 @@ public class PedidosUsuariosServlet extends HttpServlet {
 			}			
 		}
 		
-		pedidos = PedidoService.getPedidosUsuariosASC();
+		pedidos = PedidoService.getPedidosUsuariosDESC();
 		request.setAttribute("pedidos", pedidos);
 		request.setAttribute("categorias", categorias);
 		request.setAttribute("usuarios", usuarios);
-		request.getRequestDispatcher(Rutas.PEDIDOS_USUARIOS_JSP).forward(request, response);
+		
+		
+		if (usuario.esEmpleado()) {
+			request.getRequestDispatcher(Rutas.PEDIDOS_USUARIOS_EMPLEADO_JSP).forward(request, response);
+			
+		} else {
+            request.getRequestDispatcher(Rutas.PEDIDOS_USUARIOS_ADMIN_JSP).forward(request, response);
+		}
 	}
 
 }

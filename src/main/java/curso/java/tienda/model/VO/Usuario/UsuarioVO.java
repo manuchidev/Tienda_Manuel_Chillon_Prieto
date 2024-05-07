@@ -37,13 +37,16 @@ public class UsuarioVO {
 		this.dni = dni;
 	}
 	
-	
-	public boolean esCliente() {
-		return this.id_rol == 3;
-
+	public boolean esAdmin() {
+		return this.id_rol == 1;
 	}
 	
 	public boolean esEmpleado() {		
 		return this.id_rol == 2;
 	}
+	
+	public boolean esCliente() {
+		return this.id_rol == 3;
+	}
+	
 }

@@ -38,6 +38,9 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 		
 		String accion = request.getParameter("accion");
 		String id = request.getParameter("idUsuario");
+		
+		System.out.println("accion: " + accion);
+		System.out.println("id: " + id);
 
 		if ("view".equals(accion)) {
 			List<UsuarioVO> usuarios = UsuarioService.getUsuarios();
@@ -52,15 +55,12 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 		
 		} else if ("edit".equals(accion)) {
 			int idUsuario = Integer.parseInt(id);
+			System.out.println("idUsuario: " + idUsuario);
 			UsuarioVO usuarioModif = UsuarioService.getUsuario(idUsuario);
+			
 			request.setAttribute("usuarioModif", usuarioModif);
 			
 			request.getRequestDispatcher(Rutas.MODIFICAR_CLIENTE_JSP).forward(request, response);
-			return;
-		
-		} else if ("delete".equals(accion)) {
-//			ClienteService.eliminarCliente(request);
-			request.getRequestDispatcher(Rutas.CLIENTES_EMPLEADO_JSP).forward(request, response);
 			return;
 		
 		} else {

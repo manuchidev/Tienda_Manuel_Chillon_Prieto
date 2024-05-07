@@ -50,21 +50,21 @@ public class ModificarProductoServlet extends BaseServlet {
 //		Part filePart = request.getPart("imagen"); // Recoge el archivo de imagen del formulario
 //	    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // Obtiene el nombre del archivo
 	    
-	    String id = request.getParameter("idProd");
-	    String idCategoria = request.getParameter("categoriaProd");
-	    String nombre = request.getParameter("nombreProd");
-	    String precio = request.getParameter("precioProd").replaceAll("[^\\d.]", "").trim();
-	    String descripcion = request.getParameter("descripcionProd");
-	    String impuesto = request.getParameter("impuestoProd").replace("%", "").trim();
-	    String stock = request.getParameter("stockProd");
-	    String imagen = request.getParameter("imagenProd");
+	    String id = request.getParameter("idProdModif");
+	    String idCategoria = request.getParameter("categoriaProdModif");
+	    String nombre = request.getParameter("nombreProdModif");
+	    String precio = request.getParameter("precioProdModif").replaceAll("[^\\d.]", "").trim();
+	    String descripcion = request.getParameter("descripcionProdModif");
+	    String impuesto = request.getParameter("impuestoProdModif").replace("%", "").trim();
+	    String stock = request.getParameter("stockProdModif");
+	    String imagen = request.getParameter("imagenProdModif");
 	   	    	    
 	    ProductoVO producto = ProductoService.actualizarProducto(id, idCategoria, nombre, descripcion, precio, stock, impuesto, imagen);
 	    	    
 	    List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		
 		// Si existe un id, creamos el carrito. La primera vez se crea con una unidad del producto, pero posteriormente habrá que comprobar si el id del producto existe y si es así se aumenta la cantidad
-		if (request.getParameter("idProd") != null && request.getParameter("idCat") != null) {
+		if (request.getParameter("idProdModif") != null && request.getParameter("idCatModif") != null) {
 									
 			producto = ProductoService.getProductoId(producto.getId());
 			request.setAttribute("producto", producto);
@@ -75,7 +75,7 @@ public class ModificarProductoServlet extends BaseServlet {
 		
 		request.setAttribute("categorias", categorias);
 	    
-	    request.getRequestDispatcher(Rutas.DETALLES_EMPLEADO_JSP).forward(request, response);
+	    request.getRequestDispatcher(Rutas.MODIFICAR_PRODUCTO_JSP).forward(request, response);
 	}
 
 }

@@ -1,10 +1,8 @@
 package curso.java.tienda.service.Usuario;
 
-import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import curso.java.tienda.model.DAO.Usuario.UsuarioDAO;
@@ -280,6 +278,11 @@ public static HashMap<String, String> erroresAltaCliente(String email, String no
 		String claveEncriptada = encriptarClave(claveNueva);
 		
 		UsuarioDAO.updateClaveUsuario(usuario, claveEncriptada);
+	}
+	
+	public static void bajaUsuario(int id) {
+
+		UsuarioDAO.deleteUsuario(id);
 	}
 
 }

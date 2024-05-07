@@ -38,8 +38,8 @@
 							<div class="col-md-6 mb-1 d-flex align-items-center justify-content-center">
 							
 								<select id="orden" name="orden">
-									<option value="ASC">Más Antiguos</option>
 									<option value="DESC">Más Nuevos</option>
+									<option value="ASC">Más Antiguos</option>
 								</select>
 								
 							</div>

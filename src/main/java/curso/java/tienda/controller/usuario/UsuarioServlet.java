@@ -67,7 +67,7 @@ public class UsuarioServlet extends BaseServlet {
 			if (usuario.esCliente()) {
 				response.sendRedirect("Pedidos");
 				
-			} else if (usuario.esEmpleado()) {
+			} else if (usuario.esEmpleado() || usuario.esAdmin()) {
 				response.sendRedirect("PedidosUsuarios");
 			}
 			// request.getRequestDispatcher(Rutas.PEDIDOS_JSP).forward(request, response);

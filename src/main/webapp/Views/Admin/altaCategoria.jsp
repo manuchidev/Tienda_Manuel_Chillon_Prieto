@@ -19,54 +19,41 @@
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />
+		<jsp:include page="<%= Rutas.NAV_ADMIN%>" />
 		
 		<main>
 		
 			<!-- Product section-->
 	        <section class="py-5 ">
 	        											
-    			<h2 class="text-center mb-4" style="color: white">ACTUALIZACIÓN DE CATEGORÍA</h2>
+        		<h2 class="text-center mb-4" style="color: white">ALTA DE CATEGORÍA</h2>
 	        											
 				<form action="CategoriaEmpleado" method="post">
 				 
 	            	<div class="container px-4 px-lg-5 my-3 d-flex justify-content-center align-items-center">
 	            
-	                	<div class="row gx-4 gx-lg-5 bg-light catDetalle">	                
-						<%
-							CategoriaVO categoria = (CategoriaVO) request.getAttribute("categoria");
-						
-						%>
-<!-- 							<div class="col-md-5"> -->
-<%-- 							    <input type="hidden" name="imagenProdModif" value="<%=categoria.getImagen()%>"> --%>
-<%-- 								<img class="card-img-top mb-5 mb-md-0 imgDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." /> --%>
-<%-- 								<img class="card-img-top mb-5 mb-md-0 imgDetalle" id="preview" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." /> --%>
-<!-- 								<input type="file" id="imagen" name="imagen" onchange="previewImage()" class="form-control mt-2 mb-2"> -->
-<!-- 							</div> -->
-							
-							
+	                	<div class="row gx-4 gx-lg-5 bg-light catDetalle">	                			
+														
 							<div class="col-md-12 mt-2">
 							
 								<label>Nombre: </label>
 								<h2 class="fw-bolder datosCat">
-									<input type="text" class="inputModificar text-center bg-light" name="nombreCatModif" value="<%= categoria.getNombre() %>">
+									<input type="text" class="inputModificar text-center bg-light" name="nombreCatAlta">
 								</h2>
 								
 								<label>Descripción: </label>
 								<div class="fs-5 mb-2 datosCat">
-									<input type="text" class="inputModificar text-center bg-light" name="descripcionCatModif" value="<%= categoria.getDescripcion() %>">
+									<input type="text" class="inputModificar text-center bg-light" name="descripcionCatAlta">
 								</div>
 																															
 								<div class="d-flex justify-content-center mt-3 mb-2 gap-2">
-								
-								    <input type="hidden" name="idCatModif" value="<%=categoria.getId()%>">
-								    							
-									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="edit"> Actualizar Categoria </button>
+																    							
+									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="add"> Añadir Categoria </button>
 									
 								</div>
 								
 							</div>
-								
+
 		                </div>
 		                
 		            </div>

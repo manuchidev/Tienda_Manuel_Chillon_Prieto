@@ -1,4 +1,4 @@
-package curso.java.tienda.controller.empleado;
+package curso.java.tienda.controller.administrador;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,22 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
-import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
 
 /**
- * Servlet implementation class CategoriaEmpleadoServlet
+ * Servlet implementation class CategoriaAdminServlet
  */
 
-@WebServlet("/CategoriaEmpleado")
-public class CategoriaEmpleadoServlet extends BaseServlet {
+@WebServlet("/CategoriaAdmin")
+public class CategoriaAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CategoriaEmpleadoServlet() {
+    public CategoriaAdminServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,7 +33,7 @@ public class CategoriaEmpleadoServlet extends BaseServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		String accion = request.getParameter("accion");
 		
 		switch (accion) {
@@ -42,21 +41,31 @@ public class CategoriaEmpleadoServlet extends BaseServlet {
 			case "view":
 				List<CategoriaVO> categorias = CategoriaService.getCategorias();
 				request.setAttribute("categorias", categorias);
-				request.getRequestDispatcher(Rutas.CATEGORIAS_EMPLEADO_JSP).forward(request, response);
+				
+				request.getRequestDispatcher(Rutas.CATEGORIAS_ADMIN_JSP).forward(request, response);
 				break;
 				
 			case "add":				
-				request.getRequestDispatcher(Rutas.ALTA_CATEGORIA_JSP).forward(request, response);
+				request.getRequestDispatcher(Rutas.ALTA_CATEGORIA_ADMIN_JSP).forward(request, response);
 				break;
 				
 			case "edit":
 				String id = request.getParameter("idCat");
 				Integer idCategoria = Integer.parseInt(id);
 				
-				CategoriaVO categoria = CategoriaService.getCategoria(idCategoria);
+				CategoriaVO categoria = CategoriaService.getCategoria(idCategoria);				
 				request.setAttribute("categoria", categoria);
 				
-				request.getRequestDispatcher(Rutas.MODIFICAR_CATEGORIA_JSP).forward(request, response);
+				request.getRequestDispatcher(Rutas.MODIFICAR_CATEGORIA_ADMIN_JSP).forward(request, response);
+				break;
+				
+			case "delete":
+				String idDelete = request.getParameter("id");
+				int idCategoriaDelete = Integer.parseInt(idDelete);
+				
+				CategoriaService.bajaCategoria(idCategoriaDelete);
+				
+				request.getRequestDispatcher(Rutas.CATEGORIAS_ADMIN_JSP).forward(request, response);
 				break;
 		}
 	}
@@ -81,7 +90,7 @@ public class CategoriaEmpleadoServlet extends BaseServlet {
 		        	
 		        CategoriaService.altaCategoria(nuevaCategoria);
 		        	
-				request.getRequestDispatcher(Rutas.ALTA_CATEGORIA_JSP).forward(request, response);
+				request.getRequestDispatcher(Rutas.ALTA_CATEGORIA_ADMIN_JSP).forward(request, response);
 				break;
 			
 			case "edit":
@@ -103,12 +112,20 @@ public class CategoriaEmpleadoServlet extends BaseServlet {
 				
 				request.getRequestDispatcher(Rutas.MODIFICAR_CATEGORIA_JSP).forward(request, response);
 				break;
-								
+				
+			case "delete":
+				String idCat = request.getParameter("idCat");
+				Integer idCategoriaDelete = Integer.parseInt(idCat);
+				
+				CategoriaService.bajaCategoria(idCategoriaDelete);
+				
+				request.getRequestDispatcher(Rutas.CATEGORIAS_ADMIN_JSP).forward(request, response);
+				break;
+				
 			default:
 				break;
 				
 		}
-		
 	}
 
 }

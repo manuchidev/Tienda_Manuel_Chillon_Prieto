@@ -17,23 +17,19 @@
 	
 	<body>
 	
-	<% UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario"); %>
-	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<% if (usuario.esCliente()) {%>
-			<jsp:include page="<%= Rutas.NAV%>" />
+		<jsp:include page="<%= Rutas.NAV_ADMIN%>" />
 		
-		<%} else if (usuario.esEmpleado()) {%>
-        	<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />
-        	
-        <%} else if (usuario.esAdmin()) {%>
-            <jsp:include page="<%= Rutas.NAV_ADMIN%>" />
-        <%}%> 
-
 		<main>
-				
+		
+			<% 
+				UsuarioVO usuario = (UsuarioVO) request.getAttribute("usuarioModif");			
+			%>
+		
 			<section class="gradient-custom py-4">
+			
+				<h2 class="text-center mb-4" style="color: white">ACTUALIZACIÓN DE CLIENTE</h2>
 
 				<div class="container rounded bg-dark">
 				
@@ -57,7 +53,7 @@
 									<h4 class="text-center text-white">Datos del Usuario</h4>
 								</div>
 								
-								<form action="Perfil" method="post">
+								<form action="ClienteEmpleado" method="post">
 								
 									<div class="row">
 									
@@ -109,7 +105,7 @@
 									</div>
 									
 									<div class="mt-5 text-center">
-										<input type="hidden" name="idPerfil" value="<%= usuario.getId()%>">
+										<input type="hidden" name="idUsuario" value="<%= usuario.getId()%>">
 										<button type="submit" class="btn btn-outline-light btn-lg px-5" name="accion" value="guardarPerfil">Guardar Perfil</button>
 									</div>
 									
@@ -123,7 +119,7 @@
 						
 							<div class="p-3 py-5">
 							
-								<form action="Perfil" method="post">
+								<form action="ClienteEmpleado" method="post">
 								
 									<div class="d-flex justify-content-center align-items-center">
 										<span class="text-white">Cambio de Contraseña</span>
@@ -140,6 +136,7 @@
 									</div>
 											
 									<div class="col-md-12 mt-4 text-center">
+									    <input type="hidden" name="idUsuario" value="<%= usuario.getId()%>">
 										<button type="submit" class="btn btn-outline-light btnCambioClave" name="accion" value="cambioClave">
 	                                        <i class="fa fa-key"></i>&nbsp;Cambiar Contraseña							
 										</button>
@@ -147,50 +144,7 @@
 														
 								</form>
 																														
-							</div>
-						
-<!-- 						<div class="col-md-4"> -->
-						
-<!-- 							<div class="p-3 py-5"> -->
-							
-<!-- 								<div class="d-flex justify-content-between align-items-center experience"> -->
-<!-- 									<span class="text-white">Tarjeta de Crédito</span> -->
-<!-- 									<span class="border px-3 p-1 add-experience"> -->
-<!-- 										<i class="fa fa-plus"></i>&nbsp;Añadir Tarjeta -->
-<!-- 									</span> -->
-<!-- 								</div> -->
-								
-<!-- 								<br> -->
-								
-<!-- 								<div class="col-md-12"> -->
-<!-- 									<label class="labels">Titular</label> -->
-<%-- 									<input type="text" class="form-control" value="<%=usuario.getNombre()%> <%=usuario.getApellido1()%> <%=usuario.getApellido2()%>"> --%>
-<!-- 								</div> -->
-								
-<!-- 								<br> -->
-								
-<!-- 								<div class="col-md-12"> -->
-<!-- 									<label class="labels">IBAN</label> -->
-<!-- 									<input type="text" class="form-control" value=""> -->
-<!-- 								</div> -->
-								
-<!-- 								<br> -->
-								
-<!-- 								<div class="row"> -->
-								
-<!-- 									<div class="col-md-6"> -->
-<!-- 										<label class="labels">Fecha de Expedición</label> -->
-<!-- 										<input type="date" class="form-control" placeholder="additional details" value=""> -->
-<!-- 									</div> -->
-									
-<!-- 									<div class="col-md-6"> -->
-<!-- 										<label class="labels">CVV</label> -->
-<!-- 										<input type="password" class="form-control" value=""> -->
-<!-- 									</div> -->
-									
-<!-- 								</div> -->
-																								
-<!-- 							</div> -->
+							</div>					
 							
 						</div>
 						

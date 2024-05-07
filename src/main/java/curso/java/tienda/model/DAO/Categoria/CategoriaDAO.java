@@ -9,7 +9,6 @@ import java.util.List;
 
 import curso.java.tienda.config.Conexion;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
-import curso.java.tienda.model.VO.Producto.ProductoVO;
 
 public class CategoriaDAO {
 	
@@ -37,7 +36,6 @@ public class CategoriaDAO {
 			}
 			
 		} catch (SQLException e) {
-	        
 	    }
 		
 		return categorias;
@@ -66,10 +64,58 @@ public class CategoriaDAO {
 			}
 
 		} catch (SQLException e) {
-
+			e.printStackTrace();
 		}
 
 		return categoria;
+	}
+	
+	public static void insert(CategoriaVO categoria) {
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)");
+			st.setString(1, categoria.getNombre());
+			st.setString(2, categoria.getDescripcion());
+
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void update(CategoriaVO categoria) {
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("UPDATE categorias SET nombre = ?, descripcion = ? WHERE id = ?");
+			st.setString(1, categoria.getNombre());
+			st.setString(2, categoria.getDescripcion());
+			st.setInt(3, categoria.getId());
+
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void delete(int id) {
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("DELETE FROM categorias WHERE id = ?");
+			st.setInt(1, id);
+
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

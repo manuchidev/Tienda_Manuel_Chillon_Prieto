@@ -113,6 +113,11 @@ public class ProductoService {
 		return producto;		
 	}
 	
+	public static void bajaProducto(int id) {
+
+		ProductoDAO.deleteProducto(id);
+	}
+	
 	public static int obtenerStock(int id) {
 		
 		int stock = ProductoDAO.findStock(id);

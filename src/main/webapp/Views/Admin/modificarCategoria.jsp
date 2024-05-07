@@ -19,7 +19,7 @@
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />
+		<jsp:include page="<%= Rutas.NAV_ADMIN%>" />
 		
 		<main>
 		
@@ -62,6 +62,7 @@
 								    <input type="hidden" name="idCatModif" value="<%=categoria.getId()%>">
 								    							
 									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="edit"> Actualizar Categoria </button>
+									<button type="submit" name="accion" value="delete" class="btn btn-danger mt-auto">Dar de Baja</button>
 									
 								</div>
 								

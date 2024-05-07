@@ -27,8 +27,12 @@
 				
 		<% } else if (usuario.esEmpleado()) {%>
 			<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />	
-			<jsp:include page="<%= Rutas.MAIN_EMPLEADO%>" />					
-		<% } %>
+			<jsp:include page="<%= Rutas.MAIN_EMPLEADO%>" />
+								
+		<% } else if (usuario.esAdmin()) {%>
+			<jsp:include page="<%= Rutas.NAV_ADMIN%>" />	
+			<jsp:include page="<%= Rutas.MAIN_ADMIN%>" />					
+		<% } %>%>
 							
 							
 		<jsp:include page="<%= Rutas.FOOTER%>" />

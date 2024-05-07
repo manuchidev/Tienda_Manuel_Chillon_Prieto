@@ -20,5 +20,20 @@ public class CategoriaService {
 		
 		return categoria;
 	}
+	
+	public static void altaCategoria(CategoriaVO categoria) {
+
+		CategoriaDAO.insert(categoria);
+	}
+	
+	public static void modificarCategoria(CategoriaVO categoria) {
+
+		CategoriaDAO.update(categoria);
+	}
+	
+	public static void bajaCategoria(int id) {
+
+		CategoriaDAO.delete(id);
+	}
 
 }

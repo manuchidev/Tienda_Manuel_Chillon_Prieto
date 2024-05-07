@@ -205,5 +205,21 @@ public class UsuarioDAO {
             e.printStackTrace();
         }        
 	}
+	
+	public static void deleteUsuario(int id) {
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("UPDATE usuarios SET fecha_baja = NOW() WHERE id = ?");
+
+			st.setInt(1, id);
+
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

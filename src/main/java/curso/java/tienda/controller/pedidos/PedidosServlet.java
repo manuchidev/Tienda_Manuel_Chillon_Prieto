@@ -57,7 +57,7 @@ public class PedidosServlet extends BaseServlet {
 			}
 		
 		} else {
-			List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioASC(usuario.getId());
+			List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioDESC(usuario.getId());
 			request.setAttribute("pedidos", pedidos);
 		}
 		
@@ -73,7 +73,7 @@ public class PedidosServlet extends BaseServlet {
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		
-		List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioASC(usuario.getId());
+		List<PedidoVO> pedidos = PedidoService.getPedidoUsuarioDESC(usuario.getId());
 		request.setAttribute("pedidos", pedidos);
 				
 		String accion = request.getParameter("accion");	

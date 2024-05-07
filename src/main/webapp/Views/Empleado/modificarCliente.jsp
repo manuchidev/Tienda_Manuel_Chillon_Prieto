@@ -28,6 +28,8 @@
 			%>
 		
 			<section class="gradient-custom py-4">
+			
+				<h2 class="text-center mb-4" style="color: white">ACTUALIZACIÓN DE CLIENTE</h2>
 
 				<div class="container rounded bg-dark">
 				

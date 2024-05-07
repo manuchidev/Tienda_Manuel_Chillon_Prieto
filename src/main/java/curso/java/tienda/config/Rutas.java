@@ -39,9 +39,7 @@ public class Rutas {
 	public static final String HEAD = "/Views/Base/head.jsp";
 	public static final String HEADER = "/Views/Base/header.jsp";
 	public static final String NAV = "/Views/Base/nav.jsp";
-	public static final String NAV_EMPLEADO = "/Views/Base/navEmpleado.jsp";
 	public static final String MAIN = "/Views/Base/main.jsp";
-	public static final String MAIN_EMPLEADO = "/Views/Base/mainEmpleado.jsp";
 	public static final String FOOTER = "/Views/Base/footer.jsp";
 	
 	// JAVASCRIPT
@@ -76,6 +74,8 @@ public class Rutas {
 	public static final String PEDIDOS_JSP = "/Views/Usuario/Pedidos/pedidos.jsp";
 	
 	// EMPLEADO
+	public static final String NAV_EMPLEADO = "/Views/Empleado/navEmpleado.jsp";
+	public static final String MAIN_EMPLEADO = "/Views/Empleado/mainEmpleado.jsp";
 	public static final String PRODUCTOS_EMPLEADO_JSP = "/Views/Empleado/verProductos.jsp";
 	public static final String CATEGORIAS_EMPLEADO_JSP = "/Views/Empleado/verCategorias.jsp";
 	public static final String CLIENTES_EMPLEADO_JSP = "/Views/Empleado/verClientes.jsp";
@@ -89,9 +89,27 @@ public class Rutas {
 	public static final String MODIFICAR_CLIENTE_JSP = "/Views/Empleado/modificarCliente.jsp";	
 	
 	public static final String DETALLES_EMPLEADO_JSP = "Views/Detalles/detalleEmpleado.jsp";
-	public static final String PEDIDOS_USUARIOS_JSP = "/Views/Empleado/pedidosUsuarios.jsp";
+	public static final String PEDIDOS_USUARIOS_EMPLEADO_JSP = "/Views/Empleado/pedidosUsuarios.jsp";
 	public static final String DETALLES_PEDIDO_JSP = "/Views/Usuario/DetallesPedido/detallesPedido.jsp";
 	
+	// ADMINISTRADOR
+	public static final String NAV_ADMIN = "/Views/Admin/navAdmin.jsp";
+	public static final String MAIN_ADMIN = "/Views/Admin/mainAdmin.jsp";
+	public static final String PRODUCTOS_ADMIN_JSP = "/Views/Admin/verProductos.jsp";
+	public static final String CATEGORIAS_ADMIN_JSP = "/Views/Admin/verCategorias.jsp";
+	public static final String CLIENTES_ADMIN_JSP = "/Views/Admin/verClientes.jsp";
+	
+	public static final String ALTA_PRODUCTO_ADMIN_JSP = "/Views/Admin/altaProducto.jsp";
+	public static final String ALTA_CATEGORIA_ADMIN_JSP = "/Views/Admin/altaCategoria.jsp";
+	public static final String ALTA_CLIENTE_ADMIN_JSP = "/Views/Admin/altaCliente.jsp";
+	
+	public static final String MODIFICAR_PRODUCTO_ADMIN_JSP = "/Views/Admin/modificarProducto.jsp";
+	public static final String MODIFICAR_CATEGORIA_ADMIN_JSP = "/Views/Admin/modificarCategoria.jsp";
+	public static final String MODIFICAR_CLIENTE_ADMIN_JSP = "/Views/Admin/modificarCliente.jsp";	
+	
+	public static final String DETALLES_EMPLEADO_ADMIN_JSP = "Views/Admin/detalleEmpleado.jsp";
+	public static final String PEDIDOS_USUARIOS_ADMIN_JSP = "/Views/Admin/pedidosUsuarios.jsp";
+	public static final String DETALLES_PEDIDO_ADMIN_JSP = "/Views/Usuario/DetallesPedido/detallesPedido.jsp";
 	
 	// CARRITO
 	public static final String CARRITO_JSP = "/Views/Carrito/carrito.jsp";

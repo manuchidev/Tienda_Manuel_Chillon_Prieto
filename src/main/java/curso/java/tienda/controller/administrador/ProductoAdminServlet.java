@@ -1,4 +1,4 @@
-package curso.java.tienda.controller.empleado;
+package curso.java.tienda.controller.administrador;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,24 +18,23 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import curso.java.tienda.config.Rutas;
-import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
- * Servlet implementation class ProductoEmpleadoServlet
+ * Servlet implementation class ProductoAdminServlet
  */
 
-@WebServlet("/ProductoEmpleado")
-public class ProductoEmpleadoServlet extends BaseServlet {
+@WebServlet("/ProductoAdmin")
+public class ProductoAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductoEmpleadoServlet() {
+    public ProductoAdminServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,11 +43,11 @@ public class ProductoEmpleadoServlet extends BaseServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	
 		String accion = request.getParameter("accion");
 		String idProd = request.getParameter("idProd");
-	    String idCat = request.getParameter("idCat");
-	    
+		String idCat = request.getParameter("idCat");
+		
 	    int idProducto = 0;
 	    int idCategoria = 0;
 
@@ -65,33 +64,41 @@ public class ProductoEmpleadoServlet extends BaseServlet {
 
 	    request.setAttribute("productos", productos);	
 	    request.setAttribute("categorias", categorias);
-
-		if ("view".equals(accion)) {
-			request.getRequestDispatcher(Rutas.PRODUCTOS_EMPLEADO_JSP).forward(request, response);
-			return;
-		
-		} else if ("add".equals(accion)) {
-			request.getRequestDispatcher(Rutas.ALTA_PRODUCTO_JSP).forward(request, response);
-			return;
-		
-		} else if ("edit".equals(accion)) {
-			ProductoVO producto = ProductoService.getProductoId(idProducto);			
-			request.setAttribute("producto", producto);
-			request.getRequestDispatcher(Rutas.MODIFICAR_PRODUCTO_JSP).forward(request, response);
-			return;
-		
-		} else {
-			// request.getRequestDispatcher(Rutas.ERROR_JSP).forward(request, response);
-			return;
-		} 
-		
+	    
+	    switch (accion) {
+	    	
+			case "view":
+				request.getRequestDispatcher(Rutas.PRODUCTOS_ADMIN_JSP).forward(request, response);
+				break;
+				
+			case "add":
+				request.getRequestDispatcher(Rutas.ALTA_PRODUCTO_ADMIN_JSP).forward(request, response);
+				break;
+				
+			case "edit":
+				ProductoVO producto = ProductoService.getProductoId(idProducto);
+				request.setAttribute("producto", producto);
+				
+				request.getRequestDispatcher(Rutas.MODIFICAR_PRODUCTO_ADMIN_JSP).forward(request, response);
+				break;
+				
+			case "delete":
+				ProductoVO productoBaja = ProductoService.getProductoId(idProducto);
+				ProductoService.bajaProducto(productoBaja.getId());
+				
+				request.getRequestDispatcher(Rutas.PRODUCTOS_ADMIN_JSP).forward(request, response);
+				break;
+				
+			default:
+				break;
+	    }
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
+		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		request.setAttribute("categorias", categorias);
 		
@@ -147,11 +154,20 @@ public class ProductoEmpleadoServlet extends BaseServlet {
 			case "listar":
 				List<ProductoVO> productos = ProductoService.getProductos();
 				request.setAttribute("productos", productos);
-				request.getRequestDispatcher(Rutas.ALTA_PRODUCTO_JSP).forward(request, response);
+				request.getRequestDispatcher(Rutas.ALTA_PRODUCTO_ADMIN_JSP).forward(request, response);
+				break;
+				
+			case "delete":
+				String id = request.getParameter("idProducto");
+				Integer idProducto = Integer.parseInt(id);
+				
+				ProductoVO productoBaja = ProductoService.getProductoId(idProducto);
+				
+				ProductoService.bajaProducto(productoBaja.getId());
+				
+				request.getRequestDispatcher(Rutas.PRODUCTOS_ADMIN_JSP).forward(request, response);
 				break;
         }
-
 	}
-
 
 }

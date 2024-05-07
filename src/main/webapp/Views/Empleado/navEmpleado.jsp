@@ -35,8 +35,7 @@
      	        <li class="nav-item"><a class="nav-link" href="CategoriaEmpleado?accion=view"><%= bundle.getString("nav.categorias") %></a></li>
      	        
      	        <li class="nav-item"><a class="nav-link" href="ClienteEmpleado?accion=view"><%= bundle.getString("nav.clientes") %></a></li>
-     	        
-	            
+     	        	            
 	        </ul>
 	        
 	        <div class="d-flex flex-column-reverse flex-lg-row">

@@ -19,7 +19,7 @@
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />
+		<jsp:include page="<%= Rutas.NAV_ADMIN%>" />
 		
 		<main>
 		

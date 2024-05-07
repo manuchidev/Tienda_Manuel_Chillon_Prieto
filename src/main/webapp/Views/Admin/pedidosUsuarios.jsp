@@ -19,7 +19,7 @@
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		
-		<jsp:include page="<%= Rutas.NAV_EMPLEADO%>" />
+		<jsp:include page="<%= Rutas.NAV_ADMIN%>" />
 		
 		<main>
 	
@@ -149,7 +149,13 @@
 																            <button type="submit" class="btn btn-sm bg-warning">Detalle</button>
 																        </form>
 																        															        
-																    </div>																    																    																    																    
+																    </div>
+																    																    																    
+																    <form action="PedidosUsuarios" method="post">
+																        <input type="hidden" name="idPedido" value="<%= pedido.getId() %>">
+																        <button type="submit" class="btn btn-sm bg-danger" name="accion" value="Cancelar">Cancelar</button>
+																    </form>
+																    
 																    																    
 																  </td>
                                                                	<%

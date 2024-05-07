@@ -22,7 +22,7 @@ public class ProductoDAO {
 		try {
 			
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM productos");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM productos WHERE fecha_baja IS NULL");
 			
 			ResultSet rs = st.executeQuery();
 			
@@ -196,9 +196,9 @@ public class ProductoDAO {
 	}
 	
 	public static ProductoVO updateProducto(int id, int idCategoria, String nombre, String descripcion, BigDecimal precio, int stock, BigDecimal impuesto, String imagen) {
-		
+				
 		ProductoVO producto = null;
-
+		
 		try {
 
 			Connection con = Conexion.getConexion();
@@ -460,6 +460,25 @@ public class ProductoDAO {
         } catch (SQLException e) {
             
         }
+	}
+	
+	public static void deleteProducto(int id) {
+
+		Timestamp fecha = new Timestamp(System.currentTimeMillis());
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("UPDATE productos SET fecha_baja = ? WHERE id = ?");
+
+			st.setTimestamp(1, fecha);
+			st.setInt(2, id);
+
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+
+		}
 	}
 
 
