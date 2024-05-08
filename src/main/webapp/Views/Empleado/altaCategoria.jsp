@@ -28,13 +28,22 @@
 	        											
         		<h2 class="text-center mb-4" style="color: white">ALTA DE CATEGORÍA</h2>
 	        											
-				<form action="CategoriaEmpleado" method="post">
+				<form action="CategoriaEmpleado" method="post" enctype="multipart/form-data">
 				 
 	            	<div class="container px-4 px-lg-5 my-3 d-flex justify-content-center align-items-center">
 	            
 	                	<div class="row gx-4 gx-lg-5 bg-light catDetalle">	                			
+												
+							<div class="col-md-6">	
+							
+								<div class="text-center divImagen">
+									<img class="card-img-top mb-5 mb-md-0 imgDetalle" id="preview" src="" alt="IMAGEN_CATEGORIA" />
+								</div>
+								
+								<input type="file" id="imagen" name="imagen" onchange="previewImage()" class="mt-2 mb-2">
+							</div>
 														
-							<div class="col-md-12 mt-2">
+							<div class="col-md-6 mt-2">
 							
 								<label>Nombre: </label>
 								<h2 class="fw-bolder datosCat">

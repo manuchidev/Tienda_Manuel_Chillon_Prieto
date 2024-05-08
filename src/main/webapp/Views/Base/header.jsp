@@ -7,7 +7,8 @@
     
         <div class="text-center text-white">
         
-            <h1 class="display-4 fw-bolder">Tienda Serbatic</h1>
+            <h1 class="display-4 fw-bolder">Riders Shop</h1>
+            <p class="lead fw-normal text-white-50 mb-0">La tienda para los amantes de las motos</p>
             
         </div>
         

@@ -50,19 +50,19 @@
 					
 									<!-- Categoria image-->
 									<div class="divCategoriaImg">
+										<img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_CAT %><%= categoria.getImagen() %>" alt="..." />
 									</div>
 					
 									<!-- Categoria details-->
 									<div class="card-body p-4">
 					
 										<div class="text-center">
-					
+															
 											<!-- Category name-->
 											<h5 class="fw-bolder"><%= categoria.getNombre()%></h5>
 					
 											<!-- Category description-->
-											<p class="p-2 m-0 fs-5"><%= categoria.getDescripcion()%>
-											</p>
+											<p class="p-2 m-0 fs-5"><%= categoria.getDescripcion()%></p>
 										</div>
 					
 									</div>

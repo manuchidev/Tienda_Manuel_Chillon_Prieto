@@ -16,12 +16,14 @@ import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
 import curso.java.tienda.model.VO.Compra.MetodoPagoVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Carrito.CarritoService;
 import curso.java.tienda.service.Categoria.CategoriaService;
 import curso.java.tienda.service.Compra.CompraService;
 import curso.java.tienda.service.Compra.MetodoPagoService;
+import curso.java.tienda.service.Config.ConfigService;
 
 /**
  * Servlet implementation class ComprarServlet
@@ -56,6 +58,9 @@ public class ComprarServlet extends BaseServlet {
 		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		request.setAttribute("categorias", categorias);
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		HashMap<ProductoVO, Integer> carrito = (HashMap<ProductoVO, Integer>)session.getAttribute("carrito");		
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));

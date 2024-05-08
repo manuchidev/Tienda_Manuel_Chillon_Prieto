@@ -15,9 +15,11 @@ import curso.java.tienda.config.Conexion;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Carrito.CarritoService;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
@@ -73,6 +75,9 @@ public class AñadirCarritoServlet extends BaseServlet {
 		
 		request.setAttribute("categorias", categorias);
 		request.setAttribute("productos", productos);
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 				
 		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 	}

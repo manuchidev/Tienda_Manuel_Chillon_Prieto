@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
@@ -45,6 +47,9 @@ public class PerfilServlet extends BaseServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		UsuarioVO usuario = (UsuarioVO)request.getSession().getAttribute("usuario");
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		
@@ -60,7 +65,15 @@ public class PerfilServlet extends BaseServlet {
 			String provincia = request.getParameter("provinciaPerfil");
 			String localidad = request.getParameter("localidadPerfil");
 			
-			UsuarioService.actualizarUsuario(usuario, nombre, apellido1, apellido2, telefono, direccion, provincia, localidad);
+			usuario.setNombre(nombre);
+			usuario.setApellido1(apellido1);
+			usuario.setApellido2(apellido2);
+			usuario.setTelefono(telefono);
+			usuario.setDireccion(direccion);
+			usuario.setProvincia(provincia);
+			usuario.setLocalidad(localidad);
+						
+			UsuarioVO usuarioActualizado = UsuarioService.actualizarUsuario(usuario);
 						
 		} else if ("cambioClave".equals(accion)) {
 			

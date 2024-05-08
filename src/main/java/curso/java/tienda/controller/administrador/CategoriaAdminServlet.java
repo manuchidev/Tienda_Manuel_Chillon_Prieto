@@ -1,7 +1,10 @@
 package curso.java.tienda.controller.administrador;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 
 /**
  * Servlet implementation class CategoriaAdminServlet
@@ -33,6 +44,9 @@ public class CategoriaAdminServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		String accion = request.getParameter("accion");
 		
@@ -57,16 +71,7 @@ public class CategoriaAdminServlet extends HttpServlet {
 				request.setAttribute("categoria", categoria);
 				
 				request.getRequestDispatcher(Rutas.MODIFICAR_CATEGORIA_ADMIN_JSP).forward(request, response);
-				break;
-				
-			case "delete":
-				String idDelete = request.getParameter("id");
-				int idCategoriaDelete = Integer.parseInt(idDelete);
-				
-				CategoriaService.bajaCategoria(idCategoriaDelete);
-				
-				request.getRequestDispatcher(Rutas.CATEGORIAS_ADMIN_JSP).forward(request, response);
-				break;
+				break;				
 		}
 	}
 
@@ -74,56 +79,74 @@ public class CategoriaAdminServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String accion = request.getParameter("accion");
 		
-		switch (accion) {
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
-			case "add":
-	        	String nombre = request.getParameter("nombreCatAlta");
-	        	String descripcion = request.getParameter("descripcionCatAlta");
+		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		request.setAttribute("categorias", categorias);
+		
+        String accion = null;
+		Map<String, String> campos = new HashMap<String, String>();
+		String absolutePath = getServletContext().getRealPath("");
 
-	        	
-	        	CategoriaVO nuevaCategoria = new CategoriaVO();
-		        	nuevaCategoria.setNombre(nombre);
-		        	nuevaCategoria.setDescripcion(descripcion);
-		        	
-		        CategoriaService.altaCategoria(nuevaCategoria);
-		        	
-				request.getRequestDispatcher(Rutas.ALTA_CATEGORIA_ADMIN_JSP).forward(request, response);
-				break;
+		FileItemFactory file = new DiskFileItemFactory();
+		ServletFileUpload fileUpload = new ServletFileUpload(file);
+		
+		List items = null;
+		
+		try {
+			items = fileUpload.parseRequest(request);
 			
-			case "edit":
-		      	String id = request.getParameter("idCatModif");
-	        	Integer idCategoria = Integer.parseInt(id);
-	        	
-				String nombreModif = request.getParameter("nombreCatModif");
-				String descripcionModif = request.getParameter("descripcionCatModif");
-				
-				CategoriaVO categoriaActualizada = new CategoriaVO();
-					categoriaActualizada.setId(idCategoria);
-					categoriaActualizada.setNombre(nombreModif);
-					categoriaActualizada.setDescripcion(descripcionModif);
+		} catch (FileUploadException e) {
+			e.printStackTrace();
+		}
 
-				CategoriaService.modificarCategoria(categoriaActualizada);
+		FileItem imagen = null;
+        
+		for (Object item : items) {
+			FileItem fileItem = (FileItem) item;
+		
+			if (fileItem.isFormField()) {
+
+				if (fileItem.getFieldName().equals("accion")) {
+					accion = fileItem.getString();
+
+				} else {
+					campos.put(fileItem.getFieldName(), fileItem.getString());
+				}
+
+			} else {
+				imagen = fileItem;
+			}
+		}
+		
+		if (accion.equals("add")) {
+
+			CategoriaVO nuevoCategoria = new CategoriaVO();
+			
+			if (imagen != null) {
+				File f = new File(absolutePath + Rutas.IMAGENES_CAT + imagen.getName());
 				
-				CategoriaVO categoria = CategoriaService.getCategoria(categoriaActualizada.getId());
-	        	request.setAttribute("categoria", categoria);
+				try {
+					imagen.write(f);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				
-				request.getRequestDispatcher(Rutas.MODIFICAR_CATEGORIA_JSP).forward(request, response);
-				break;
-				
-			case "delete":
-				String idCat = request.getParameter("idCat");
-				Integer idCategoriaDelete = Integer.parseInt(idCat);
-				
-				CategoriaService.bajaCategoria(idCategoriaDelete);
-				
-				request.getRequestDispatcher(Rutas.CATEGORIAS_ADMIN_JSP).forward(request, response);
-				break;
-				
-			default:
-				break;
+				nuevoCategoria.setImagen(imagen.getName());		
+			} 
+    		
+    		nuevoCategoria.setNombre(campos.get("nombreCatAlta"));
+    		nuevoCategoria.setDescripcion(campos.get("descripcionCatAlta"));
+    		
+    		CategoriaService.altaCategoria(nuevoCategoria);
+    		
+			categorias = CategoriaService.getCategorias();
+        	request.setAttribute("categorias", categorias);
+        			        
+			request.getRequestDispatcher(Rutas.ALTA_CATEGORIA_JSP).forward(request, response);
 				
 		}
 	}

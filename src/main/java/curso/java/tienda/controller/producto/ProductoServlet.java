@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
@@ -37,6 +39,9 @@ public class ProductoServlet extends BaseServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		String precio = request.getParameter("precio");
 		String categoria = request.getParameter("categoria");
 						
@@ -65,7 +70,7 @@ public class ProductoServlet extends BaseServlet {
 			List<ProductoVO> productos = ProductoService.getProductos();
 			request.setAttribute("productos", productos);
 		}
-						
+
 		request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);		
 	}
 

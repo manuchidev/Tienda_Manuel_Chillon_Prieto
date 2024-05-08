@@ -15,7 +15,9 @@ import javax.servlet.http.HttpSession;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Contacto.ContactoService;
 
 /**
@@ -42,6 +44,9 @@ public class ContactoServlet extends BaseServlet {
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		request.setAttribute("categorias", categorias);
 		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		request.getRequestDispatcher(Rutas.CONTACTO_JSP).forward(request, response);
 	}
 
@@ -51,6 +56,9 @@ public class ContactoServlet extends BaseServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession(true);
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 
@@ -67,8 +75,7 @@ public class ContactoServlet extends BaseServlet {
 
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", new Locale(idioma));
 		session.setAttribute("bundle", bundle);
-		
-		String remitente = request.getParameter("emailContacto");
+
 		String asunto = request.getParameter("asuntoContacto");
 		String mensaje = request.getParameter("mensajeContacto");
 

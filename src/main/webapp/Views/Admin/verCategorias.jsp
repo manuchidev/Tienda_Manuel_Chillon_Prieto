@@ -50,6 +50,7 @@
 					
 									<!-- Categoria image-->
 									<div class="divCategoriaImg">
+										<img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_CAT %><%= categoria.getImagen() %>" alt="..." />
 									</div>
 					
 									<!-- Categoria details-->
@@ -77,7 +78,6 @@
 												<input type="hidden" name="idCat" value="<%= categoria.getId()%>">
 												
 												<button type="submit" name="accion" value="edit" class="btn btn-warning mt-auto">Modificar</button>
-												<button type="submit" name="accion" value="delete" class="btn btn-danger mt-auto">Dar de Baja</button>
 																								
 											</form>
 			

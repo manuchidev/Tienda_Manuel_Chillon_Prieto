@@ -22,7 +22,7 @@ public class ContactoService extends BaseServlet{
 
         final Properties properties = new Properties();
         String destinatario = "riders_shop@outlook.com";
-
+        
         try (InputStream input = ContactoService.class.getClassLoader().getResourceAsStream("mail.properties")) {
 
             if (input == null) {
@@ -31,12 +31,15 @@ public class ContactoService extends BaseServlet{
 
             properties.load(input);
 
+            System.out.println("properties.getProperty('mail.smtp.username') = " + properties.getProperty("mail.smtp.username"));
+            System.out.println("properties.getProperty('mail.smtp.password') = " + properties.getProperty("mail.smtp.password"));
+
         } catch (IOException ex) {
             throw new RuntimeException("Error al cargar el fichero de propiedades", ex);
         }
 
         Session session = Session.getInstance(properties, new Authenticator() {
-
+  
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(properties.getProperty("mail.smtp.username"), properties.getProperty("mail.smtp.password"));

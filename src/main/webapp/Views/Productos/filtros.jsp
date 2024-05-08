@@ -28,7 +28,6 @@
 					<option value="100">Hasta 100€</option>
 					<option value="500">Hasta 500€</option>
 					<option value="1000">Hasta 1000€</option>
-					<option value="3000">Hasta 3000€</option>
 				</select>
 
 			</div>

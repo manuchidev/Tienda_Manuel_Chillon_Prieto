@@ -28,7 +28,7 @@
 	        											
     			<h2 class="text-center mb-4" style="color: white">ACTUALIZACIÓN DE CATEGORÍA</h2>
 	        											
-				<form action="CategoriaEmpleado" method="post">
+				<form action="ModificarCategoria" method="post">
 				 
 	            	<div class="container px-4 px-lg-5 my-3 d-flex justify-content-center align-items-center">
 	            
@@ -37,15 +37,13 @@
 							CategoriaVO categoria = (CategoriaVO) request.getAttribute("categoria");
 						
 						%>
-<!-- 							<div class="col-md-5"> -->
-<%-- 							    <input type="hidden" name="imagenProdModif" value="<%=categoria.getImagen()%>"> --%>
-<%-- 								<img class="card-img-top mb-5 mb-md-0 imgDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." /> --%>
-<%-- 								<img class="card-img-top mb-5 mb-md-0 imgDetalle" id="preview" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." /> --%>
-<!-- 								<input type="file" id="imagen" name="imagen" onchange="previewImage()" class="form-control mt-2 mb-2"> -->
-<!-- 							</div> -->
+							<div class="col-md-5">
+							    <input type="hidden" name="imagenProdModif" value="<%=categoria.getImagen()%>">
+								<img class="card-img-top mb-5 mb-md-0 imgDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_CAT %><%= categoria.getImagen() %>" alt="IMAGEN_PRODUCTO" />
+							</div>
 							
 							
-							<div class="col-md-12 mt-2">
+							<div class="col-md-7 mt-2">
 							
 								<label>Nombre: </label>
 								<h2 class="fw-bolder datosCat">
@@ -59,10 +57,9 @@
 																															
 								<div class="d-flex justify-content-center mt-3 mb-2 gap-2">
 								
-								    <input type="hidden" name="idCatModif" value="<%=categoria.getId()%>">
+								    <input type="hidden" name="idCat" value="<%=categoria.getId()%>">
 								    							
 									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="edit"> Actualizar Categoria </button>
-									<button type="submit" name="accion" value="delete" class="btn btn-danger mt-auto">Dar de Baja</button>
 									
 								</div>
 								

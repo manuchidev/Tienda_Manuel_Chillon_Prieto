@@ -13,8 +13,10 @@ import javax.servlet.http.HttpSession;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
@@ -39,6 +41,9 @@ public class DetallesServlet extends BaseServlet {
 
 		HttpSession session = request.getSession(true);
 		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		
 		// Si existe un id, creamos el carrito. La primera vez se crea con una unidad del producto, pero posteriormente habrá que comprobar si el id del producto existe y si es así se aumenta la cantidad
@@ -53,7 +58,7 @@ public class DetallesServlet extends BaseServlet {
 			List<ProductoVO> productosCategoriaDetalles = ProductoService.getProductosCategoriaDetalles(idProd, idCat);
 			request.setAttribute("productosCategoriaDetalles", productosCategoriaDetalles);
 		}
-		
+			
 		request.setAttribute("categorias", categorias);
 		request.getRequestDispatcher(Rutas.DETALLES_JSP).forward(request, response);
 	}

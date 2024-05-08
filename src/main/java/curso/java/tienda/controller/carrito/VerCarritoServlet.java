@@ -16,9 +16,11 @@ import javax.servlet.http.HttpSession;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.service.Carrito.CarritoService;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Producto.ProductoService;
 
 /**
@@ -50,6 +52,9 @@ public class VerCarritoServlet extends BaseServlet {
 		request.setAttribute("totalCarrito", CarritoService.calcularTotal(carrito));
 		request.setAttribute("totalCarritoIVA", CarritoService.calcularTotalIVA(CarritoService.calcularTotal(carrito)));
 		request.setAttribute("categorias", categorias);
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		request.getRequestDispatcher(Rutas.CARRITO_JSP).forward(request, response);
 	}

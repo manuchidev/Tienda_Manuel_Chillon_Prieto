@@ -1,5 +1,7 @@
 package curso.java.tienda.model.VO.Usuario;
 
+import java.sql.Timestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -21,6 +23,7 @@ public class UsuarioVO {
 	private String localidad;
 	private String telefono;
 	private String dni;
+	private Timestamp fecha_baja;
 	
 	public UsuarioVO(String email, String clave, String nombre, String apellido1, String apellido2, String direccion,
 			String provincia, String localidad, String telefono, String dni) {

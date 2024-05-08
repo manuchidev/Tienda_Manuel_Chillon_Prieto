@@ -49,7 +49,9 @@ public class Rutas {
 	public static final String CANTIDAD_CARRITO_JS = "/Resources/js/Carrito/cantidadCarrito.js";
 	
 	// IMAGENES
-	public static final String IMAGENES_LOGO = "/Resources/img/logo.webp";
+	public static final String IMAGENES_BANNER = "/Resources/img/banner.png";
+	public static final String IMAGENES_LOGO = "/Resources/img/logo.png";
+	public static final String IMAGENES_CAT = "/Resources/img/Categoria/";
 	public static final String IMAGENES_PROD = "/Resources/img/Producto/";
 	
 	
@@ -98,14 +100,17 @@ public class Rutas {
 	public static final String PRODUCTOS_ADMIN_JSP = "/Views/Admin/verProductos.jsp";
 	public static final String CATEGORIAS_ADMIN_JSP = "/Views/Admin/verCategorias.jsp";
 	public static final String CLIENTES_ADMIN_JSP = "/Views/Admin/verClientes.jsp";
+	public static final String EMPLEADOS_ADMIN_JSP = "/Views/Admin/verEmpleados.jsp";
 	
 	public static final String ALTA_PRODUCTO_ADMIN_JSP = "/Views/Admin/altaProducto.jsp";
 	public static final String ALTA_CATEGORIA_ADMIN_JSP = "/Views/Admin/altaCategoria.jsp";
 	public static final String ALTA_CLIENTE_ADMIN_JSP = "/Views/Admin/altaCliente.jsp";
+	public static final String ALTA_EMPLEADO_ADMIN_JSP = "/Views/Admin/altaEmpleado.jsp";
 	
 	public static final String MODIFICAR_PRODUCTO_ADMIN_JSP = "/Views/Admin/modificarProducto.jsp";
 	public static final String MODIFICAR_CATEGORIA_ADMIN_JSP = "/Views/Admin/modificarCategoria.jsp";
 	public static final String MODIFICAR_CLIENTE_ADMIN_JSP = "/Views/Admin/modificarCliente.jsp";	
+	public static final String MODIFICAR_EMPLEADO_ADMIN_JSP = "/Views/Admin/modificarEmpleado.jsp";
 	
 	public static final String DETALLES_EMPLEADO_ADMIN_JSP = "Views/Admin/detalleEmpleado.jsp";
 	public static final String PEDIDOS_USUARIOS_ADMIN_JSP = "/Views/Admin/pedidosUsuarios.jsp";

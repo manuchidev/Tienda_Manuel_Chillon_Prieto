@@ -42,8 +42,7 @@
 							    <input type="hidden" name="imagenProdModif" value="<%=producto.getImagen()%>">
 								<img class="card-img-top mb-5 mb-md-0 imgDetalle" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="IMAGEN_PRODUCTO" />
 							</div>
-							
-							
+														
 							<div class="col-md-7 mt-2">
 								<h2 class="fw-bolder datosProd">
 									<input type="text" class="inputModificar text-center bg-light" name="nombreProdModif" value="<%= producto.getNombre() %>">
@@ -106,7 +105,7 @@
 								<div class="d-flex justify-content-center mt-3 mb-2 gap-2">
 								
 								    <input type="hidden" name="idProdModif" value="<%=producto.getId()%>">
-								    <input type="hidden" name="idCatModif" value="<%=producto.getId_categoria()%>">
+<%-- 								    <input type="hidden" name="idCatModif" value="<%=producto.getId_categoria()%>"> --%>
 								    							
 									<button type="submit" class="btn btn-success flex-shrink-0" name="accion" value="edit"> Actualizar Producto </button>
 									
@@ -119,6 +118,61 @@
 		            </div>
 		            
 				</form>
+				
+				<table class= "table bg-light mt-5" border="1">
+				
+					<thead>
+					
+						<tr>
+							<th colspan="8" class="text-center bg-secondary p-3">LISTADO DE PRODUCTOS</th>
+						</tr>
+					
+						<tr class="text-center bg-info p-3">						
+						    <th>Nombre</th>
+							<th>Precio</th>
+							<th>Descripción</th>
+							<th>Impuesto</th>
+							<th>Stock</th>
+							<th>Imagen</th>
+							<th>Acciones</th>						
+						</tr>
+							
+					</thead>
+					
+					<tbody>
+					
+					<%
+					    List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");
+					
+					    if (productos != null) {
+					    	
+					        for (ProductoVO prod : productos) {
+					%>
+					            <tr class="text-center">
+					                <td><%= prod.getNombre() %></td>
+					                <td><%= prod.getPrecio() %>€</td>
+					                <td><%= prod.getDescripcion() %></td>
+					                <td><%= prod.getImpuesto() %>%</td>
+					                <td><%= prod.getStock() %></td>
+					                <td><img src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= prod.getImagen() %>" height="50" width="50"></td>
+					                <td>
+										<form action="ProductoEmpleado" method="get">
+											<input type="hidden" name="accion" value="edit">
+											<input type="hidden" name="idProd" value="<%= prod.getId() %>">
+											
+											<input type="submit" value="Editar">
+										</form>
+					                </td>
+					            </tr>
+					<%
+					        }
+					    }
+					%>
+					
+					
+					</tbody>
+								
+				</table>
 	            
 	        </section>	        
 		

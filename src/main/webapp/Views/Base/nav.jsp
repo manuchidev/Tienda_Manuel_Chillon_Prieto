@@ -18,7 +18,7 @@
 
 	<div class="container-fluid">
 		    
-	    <a class="navbar-brand  px-0 mx-5" href="/Tienda_Manuel_Chillon_Prieto/">
+	    <a class="navbar-brand px-0 mx-4" href="/Tienda_Manuel_Chillon_Prieto/">
 	    	<img class="imgLogo" src="<%=request.getContextPath() %><%=Rutas.IMAGENES_LOGO %>" alt="">
 	    </a>
 	    

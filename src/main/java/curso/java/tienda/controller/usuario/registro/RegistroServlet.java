@@ -13,9 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Producto.ProductoService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
@@ -43,6 +45,9 @@ public class RegistroServlet extends BaseServlet {
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		request.setAttribute("categorias", categorias);
 		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		request.getRequestDispatcher(Rutas.REGISTRO_JSP).forward(request, response);
 	}
 
@@ -50,6 +55,9 @@ public class RegistroServlet extends BaseServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();		
 		List<ProductoVO> productos = ProductoService.getProductos();

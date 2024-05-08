@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Pedido.PedidoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
@@ -38,6 +39,9 @@ public class PedidosUsuariosServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<UsuarioVO> usuarios = UsuarioService.getUsuarios();
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
@@ -75,6 +79,9 @@ public class PedidosUsuariosServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();

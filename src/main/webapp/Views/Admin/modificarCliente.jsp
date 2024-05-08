@@ -53,7 +53,7 @@
 									<h4 class="text-center text-white">Datos del Usuario</h4>
 								</div>
 								
-								<form action="ClienteEmpleado" method="post">
+								<form action="ClienteAdmin" method="post">
 								
 									<div class="row">
 									

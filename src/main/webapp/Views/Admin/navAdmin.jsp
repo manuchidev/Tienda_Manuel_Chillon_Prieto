@@ -16,7 +16,7 @@
 
 	<div class="container-fluid">
 		    
-	    <a class="navbar-brand  px-0 mx-5" href="/Tienda_Manuel_Chillon_Prieto/">
+	    <a class="navbar-brand  px-0 mx-4" href="/Tienda_Manuel_Chillon_Prieto/">
 	    	<img class="imgLogo" src="<%=request.getContextPath() %><%=Rutas.IMAGENES_LOGO %>" alt="">
 	    </a>
 	    
@@ -36,7 +36,8 @@
      	        
      	        <li class="nav-item"><a class="nav-link" href="ClienteAdmin?accion=view"><%= bundle.getString("nav.clientes") %></a></li>
      	        
-	            
+     	        <li class="nav-item"><a class="nav-link" href="EmpleadoAdmin?accion=view"><%= bundle.getString("nav.empleados") %></a></li>
+     	        	            
 	        </ul>
 	        
 	        <div class="d-flex flex-column-reverse flex-lg-row">

@@ -30,9 +30,7 @@
 				
 								<!-- Product image-->
 								<div class="divProductoImg">
-									<img class="card-img-top imgProd"
-										src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>"
-										alt="..." />
+									<img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
 								</div>
 				
 								<!-- Product details-->

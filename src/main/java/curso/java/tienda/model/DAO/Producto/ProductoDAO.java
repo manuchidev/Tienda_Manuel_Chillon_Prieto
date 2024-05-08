@@ -195,27 +195,24 @@ public class ProductoDAO {
 		
 	}
 	
-	public static ProductoVO updateProducto(int id, int idCategoria, String nombre, String descripcion, BigDecimal precio, int stock, BigDecimal impuesto, String imagen) {
+	public static ProductoVO updateProducto(ProductoVO producto) {
 				
-		ProductoVO producto = null;
-		
 		try {
 
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement( "UPDATE productos SET id_categoria = ?, nombre = ?, descripcion = ?, precio = ?, stock = ?, impuesto = ?, imagen = ? WHERE id = ?");
+			PreparedStatement st = con.prepareStatement(
+					"UPDATE productos SET id_categoria = ?, nombre = ?, descripcion = ?, precio = ?, stock = ?, impuesto = ?, imagen = ? WHERE id = ?");
 
-			st.setInt(1, idCategoria);
-			st.setString(2, nombre);
-			st.setString(3, descripcion);
-			st.setBigDecimal(4, precio);
-			st.setInt(5, stock);
-			st.setBigDecimal(6, impuesto);
-			st.setString(7, imagen);
-			st.setInt(8, id);
+			st.setInt(1, producto.getId_categoria());
+			st.setString(2, producto.getNombre());
+			st.setString(3, producto.getDescripcion());
+			st.setBigDecimal(4, producto.getPrecio());
+			st.setInt(5, producto.getStock());
+			st.setBigDecimal(6, producto.getImpuesto());
+			st.setString(7, producto.getImagen());
+			st.setInt(8, producto.getId());
 
 			st.executeUpdate();
-
-			producto = findById(id);
 
 		} catch (SQLException e) {
 

@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.DetallePedido.DetallePedidoVO;
 import curso.java.tienda.model.VO.Producto.ProductoVO;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.DetallePedido.DetallePedidoService;
 
 /**
@@ -37,6 +39,9 @@ public class DetallesPedidoServlet extends BaseServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String id = request.getParameter("idPedido");
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		if (id != null) {
 			

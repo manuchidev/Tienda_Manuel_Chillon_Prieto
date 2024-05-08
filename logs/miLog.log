@@ -666,3 +666,810 @@
 07/05/2024 21:03:28  INFO EntradaServlet:57 - Idioma: es
 07/05/2024 21:03:45  INFO EntradaServlet:54 - Idioma por defecto: es
 07/05/2024 21:03:45  INFO EntradaServlet:66 - Carrito disponible
+07/05/2024 23:43:42  INFO EntradaServlet:54 - Idioma por defecto: es
+07/05/2024 23:43:42  INFO EntradaServlet:66 - Carrito disponible
+07/05/2024 23:43:58  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+07/05/2024 23:44:27  INFO EntradaServlet:54 - Idioma por defecto: es
+07/05/2024 23:44:27  INFO EntradaServlet:66 - Carrito disponible
+07/05/2024 23:44:29  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:44:40  INFO LoginServlet:81 - Usuario admin1@admin1.com ha iniciado sesión
+07/05/2024 23:45:10  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:45:11  INFO EntradaServlet:54 - Idioma por defecto: es
+07/05/2024 23:45:11  INFO EntradaServlet:66 - Carrito disponible
+07/05/2024 23:45:18  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+07/05/2024 23:46:12  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+07/05/2024 23:46:36  INFO LoginServlet:81 - Usuario empleado1@empleado1.com ha iniciado sesión
+07/05/2024 23:47:55  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:48:00  INFO EntradaServlet:54 - Idioma por defecto: es
+07/05/2024 23:48:00  INFO EntradaServlet:66 - Carrito disponible
+07/05/2024 23:48:06  INFO LoginServlet:81 - Usuario admin1@admin1.com ha iniciado sesión
+07/05/2024 23:48:14  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:51:38  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:54:01  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:54:06  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:54:16  INFO LoginServlet:81 - Usuario admin1@admin1.com ha iniciado sesión
+07/05/2024 23:54:36  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:54:36  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:54:44  INFO LoginServlet:81 - Usuario admin1@admin1.com ha iniciado sesión
+07/05/2024 23:55:44  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:56:33  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:56:39  INFO LoginServlet:81 - Usuario admin1@admin1.com ha iniciado sesión
+07/05/2024 23:57:31  INFO EntradaServlet:57 - Idioma: es
+07/05/2024 23:57:39  INFO LoginServlet:81 - Usuario admin1@admin1.com ha iniciado sesión
+08/05/2024 12:59:14  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 12:59:14  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:00:26  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:00:26  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:00:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:00:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:00:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:00:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:06  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:55  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:01:58  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:38  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:46  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:49  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:02:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:13  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:32  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:32  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:33  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:03:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:05:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:36  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:36  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:06:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:24  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:07:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:09:05  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:09:11  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:09:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:09:13  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:09:28  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:09:46  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:10:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:00  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:00  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:01  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:08  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:27  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:45  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:11:46  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:22  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:33  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:39  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:40  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:40  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:41  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:41  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:45  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:12:59  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:00  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:06  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:25  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:35  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:35  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:36  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:51  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:51  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:13:58  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:14:10  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:14:53  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:15:14  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:15:55  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:17:48  INFO EntradaServlet:57 - Idioma: en
+08/05/2024 13:17:52  INFO EntradaServlet:57 - Idioma: en
+08/05/2024 13:17:53  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:18:00  INFO EntradaServlet:57 - Idioma: en
+08/05/2024 13:18:01  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:18:42  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:18:48  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 13:18:48  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:18:59  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 13:19:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:19:14  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:19:19  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 13:19:19  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:19:24  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:19:55  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:20:01  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 13:20:01  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:20:07  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 13:20:11  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:39  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:41  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 13:20:41  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:20:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:50  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:55  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:55  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:56  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:20:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:04  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:21  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:47  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:47  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:51  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:51  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:53  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:56  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:21:56  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:22:15  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:22:23  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:22:32  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:24:07  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:24:08  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 13:24:08  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:24:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:24:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:24:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:24:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:24:35  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:24:45  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:25:09  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 13:25:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:25:34  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 13:25:34  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 13:25:40  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 13:35:21  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:35:21  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:36:29  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:39:10  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 13:39:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:39:20  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:42:51  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 13:49:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:01:05  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 14:01:05  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 14:01:25  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:03:11  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:03:16  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:03:33  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:05:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:05:47  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:39  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:40  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:40  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:40  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:46  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:06:58  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:07:08  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:07:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:14:31 ERROR ClienteEmpleadoServlet:123 - Error al registrar el cliente
+08/05/2024 14:17:06  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 14:17:06  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 14:17:12  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email pepe_prieto@hotmail.com
+08/05/2024 14:17:17  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 14:17:29  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 14:17:29  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 14:17:36  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:17:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:28:08  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:28:15  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:30:16  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:30:39  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:31:21  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:32:28  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:32:42  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:33:30  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:33:39  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:36:44  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:36:48  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:36:53  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:39:38  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:39:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:39:58  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:41:07  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:41:16  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:42:11  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:45:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:45:12  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:46:04  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:51:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:52:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 14:52:10  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 14:56:34  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:06:58  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 15:06:58  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 15:07:03  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 15:08:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:09:01  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:09:04  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:09:11  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 15:15:22  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 15:15:22  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 15:15:23  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 15:15:23  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 15:15:30  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 15:16:00  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:16:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:18:31  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:18:41  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:18:50  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 15:52:22  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 15:52:22  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 15:52:29  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 15:53:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:54:06  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 15:54:16  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 16:05:21  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 16:05:27  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 16:05:33  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 17:53:20  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 17:53:20  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 17:53:30  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 17:54:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:53  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:54:55  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:55:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:55:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:55:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:55:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 17:59:11  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 18:06:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:07:06  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:09:45  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:12:41  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:12:54  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email pepe_prieto@hotmail.com
+08/05/2024 18:13:01  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:13:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:13:07  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:14:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:14:59  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:19:33  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:19:57  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:19:58  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:19:59  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:33:27  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:34:00  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:34:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:34:09  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:36:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:36:19  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:38:15  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:40:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:40:22  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:42:31  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:42:32  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:42:41  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:42:50  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:43:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:44:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:44:06  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:44:11  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:44:21  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:45:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:46:14  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 18:46:34  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:47:26  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 18:54:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:04:04  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:04:15  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email pepe_prieto@hotmail.com
+08/05/2024 19:04:21  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:06:25  INFO ClienteEmpleadoServlet:112 - Cliente registrado correctamente
+08/05/2024 19:06:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:12:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:12:54  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:15:10  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:15:16  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:15:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:17:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:19:08  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:19:14  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:19:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:19:45  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:20:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:28:02  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:28:36  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:40:29  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:49:59  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 19:49:59  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 19:50:04  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 19:51:21  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 19:51:21  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 19:51:26  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:51:32  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:55:56  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:56:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:56:23  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 19:57:33  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:57:55  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 19:58:03  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:02:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:02:18  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:02:23  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:03:49  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:03:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:10:41  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:17:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:18:01  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:22:35  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:22:40  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:22:42  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:25:14  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:25:29  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:25:53  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:25:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:25:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:25:54  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:27:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:27:22  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:29:02  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:29:13  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:30:24  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:30:30  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:30:39  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:31:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:31:24  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:31:32  WARN LoginServlet:85 - Intento de inicio de sesión fallido con email pepe_prieto@hotmail.com
+08/05/2024 20:31:37  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 20:40:22  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:40:24  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 20:40:24  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 20:40:29  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 20:40:52  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:47:06  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 20:47:14  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:04:18  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:04:24  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:10:11  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:10:43  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:10:50  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:12:00  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:12:03  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:12:03  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:12:09  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 21:16:41  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:43:27  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:43:27  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:43:31  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:43:56  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:45:29  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:45:29  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:46:01  INFO LoginServlet:81 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 21:46:09  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:46:45  INFO ComprarServlet:77 - Stock suficiente
+08/05/2024 21:46:52 ERROR ComprarServlet:81 - Stock insuficiente
+08/05/2024 21:46:58  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:47:09  INFO ComprarServlet:77 - Stock suficiente
+08/05/2024 21:47:20  INFO RealizarPedidoServlet:91 - Stock suficiente
+08/05/2024 21:47:31  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:47:31  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:47:55  INFO ComprarServlet:77 - Stock suficiente
+08/05/2024 21:48:10  INFO RealizarPedidoServlet:91 - Stock suficiente
+08/05/2024 21:48:23  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:48:23  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:48:29  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:48:38  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:48:38  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:48:43  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 21:48:53  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:48:53  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:49:01  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:49:07  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:49:07  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:49:13  INFO LoginServlet:81 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 21:49:31  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:49:31  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:49:36  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 21:50:32  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:50:39  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 21:56:35  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:56:36  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:59:08  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 21:59:19  INFO LoginServlet:81 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 21:59:37  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 21:59:37  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 21:59:42  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 22:00:37  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:01:03  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:04:15  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:04:26  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 22:14:17  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 22:14:17  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 22:14:24  INFO LoginServlet:81 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 22:14:33  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:14:35  INFO EntradaServlet:54 - Idioma por defecto: es
+08/05/2024 22:14:35  INFO EntradaServlet:66 - Carrito disponible
+08/05/2024 22:18:51  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 22:19:32 ERROR ClienteAdminServlet:125 - Error al registrar el cliente
+08/05/2024 22:19:57  INFO ClienteAdminServlet:114 - Cliente registrado correctamente
+08/05/2024 22:20:25  INFO ClienteEmpleadoServlet:112 - Cliente registrado correctamente
+08/05/2024 22:20:36  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:22:24  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:23:17  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:23:23  INFO EntradaServlet:57 - Idioma: es
+08/05/2024 22:23:30  INFO LoginServlet:81 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 22:24:05  INFO ClienteAdminServlet:114 - Cliente registrado correctamente
+08/05/2024 22:24:28  INFO EmpleadoAdminServlet:113 - Empleado registrado correctamente
+08/05/2024 22:29:33  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:35:46  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:39:20  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:39:38  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:39:48  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:05  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:15  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:15  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:15  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:22  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:32  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:32  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:32  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:33  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:33  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:47  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:49  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:49  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:50  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:40:54  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:11  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:26  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:35  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:36  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:40  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:41  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:43  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:43  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:43  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:47  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:41:54  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:42:23  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:43:03  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:43:49  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:44:47  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:44:58  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:45:27  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:45:48  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:45:54  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:46:08  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:46:34  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:50:08  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:52:44  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:52:45  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:52:50  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:53:27  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:53:31  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:53:31  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:53:46  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:53:49 ERROR ComprarServlet:92 - Carrito vacío
+08/05/2024 22:53:53  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:53:55 ERROR ComprarServlet:92 - Carrito vacío
+08/05/2024 22:53:56  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:54:59 ERROR ComprarServlet:92 - Carrito vacío
+08/05/2024 22:55:11  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:55:11  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:55:27  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:55:29 ERROR ComprarServlet:97 - Carrito vacío
+08/05/2024 22:55:30 ERROR ComprarServlet:97 - Carrito vacío
+08/05/2024 22:55:31 ERROR ComprarServlet:97 - Carrito vacío
+08/05/2024 22:55:33  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:56:09  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:56:14  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:56:17  INFO EntradaServlet:59 - Idioma: es
+08/05/2024 22:56:20 ERROR ComprarServlet:97 - Carrito vacío
+08/05/2024 22:56:31  INFO LoginServlet:86 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:01:07  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:01:08  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:01:13  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:01:14  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:01:23 ERROR ComprarServlet:97 - Carrito vacío
+08/05/2024 23:01:31  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:01:57  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:01:59  INFO ComprarServlet:82 - Stock suficiente
+08/05/2024 23:02:07  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:02:09  INFO EntradaServlet:59 - Idioma por defecto: es
+08/05/2024 23:02:09  INFO EntradaServlet:71 - Carrito disponible
+08/05/2024 23:02:14  INFO LoginServlet:89 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 23:02:40  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:02:53  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:03:05  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:03:10  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:04:39  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:04:42  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:04:51  INFO LoginServlet:89 - Usuario pepe_prieto@hotmail.com ha iniciado sesión
+08/05/2024 23:05:18  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:05:27  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:05:28  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:05:32  INFO EntradaServlet:59 - Idioma por defecto: es
+08/05/2024 23:05:32  INFO EntradaServlet:71 - Carrito disponible
+08/05/2024 23:05:37  INFO LoginServlet:89 - Usuario admin1_riders@hotmail.com ha iniciado sesión
+08/05/2024 23:05:54  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:06:04  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:06:08  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:06:11  INFO EntradaServlet:59 - Idioma por defecto: es
+08/05/2024 23:06:11  INFO EntradaServlet:71 - Carrito disponible
+08/05/2024 23:06:21  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:08:00  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:08:12 ERROR ContactoServlet:90 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:60)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:84)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [MA3P292CA0015.ESPP292.PROD.OUTLOOK.COM 2024-05-08T21:08:06.187Z 08DC6F5E3228ADD6]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:826)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:761)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:685)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:54)
+	... 25 more
+08/05/2024 23:14:06  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:14:16 ERROR ContactoServlet:90 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:60)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:84)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [MA2P292CA0011.ESPP292.PROD.OUTLOOK.COM 2024-05-08T21:14:10.727Z 08DC62F0CABF8815]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:826)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:761)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:685)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:54)
+	... 25 more
+08/05/2024 23:16:00  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:16:09  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:16:18  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:16:29 ERROR ContactoServlet:90 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:65)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:84)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [MA2P292CA0015.ESPP292.PROD.OUTLOOK.COM 2024-05-08T21:16:23.032Z 08DC62A028DB3ED3]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:826)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:761)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:685)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:59)
+	... 25 more
+08/05/2024 23:17:34  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:17:39  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:17:45  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:17:52  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:18:03 ERROR ContactoServlet:90 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:65)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:84)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [MA4P292CA0001.ESPP292.PROD.OUTLOOK.COM 2024-05-08T21:17:57.680Z 08DC69E9E987AF0C]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:826)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:761)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:685)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:59)
+	... 25 more
+08/05/2024 23:21:04  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:21:07  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:21:15  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:21:29  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:21:40 ERROR ContactoServlet:90 - Error al enviar el correo
+java.lang.RuntimeException: Error al enviar el correo
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:65)
+	at curso.java.tienda.controller.contacto.ContactoServlet.doPost(ContactoServlet.java:84)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:670)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication unsuccessful, the user credentials were incorrect. [MA2P292CA0007.ESPP292.PROD.OUTLOOK.COM 2024-05-08T21:21:34.718Z 08DC634276E7F7BB]
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:826)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:761)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:685)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at curso.java.tienda.service.Contacto.ContactoService.enviarEmail(ContactoService.java:59)
+	... 25 more
+08/05/2024 23:25:06  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:25:15  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:25:50  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:25:57  INFO ContactoServlet:85 - Correo enviado correctamente
+08/05/2024 23:26:54  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:27:03  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:27:21  INFO ContactoServlet:73 - Idioma: es
+08/05/2024 23:27:27  INFO ContactoServlet:85 - Correo enviado correctamente

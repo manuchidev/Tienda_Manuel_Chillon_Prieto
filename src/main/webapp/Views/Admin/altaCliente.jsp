@@ -57,7 +57,7 @@
 			            
 				              <h2 class="text-uppercase text-center mb-5">ALTA DE CLIENTE</h2>
 				
-				              <form novalidate action="ClienteEmpleado" method="post" id="formRegistro" class="form-container" onsubmit="return validarRegistro(event)">
+				              <form novalidate action="ClienteAdmin" method="post" id="formRegistro" class="form-container" onsubmit="return validarRegistro(event)">
 								
 								<div class="form-row">
 								

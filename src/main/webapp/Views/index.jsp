@@ -32,7 +32,7 @@
 		<% } else if (usuario.esAdmin()) {%>
 			<jsp:include page="<%= Rutas.NAV_ADMIN%>" />	
 			<jsp:include page="<%= Rutas.MAIN_ADMIN%>" />					
-		<% } %>%>
+		<% } %>
 							
 							
 		<jsp:include page="<%= Rutas.FOOTER%>" />

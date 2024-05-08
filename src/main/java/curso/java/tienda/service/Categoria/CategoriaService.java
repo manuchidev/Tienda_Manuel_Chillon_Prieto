@@ -26,9 +26,11 @@ public class CategoriaService {
 		CategoriaDAO.insert(categoria);
 	}
 	
-	public static void modificarCategoria(CategoriaVO categoria) {
+	public static CategoriaVO modificarCategoria(CategoriaVO categoria) {
 
-		CategoriaDAO.update(categoria);
+		CategoriaVO categoriaActualizada = CategoriaDAO.update(categoria);
+		
+		return categoriaActualizada;
 	}
 	
 	public static void bajaCategoria(int id) {

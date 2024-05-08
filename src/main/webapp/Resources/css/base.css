@@ -28,9 +28,15 @@
     max-width: 60px; /* Ancho máximo para asegurar que el enlace no se expanda demasiado */
 }
 
+.imgBanner {
+	height: 100%;
+	width: 100%;
+}
+
 .imgLogo {
-    width: 100%; /* La imagen ocupa el 100% del contenedor */
+    width: 90%; /* La imagen ocupa el 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
+    border: 1px solid #fff; /* Borde blanco de 1px */
 }
  
 :root {

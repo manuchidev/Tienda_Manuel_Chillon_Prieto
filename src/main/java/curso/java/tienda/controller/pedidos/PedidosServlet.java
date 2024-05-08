@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
 import curso.java.tienda.model.VO.Categoria.CategoriaVO;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Pedido.PedidoVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
 import curso.java.tienda.service.Categoria.CategoriaService;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Pedido.PedidoService;
 
 /**
@@ -42,6 +44,9 @@ public class PedidosServlet extends BaseServlet {
 		
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		String orden = request.getParameter("orden");
 		
@@ -70,6 +75,9 @@ public class PedidosServlet extends BaseServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		UsuarioVO usuario = (UsuarioVO) request.getSession().getAttribute("usuario");
 		List<CategoriaVO> categorias = CategoriaService.getCategorias();
 		

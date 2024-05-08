@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import="curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Usuario.UsuarioVO"
+	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Config.ConfigVO, curso.java.tienda.model.VO.Usuario.UsuarioVO"
 %>
 
 <!DOCTYPE html>
@@ -16,6 +16,8 @@
 	</head>
 	
 	<body class="gradient-custom">
+	
+	    <% List<ConfigVO> datosEmpresa = (List<ConfigVO>) request.getAttribute("datosEmpresa"); %>
 	
 		<jsp:include page="<%= Rutas.HEADER%>" />
 		

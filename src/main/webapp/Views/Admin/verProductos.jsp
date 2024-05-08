@@ -59,9 +59,7 @@
 							
 											<!-- Product image-->
 											<div class="divProductoImg">
-												<img class="card-img-top imgProd"
-													src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>"
-													alt="..." />
+												<img class="card-img-top imgProd" src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" alt="..." />
 											</div>
 							
 											<!-- Product details-->
@@ -91,8 +89,8 @@
 												
 													<form action="ProductoAdmin" method="get">
 												
-														<input type="hidden" name="idProd" value="<%= producto.getId()%>">
-														<input type="hidden" name="idCat" value="<%= producto.getId_categoria()%>">
+														<input type="hidden" name="idProducto" value="<%= producto.getId()%>">
+														<input type="hidden" name="idCategoria" value="<%= producto.getId_categoria()%>">
 														
 														<button type="submit" name="accion" value="edit" class="btn btn-warning mt-auto">Modificar</button>
 														<button type="submit" name="accion" value="delete" class="btn btn-danger mt-auto">Dar de Baja</button>

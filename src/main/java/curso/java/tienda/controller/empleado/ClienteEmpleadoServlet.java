@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import curso.java.tienda.config.Rutas;
 import curso.java.tienda.controller.base.BaseServlet;
+import curso.java.tienda.model.VO.Config.ConfigVO;
 import curso.java.tienda.model.VO.Usuario.UsuarioVO;
+import curso.java.tienda.service.Config.ConfigService;
 import curso.java.tienda.service.Usuario.UsuarioService;
 
 /**
@@ -35,6 +37,9 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
 		
 		String accion = request.getParameter("accion");
 		String id = request.getParameter("idUsuario");
@@ -73,10 +78,10 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//		Part filePart = request.getPart("imagen"); // Recoge el archivo de imagen del formulario
-//	    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // Obtiene el nombre del archivo
 	    
+		List<ConfigVO> datosEmpresa = ConfigService.obtenerDatosEmpresa();
+		request.setAttribute("datosEmpresa", datosEmpresa);
+		
 		String accion = request.getParameter("accion");
 		String id = request.getParameter("idUsuario");
 
@@ -94,7 +99,7 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 			String telefono = request.getParameter("telefonoRegistro");
 			String dni = request.getParameter("dniRegistro");
 					
-			HashMap<String, String> errores = UsuarioService.erroresAltaCliente(email, nombre, apellido1, apellido2, password, password2, telefono, direccion, provincia, localidad, dni);
+			HashMap<String, String> errores = UsuarioService.erroresAltaUsuario(email, nombre, apellido1, apellido2, password, password2, telefono, direccion, provincia, localidad, dni);
 										
 			if (errores.isEmpty()) {
 				
@@ -138,8 +143,17 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 			String provincia = request.getParameter("provinciaPerfil");
 			String localidad = request.getParameter("localidadPerfil");
 			
-			UsuarioService.actualizarUsuario(usuario, nombre, apellido1, apellido2, telefono, direccion, provincia, localidad);
-			request.setAttribute("usuarioModif", usuario);
+			usuario.setNombre(nombre);
+			usuario.setApellido1(apellido1);
+			usuario.setApellido2(apellido2);
+			usuario.setTelefono(telefono);
+			usuario.setDireccion(direccion);
+			usuario.setProvincia(provincia);
+			usuario.setLocalidad(localidad);
+			
+			UsuarioVO usuarioActualizado = UsuarioService.actualizarUsuario(usuario);
+			request.setAttribute("usuarioModif", usuarioActualizado);
+			
 			request.getRequestDispatcher(Rutas.MODIFICAR_CLIENTE_JSP).forward(request, response);
 							
 		} else if ("cambioClave".equals(accion)) {
@@ -160,6 +174,7 @@ public class ClienteEmpleadoServlet extends BaseServlet {
 				}
 			}
 			
+			usuario = UsuarioService.getUsuario(Integer.parseInt(id));
 			request.setAttribute("usuarioModif", usuario);
 			request.getRequestDispatcher(Rutas.MODIFICAR_CLIENTE_JSP).forward(request, response);
 	    	

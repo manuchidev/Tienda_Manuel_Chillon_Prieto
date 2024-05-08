@@ -32,7 +32,7 @@
 					<div class="card text-center">
 					
 						<div class="card-body">
-							<h5 class="card-title">PRODUCTOS</h5>
+							<h5 class="card-title">GESTIÓN PRODUCTOS</h5>
 							
 							<form action="ProductoAdmin" method="get">
 								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Productos</button>
@@ -50,7 +50,7 @@
 					<div class="card text-center">
 					
 						<div class="card-body">
-							<h5 class="card-title">CATEGORÍAS</h5>
+							<h5 class="card-title">GESTIÓN CATEGORÍAS</h5>
 
 							<form action="CategoriaAdmin" method="get">
 								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Categorias</button>
@@ -68,7 +68,7 @@
 					<div class="card text-center">
 					
 						<div class="card-body">
-							<h5 class="card-title">CLIENTES</h5>
+							<h5 class="card-title">GESTIÓN CLIENTES</h5>
 
 							<form action="ClienteAdmin" method="get">
 								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Clientes</button>
@@ -81,6 +81,29 @@
 					
 				</div>
 				
+			</div>
+			
+			<div class="row mt-4">
+			
+				<!-- Card de Empleados -->
+				<div class="col-md-4">
+				
+					<div class="card text-center">
+					
+						<div class="card-body">
+							<h5 class="card-title">GESTIÓN EMPLEADOS</h5>
+
+							<form action="EmpleadoAdmin" method="get">
+								<button type="submit" name="accion" value="view" class="btn btn-primary">Ver Empleados</button>
+								<button type="submit" name="accion" value="add" class="btn btn-success">Añadir Empleado</button>
+							</form>
+
+						</div>
+						
+					</div>
+					
+				</div>
+			
 			</div>
 			
 		</div>

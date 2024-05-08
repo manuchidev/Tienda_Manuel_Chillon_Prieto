@@ -32,16 +32,22 @@ USE tienda_manuel_chillon_prieto;
 CREATE TABLE `categorias` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) DEFAULT NULL,
-  `descripcion` varchar(255) DEFAULT NULL
+  `descripcion` varchar(255) DEFAULT NULL,
+  `fecha_baja` timestamp NULL DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id`, `nombre`, `descripcion`) VALUES
-(1, 'Electrónica', 'Dispositivos electrónicos y accesorios'),
-(2, 'Ropa', 'Artículos de vestir');
+INSERT INTO `categorias` (`id`, `nombre`, `descripcion`, `fecha_baja`, `imagen`) VALUES
+(1, 'Cascos', 'Cascos de seguridad', NULL, 'cascos.png'),
+(2, 'Chaquetas', 'Chaquetas de cuero o textil', NULL, 'chaquetas.png'),
+(3, 'Guantes', 'Guantes resistentes y protectores', NULL, 'guantes.png'),
+(4, 'Pantalones', 'Pantalones de moto resistentes y cómodos', NULL, 'pantalones.png'),
+(5, 'Botas', 'Botas de carretera y de offroad', NULL, 'botas.png'),
+(6, 'Accesorios', 'Otros accesorios útiles', NULL, 'accesorios.png');
 
 -- --------------------------------------------------------
 
@@ -177,14 +183,38 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `id_categoria`, `nombre`, `descripcion`, `precio`, `stock`, `fecha_alta`, `fecha_baja`, `impuesto`, `imagen`) VALUES
-(1, 1, 'Samsung Galaxy S20', 'Smartphone de alta gama con cámara potente y pantalla AMOLED', 799.99, 50, '2024-04-14 22:00:00', NULL, 21, 'samsumgGS20.webp'),
-(2, 1, 'Sony WH-1000XM4', 'Auriculares inalámbricos con cancelación de ruido líder en su clase', 349.99, 30, '2024-04-14 22:00:00', NULL, 21, 'SonyAuriculares.webp'),
-(3, 2, 'Jeans Slim Fit', 'Jeans ajustados de alta calidad, estilo moderno', 39.99, 80, '2024-04-14 22:00:00', NULL, 21, 'jeansSlimFit.webp'),
-(4, 2, 'Zapatillas Deportivas', 'Zapatillas deportivas ideales para correr y entrenar', 59.99, 60, '2024-04-14 22:00:00', NULL, 21, 'zapatillasDeportivas.webp'),
-(5, 1, 'iPhone 13 Pro', 'Teléfono inteligente de alta gama con tecnología avanzada', 999.99, 30, '2024-04-20 10:00:00', NULL, 21, 'iphone13pro.webp'),
-(6, 1, 'Laptop HP Envy x360', 'Laptop convertible con pantalla táctil Full HD y procesador Ryzen', 1299.99, 10, '2024-04-20 12:00:00', NULL, 21, 'hp-envy-x360.webp');
+INSERT INTO `productos` (`id` ,`id_categoria`, `nombre`, `descripcion`, `precio`, `stock`, `fecha_alta`, `fecha_baja`, `impuesto`, `imagen`) VALUES
+(1, 1, 'Casco integral negro mate', 'Casco de moto integral negro mate, resistente y seguro', 89.99, 50, NOW(), NULL, 21, 'casco_integral.png'),
+(2, 1, 'Casco modular con visera', 'Casco modular con visera para mayor comodidad y versatilidad', 129.99, 30, NOW(), NULL, 21, 'casco_modular_visera.png'),
+(3, 1, 'Casco de motocross', 'Casco de motocross resistente, ideal para off-road', 149.99, 15, NOW(), NULL, 21, 'casco_motocross.png'),
+(4, 1, 'Casco de moto abierto', 'Casco de moto abierto', 79.99, 20, NOW(), NULL, 21, 'casco_abierto.png'),
 
+(5, 2, 'Chaqueta de cuero con protecciones', 'Chaqueta de cuero con protecciones para motociclistas', 199.99, 40, NOW(), NULL, 21, 'chaqueta_cuero.png'),
+(6, 2, 'Chaqueta textil impermeable', 'Chaqueta textil impermeable para todas las estaciones', 129.99, 35, NOW(), NULL, 21, 'chaqueta_textil.png'),
+(7, 2, 'Chaqueta de verano transpirable', 'Chaqueta ligera y transpirable ideal para verano', 99.99, 30, NOW(), NULL, 21, 'chaqueta_verano.png'),
+(8, 2, 'Chaqueta de motocross', 'Chaqueta ligera y transpirable ideal para motocross', 49.99, 20, NOW(), NULL, 21, 'chaqueta_motocross.png'),
+(9, 2, 'Chaqueta estilo calle', 'Chaqueta de moto estilo calle con protecciones', 149.99, 25, NOW(), NULL, 21, 'chaqueta_calle.png'),
+
+(10, 3, 'Guantes de cuero con refuerzos', 'Guantes de cuero con refuerzos para mayor protección', 59.99, 60, NOW(), NULL, 21, 'guantes_cuero.png'),
+(11, 3, 'Guantes de invierno impermeables', 'Guantes térmicos e impermeables para el invierno', 49.99, 50, NOW(), NULL, 21, 'guantes_invierno.png'),
+(12, 3, 'Guantes deportivos', 'Guantes deportivos para moto con ventilación', 39.99, 70, NOW(), NULL, 21, 'guantes_deportivos.png'),
+(13, 3, 'Guantes de motocross', 'Guantes para motocross ligeros y con ventilación', 39.99, 50, NOW(), NULL, 21, 'guantes_motocross.png'),
+(14, 3, 'Guantes de verano', 'Guantes cortos y ventilados con protecciones para el verano', 69.99, 45, NOW(), NULL, 21, 'guantes_verano.png'),
+
+(15, 4, 'Pantalones de moto de invierno', 'Pantalones de moto ajustables, resistentes e impermeables para el invierno', 119.99, 30, NOW(), NULL, 21, 'pantalones_invierno.png'),
+(16, 4, 'Pantalones de cuero', 'Pantalones de cuero con protecciones y deslizaderas', 149.99, 25, NOW(), NULL, 21, 'pantalones_cuero.png'),
+(17, 4, 'Pantalones vaqueros con kevlar', 'Pantalones vaqueros reforzados con kevlar para mayor seguridad', 99.99, 40, NOW(), NULL, 21, 'pantalones_vaqueros.png'),
+(18, 4, 'Pantalones de motocross', 'Pantalones para motocross con pequeñas protecciones', 79.99, 50, NOW(), NULL, 21, 'pantalones_motocross.png'),
+
+(19, 5, 'Botas deportivas', 'Botas de cuero para largas distancias y protección', 169.99, 20, NOW(), NULL, 21, 'botas_deportivas.png'),
+(20, 5, 'Botas de motocross enduro', 'Botas de motocross enduro resistentes y cómodas', 199.99, 15, NOW(), NULL, 21, 'botas_motocross.png'),
+(21, 5, 'Botas urbanas estilo motero', 'Botas urbanas estilo motero con protecciones', 129.99, 30, NOW(), NULL, 21, 'botas_urbanas.png'),
+(22, 5, 'Botas touring con membrana impermeable', 'Botas touring con membrana impermeable y transpirable', 189.99, 25, NOW(), NULL, 21, 'botas_touring.png'),
+
+(23, 6, 'Mochila impermeable para moto', 'Mochila impermeable diseñada para llevar en moto', 49.99, 40, NOW(), NULL, 21, 'mochila_impermeable.png'),
+(24, 6, 'Kit de herramientas para moto', 'Kit completo de herramientas esenciales para motociclistas', 39.99, 30, NOW(), NULL, 21, 'kit_herramientas.png'),
+(25, 6, 'Soporte móvil para moto', 'Soporte resistente para montar un teléfono móvil en la moto', 19.99, 20, NOW(), NULL, 21, 'soporte_movil.png'),
+(26, 6, 'Cepillo limpia cadena', 'Cepillo para limpiar la cadena de la motocicleta', 29.99, 15, NOW(), NULL, 21, 'cepillo_cadena.png');
 -- --------------------------------------------------------
 
 --
@@ -240,16 +270,17 @@ CREATE TABLE `usuarios` (
   `provincia` varchar(255) DEFAULT NULL,
   `localidad` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
-  `dni` varchar(255) DEFAULT NULL
+  `dni` varchar(255) DEFAULT NULL,
+  `fecha_baja` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `id_rol`, `email`, `clave`, `nombre`, `apellido1`, `apellido2`, `direccion`, `provincia`, `localidad`, `telefono`, `dni`) VALUES
-(1, 1, 'admin1@admin1.com', 'wVh8cR7nMc8Ta82QXzTEJUMshq8wrDDmhb3gyoj3t5q70hW1jqkzxCTfa0ZpGPpj', 'María', 'López', 'Martínez', 'Avenida Central 456', 'Barcelona', 'Barcelona', '555123456', '87654321B'),
-(2, 2, 'empleado1@empleado1.com', '9MJhr0uMviZUYZ8bzzqY+E+Ss2aH6jE5KZxz9UTcBR4z1l+1/PmZfLxmK1k6tX2j', 'Pepe', 'Prieto', 'Gómez', 'Calle Maestra 789', 'Valencia', 'Valencia', '600364857', '45678912V');
+INSERT INTO `usuarios` (`id`, `id_rol`, `email`, `clave`, `nombre`, `apellido1`, `apellido2`, `direccion`, `provincia`, `localidad`, `telefono`, `dni`, `fecha_baja`) VALUES
+(1, 1, 'admin1_riders@hotmail.com', 'wVh8cR7nMc8Ta82QXzTEJUMshq8wrDDmhb3gyoj3t5q70hW1jqkzxCTfa0ZpGPpj', 'María', 'López', 'Martínez', 'Avenida Central 456', 'Barcelona', 'Barcelona', '555123456', '87654321B', NULL),
+(2, 2, 'pepe_prieto@hotmail.com', '9MJhr0uMviZUYZ8bzzqY+E+Ss2aH6jE5KZxz9UTcBR4z1l+1/PmZfLxmK1k6tX2j', 'Pepe', 'Prieto', 'Gómez', 'Calle Maestra 789', 'Valencia', 'Valencia', '600364857', '45678912V', NULL);
 
 -- --------------------------------------------------------
 

@@ -17,6 +17,13 @@ public class UsuarioService {
 		return usuarios;
 	}
 	
+	public static List<UsuarioVO> getEmpleados() {
+
+		List<UsuarioVO> empleados = UsuarioDAO.findEmpleados();
+
+		return empleados;
+	}
+	
 	public static UsuarioVO getUsuario(int id) {
 		
 		UsuarioVO usuario = UsuarioDAO.findById(id);
@@ -139,7 +146,7 @@ public class UsuarioService {
 
 	}
 	
-public static HashMap<String, String> erroresAltaCliente(String email, String nombre, String apellido1, String apellido2, String password, String password2, String telefono, String direccion, String provincia, String localidad, String dni) {
+public static HashMap<String, String> erroresAltaUsuario(String email, String nombre, String apellido1, String apellido2, String password, String password2, String telefono, String direccion, String provincia, String localidad, String dni) {
 		
 		HashMap<String, String> errores = new HashMap<String, String>();
 		
@@ -260,17 +267,18 @@ public static HashMap<String, String> erroresAltaCliente(String email, String no
 		return usuarioRegistrado;
 	}
 	
-	public static void actualizarUsuario(UsuarioVO usuario, String nombre, String apellido1, String apellido2, String telefono, String direccion, String provincia, String localidad) {
-			
-		usuario.setNombre(nombre);
-		usuario.setApellido1(apellido1);
-		usuario.setApellido2(apellido2);
-		usuario.setTelefono(telefono);
-		usuario.setDireccion(direccion);
-		usuario.setProvincia(provincia);
-		usuario.setLocalidad(localidad);
+	public static UsuarioVO registrarEmpleado(UsuarioVO usuario) {
 		
-		UsuarioDAO.updateUsuario(usuario);
+		UsuarioVO usuarioRegistrado = UsuarioDAO.insertarEmpleado(usuario);
+		
+		return usuarioRegistrado;
+	}
+	
+	public static UsuarioVO actualizarUsuario(UsuarioVO usuario) {
+					
+		UsuarioVO usuarioActualizado = UsuarioDAO.updateUsuario(usuario);
+		
+		return usuarioActualizado;
 	}
 
 	public static void actualizarClave(UsuarioVO usuario, String claveNueva) {

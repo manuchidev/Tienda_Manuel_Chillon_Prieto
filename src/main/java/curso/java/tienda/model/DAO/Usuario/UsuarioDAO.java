@@ -19,7 +19,7 @@ public class UsuarioDAO {
 		try {
 
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios WHERE id_rol = 3");
+			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios WHERE id_rol = 3 AND fecha_baja IS NULL");
 
 			ResultSet rs = st.executeQuery();
 
@@ -39,7 +39,7 @@ public class UsuarioDAO {
 				usuario.setLocalidad(rs.getString("localidad"));
 				usuario.setTelefono(rs.getString("telefono"));
 				usuario.setDni(rs.getString("dni"));
-
+				
 				usuarios.add(usuario);
 			}
 
@@ -48,6 +48,45 @@ public class UsuarioDAO {
 		}
 
 		return usuarios;
+	}
+	
+	public static List<UsuarioVO> findEmpleados() {
+		
+		List<UsuarioVO> empleados = new ArrayList<UsuarioVO>();
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("SELECT * FROM usuarios WHERE id_rol = 2 AND fecha_baja IS NULL");
+
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+
+				UsuarioVO empleado = new UsuarioVO();
+
+				empleado.setId(rs.getInt("id"));
+				empleado.setId_rol(rs.getInt("id_rol"));
+				empleado.setEmail(rs.getString("email"));
+				empleado.setClave(rs.getString("clave"));
+				empleado.setNombre(rs.getString("nombre"));
+				empleado.setApellido1(rs.getString("apellido1"));
+				empleado.setApellido2(rs.getString("apellido2"));
+				empleado.setDireccion(rs.getString("direccion"));
+				empleado.setProvincia(rs.getString("provincia"));
+				empleado.setLocalidad(rs.getString("localidad"));
+				empleado.setTelefono(rs.getString("telefono"));
+				empleado.setDni(rs.getString("dni"));
+				
+				empleados.add(empleado);
+			}
+
+		} catch (SQLException e) {
+			return null;
+		}
+
+		return empleados;
+		
 	}
 	
 	public static UsuarioVO findById(int id) {
@@ -166,27 +205,70 @@ public class UsuarioDAO {
         return usuarioRegistrado;
 	}
 	
-	public static void updateUsuario(UsuarioVO usuario) {
+	public static UsuarioVO insertarEmpleado(UsuarioVO usuario) {
 		
-		try {
+		UsuarioVO usuarioRegistrado = null;
+				    
+        try {
             
             Connection con = Conexion.getConexion();
-            PreparedStatement st = con.prepareStatement("UPDATE usuarios SET nombre = ?, apellido1 = ?, apellido2 = ?, telefono = ?, direccion = ?, provincia = ?, localidad = ? WHERE id = ?");
+            PreparedStatement st = con.prepareStatement("INSERT INTO usuarios (id_rol, email, clave, nombre, apellido1, apellido2, direccion, provincia, localidad, telefono, dni) VALUES (2, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
             
-            st.setString(1, usuario.getNombre());
-            st.setString(2, usuario.getApellido1());
-            st.setString(3, usuario.getApellido2());
-            st.setString(4, usuario.getTelefono());
-            st.setString(5, usuario.getDireccion());
-            st.setString(6, usuario.getProvincia());
-            st.setString(7, usuario.getLocalidad());
-            st.setInt(8, usuario.getId());
-            
+            st.setString(1, usuario.getEmail());
+            st.setString(2, usuario.getClave());
+            st.setString(3, usuario.getNombre());
+            st.setString(4, usuario.getApellido1());
+            st.setString(5, usuario.getApellido2());
+            st.setString(6, usuario.getDireccion());
+            st.setString(7, usuario.getProvincia());
+            st.setString(8, usuario.getLocalidad());
+            st.setString(9, usuario.getTelefono());
+            st.setString(10, usuario.getDni());
+
             st.executeUpdate();
             
+            ResultSet rs = st.getGeneratedKeys();
+            
+			if (rs.next()) {
+				usuarioRegistrado = UsuarioDAO.findById(rs.getInt(1));
+			}
+                        
         } catch (SQLException e) {
-            e.printStackTrace();
-        }        
+        	e.printStackTrace();
+        }       
+        
+        return usuarioRegistrado;
+	}
+	
+	public static UsuarioVO updateUsuario(UsuarioVO usuario) {
+		
+		UsuarioVO usuarioActualizado = null;
+
+		try {
+
+			Connection con = Conexion.getConexion();
+			PreparedStatement st = con.prepareStatement("UPDATE usuarios SET email = ?, nombre = ?, apellido1 = ?, apellido2 = ?, direccion = ?, provincia = ?, localidad = ?, telefono = ?, dni = ? WHERE id = ?");
+
+			st.setString(1, usuario.getEmail());
+			st.setString(2, usuario.getNombre());
+			st.setString(3, usuario.getApellido1());
+			st.setString(4, usuario.getApellido2());
+			st.setString(5, usuario.getDireccion());
+			st.setString(6, usuario.getProvincia());
+			st.setString(7, usuario.getLocalidad());
+			st.setString(8, usuario.getTelefono());
+			st.setString(9, usuario.getDni());
+			st.setInt(10, usuario.getId());
+
+			st.executeUpdate();
+
+			usuarioActualizado = UsuarioDAO.findById(usuario.getId());
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return usuarioActualizado;
 	}
 	
 	public static void updateClaveUsuario(UsuarioVO usuario, String clave) {

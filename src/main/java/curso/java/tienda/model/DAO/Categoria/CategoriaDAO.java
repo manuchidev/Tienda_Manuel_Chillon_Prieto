@@ -31,6 +31,7 @@ public class CategoriaDAO {
 				categoria.setId(rs.getInt("id"));
 				categoria.setNombre(rs.getString("nombre"));
 				categoria.setDescripcion(rs.getString("descripcion"));
+				categoria.setImagen(rs.getString("imagen"));
 				
 				categorias.add(categoria);
 			}
@@ -61,6 +62,7 @@ public class CategoriaDAO {
 				categoria.setId(rs.getInt("id"));
 				categoria.setNombre(rs.getString("nombre"));
 				categoria.setDescripcion(rs.getString("descripcion"));
+				categoria.setImagen(rs.getString("imagen"));
 			}
 
 		} catch (SQLException e) {
@@ -75,9 +77,10 @@ public class CategoriaDAO {
 		try {
 
 			Connection con = Conexion.getConexion();
-			PreparedStatement st = con.prepareStatement("INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)");
+			PreparedStatement st = con.prepareStatement("INSERT INTO categorias (nombre, descripcion, imagen) VALUES (?, ?, ?)");
 			st.setString(1, categoria.getNombre());
 			st.setString(2, categoria.getDescripcion());
+			st.setString(3, categoria.getImagen());
 
 			st.executeUpdate();
 
@@ -86,8 +89,10 @@ public class CategoriaDAO {
 		}
 	}
 	
-	public static void update(CategoriaVO categoria) {
+	public static CategoriaVO update(CategoriaVO categoria) {
 
+		CategoriaVO categoriaActualizada = null;
+		
 		try {
 
 			Connection con = Conexion.getConexion();
@@ -98,9 +103,13 @@ public class CategoriaDAO {
 
 			st.executeUpdate();
 
+			categoriaActualizada = findById(categoria.getId());
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		return categoriaActualizada;
 	}
 	
 	public static void delete(int id) {

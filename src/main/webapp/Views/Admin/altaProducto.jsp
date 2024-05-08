@@ -30,7 +30,7 @@
 	        
 	        	<h2 class="text-center mb-4" style="color: white">ALTA DE PRODUCTO</h2>
 
-				<form action="ProductoEmpleado?accion=add" method="post" enctype="multipart/form-data">
+				<form action="ProductoAdmin" method="post" enctype="multipart/form-data">
 				 
 	            	<div class="container px-4 px-lg-5 my-3 d-flex justify-content-center align-items-center">
 	            
@@ -40,13 +40,14 @@
 						
 						%>
 							<div class="col-md-5">	
+							
 								<div class="text-center divImagen">
 									<img class="card-img-top mb-5 mb-md-0 imgDetalle" id="preview" src="" alt="IMAGEN_PRODUCTO" />
 								</div>
+								
 								<input type="file" id="imagen" name="imagen" onchange="previewImage()" class="mt-2 mb-2">
 							</div>
-							
-							
+														
 							<div class="col-md-7 mt-3">
 							
 								<div class="row">
@@ -141,55 +142,7 @@
 		            </div>
 		            
 				</form>
-				
-				<table class= "table bg-light mt-5" border="1">
-				
-					<thead>
-					
-						<tr>
-							<th colspan="8" class="text-center bg-secondary p-3">LISTADO DE PRODUCTOS</th>
-						</tr>
-					
-						<tr class="text-center bg-info p-3">						
-						    <th>Nombre</th>
-							<th>Precio</th>
-							<th>Descripción</th>
-							<th>Impuesto</th>
-							<th>Stock</th>
-							<th>Imagen</th>
-							<th>Acciones</th>						
-						</tr>
-							
-					</thead>
-					
-					<tbody>
-					
-					<%
-					    List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");
-					    if (productos != null) {
-					        for (ProductoVO producto : productos) {
-					%>
-					            <tr class="text-center">
-					                <td><%= producto.getNombre() %></td>
-					                <td><%= producto.getPrecio() %>€</td>
-					                <td><%= producto.getDescripcion() %></td>
-					                <td><%= producto.getImpuesto() %>%</td>
-					                <td><%= producto.getStock() %></td>
-					                <td><img src="<%= request.getContextPath() %><%= Rutas.IMAGENES_PROD %><%= producto.getImagen() %>" height="50" width="50"></td>
-					                <td>
-					                    <a href="ProductoEmpleado?accion=edit&idProd=<%= producto.getId() %>">Editar</a>
-					                </td>
-					            </tr>
-					<%
-					        }
-					    }
-					%>
-					
-					
-					</tbody>
-								
-				</table>
-	            
+					            
 	        </section>	        
 		
 		</main>

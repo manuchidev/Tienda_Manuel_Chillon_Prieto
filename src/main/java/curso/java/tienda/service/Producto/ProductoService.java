@@ -100,17 +100,11 @@ public class ProductoService {
 		ProductoDAO.insertProducto(producto);
 	}
 	
-	public static ProductoVO actualizarProducto(String id, String idCategoria, String nombre, String descripcion, String precio, String stock, String impuesto, String imagen) {
+	public static ProductoVO actualizarProducto(ProductoVO producto) {
+				
+		ProductoVO productoActualizado = ProductoDAO.updateProducto(producto);
 		
-		int idProducto = Integer.parseInt(id);
-		int idCategoriaInt = Integer.parseInt(idCategoria);
-		BigDecimal precioBD = BigDecimal.valueOf(Double.parseDouble(precio));
-		int stockInt = Integer.parseInt(stock);
-		BigDecimal impuestoBD = BigDecimal.valueOf(Double.parseDouble(impuesto));
-		
-		ProductoVO producto = ProductoDAO.updateProducto(idProducto, idCategoriaInt, nombre, descripcion, precioBD, stockInt, impuestoBD, imagen);
-		
-		return producto;		
+		return productoActualizado;		
 	}
 	
 	public static void bajaProducto(int id) {

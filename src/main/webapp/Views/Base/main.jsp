@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" 
-	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Producto.ProductoVO, curso.java.tienda.model.VO.Categoria.CategoriaVO, 
-	curso.java.tienda.model.VO.Usuario.UsuarioVO"
+	import="java.util.*, curso.java.tienda.config.Rutas, curso.java.tienda.model.VO.Config.ConfigVO, curso.java.tienda.model.VO.Producto.ProductoVO, 
+	curso.java.tienda.model.VO.Categoria.CategoriaVO, curso.java.tienda.model.VO.Usuario.UsuarioVO"
 %> 
 
 <!-- Section-->
@@ -20,7 +20,9 @@
 		List<CategoriaVO> categorias = (List<CategoriaVO>) request.getAttribute("categorias");
 		List<ProductoVO> productos = (List<ProductoVO>) request.getAttribute("productos");
 		List<ProductoVO> productosFiltrados = (List<ProductoVO>) request.getAttribute("productosFiltrados");
-		List<ProductoVO> productosCategoria = (List<ProductoVO>) request.getAttribute("productosCategoria");		
+		List<ProductoVO> productosCategoria = (List<ProductoVO>) request.getAttribute("productosCategoria");
+		
+		List<ConfigVO> datosEmpresa = (List<ConfigVO>) request.getAttribute("datosEmpresa");
 		
 		if (productosFiltrados != null && !productosFiltrados.isEmpty()) {
 	%>
