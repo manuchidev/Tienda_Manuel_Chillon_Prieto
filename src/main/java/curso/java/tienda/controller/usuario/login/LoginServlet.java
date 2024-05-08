@@ -90,6 +90,7 @@ public class LoginServlet extends BaseServlet {
 				request.getRequestDispatcher(Rutas.INDEX_JSP).forward(request, response);
 				
 			} else {
+				request.setAttribute("mensajeError", "Error al iniciar sesión");
 				logger.warn("Intento de inicio de sesión fallido con email " + email);
 				request.getRequestDispatcher(Rutas.LOGIN_JSP).forward(request, response);
 			}

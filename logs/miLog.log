@@ -1473,3 +1473,9 @@ Caused by: javax.mail.AuthenticationFailedException: 535 5.7.139 Authentication 
 08/05/2024 23:27:03  INFO LoginServlet:89 - Usuario luis_rl@hotmail.com ha iniciado sesión
 08/05/2024 23:27:21  INFO ContactoServlet:73 - Idioma: es
 08/05/2024 23:27:27  INFO ContactoServlet:85 - Correo enviado correctamente
+08/05/2024 23:28:39  INFO EntradaServlet:59 - Idioma por defecto: es
+08/05/2024 23:28:39  INFO EntradaServlet:71 - Carrito disponible
+08/05/2024 23:31:56  INFO EntradaServlet:62 - Idioma: es
+08/05/2024 23:32:02  WARN LoginServlet:95 - Intento de inicio de sesión fallido con email luis_rl@hotmail.com
+08/05/2024 23:32:07  INFO LoginServlet:90 - Usuario luis_rl@hotmail.com ha iniciado sesión
+08/05/2024 23:32:27  INFO EntradaServlet:62 - Idioma: es

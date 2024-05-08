@@ -24,8 +24,16 @@
 		<main>
 		
 			<section class="gradient-custom">
-			
-			  <div class="container py-5">
+	
+				<%
+				if (request.getAttribute("mensajeError") != null) {
+				%>
+					<div class="alert alert-danger alert-dismissible fade show text-center" role="alert"> <%=request.getAttribute("mensajeError")%>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+			<% } %>
+
+			<div class="container py-5">
 			  
 			    <div class="row d-flex justify-content-center align-items-center">
 			    
