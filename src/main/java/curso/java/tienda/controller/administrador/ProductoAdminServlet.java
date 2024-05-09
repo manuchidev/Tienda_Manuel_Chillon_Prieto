@@ -187,10 +187,16 @@ public class ProductoAdminServlet extends HttpServlet {
 			int stock = Integer.parseInt(campos.get("stockProdAlta"));
 			nuevoProducto.setStock(stock);
 			
-			int idCategoria = Integer.parseInt(campos.get("idCategoria"));
+			int idCategoria = Integer.parseInt(campos.get("categoriaProdAlta"));
 			nuevoProducto.setId_categoria(idCategoria);
 			
-			ProductoService.altaProducto(nuevoProducto);	
+			try {
+				ProductoService.altaProducto(nuevoProducto);	
+				request.setAttribute("mensajeExito", "Producto añadido correctamente");
+			
+			} catch (Exception e) {
+				request.setAttribute("mensajeError", "Error al añadir el producto");
+			}
     		  
 			request.getRequestDispatcher(Rutas.ALTA_PRODUCTO_ADMIN_JSP).forward(request, response);    					
         }

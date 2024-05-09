@@ -25,6 +25,20 @@
 		
 		<main>
 		
+			<% if (request.getAttribute("mensajeExito") != null) { %>
+				<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+					<%= request.getAttribute("mensajeExito") %>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<% } %>
+
+			<% if (request.getAttribute("mensajeError") != null) { %>
+				<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+					<%= request.getAttribute("mensajeError") %>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			<% } %>
+		
 			<!-- Product section-->
 	        <section class="py-5 ">
 	        
